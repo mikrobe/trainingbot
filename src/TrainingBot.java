@@ -1,20 +1,23 @@
-public class Main {
+import java.util.ArrayList;
+import java.util.List;
 
-    public static void main(String[] args) {
-        System.out.println("TrainBot");
-        for (int i = 1; i < 20; i++) {
-            double[] training = getSessionDuration(i, 24, 20);
-            System.out.println(training[0]);
-            System.out.println(training[1]);
+public class TrainingBot {
+
+    public static void main(String args[]){
+        TrainingBot wTrainingBot = new TrainingBot();
+        List<Session> sessions = wTrainingBot.getSessionDuration(1, 24, 20);
+        for (Session s:sessions){
+            System.out.println(s.getTotalDuration());
         }
     }
 
-    static public double[] getSessionDuration(int pWeek, double pInitialDuration, int pNumberOfWeeks){
+    public List<Session> getSessionDuration(int pWeek, double pInitialDuration, int pNumberOfWeeks){
         double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
         double lastShortSessionTime = pInitialDuration;
         double shortTrainingDuration = pInitialDuration;
         double longTrainingDuration = 0;
         double longSession = 0.67;
+        List<Session> wSessions = null;
 
         for (int tw = 1; tw < pNumberOfWeeks; tw++) {
             WeekFocus weekFocus = getWeekFocus(tw, pNumberOfWeeks);
@@ -22,9 +25,10 @@ public class Main {
                 case regular:
                     shortTrainingDuration = lastShortSessionTime + adjusters[Math.floorMod(tw, 4)] * lastShortSessionTime;
                     break;
-                case repeeting:
-                    shortTrainingDuration = getSessionDuration(tw-4, pInitialDuration, pNumberOfWeeks)[0];
+                case repeeting: {
+                    wSessions = getSessionDuration(tw - 4, pInitialDuration, pNumberOfWeeks);
                     break;
+                }
                 case breakWeek:
                     shortTrainingDuration = lastShortSessionTime;
                     break;
@@ -35,8 +39,17 @@ public class Main {
             longTrainingDuration = shortTrainingDuration + longSession * shortTrainingDuration;
             lastShortSessionTime = shortTrainingDuration;
             if (tw == pWeek) {
-                //TODO return Session object
-                return new double[]{shortTrainingDuration, longTrainingDuration};
+                if (wSessions == null) {
+                    wSessions = new ArrayList<Session>();
+                    Set wSet = new Set(shortTrainingDuration, 0);
+                    Session wShortSession = new Session();
+                    wShortSession.addSet(new Set(shortTrainingDuration, 0));
+                    Session wLongSession = new Session();
+                    wLongSession.addSet(new Set(longTrainingDuration, 0));
+                    wSessions.add(wShortSession);
+                    wSessions.add(wLongSession);
+                }
+                return wSessions;
             }
         }
         return null;
