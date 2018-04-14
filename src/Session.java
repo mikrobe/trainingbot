@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Session {
+    boolean overTrainingIndicator = false;
     List<Set> sets;
 
     public Session() {
@@ -22,5 +23,13 @@ public class Session {
             wTotalDuration = set.getDuration();
         }
         return wTotalDuration;
+    }
+
+    public boolean isOverTrainingIndicator() {
+        return overTrainingIndicator;
+    }
+
+    public void setOverTrainingIndicator(boolean overTrainingIndicator) {
+        this.overTrainingIndicator = overTrainingIndicator;
     }
 }

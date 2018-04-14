@@ -5,10 +5,18 @@ public class TrainingBot {
 
     public static void main(String args[]){
         TrainingBot wTrainingBot = new TrainingBot();
-        List<Session> sessions = wTrainingBot.getSessionDuration(1, 24, 20);
-        for (Session s:sessions){
-            System.out.println(s.getTotalDuration());
+        for (int i = 1; i < 20; i++) {
+            List<Session> sessions = wTrainingBot.getSessionDuration(i, 24, 20);
+            for (Session s:sessions){
+                System.out.println(s.getTotalDuration());
+            }
         }
+    }
+
+    public List<Session> getSessionDuration(int pWeek, double pInitialDuration, int pNumberOfWeeks, List<Session> currentSessionsDurations){
+        List<Session> wSessions = getSessionDuration(pWeek, pInitialDuration, pNumberOfWeeks);
+        boolean wOvertraing = validateOverTraining(pWeek, pNumberOfWeeks, currentSessionsDurations);
+        return wSessions;
     }
 
     public List<Session> getSessionDuration(int pWeek, double pInitialDuration, int pNumberOfWeeks){
@@ -53,6 +61,11 @@ public class TrainingBot {
             }
         }
         return null;
+    }
+
+    private boolean validateOverTraining(int tw, int pNumberOfWeeks, List<Session> currentSessions) {
+        //TODO linear regression if currentSessions ends up in overtraining or understraning
+        return false;
     }
 
     private static WeekFocus getWeekFocus(int tw, int pNumberOfWeeks) {
