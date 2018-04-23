@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Session {
     boolean overTrainingIndicator = false;
+    Date date;
     List<Set> sets;
 
     public Session() {
@@ -31,5 +33,13 @@ public class Session {
 
     public void setOverTrainingIndicator(boolean overTrainingIndicator) {
         this.overTrainingIndicator = overTrainingIndicator;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }

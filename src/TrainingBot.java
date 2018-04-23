@@ -2,25 +2,34 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TrainingBot {
+    double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
+
 
     public static void main(String args[]){
+        double[] adjustersOver = {-0.35, 0.75, 0.15, 0.15};
+        double[] adjustersUnder = {-0.46, 0.60, 0.05, 0.05};
         TrainingBot wTrainingBot = new TrainingBot();
         for (int i = 1; i < 20; i++) {
-            List<Session> sessions = wTrainingBot.getSessionDuration(i, 24, 20);
+            List<Session> sessions = wTrainingBot.getSessions(adjustersUnder, i, 24, 20);
             for (Session s:sessions){
                 System.out.println(s.getTotalDuration());
             }
         }
     }
 
-    public List<Session> getSessionDuration(int pWeek, double pInitialDuration, int pNumberOfWeeks, List<Session> currentSessionsDurations){
-        List<Session> wSessions = getSessionDuration(pWeek, pInitialDuration, pNumberOfWeeks);
+    public List<Session> getSessions(double[] pAdjusters, int pWeek, double pInitialDuration, int pNumberOfWeeks){
+        adjusters = pAdjusters;
+        return getSessions(pWeek, pInitialDuration, pNumberOfWeeks);
+    }
+
+    public List<Session> getSessions(int pWeek, double pInitialDuration, int pNumberOfWeeks, List<Session> currentSessionsDurations){
+        List<Session> wSessions = getSessions(pWeek, pInitialDuration, pNumberOfWeeks);
         boolean wOvertraing = validateOverTraining(pWeek, pNumberOfWeeks, currentSessionsDurations);
         return wSessions;
     }
 
-    public List<Session> getSessionDuration(int pWeek, double pInitialDuration, int pNumberOfWeeks){
-        double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
+    public List<Session> getSessions(int pWeek, double pInitialDuration, int pNumberOfWeeks){
+
         double lastShortSessionTime = pInitialDuration;
         double shortTrainingDuration = pInitialDuration;
         double longTrainingDuration = 0;
@@ -34,7 +43,7 @@ public class TrainingBot {
                     shortTrainingDuration = lastShortSessionTime + adjusters[Math.floorMod(tw, 4)] * lastShortSessionTime;
                     break;
                 case repeeting: {
-                    wSessions = getSessionDuration(tw - 4, pInitialDuration, pNumberOfWeeks);
+                    wSessions = getSessions(tw - 4, pInitialDuration, pNumberOfWeeks);
                     break;
                 }
                 case breakWeek:
@@ -65,6 +74,7 @@ public class TrainingBot {
 
     private boolean validateOverTraining(int tw, int pNumberOfWeeks, List<Session> currentSessions) {
         //TODO linear regression if currentSessions ends up in overtraining or understraning
+        //https://www.ibm.com/developerworks/library/os-weka1/
         return false;
     }
 

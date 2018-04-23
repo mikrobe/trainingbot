@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/GradientDescent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingBot/TrainingBot$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrainingBot/TrainingBot$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/TrainingBot/TrainingBot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/TrainingBot/TrainingBot.class" afterDir="false" />
@@ -18,11 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="TrainingBot.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TrainingBot.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TrainingBot.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+            <state relative-caret-position="437">
+              <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -30,11 +31,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingBot.class" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/out/production/TrainingBot/TrainingBot.class">
+      <file leaf-file-name="GradientDescent.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/GradientDescent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            <state relative-caret-position="529">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="e#246#247#0" expanded="true" />
+                <element signature="e#284#285#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#379#380#0" expanded="true" />
+                <element signature="e#2759#2760#0" expanded="true" />
+                <element signature="e#2794#2795#0" expanded="true" />
+                <element signature="e#3484#3485#0" expanded="true" />
+                <element signature="e#3517#3518#0" expanded="true" />
+                <element signature="e#3570#3571#0" expanded="true" />
+                <element signature="e#3614#3615#0" expanded="true" />
+                <element signature="e#3653#3654#0" expanded="true" />
+                <element signature="e#3688#3689#0" expanded="true" />
+                <element signature="e#3743#3744#0" expanded="true" />
+                <element signature="e#3791#3792#0" expanded="true" />
+                <element signature="e#3977#3978#0" expanded="true" />
+                <element signature="e#4029#4030#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -42,12 +61,13 @@
       <file leaf-file-name="Session.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Session.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+            <state relative-caret-position="621">
+              <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#160#161#0" expanded="true" />
-                <element signature="e#203#204#0" expanded="true" />
+                <element signature="e#859#860#0" expanded="true" />
+                <element signature="e#897#898#0" expanded="true" />
+                <element signature="e#929#930#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,9 +79,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="UML Class" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="Arquillian JUnit Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -81,8 +101,9 @@
         <option value="$PROJECT_DIR$/src/Set.java" />
         <option value="$PROJECT_DIR$/src/Effort.java" />
         <option value="$PROJECT_DIR$/test/src/TrainingBotTest.java" />
-        <option value="$PROJECT_DIR$/src/Session.java" />
+        <option value="$PROJECT_DIR$/src/GradientDescent.java" />
         <option value="$PROJECT_DIR$/src/TrainingBot.java" />
+        <option value="$PROJECT_DIR$/src/Session.java" />
       </list>
     </option>
   </component>
@@ -109,9 +130,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -128,6 +148,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -157,7 +178,11 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GradientDescent">
+    <configuration name="GradientDescent" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="GradientDescent" />
+      <module name="TrainingBot" />
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="TrainingBot" />
       <module name="TrainingBot" />
@@ -180,8 +205,13 @@
       <envs />
       <method />
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.GradientDescent" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.GradientDescent" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -200,16 +230,25 @@
       <workItem from="1523417860688" duration="1100000" />
       <workItem from="1523458201331" duration="12248000" />
       <workItem from="1523630441764" duration="41000" />
-      <workItem from="1523668938665" duration="774000" />
+      <workItem from="1523668938665" duration="4131000" />
+      <workItem from="1524103273341" duration="249000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20316000" />
+    <option name="totallyTimeSpent" value="23922000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
     <layout>
       <window_info anchor="right" id="PlantUML" order="10" sideWeight="0.4969697" weight="0.525641" />
       <window_info anchor="right" id="Palette" order="3" />
@@ -220,20 +259,20 @@
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="bottom" id="SBT Execute" order="19" side_tool="true" />
-      <window_info anchor="right" id="Structure" order="11" sideWeight="0.5030303" side_tool="true" weight="0.525641" />
+      <window_info anchor="right" id="Structure" order="11" sideWeight="0.5030303" side_tool="true" visible="true" weight="0.20357142" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24969475" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.37666327" />
-      <window_info anchor="bottom" id="TODO" order="9" weight="0.2264529" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.3757515" />
+      <window_info anchor="bottom" id="TODO" order="9" weight="0.2214429" />
       <window_info anchor="bottom" id="SBT Console" order="15" />
-      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3285568" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.3285568" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="3" sideWeight="0.49656945" weight="0.38577154" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.25486183" />
-      <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="3" sideWeight="0.49656945" weight="0.27123848" />
       <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47907948" visible="true" weight="0.14835165" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.47907948" visible="true" weight="0.14464286" />
       <window_info anchor="right" id="Theme Preview" order="7" />
       <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
       <window_info anchor="bottom" id="Sequence" order="0" />
@@ -260,10 +299,66 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GradientDescent.java</url>
+          <line>201</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/TrainingBot.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GradientDescent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1035">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
+          <folding>
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#2794#2795#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3517#3518#0" expanded="true" />
+            <element signature="e#3570#3571#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3653#3654#0" expanded="true" />
+            <element signature="e#3688#3689#0" expanded="true" />
+            <element signature="e#3743#3744#0" expanded="true" />
+            <element signature="e#3791#3792#0" expanded="true" />
+            <element signature="e#3977#3978#0" expanded="true" />
+            <element signature="e#4029#4030#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Session.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="621">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/TrainingBot.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1035">
@@ -287,8 +382,9 @@
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -316,8 +412,9 @@
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -345,8 +442,9 @@
           <caret line="3" selection-start-line="3" selection-end-line="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -501,22 +599,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Session.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="621">
+          <caret line="37" column="27" selection-start-line="37" selection-start-column="27" selection-end-line="37" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#160#161#0" expanded="true" />
-            <element signature="e#203#204#0" expanded="true" />
+            <element signature="e#859#860#0" expanded="true" />
+            <element signature="e#897#898#0" expanded="true" />
+            <element signature="e#929#930#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TrainingBot.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="8" column="78" selection-start-line="8" selection-start-column="78" selection-end-line="8" selection-end-column="78" />
+        <state relative-caret-position="437">
+          <caret line="19" column="25" selection-start-line="19" selection-start-column="25" selection-end-line="19" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GradientDescent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#246#247#0" expanded="true" />
+            <element signature="e#284#285#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#379#380#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#2794#2795#0" expanded="true" />
+            <element signature="e#3484#3485#0" expanded="true" />
+            <element signature="e#3517#3518#0" expanded="true" />
+            <element signature="e#3570#3571#0" expanded="true" />
+            <element signature="e#3614#3615#0" expanded="true" />
+            <element signature="e#3653#3654#0" expanded="true" />
+            <element signature="e#3688#3689#0" expanded="true" />
+            <element signature="e#3743#3744#0" expanded="true" />
+            <element signature="e#3791#3792#0" expanded="true" />
+            <element signature="e#3977#3978#0" expanded="true" />
+            <element signature="e#4029#4030#0" expanded="true" />
           </folding>
         </state>
       </provider>
