@@ -3,18 +3,48 @@ import java.util.List;
 
 public class TrainingBot {
     double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
-
-
+    static double[] phases = {0.05,0.05,-0.2,0.1};
     public static void main(String args[]){
         double[] adjustersOver = {-0.35, 0.75, 0.15, 0.15};
         double[] adjustersUnder = {-0.46, 0.60, 0.05, 0.05};
-        TrainingBot wTrainingBot = new TrainingBot();
-        for (int i = 1; i < 20; i++) {
-            List<Session> sessions = wTrainingBot.getSessions(adjustersUnder, i, 24, 20);
-            for (Session s:sessions){
-                System.out.println(s.getTotalDuration());
-            }
+
+
+        int nbrWeeks = 20;
+        double secs = 340;
+        double boost = 1;
+
+//        TrainingBot wTrainingBot = new TrainingBot();
+//        for (int i = 1; i < 20; i++) {
+//            List<Session> sessions = wTrainingBot.getSessions(adjustersUnder, i, 24, 20);
+//            for (Session s:sessions){
+//                System.out.println(s.getTotalDuration());
+//            }
+//        }
+        for(int i=1 ;i < nbrWeeks; i++){
+
+            int weekNbrInMonth = i % 4;
+            secs = secs - (phases[i%4]* secs);
+
+            System.out.println("phase: " +phases[i%4]);
+            System.out.println("weekNbr: "+ i);
+            System.out.println("effort: " + secs + "\n");
+
+
+
         }
+    }
+
+    public static int getShort(int session, int lastsecs){
+        return lastsecs - 1;
+    }
+
+    public static long getLong(long lastsecs){
+        return lastsecs;
+    }
+
+    public static double getPhase(int nbrWeekInMonth, double boost){
+        // 0.1, 0,1, -0.41, 0.70
+        return phases[nbrWeekInMonth]*boost;
     }
 
     public List<Session> getSessions(double[] pAdjusters, int pWeek, double pInitialDuration, int pNumberOfWeeks){
