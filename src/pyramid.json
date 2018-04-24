@@ -1,0 +1,108 @@
+{
+  "sessionName": "Pyramid",
+  "Date": "2018-04-26",
+  "sets": {
+    "set": [
+      {
+        "id": "1",
+        "reps": "1",
+        "effort": {
+          "time": "00:15:00",
+          "instruction": "warmup"
+        }
+      },
+      {
+        "id": "1",
+        "reps": "1",
+        "effort": {
+          "time": "00:00:30",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:00:30",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:01:00",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:01:00",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:02:00",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:02:00",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:04:00",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:04:00",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:02:00",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:02:00",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:01:00",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:01:00",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:00:30",
+          "instruction": "something"
+        },
+        "rest": {
+          "time": "00:00:30",
+          "instruction": "something"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:10:00",
+          "instruction": "cool down"
+        }
+      }
+    ]
+  }
+}

@@ -2,6 +2,13 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * A set can be repeated rep number of times.
+ * Ex.:
+ * warmup: 10 minutes
+ *
+ * pyramid (
+ */
 public class Session {
     boolean overTrainingIndicator = false;
     Date date;

@@ -1,0 +1,38 @@
+{
+  "sessionName": "Cardio Blaster",
+  "Date": "2018-04-26",
+  "sets": {
+    "set": [
+      {
+        "id": "1",
+        "reps": "1",
+        "effort": {
+          "time": "00:15:00",
+          "instruction": "warmup"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "3",
+        "effort": {
+          "time": "00:03:00",
+          "instruction": "swsw",
+          "pace": "00:06:30"
+        },
+        "rest": {
+          "time": "00:03:00",
+          "instruction": "swsw",
+          "pace": "00:08:30"
+        }
+      },
+      {
+        "id": "2",
+        "reps": "1",
+        "effort": {
+          "time": "00:10:00",
+          "instruction": "cool down"
+        }
+      }
+    ]
+  }
+}
