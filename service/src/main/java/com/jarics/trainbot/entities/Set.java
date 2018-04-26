@@ -1,3 +1,5 @@
+package com.jarics.trainbot.entities;
+
 public class Set {
     public Set(double work, double rest) {
         this.work = new Effort(work);

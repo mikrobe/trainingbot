@@ -1,3 +1,8 @@
+package com.jarics.trainbot;
+
+import com.jarics.trainbot.entities.Session;
+import com.jarics.trainbot.entities.Set;
+
 import java.util.ArrayList;
 import java.util.List;
 

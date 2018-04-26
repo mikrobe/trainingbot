@@ -1,3 +1,5 @@
+package com.jarics.trainbot;
+
 import java.util.*;
 
 public class GradientDescent {

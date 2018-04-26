@@ -1,3 +1,5 @@
+package com.jarics.trainbot.entities;
+
 /**
  * Template for pyramid.
  * Variable is pace.

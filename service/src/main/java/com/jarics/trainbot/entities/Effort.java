@@ -1,3 +1,5 @@
+package com.jarics.trainbot.entities;
+
 public class Effort {
     public Effort(double duration, String instruction) {
         this.duration = duration;
