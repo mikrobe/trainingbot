@@ -1,0 +1,38 @@
+{
+  "info": {
+    "_postman_id": "0bc2abe1-c8aa-40cd-9b8d-7459d67bf9e3",
+    "name": "TrainingBot",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Plan",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"currentWeek\":1,\"numberOfWeeks\":20,\"ftp\":235,\"targetFtp\":265,\"sport\":\"bike\"}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/plan",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "plan"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
