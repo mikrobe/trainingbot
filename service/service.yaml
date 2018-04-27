@@ -1,0 +1,91 @@
+swagger: '2.0'
+info:
+  version: '1.0.0'
+  title: Traininbot
+  description: Stateless training bot returns triathlon training plans based on AI. Persistence is in query or on strava/garmin/others.
+  termsOfService: http://trainingbot.com/terms/
+  contact:
+    name: Training bot API team
+    email: foo@example.com
+    url: http://trainingbot.com
+  license:
+    name: MIT
+    url: http://opensource.org/licenses/MIT
+host: trainingbot.swagger.io
+basePath: /api
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /plan:
+    post:
+      description: Returns a new stateless training plan.
+      operationId: createPlan
+      produces:
+        - application/json
+      parameters:
+        - name: athleteWishes
+          in: body
+          description: Athletes information with current paces (FTP) and targets race paces
+          required: true
+          schema:
+            $ref: '#/definitions/Athlete'
+      responses:
+        '200':
+          description: plan response
+          schema:
+            $ref: '#/definitions/Plan'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/errorModel'
+definitions:
+  Athlete:
+    type: object
+    required:
+      - name
+      - email
+    properties:
+      name:
+        type: string
+      email:
+        type: string
+      weeksToTrain:
+        type: string
+  Sport:
+    type: object
+    properties:
+      sport:
+        type: string
+      level:
+        type: string
+      ftp:
+        type: integer
+      target:
+        type: integer
+  Plan:
+    type: object
+    properties:
+      overtrained:
+        type: boolean
+      sessions:
+        type: array
+        items:
+          $ref: "#/definitions/Session"
+  Session:
+    type: object
+    properties:
+      name:
+        type: string
+      date:
+        type: string
+      sport:
+        type: string
+  errorModel:
+    type: object
+    properties:
+      error:
+        type: string
