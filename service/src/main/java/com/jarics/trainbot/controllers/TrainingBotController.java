@@ -22,7 +22,8 @@ public class TrainingBotController {
 
     @RequestMapping(value = "/plan", method = RequestMethod.POST, produces = "application/json")
     public List<Session> create(@RequestBody TrainingInfo pTrainingInfo) {
-        List<Session> wSessions = trainingBotService.getSessions(
+        List<Session> wSessions = null;
+        wSessions = trainingBotService.getSessions(
                 pTrainingInfo.getCurrentWeek(),
                 pTrainingInfo.getFtp(),
                 pTrainingInfo.getNumberOfWeeks());

@@ -11,13 +11,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 
 import java.nio.charset.Charset;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -40,12 +37,12 @@ public class StampControllerTest {
 
 
     @Before
-    public void before() throws Exception {
+    public void before() {
 
     }
 
     @After
-    public void after() throws Exception {
+    public void after() {
     }
 
     @Test
@@ -55,7 +52,7 @@ public class StampControllerTest {
         wTrainingInfo.setFtp(235);
         wTrainingInfo.setTargetFtp(265);
         wTrainingInfo.setSport("bike");
-
+        System.out.println(TestUtil.convertObjectToJsonBytes(wTrainingInfo));
         mockMvc.perform(post("/api/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wTrainingInfo))).andExpect(status().isOk());
 
     }
