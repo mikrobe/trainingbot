@@ -1,8 +1,8 @@
 package com.jarics.trainbot.controllers;
 
 
-import com.jarics.trainbot.entities.Session;
-import com.jarics.trainbot.entities.TrainingInfo;
+import com.jarics.trainbot.entities.AthleteFTP;
+import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.services.TrainingBotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,18 +17,19 @@ import java.util.List;
 @RequestMapping("/api")
 public class TrainingBotController {
 
-    @Autowired
+    final
     TrainingBotService trainingBotService;
 
-    @RequestMapping(value = "/plan", method = RequestMethod.POST, produces = "application/json")
-    public List<Session> create(@RequestBody TrainingInfo pTrainingInfo) {
-        List<Session> wSessions = null;
-        wSessions = trainingBotService.getSessions(
-                pTrainingInfo.getCurrentWeek(),
-                pTrainingInfo.getFtp(),
-                pTrainingInfo.getNumberOfWeeks());
-        return wSessions;
+    @Autowired
+    public TrainingBotController(TrainingBotService trainingBotService) {
+        this.trainingBotService = trainingBotService;
     }
 
+    @RequestMapping(value = "/plan", method = RequestMethod.POST, produces = "application/json")
+    public List<SimpleSession> create(@RequestBody AthleteFTP pAthleteFTP) {
+        List<SimpleSession> wSessions = null;
+        wSessions = trainingBotService.getSessions(pAthleteFTP);
+        return wSessions;
+    }
 
 }

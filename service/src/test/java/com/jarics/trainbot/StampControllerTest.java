@@ -1,6 +1,6 @@
 package com.jarics.trainbot;
 
-import com.jarics.trainbot.entities.TrainingInfo;
+import com.jarics.trainbot.entities.AthleteFTP;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -47,13 +47,12 @@ public class StampControllerTest {
 
     @Test
     public void testCreatePlan() throws Exception {
-        TrainingInfo wTrainingInfo = new TrainingInfo();
-        wTrainingInfo.setCurrentWeek(1);
-        wTrainingInfo.setFtp(235);
-        wTrainingInfo.setTargetFtp(265);
-        wTrainingInfo.setSport("bike");
-        System.out.println(TestUtil.convertObjectToJsonBytes(wTrainingInfo));
-        mockMvc.perform(post("/api/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wTrainingInfo))).andExpect(status().isOk());
+        AthleteFTP wAthleteFTP = new AthleteFTP();
+        wAthleteFTP.setFtp(340);
+        wAthleteFTP.setTarget(2);
+
+        System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
+        mockMvc.perform(post("/api/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
 
     }
 

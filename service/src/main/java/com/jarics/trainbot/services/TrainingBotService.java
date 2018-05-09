@@ -1,14 +1,15 @@
 package com.jarics.trainbot.services;
 
+import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.Session;
-import com.jarics.trainbot.entities.Set;
+import com.jarics.trainbot.entities.SimpleSession;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class TrainingBotService {
+public class TrainingBotService implements TrainingBotServiceIf {
     //deprecated
     double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
     static double[] phases = {0.05, 0.05, -0.2, 0.1};
@@ -20,29 +21,7 @@ public class TrainingBotService {
 
     public static void main(String args[]) {
 
-        int nbrWeeks = 20;
-        double ftp = 340; //run ftp
-        double timeAtFtp = 15; //start at 9 minutes at ftp pace
-        double distance = 5; //Olympic
-        double boost = 1;
 
-//        TrainingBot wTrainingBot = new TrainingBot();
-//        for (int i = 1; i < 20; i++) {
-//            List<Session> sessions = wTrainingBot.getSessions(adjustersUnder, i, 24, 20);
-//            for (Session s:sessions){
-//                System.out.println(s.getTotalDuration());
-//            }
-//        }
-        for (int i = 1; i < nbrWeeks + 1; i++) {
-
-            int weekNbrInMonth = i % 4;
-            timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
-            distance = distance + (longIncreaseTable[i % 4] * distance);
-
-            System.out.print("=split(\"" + i + "," + timeAtFtp + "," + distance + "\",\",\",TRUE, TRUE)");
-            System.out.println();
-
-        }
     }
 
     public static int getShort(int session, int lastsecs) {
@@ -56,61 +35,6 @@ public class TrainingBotService {
     public static double getPhase(int nbrWeekInMonth, double boost) {
         // 0.1, 0,1, -0.41, 0.70
         return phases[nbrWeekInMonth] * boost;
-    }
-
-    public List<Session> getSessions(double[] pAdjusters, int pWeek, double pInitialDuration, int pNumberOfWeeks) {
-        adjusters = pAdjusters;
-        return getSessions(pWeek, pInitialDuration, pNumberOfWeeks);
-    }
-
-    public List<Session> getSessions(int pWeek, double pInitialDuration, int pNumberOfWeeks, List<Session> currentSessionsDurations) {
-        List<Session> wSessions = getSessions(pWeek, pInitialDuration, pNumberOfWeeks);
-        boolean wOvertraing = validateOverTraining(pWeek, pNumberOfWeeks, currentSessionsDurations);
-        return wSessions;
-    }
-
-    public List<Session> getSessions(int pWeek, double pInitialDuration, int pNumberOfWeeks) {
-
-        double lastShortSessionTime = pInitialDuration;
-        double shortTrainingDuration = pInitialDuration;
-        double longTrainingDuration = 0;
-        double longSession = 0.67;
-        List<Session> wSessions = null;
-
-        for (int tw = 1; tw < pNumberOfWeeks; tw++) {
-            WeekFocus weekFocus = getWeekFocus(tw, pNumberOfWeeks);
-            switch (weekFocus) {
-                case regular:
-                    shortTrainingDuration = lastShortSessionTime + adjusters[Math.floorMod(tw, 4)] * lastShortSessionTime;
-                    break;
-                case repeeting: {
-                    wSessions = getSessions(tw - 4, pInitialDuration, pNumberOfWeeks);
-                    break;
-                }
-                case breakWeek:
-                    shortTrainingDuration = lastShortSessionTime;
-                    break;
-                case firstWeek:
-                    shortTrainingDuration = lastShortSessionTime;
-                    break;
-            }
-            longTrainingDuration = shortTrainingDuration + longSession * shortTrainingDuration;
-            lastShortSessionTime = shortTrainingDuration;
-            if (tw == pWeek) {
-                if (wSessions == null) {
-                    wSessions = new ArrayList<Session>();
-                    Set wSet = new Set(shortTrainingDuration, 0);
-                    Session wShortSession = new Session();
-                    wShortSession.addSet(new Set(shortTrainingDuration, 0));
-                    Session wLongSession = new Session();
-                    wLongSession.addSet(new Set(longTrainingDuration, 0));
-                    wSessions.add(wShortSession);
-                    wSessions.add(wLongSession);
-                }
-                return wSessions;
-            }
-        }
-        return null;
     }
 
     private boolean validateOverTraining(int tw, int pNumberOfWeeks, List<Session> currentSessions) {
@@ -130,5 +54,28 @@ public class TrainingBotService {
         if (r >= repeatingFocus[0] && r <= repeatingFocus[1])
             return WeekFocus.repeeting;
         return WeekFocus.regular;
+    }
+
+    @Override
+    public List<SimpleSession> getSessions(AthleteFTP pAthleteFTP) {
+        int nbrWeeks = 20;
+        double ftp = pAthleteFTP.getFtp();
+        double timeAtFtp = 15;
+        double distance = runDistanceStart[pAthleteFTP.getTarget()];
+        double boost = 1;
+
+        List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
+
+        for (int i = 1; i < nbrWeeks + 1; i++) {
+
+            int weekNbrInMonth = i % 4;
+            timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
+            distance = distance + (longIncreaseTable[i % 4] * distance);
+            wSimpleSessions.add(new SimpleSession(i, timeAtFtp, distance));
+//            System.out.print("=split(\"" + i + "," + timeAtFtp + "," + distance + "\",\",\",TRUE, TRUE)");
+//            System.out.println();
+        }
+
+        return wSimpleSessions;
     }
 }
