@@ -9,16 +9,21 @@ import java.util.List;
 
 @Component
 public class TrainingBotService {
+    //deprecated
     double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
     static double[] phases = {0.05, 0.05, -0.2, 0.1};
+    //end deprecated
+
+    static double[] shortIncreaseTable = {0.7, 0.1, 0.1, -0.41};
+    static double[] longIncreaseTable = {0.05, 0.08, -0.10, 0.20};
+    static double[] runDistanceStart = {21, 10, 5, 3}; //Marathon, Half, Olympic, Sprint distances
 
     public static void main(String args[]) {
-        double[] adjustersOver = {-0.35, 0.75, 0.15, 0.15};
-        double[] adjustersUnder = {-0.46, 0.60, 0.05, 0.05};
-
 
         int nbrWeeks = 20;
-        double secs = 340;
+        double ftp = 340; //run ftp
+        double timeAtFtp = 15; //start at 9 minutes at ftp pace
+        double distance = 5; //Olympic
         double boost = 1;
 
 //        TrainingBot wTrainingBot = new TrainingBot();
@@ -31,11 +36,12 @@ public class TrainingBotService {
         for (int i = 1; i < nbrWeeks; i++) {
 
             int weekNbrInMonth = i % 4;
-            secs = secs - (phases[i % 4] * secs);
+            timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
+            distance = distance + (longIncreaseTable[i % 4] * distance);
 
-            System.out.println("phase: " + phases[i % 4]);
             System.out.println("weekNbr: " + i);
-            System.out.println("effort: " + secs + "\n");
+            System.out.println("intensity: " + timeAtFtp + "\n");
+            System.out.println("distance: " + distance + "\n");
 
 
         }
