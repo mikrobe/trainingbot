@@ -33,16 +33,14 @@ public class TrainingBotService {
 //                System.out.println(s.getTotalDuration());
 //            }
 //        }
-        for (int i = 1; i < nbrWeeks; i++) {
+        for (int i = 1; i < nbrWeeks + 1; i++) {
 
             int weekNbrInMonth = i % 4;
             timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
             distance = distance + (longIncreaseTable[i % 4] * distance);
 
-            System.out.println("weekNbr: " + i);
-            System.out.println("intensity: " + timeAtFtp + "\n");
-            System.out.println("distance: " + distance + "\n");
-
+            System.out.print("=split(\"" + i + "," + timeAtFtp + "," + distance + "\",\",\",TRUE, TRUE)");
+            System.out.println();
 
         }
     }
