@@ -120,10 +120,26 @@ Finish with a 10-minute cooldown.
 
 #### Long Workouts
 The long workout is a % increase of the target race distance. The curve for long
-workouts should follow the same rule of short workouts but % effects distance.
+workouts should follow the same rule as short workouts but % effects distances.
 Intensity must remain at z2 or below. The bot will set your race day distance 
 and decrease in time. In some weeks (near the end) you will do distance a little 
 above the targeted distance. 
+
+Starting point is:
+* 5k for Spring distance,
+* 10k for Olympic distance, 
+* 21k for 70.3 distance,
+* 42k for Ironman distance
+
+Then increase time at sweet spot is following a four weeks pattern:
+* week1: 5%
+* week2: 8%
+* week3: -10%
+* week4: 20% (end/start micro-cycle)
+
+##### Special Weeks
+* At week 15 (or 75% for all training plan done), we repeat week 14 (or 0% increase)
+* At week 17 start bricks (intensity followed by distance), start new micro-cycle but using repeat week 13 distance
 
 ## Machine Learning
 The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine  learning (ml) algorithm to detect over/under/normal training. The ml is using examples of over/under/normal training sessions.
