@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Component
 public class TrainingBotService implements TrainingBotServiceIf {
     //deprecated
@@ -18,6 +19,9 @@ public class TrainingBotService implements TrainingBotServiceIf {
     static double[] shortIncreaseTable = {0.7, 0.1, 0.1, -0.41};
     static double[] longIncreaseTable = {0.05, 0.08, -0.10, 0.20};
     static double[] runDistanceStart = {21, 10, 5, 3}; //Marathon, Half, Olympic, Sprint distances
+    static double[] runningSweetSpots = {1.02, 1.10}; //345
+    static double[] bikingSweetSpots = {0.84, 0.97};
+
 
     public static void main(String args[]) {
 
@@ -56,10 +60,26 @@ public class TrainingBotService implements TrainingBotServiceIf {
         return WeekFocus.regular;
     }
 
+
     @Override
-    public List<SimpleSession> getSessions(AthleteFTP pAthleteFTP) {
+    public SimpleSession getSession(AthleteFTP pAthleteFTP, int pWeek) {
+        double timeAtFtp = 15;
+        double distance = runDistanceStart[pAthleteFTP.getTarget()];
+        double boost = 1;
+
+        timeAtFtp = timeAtFtp + (shortIncreaseTable[pWeek % 4] * timeAtFtp);
+        distance = distance + (longIncreaseTable[pWeek % 4] * distance);
+        SimpleSession wSimpleSession = new SimpleSession(pWeek, timeAtFtp, distance);
+        wSimpleSession.setBikeLZone(bikingSweetSpots[0] * pAthleteFTP.getBikeFtp());
+        wSimpleSession.setBikeHZone(bikingSweetSpots[1] * pAthleteFTP.getBikeFtp());
+        wSimpleSession.setRunLZone(runningSweetSpots[0] * pAthleteFTP.getRunFtp());
+        wSimpleSession.setRunHZone(runningSweetSpots[1] * pAthleteFTP.getRunFtp());
+        return wSimpleSession;
+    }
+
+    @Override
+    public List<SimpleSession> getSession(AthleteFTP pAthleteFTP) {
         int nbrWeeks = 20;
-        double ftp = pAthleteFTP.getFtp();
         double timeAtFtp = 15;
         double distance = runDistanceStart[pAthleteFTP.getTarget()];
         double boost = 1;
@@ -71,11 +91,16 @@ public class TrainingBotService implements TrainingBotServiceIf {
             int weekNbrInMonth = i % 4;
             timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
             distance = distance + (longIncreaseTable[i % 4] * distance);
-            wSimpleSessions.add(new SimpleSession(i, timeAtFtp, distance));
-//            System.out.print("=split(\"" + i + "," + timeAtFtp + "," + distance + "\",\",\",TRUE, TRUE)");
-//            System.out.println();
+            SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp, distance);
+            wSimpleSession.setBikeLZone(bikingSweetSpots[0] * pAthleteFTP.getBikeFtp());
+            wSimpleSession.setBikeHZone(bikingSweetSpots[1] * pAthleteFTP.getBikeFtp());
+            wSimpleSession.setRunLZone(runningSweetSpots[0] * pAthleteFTP.getRunFtp());
+            wSimpleSession.setRunLZone(runningSweetSpots[1] * pAthleteFTP.getRunFtp());
+            wSimpleSessions.add(wSimpleSession);
         }
 
         return wSimpleSessions;
     }
+
+
 }

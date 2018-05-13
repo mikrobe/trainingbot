@@ -1,7 +1,8 @@
 package com.jarics.trainbot.entities;
 
 public class AthleteFTP {
-    double ftp;
+    double bikeFtp;
+    double runFtp;
     int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
 
     public AthleteFTP() {
@@ -15,11 +16,20 @@ public class AthleteFTP {
         this.target = target;
     }
 
-    public double getFtp() {
-        return ftp;
+    public double getBikeFtp() {
+        return bikeFtp;
     }
 
-    public void setFtp(double ftp) {
-        this.ftp = ftp;
+    public void setBikeFtp(double bikeFtp) {
+        this.bikeFtp = bikeFtp;
     }
+
+    public double getRunFtp() {
+        return runFtp;
+    }
+
+    public void setRunFtp(double runFtp) {
+        this.runFtp = runFtp;
+    }
+
 }

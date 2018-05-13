@@ -13,6 +13,15 @@ public interface TrainingBotServiceIf {
      * @param pAthleteFTP
      * @return
      */
-    List<SimpleSession> getSessions(AthleteFTP pAthleteFTP);
+    List<SimpleSession> getSession(AthleteFTP pAthleteFTP);
+
+    /**
+     * Returns a single session inside a plan.
+     *
+     * @param pAthleteFTP
+     * @param week
+     * @return
+     */
+    SimpleSession getSession(AthleteFTP pAthleteFTP, int week);
 
 }

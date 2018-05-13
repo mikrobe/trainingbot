@@ -48,11 +48,24 @@ public class StampControllerTest {
     @Test
     public void testCreatePlan() throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
-        wAthleteFTP.setFtp(340);
+        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
+        wAthleteFTP.setBikeFtp(235.0);
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
         mockMvc.perform(post("/api/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
+
+    }
+
+    @Test
+    public void testCreateSession() throws Exception {
+        AthleteFTP wAthleteFTP = new AthleteFTP();
+        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
+        wAthleteFTP.setBikeFtp(235.0);
+        wAthleteFTP.setTarget(2);
+
+        System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
+        mockMvc.perform(post("/api/session").param("week", "4").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
 
     }
 

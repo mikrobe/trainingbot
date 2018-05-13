@@ -41,7 +41,8 @@ IF is a percentage of the FTP which represents the zones. Values are from 1 to 7
 #### Run Pace Zones [2]:
 * Zone 1 Slower than 129% of FTP
 * Zone 2 114% to 129% of FTP
-* Zone 3 106% to 113% of FTP (**sweetspot**)
+* Zone 3 106% to 113% of FTP
+* Sweetspot 102% to 110% of FTP 
 * Zone 4 99% to 105% of FTP
 * Zone 5a 97% to 100% of FTP
 * Zone 5b 90% to 96% of FTP
