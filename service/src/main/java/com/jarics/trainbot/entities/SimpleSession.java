@@ -4,11 +4,14 @@ public class SimpleSession {
     double timeAtFtp;
     double runDistance;
     double bikeDistance;
+    double swimDistance;
     int week;
     double runLZone;
     double runHZone;
     double bikeLZone;
     double bikeHZone;
+    double swimLZone;
+    double swimHZone;
 
     public SimpleSession() {
     }
@@ -81,5 +84,29 @@ public class SimpleSession {
 
     public void setBikeDistance(double bikeDistance) {
         this.bikeDistance = bikeDistance;
+    }
+
+    public double getSwimDistance() {
+        return swimDistance;
+    }
+
+    public void setSwimDistance(double swimDistance) {
+        this.swimDistance = swimDistance;
+    }
+
+    public double getSwimLZone() {
+        return swimLZone;
+    }
+
+    public void setSwimLZone(double swimLZone) {
+        this.swimLZone = swimLZone;
+    }
+
+    public double getSwimHZone() {
+        return swimHZone;
+    }
+
+    public void setSwimHZone(double swimHZone) {
+        this.swimHZone = swimHZone;
     }
 }

@@ -20,8 +20,10 @@ public class TrainingBotService implements TrainingBotServiceIf {
     static double[] longIncreaseTable = {0.05, 0.08, -0.10, 0.20};
     static double[] runDistanceStart = {21, 10, 5, 3}; //Ironman, Half, Olympic, Sprint distances
     static double[] bikeDistanceStart = {90, 45, 20, 10}; //Ironman, Half, Olympic, Sprint distances
-    static double[] runningSweetSpots = {1.02, 1.10}; //345
+    static double[] swimDistanceStart = {1900, 950, 750, 375}; //Ironman, Half, Olympic, Sprint distances
+    static double[] runningSweetSpots = {1.02, 1.10};
     static double[] bikingSweetSpots = {0.84, 0.97};
+    static double[] swimSweetSpots = {1.02, 1.10};
 
 
     public static void main(String args[]) {
@@ -73,6 +75,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
         double timeAtFtp = 15;
         double runDistance = runDistanceStart[pAthleteFTP.getTarget()];
         double bikeDistance = bikeDistanceStart[pAthleteFTP.getTarget()];
+        double swimDistance = swimDistanceStart[pAthleteFTP.getTarget()];
         double boost = 1;
 
         List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
@@ -82,13 +85,17 @@ public class TrainingBotService implements TrainingBotServiceIf {
             timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
             runDistance = runDistance + (longIncreaseTable[i % 4] * runDistance);
             bikeDistance = bikeDistance + (longIncreaseTable[i % 4] * bikeDistance);
+            swimDistance = swimDistance + (longIncreaseTable[i % 4] * swimDistance);
             SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
             wSimpleSession.setRunDistance(runDistance);
             wSimpleSession.setBikeDistance(bikeDistance);
+            wSimpleSession.setSwimDistance(swimDistance);
             wSimpleSession.setBikeLZone(bikingSweetSpots[0] * pAthleteFTP.getBikeFtp());
             wSimpleSession.setBikeHZone(bikingSweetSpots[1] * pAthleteFTP.getBikeFtp());
             wSimpleSession.setRunLZone(runningSweetSpots[0] * pAthleteFTP.getRunFtp());
             wSimpleSession.setRunHZone(runningSweetSpots[1] * pAthleteFTP.getRunFtp());
+            wSimpleSession.setSwimLZone(swimSweetSpots[0] * pAthleteFTP.getSwimFtp());
+            wSimpleSession.setSwimHZone(swimSweetSpots[1] * pAthleteFTP.getSwimFtp());
             wSimpleSessions.add(wSimpleSession);
         }
 

@@ -50,7 +50,8 @@ IF is a percentage of the FTP which represents the zones. Values are from 1 to 7
 #### Swim Pace Zones [3]:
 * Zone 1 SW (slow)
 * Zone 2 5 secs slower than T-Time
-* Zone 3 T-Time (**sweetspot**)
+* Zone 3 T-Time
+* Sweetspot 102% to 110% of FTP 
 * Zone 4 99% to 105% of T-Time
 * Zone 5a 97% to 100% of T-Time
 * Zone 5b 90% to 96% of T-Time

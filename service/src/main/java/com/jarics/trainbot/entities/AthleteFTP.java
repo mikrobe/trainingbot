@@ -3,6 +3,7 @@ package com.jarics.trainbot.entities;
 public class AthleteFTP {
     double bikeFtp;
     double runFtp;
+    double swimFtp;
     int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
 
     public AthleteFTP() {
@@ -32,4 +33,11 @@ public class AthleteFTP {
         this.runFtp = runFtp;
     }
 
+    public double getSwimFtp() {
+        return swimFtp;
+    }
+
+    public void setSwimFtp(double swimFtp) {
+        this.swimFtp = swimFtp;
+    }
 }
