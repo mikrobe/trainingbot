@@ -2,7 +2,8 @@ package com.jarics.trainbot.entities;
 
 public class SimpleSession {
     double timeAtFtp;
-    double distance;
+    double runDistance;
+    double bikeDistance;
     int week;
     double runLZone;
     double runHZone;
@@ -12,8 +13,7 @@ public class SimpleSession {
     public SimpleSession() {
     }
 
-    public SimpleSession(int week, double timeAtFtp, double distance) {
-        setDistance(distance);
+    public SimpleSession(int week, double timeAtFtp) {
         setWeek(week);
         setTimeAtFtp(timeAtFtp);
     }
@@ -26,13 +26,6 @@ public class SimpleSession {
         this.timeAtFtp = timeAtFtp;
     }
 
-    public double getDistance() {
-        return distance;
-    }
-
-    public void setDistance(double distance) {
-        this.distance = distance;
-    }
 
     public int getWeek() {
         return week;
@@ -72,5 +65,21 @@ public class SimpleSession {
 
     public void setBikeHZone(double bikeHZone) {
         this.bikeHZone = bikeHZone;
+    }
+
+    public double getRunDistance() {
+        return runDistance;
+    }
+
+    public void setRunDistance(double runDistance) {
+        this.runDistance = runDistance;
+    }
+
+    public double getBikeDistance() {
+        return bikeDistance;
+    }
+
+    public void setBikeDistance(double bikeDistance) {
+        this.bikeDistance = bikeDistance;
     }
 }
