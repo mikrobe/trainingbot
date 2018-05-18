@@ -3,6 +3,7 @@ package com.jarics.trainbot.services;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.Session;
 import com.jarics.trainbot.entities.SimpleSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -11,6 +12,15 @@ import java.util.List;
 
 @Component
 public class TrainingBotService implements TrainingBotServiceIf {
+
+    final
+    StravaService stravaService;
+
+    @Autowired
+    public TrainingBotService(StravaService pStravaService) {
+        this.stravaService = pStravaService;
+    }
+
     //deprecated
     double[] adjusters = {-0.41, 0.70, 0.10, 0.10};
     static double[] phases = {0.05, 0.05, -0.2, 0.1};
@@ -73,6 +83,15 @@ public class TrainingBotService implements TrainingBotServiceIf {
     public List<SimpleSession> getSession(AthleteFTP pAthleteFTP) {
         int nbrWeeks = 20;
         double timeAtFtp = 15;
+
+        //ML stuff
+        try {
+            stravaService.getAthleteActivities();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+
         double runDistance = runDistanceStart[pAthleteFTP.getTarget()];
         double bikeDistance = bikeDistanceStart[pAthleteFTP.getTarget()];
         double swimDistance = swimDistanceStart[pAthleteFTP.getTarget()];

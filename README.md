@@ -15,7 +15,7 @@ To be completed.
 #### Functional Threshold Pace (FTP)
 FTP stands for Functional Threshold Power/Pace, which is commonly defined as the highest average power/pace 
 you can sustain for an hour, measured in watts. FTP is often used to determine training zones when 
-using a power/pace meter and to measure improvement.[4]
+using a power/pace meter and to measure improvement [2],[4].
 #### IF (Intensity Factor)
 IF is a percentage of the FTP which represents the zones. Values are from 1 to 7.
 #### TSB (Training Stress Balance)

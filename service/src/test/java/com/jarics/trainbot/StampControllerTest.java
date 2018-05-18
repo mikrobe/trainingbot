@@ -61,7 +61,8 @@ public class StampControllerTest {
     public void testCreateSession() throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(235.0);
+        wAthleteFTP.setBikeFtp(240.0);
+        wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
