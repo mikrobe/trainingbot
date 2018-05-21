@@ -1,10 +1,21 @@
 package com.jarics.trainbot.entities;
 
-public class AthleteFTP {
+import com.jarics.trainbot.services.MLClasses;
+import org.dizitart.no2.objects.Id;
+
+import java.io.Serializable;
+
+
+public class AthleteFTP implements Serializable {
     double bikeFtp;
     double runFtp;
     double swimFtp;
     int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
+
+    @Id
+    long id;
+
+    MLClasses classification;
 
     public AthleteFTP() {
     }
@@ -39,5 +50,21 @@ public class AthleteFTP {
 
     public void setSwimFtp(double swimFtp) {
         this.swimFtp = swimFtp;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public MLClasses getClassification() {
+        return classification;
+    }
+
+    public void setClassification(MLClasses classification) {
+        this.classification = classification;
     }
 }

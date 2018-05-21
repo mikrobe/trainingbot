@@ -64,6 +64,7 @@ public class StampControllerTest {
         wAthleteFTP.setBikeFtp(240.0);
         wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
+        wAthleteFTP.setId(461718088007507L);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
         mockMvc.perform(post("/api/session").param("week", "4").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());

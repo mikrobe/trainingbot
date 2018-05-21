@@ -14,7 +14,7 @@ import java.util.List;
 public class StravaService {
 
 
-    public void getAthleteActivities() throws Exception {
+    public List<SummaryActivity> getAthleteActivities() throws Exception {
         //last two weeks
         //Get the current date
         LocalDate today = LocalDate.now();
@@ -29,8 +29,6 @@ public class StravaService {
         ActivitiesApi api = new ActivitiesApi();
         api.setApiClient(new ApiClient());
         api.getApiClient().setAccessToken("eb701aac06d7542441c4857226e9939bac3aa3a1");
-        List<SummaryActivity> response = api.getLoggedInAthleteActivities(before, after, page, perPage);
-        System.out.println();
-
+        return api.getLoggedInAthleteActivities(before, after, page, perPage);
     }
 }

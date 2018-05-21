@@ -34,4 +34,5 @@ public class TrainingBotController {
         return trainingBotService.getSession(pAthleteFTP, week);
     }
 
+
 }

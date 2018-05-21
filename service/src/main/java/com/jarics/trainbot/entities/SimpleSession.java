@@ -12,6 +12,7 @@ public class SimpleSession {
     double bikeHZone;
     double swimLZone;
     double swimHZone;
+    String athletesId;
 
     public SimpleSession() {
     }
@@ -108,5 +109,13 @@ public class SimpleSession {
 
     public void setSwimHZone(double swimHZone) {
         this.swimHZone = swimHZone;
+    }
+
+    public String getAthletesId() {
+        return athletesId;
+    }
+
+    public void setAthletesId(String athletesId) {
+        this.athletesId = athletesId;
     }
 }
