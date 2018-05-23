@@ -52,7 +52,8 @@ public class StampControllerTest {
     public void testGetAthlete() throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(235.0);
+        wAthleteFTP.setBikeFtp(228.0);
+        wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
@@ -67,7 +68,8 @@ public class StampControllerTest {
     public void testCreatePlan() throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(235.0);
+        wAthleteFTP.setBikeFtp(228.0);
+        wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
@@ -79,13 +81,12 @@ public class StampControllerTest {
     public void testCreateSession() throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(240.0);
+        wAthleteFTP.setBikeFtp(228.0);
         wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
-        wAthleteFTP.setId(461718088007507L);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
-        mockMvc.perform(post("/api/session").param("week", "4").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
+        mockMvc.perform(post("/api/athlete/session").param("week", "4").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
 
     }
 
