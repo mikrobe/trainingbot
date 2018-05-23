@@ -11,10 +11,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.Charset;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
@@ -46,6 +49,21 @@ public class StampControllerTest {
     }
 
     @Test
+    public void testGetAthlete() throws Exception {
+        AthleteFTP wAthleteFTP = new AthleteFTP();
+        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
+        wAthleteFTP.setBikeFtp(235.0);
+        wAthleteFTP.setTarget(2);
+
+        System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
+        MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
+        AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
+        String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
+        mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().string(org.hamcrest.Matchers.containsString("id\":" + wFtp.getId())));
+
+    }
+
+    @Test
     public void testCreatePlan() throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
@@ -53,7 +71,7 @@ public class StampControllerTest {
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
-        mockMvc.perform(post("/api/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
+        mockMvc.perform(post("/api/athlete/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
 
     }
 

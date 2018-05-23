@@ -20,6 +20,11 @@ public class TestUtil {
         return wRet;
     }
 
+    public static Object convertJsonBytesToObject(String json, Class pClazz) throws IOException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.readValue(json, pClazz);
+    }
+
     public static String createStringWithLength(int length) {
         StringBuilder builder = new StringBuilder();
 

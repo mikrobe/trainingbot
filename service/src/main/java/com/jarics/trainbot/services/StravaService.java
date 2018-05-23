@@ -1,5 +1,6 @@
 package com.jarics.trainbot.services;
 
+import com.jarics.trainbot.entities.AthleteFTP;
 import io.swagger.client.ApiClient;
 import io.swagger.client.api.ActivitiesApi;
 import io.swagger.client.model.SummaryActivity;
@@ -14,7 +15,7 @@ import java.util.List;
 public class StravaService {
 
 
-    public List<SummaryActivity> getAthleteActivities() throws Exception {
+    public List<SummaryActivity> getAthleteActivities(AthleteFTP pAthleteFTP) throws Exception {
         //last two weeks
         //Get the current date
         LocalDate today = LocalDate.now();

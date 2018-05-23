@@ -76,7 +76,16 @@ public class TrainingBotService implements TrainingBotServiceIf {
         AthleteFTP wAthleteFTP = null;
 
         //persistence
-        wAthleteFTP = athleteRepositoryService.getAthleteFTP(pAthleteFTP);
+        wAthleteFTP = athleteRepositoryService.setAthleteFTP(pAthleteFTP);
+
+        //force ML classification
+        try {
+            MLClasses wMlClasses = mlService.classify(wAthleteFTP, stravaService.getAthleteActivities(wAthleteFTP));
+            wAthleteFTP.setClassification(wMlClasses);
+            athleteRepositoryService.updateAthleteFTP(wAthleteFTP);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         double runDistance = runDistanceStart[wAthleteFTP.getTarget()];
         double bikeDistance = bikeDistanceStart[wAthleteFTP.getTarget()];

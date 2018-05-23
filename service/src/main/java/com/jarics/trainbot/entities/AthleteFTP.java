@@ -1,32 +1,18 @@
 package com.jarics.trainbot.entities;
 
 import com.jarics.trainbot.services.MLClasses;
+import lombok.EqualsAndHashCode;
 import org.dizitart.no2.objects.Id;
 
-import java.io.Serializable;
-
-
-public class AthleteFTP implements Serializable {
-    double bikeFtp;
-    double runFtp;
-    double swimFtp;
-    int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
-
+@EqualsAndHashCode
+public class AthleteFTP {
+    private double bikeFtp;
+    private double runFtp;
+    private double swimFtp;
+    private int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
     @Id
-    long id;
-
-    MLClasses classification;
-
-    public AthleteFTP() {
-    }
-
-    public int getTarget() {
-        return target;
-    }
-
-    public void setTarget(int target) {
-        this.target = target;
-    }
+    private long id;
+    private MLClasses classification;
 
     public double getBikeFtp() {
         return bikeFtp;
@@ -52,6 +38,14 @@ public class AthleteFTP implements Serializable {
         this.swimFtp = swimFtp;
     }
 
+    public int getTarget() {
+        return target;
+    }
+
+    public void setTarget(int target) {
+        this.target = target;
+    }
+
     public long getId() {
         return id;
     }
@@ -68,3 +62,6 @@ public class AthleteFTP implements Serializable {
         this.classification = classification;
     }
 }
+
+
+
