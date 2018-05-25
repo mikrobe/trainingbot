@@ -209,6 +209,10 @@ This will be fed into a linear regression algorithm. This supervised ml will con
 } 
 ```
 
+## Deployment and start
+> erickaudet$ scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
+> java -jar service-1.0-SNAPSHOT.jar
+
 ## References
 1. http://tailwind-coaching.com/2016/04/13/training-stress-score-fatigue/, Coach Rob
 2. https://www.trainingpeaks.com/blog/joe-friel-s-quick-guide-to-setting-zones/, MAY 4, 2012  BY JOE FRIEL 
