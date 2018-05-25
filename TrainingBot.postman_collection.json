@@ -17,7 +17,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"swimFtp\":102,\"runFtp\":345.0,\"bikeFtp\":240.0,\"target\":2}\n"
+                  "raw": "{\"swimFtp\":101,\"runFtp\":345.0,\"bikeFtp\":240.0,\"target\":2, \"id\":586982720484280}\n"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/plan",
@@ -35,7 +35,7 @@
 			},
 			"response": [
 				{
-					"id": "818904ab-aba3-40cb-b5da-02a517b2fab9",
+                  "id": "57eca720-d967-4eef-a948-cd45c2d2c393",
 					"name": "Create Plan",
 					"originalRequest": {
 						"method": "POST",
@@ -139,7 +139,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"swimFtp\":101,\"runFtp\":332.0,\"bikeFtp\":228.0,\"target\":2}"
+                  "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 120,\n    \"target\": 2,\n    \"id\": 808774205972959,\n    \"classification\": null\n}"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete",
@@ -163,7 +163,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-					"raw": "http://{{host}}:8080/api/athlete?id=546785767699082",
+                  "raw": "http://{{host}}:8080/api/athlete?id=808774205972959",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -176,7 +176,7 @@
 					"query": [
 						{
 							"key": "id",
-							"value": "546785767699082"
+                          "value": "808774205972959"
 						}
 					]
 				}
