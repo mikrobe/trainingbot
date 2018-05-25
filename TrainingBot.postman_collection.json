@@ -1,38 +1,187 @@
 {
-  "info": {
-    "_postman_id": "0bc2abe1-c8aa-40cd-9b8d-7459d67bf9e3",
-    "name": "TrainingBot",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-  },
-  "item": [
-    {
-      "name": "Create Plan",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\"currentWeek\":1,\"numberOfWeeks\":20,\"ftp\":235,\"targetFtp\":265,\"sport\":\"bike\"}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/plan",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "plan"
-          ]
-        }
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "0bc2abe1-c8aa-40cd-9b8d-7459d67bf9e3",
+		"name": "TrainingBot",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Plan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"swimFtp\":102,\"runFtp\":345.0,\"bikeFtp\":240.0,\"target\":2}\n"
+				},
+				"url": {
+					"raw": "http://{{host}}:8080/api/athlete/plan",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"athlete",
+						"plan"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "818904ab-aba3-40cb-b5da-02a517b2fab9",
+					"name": "Create Plan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": false
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"runFtp\":345.0,\"bikeFtp\":235.0,\"target\":2}\n"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/plan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"plan"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 15 May 2018 00:34:08 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"body": "[{\"timeAtFtp\":16.5,\"runDistance\":5.4,\"bikeDistance\":21.6,\"week\":1,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":18.15,\"runDistance\":4.86,\"bikeDistance\":19.44,\"week\":2,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":10.7085,\"runDistance\":5.832000000000001,\"bikeDistance\":23.328000000000003,\"week\":3,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":18.20445,\"runDistance\":6.123600000000001,\"bikeDistance\":24.494400000000002,\"week\":4,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":20.024895,\"runDistance\":6.613488,\"bikeDistance\":26.453952,\"week\":5,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":22.0273845,\"runDistance\":5.9521392,\"bikeDistance\":23.8085568,\"week\":6,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":12.996156855,\"runDistance\":7.14256704,\"bikeDistance\":28.57026816,\"week\":7,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":22.093466653500002,\"runDistance\":7.4996953920000005,\"bikeDistance\":29.998781568000002,\"week\":8,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":24.302813318850003,\"runDistance\":8.09967102336,\"bikeDistance\":32.39868409344,\"week\":9,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":26.733094650735005,\"runDistance\":7.289703921024,\"bikeDistance\":29.158815684096,\"week\":10,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":15.772525843933654,\"runDistance\":8.7476447052288,\"bikeDistance\":34.9905788209152,\"week\":11,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":26.81329393468721,\"runDistance\":9.185026940490241,\"bikeDistance\":36.740107761960964,\"week\":12,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":29.49462332815593,\"runDistance\":9.91982909572946,\"bikeDistance\":39.67931638291784,\"week\":13,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":32.444085660971524,\"runDistance\":8.927846186156515,\"bikeDistance\":35.71138474462606,\"week\":14,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":19.1420105399732,\"runDistance\":10.713415423387818,\"bikeDistance\":42.853661693551274,\"week\":15,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":32.54141791795444,\"runDistance\":11.24908619455721,\"bikeDistance\":44.99634477822884,\"week\":16,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":35.79555970974988,\"runDistance\":12.149013090121786,\"bikeDistance\":48.59605236048714,\"week\":17,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":39.37511568072487,\"runDistance\":10.934111781109607,\"bikeDistance\":43.73644712443843,\"week\":18,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":23.231318251627673,\"runDistance\":13.120934137331528,\"bikeDistance\":52.48373654932611,\"week\":19,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95},{\"timeAtFtp\":39.49324102776704,\"runDistance\":13.776980844198103,\"bikeDistance\":55.107923376792414,\"week\":20,\"runLZone\":351.90000000000003,\"runHZone\":379.50000000000006,\"bikeLZone\":197.4,\"bikeHZone\":227.95}]"
+				}
+			]
+		},
+		{
+			"name": "getSession",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"swimFtp\":101,\"runFtp\":345.0,\"bikeFtp\":240.0,\"target\":2}"
+				},
+				"url": {
+					"raw": "http://{{host}}:8080/api/athlete/session?week=5",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"athlete",
+						"session"
+					],
+					"query": [
+						{
+							"key": "week",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create athlete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"swimFtp\":101,\"runFtp\":332.0,\"bikeFtp\":228.0,\"target\":2}"
+				},
+				"url": {
+					"raw": "http://{{host}}:8080/api/athlete",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"athlete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Athlete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:8080/api/athlete?id=546785767699082",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"athlete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "546785767699082"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }
