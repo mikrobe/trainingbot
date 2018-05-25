@@ -23,14 +23,14 @@ public class TrainingBotController {
 
 
     @RequestMapping(value = "/athlete/plan", method = RequestMethod.POST, produces = "application/json")
-    public List<SimpleSession> create(@RequestBody AthleteFTP pAthleteFTP) {
+    public List<SimpleSession> plan(@RequestBody AthleteFTP pAthleteFTP) {
         List<SimpleSession> wSessions = null;
         wSessions = trainingBotService.getSession(pAthleteFTP);
         return wSessions;
     }
 
     @RequestMapping(value = "/athlete/session", method = RequestMethod.POST, produces = "application/json")
-    public SimpleSession create(@RequestBody AthleteFTP pAthleteFTP, @RequestParam(value = "week") int week) {
+    public SimpleSession session(@RequestBody AthleteFTP pAthleteFTP, @RequestParam(value = "week") int week) {
         return trainingBotService.getSession(pAthleteFTP, week);
     }
 

@@ -5,6 +5,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.WriteResult;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
@@ -14,17 +15,21 @@ public class AthleteRepositoryService {
 
     Nitrite db;
     ObjectRepository<AthleteFTP> repository;
+    @Value("${nitrite-db-file-path}")
+    private String nitriteDbPath;
 
     public AthleteRepositoryService() {
         //java initialization
         db = Nitrite.builder()
                 .compressed()
-                .filePath("/Users/erickaudet/Documents/trainingBot.db")
+                .filePath(nitriteDbPath)
                 .openOrCreate("system", "admin");
         repository = db.getRepository(AthleteFTP.class);
     }
 
     public AthleteFTP setAthleteFTP(AthleteFTP pAthleteFTP) {
+        if (pAthleteFTP.getId() > 0)
+            return updateAthleteFTP(pAthleteFTP);
         AthleteFTP wAthleteFTP = new AthleteFTP();
         pAthleteFTP.setId(NitriteId.newId().getIdValue());
         WriteResult result = repository.insert(pAthleteFTP);

@@ -61,6 +61,12 @@ public class StampControllerTest {
         AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
         String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
         mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().string(org.hamcrest.Matchers.containsString("id\":" + wFtp.getId())));
+        wAthleteFTP.setBikeFtp(300.0);
+        wAthleteFTP.setId(wFtp.getId());
+        mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)));
+        mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
+                string(org.hamcrest.Matchers.containsString("bikeFtp\":" + wAthleteFTP.getBikeFtp())));
+
 
     }
 
@@ -73,6 +79,10 @@ public class StampControllerTest {
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
+        MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
+        AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
+        String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
+        wAthleteFTP.setId(wFtp.getId());
         mockMvc.perform(post("/api/athlete/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
 
     }
@@ -86,6 +96,11 @@ public class StampControllerTest {
         wAthleteFTP.setTarget(2);
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
+        MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
+        AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
+        String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
+        wAthleteFTP.setId(wFtp.getId());
+
         mockMvc.perform(post("/api/athlete/session").param("week", "4").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
 
     }

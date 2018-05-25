@@ -210,8 +210,10 @@ This will be fed into a linear regression algorithm. This supervised ml will con
 ```
 
 ## Deployment and start
-> erickaudet$ scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
-> java -jar service-1.0-SNAPSHOT.jar
+$ scp /Users/erickaudet/Documents/application.properties ubuntu@208.75.75.136:apps
+$ scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
+$ ssh ubuntu@208.75.75.136
+$ java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar --spring.config.location=/Users/erickaudet/Documents/application.properties 
 
 ## References
 1. http://tailwind-coaching.com/2016/04/13/training-stress-score-fatigue/, Coach Rob

@@ -76,9 +76,10 @@ public class TrainingBotService implements TrainingBotServiceIf {
         AthleteFTP wAthleteFTP = null;
 
         //persistence
-        wAthleteFTP = athleteRepositoryService.setAthleteFTP(pAthleteFTP);
+        wAthleteFTP = athleteRepositoryService.getAthleteFtp(pAthleteFTP.getId());
 
-        //force ML classification
+
+        //use classificatio to adapt sessions (Get Athletes Sessions #12)
         try {
             MLClasses wMlClasses = mlService.classify(wAthleteFTP, stravaService.getAthleteActivities(wAthleteFTP));
             wAthleteFTP.setClassification(wMlClasses);
