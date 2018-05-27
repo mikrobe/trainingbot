@@ -17,7 +17,7 @@
 				],
 				"body": {
 					"mode": "raw",
-                  "raw": "{\"swimFtp\":101,\"runFtp\":345.0,\"bikeFtp\":240.0,\"target\":2, \"id\":586982720484280}\n"
+					"raw": "{\"id\":811194388135934}\n"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/plan",
@@ -35,7 +35,7 @@
 			},
 			"response": [
 				{
-                  "id": "57eca720-d967-4eef-a948-cd45c2d2c393",
+					"id": "0afada69-039b-4a8a-86ec-ec3ddc025f10",
 					"name": "Create Plan",
 					"originalRequest": {
 						"method": "POST",
@@ -103,7 +103,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"swimFtp\":101,\"runFtp\":345.0,\"bikeFtp\":240.0,\"target\":2}"
+					"raw": "{ \"id\":811194388135934}"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/session?week=5",
@@ -139,7 +139,7 @@
 				],
 				"body": {
 					"mode": "raw",
-                  "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 120,\n    \"target\": 2,\n    \"id\": 808774205972959,\n    \"classification\": null\n}"
+					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"target\": 2,\n    \"id\": 0,\n    \"classification\": null\n}"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete",
@@ -163,7 +163,7 @@
 				"header": [],
 				"body": {},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete?id=808774205972959",
+					"raw": "http://{{host}}:8080/api/athlete?id=811194388135934",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -176,7 +176,7 @@
 					"query": [
 						{
 							"key": "id",
-                          "value": "808774205972959"
+							"value": "811194388135934"
 						}
 					]
 				}

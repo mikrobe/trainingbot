@@ -57,4 +57,13 @@ public class AthleteRepositoryService {
         }
         return wAthleteFTP;
     }
+
+    public AthleteFTP findAthleteFtpByUsername(String pUsername) {
+        AthleteFTP wAthleteFTP = new AthleteFTP();
+        org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("username", pUsername));
+        for (AthleteFTP wFtp : wCursor) {
+            wAthleteFTP = wFtp;
+        }
+        return wAthleteFTP;
+    }
 }

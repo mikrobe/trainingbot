@@ -44,4 +44,9 @@ public class TrainingBotController {
         return athleteRepositoryService.getAthleteFtp(athleteFtpId);
     }
 
+    @RequestMapping(value = "/athlete/{username}", method = RequestMethod.GET, produces = "application/json")
+    public AthleteFTP getAthlete(@PathVariable("username") String pUsername) {
+        return athleteRepositoryService.findAthleteFtpByUsername(pUsername);
+    }
+
 }

@@ -55,6 +55,7 @@ public class StampControllerTest {
         wAthleteFTP.setBikeFtp(228.0);
         wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
+        wAthleteFTP.setUsername("eaudet");
 
         System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
         MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
@@ -66,7 +67,9 @@ public class StampControllerTest {
         mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)));
         mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
                 string(org.hamcrest.Matchers.containsString("bikeFtp\":" + wAthleteFTP.getBikeFtp())));
-
+        wUrl = "/api/athlete/" + wFtp.getUsername();
+        mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
+                string(org.hamcrest.Matchers.containsString("username\":\"" + wAthleteFTP.getUsername() + "\"")));
 
     }
 

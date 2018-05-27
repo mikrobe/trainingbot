@@ -13,6 +13,7 @@ public class AthleteFTP {
     @Id
     private long id;
     private MLClasses classification;
+    private String username;
 
     public double getBikeFtp() {
         return bikeFtp;
@@ -60,6 +61,14 @@ public class AthleteFTP {
 
     public void setClassification(MLClasses classification) {
         this.classification = classification;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 }
 
