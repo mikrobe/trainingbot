@@ -15,8 +15,9 @@ import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.Charset;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.junit.Assert.fail;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -49,63 +50,126 @@ public class StampControllerTest {
     }
 
     @Test
-    public void testGetAthlete() throws Exception {
-        AthleteFTP wAthleteFTP = new AthleteFTP();
-        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(228.0);
-        wAthleteFTP.setSwimFtp(101.0);
-        wAthleteFTP.setTarget(2);
-        wAthleteFTP.setUsername("eaudet");
-
-        System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
-        MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
-        AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
-        String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
-        mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().string(org.hamcrest.Matchers.containsString("id\":" + wFtp.getId())));
-        wAthleteFTP.setBikeFtp(300.0);
-        wAthleteFTP.setId(wFtp.getId());
-        mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)));
-        mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
-                string(org.hamcrest.Matchers.containsString("bikeFtp\":" + wAthleteFTP.getBikeFtp())));
-        wUrl = "/api/athlete/" + wFtp.getUsername();
-        mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
-                string(org.hamcrest.Matchers.containsString("username\":\"" + wAthleteFTP.getUsername() + "\"")));
-
+    public void testCreateAthlete() throws Exception {
+        AthleteFTP wAthleteFTP = generateAthlete();
+        createAthlete(wAthleteFTP);
+        AthleteFTP athleteFTP = findAthlete(wAthleteFTP.getUsername());
+        deleteAthlete(wAthleteFTP.getUsername());
     }
 
     @Test
-    public void testCreatePlan() throws Exception {
-        AthleteFTP wAthleteFTP = new AthleteFTP();
-        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(228.0);
-        wAthleteFTP.setSwimFtp(101.0);
-        wAthleteFTP.setTarget(2);
+    public void testCreateAthleteTwoTimes() throws Exception {
+        AthleteFTP wAthleteFTP = generateAthlete();
+        createAthlete(wAthleteFTP);
 
-        System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
-        MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
+        try {
+            mockMvc.perform(post("/api/athlete").contentType(contentType).
+                    content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)))
+                    .andExpect(status().isInternalServerError())
+                    .andExpect(content().string("Athlete with same username already exists..."))
+                    .andDo(print());
+        } catch (Exception e) {
+            //sink it
+        }
+
+        deleteAthlete(wAthleteFTP.getUsername());
+    }
+
+    private void createAthlete(AthleteFTP wAthleteFTP) throws Exception {
+        mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
+    }
+
+    private void deleteAthlete(String pUsername) throws Exception {
+        String wUrl = "/api/athlete/" + pUsername;
+        mockMvc.perform(delete(wUrl)).andExpect(status().isOk()).andExpect(content().
+                string(org.hamcrest.Matchers.containsString("username\":\"" + pUsername + "\"")));
+    }
+
+    private AthleteFTP findAthlete(String pUsername) throws Exception {
+        String wUrl = "/api/athlete/" + pUsername;
+        MvcResult wMvcResult = mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
+                string(org.hamcrest.Matchers.containsString("username\":\"" + pUsername + "\""))).andReturn();
         AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
-        String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
-        wAthleteFTP.setId(wFtp.getId());
-        mockMvc.perform(post("/api/athlete/plan").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
-
+        return wFtp;
     }
 
     @Test
-    public void testCreateSession() throws Exception {
+    public void testChangeAthleteFtp() throws Exception {
+        AthleteFTP wAthleteFTP = generateAthlete();
+        createAthlete(wAthleteFTP);
+        AthleteFTP wUpdated = findAthlete(wAthleteFTP.getUsername());
+        wUpdated.setBikeFtp(300.0);
+        updateAthlete(wUpdated);
+        wUpdated = findAthlete(wAthleteFTP.getUsername());
+        if (wUpdated.getBikeFtp() != wUpdated.getBikeFtp()) {
+            fail("update fail");
+        }
+        deleteAthlete(wAthleteFTP.getUsername());
+    }
+
+    @Test
+    public void testChangeAthleteFtpOnWrongUserName() throws Exception {
+        AthleteFTP wAthleteFTP = generateAthlete();
+        AthleteFTP wAthleteFTP2 = generateAthlete("toto");
+        createAthlete(wAthleteFTP);
+        createAthlete(wAthleteFTP2);
+        AthleteFTP wUpdated = findAthlete(wAthleteFTP.getUsername());
+        wUpdated.setBikeFtp(300.0);
+        wUpdated.setUsername(wAthleteFTP2.getUsername());
+        //update and handle exception
+        try {
+            mockMvc.perform(patch("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)))
+                    .andExpect(status().isInternalServerError())
+                    .andExpect(content().string("Illegal update"))
+                    .andDo(print());
+        } catch (Exception e) {
+            //sink it
+        }
+
+        deleteAthlete(wAthleteFTP.getUsername());
+        deleteAthlete(wAthleteFTP2.getUsername());
+    }
+
+    private void updateAthlete(AthleteFTP wAthleteFTP) throws Exception {
+        mockMvc.perform(patch("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)));
+    }
+
+    private AthleteFTP generateAthlete() {
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
         wAthleteFTP.setBikeFtp(228.0);
         wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
+        wAthleteFTP.setUsername("demoTester");
+        return wAthleteFTP;
+    }
 
-        System.out.println(TestUtil.convertObjectToJsonBytes(wAthleteFTP));
-        MvcResult wMvcResult = mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
-        AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
-        String wUrl = "/api/athlete/?id=" + Long.toString(wFtp.getId());
-        wAthleteFTP.setId(wFtp.getId());
+    private AthleteFTP generateAthlete(String pUserName) {
+        AthleteFTP wAthleteFTP = new AthleteFTP();
+        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
+        wAthleteFTP.setBikeFtp(228.0);
+        wAthleteFTP.setSwimFtp(101.0);
+        wAthleteFTP.setTarget(2);
+        wAthleteFTP.setUsername(pUserName);
+        return wAthleteFTP;
+    }
 
-        mockMvc.perform(post("/api/athlete/session").param("week", "4").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andExpect(status().isOk());
+    @Test
+    public void testGetPlan() throws Exception {
+        AthleteFTP wAthleteFTP = generateAthlete();
+        createAthlete(wAthleteFTP);
+        String wUrl = "/api/athlete/plan" + wAthleteFTP.getUsername();
+        mockMvc.perform(get(wUrl)).andExpect(status().isOk());
+        deleteAthlete(wAthleteFTP.getUsername());
+    }
 
+    @Test
+    public void testGetSession() throws Exception {
+        AthleteFTP wAthleteFTP = generateAthlete();
+        createAthlete(wAthleteFTP);
+        String wUrl = "/api/athlete/session" + wAthleteFTP.getUsername();
+        mockMvc.perform(get(wUrl).param("week", "4")).andExpect(status().isOk());
+        deleteAthlete(wAthleteFTP.getUsername());
     }
 
 }

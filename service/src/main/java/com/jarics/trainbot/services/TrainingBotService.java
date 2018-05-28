@@ -65,18 +65,18 @@ public class TrainingBotService implements TrainingBotServiceIf {
     }
 
     @Override
-    public SimpleSession getSession(AthleteFTP pAthleteFTP, int pWeek) {
-        return getSession(pAthleteFTP).get(pWeek - 1);
+    public SimpleSession getSession(String pUsername, int pWeek) {
+        return getSession(pUsername).get(pWeek - 1);
     }
 
     @Override
-    public List<SimpleSession> getSession(AthleteFTP pAthleteFTP) {
+    public List<SimpleSession> getSession(String pUsername) {
         int nbrWeeks = 20;
         double timeAtFtp = 15;
         AthleteFTP wAthleteFTP = null;
 
         //persistence
-        wAthleteFTP = athleteRepositoryService.getAthleteFtp(pAthleteFTP.getId());
+        wAthleteFTP = athleteRepositoryService.findAthleteFtpByUsername(pUsername);
 
 
         //use classificatio to adapt sessions (Get Athletes Sessions #12)

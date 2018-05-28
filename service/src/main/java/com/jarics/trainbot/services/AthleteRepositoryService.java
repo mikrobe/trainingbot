@@ -15,7 +15,7 @@ public class AthleteRepositoryService {
 
     Nitrite db;
     ObjectRepository<AthleteFTP> repository;
-    @Value("${nitrite-db-file-path}")
+    @Value("${nitrite.db.file.path}")
     private String nitriteDbPath;
 
     public AthleteRepositoryService() {
@@ -27,17 +27,26 @@ public class AthleteRepositoryService {
         repository = db.getRepository(AthleteFTP.class);
     }
 
-    public AthleteFTP setAthleteFTP(AthleteFTP pAthleteFTP) {
+    public AthleteFTP setAthleteFTP(AthleteFTP pAthleteFTP) throws Exception {
+        AthleteFTP wAthleteFTP = null;
         if (pAthleteFTP.getId() > 0)
             return updateAthleteFTP(pAthleteFTP);
-        AthleteFTP wAthleteFTP = new AthleteFTP();
-        pAthleteFTP.setId(NitriteId.newId().getIdValue());
-        WriteResult result = repository.insert(pAthleteFTP);
-        return getAthleteFromResult(wAthleteFTP, result);
+        wAthleteFTP = findAthleteFtpByUsername(pAthleteFTP.getUsername());
+        if (wAthleteFTP.getUsername() == null) {
+            pAthleteFTP.setId(NitriteId.newId().getIdValue());
+            WriteResult result = repository.insert(pAthleteFTP);
+            return getAthleteFromResult(wAthleteFTP, result);
+        } else {
+            throw new Exception("Athlete with same username already exists...");
+        }
     }
 
-    public AthleteFTP updateAthleteFTP(AthleteFTP pAthleteFTP) {
+    public AthleteFTP updateAthleteFTP(AthleteFTP pAthleteFTP) throws Exception {
         AthleteFTP wAthleteFTP = new AthleteFTP();
+        // make sure same id with same username
+        wAthleteFTP = getAthleteById(pAthleteFTP.getId());
+        if (!wAthleteFTP.getUsername().equals(pAthleteFTP.getUsername()))
+            throw new Exception("Illegal update");
         WriteResult writeResult = repository.update(pAthleteFTP);
         return getAthleteFromResult(wAthleteFTP, writeResult);
     }
@@ -49,18 +58,24 @@ public class AthleteRepositoryService {
         return wAthleteFTP;
     }
 
-    public AthleteFTP getAthleteFtp(long athleteFtpId) {
+    public AthleteFTP findAthleteFtpByUsername(String pUsername) {
         AthleteFTP wAthleteFTP = new AthleteFTP();
-        org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("id", athleteFtpId));
+        org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("username", pUsername));
         for (AthleteFTP wFtp : wCursor) {
             wAthleteFTP = wFtp;
         }
         return wAthleteFTP;
     }
 
-    public AthleteFTP findAthleteFtpByUsername(String pUsername) {
+    public AthleteFTP removeAthlete(String pUsername) {
+        AthleteFTP wAthleteFTP = findAthleteFtpByUsername(pUsername);
+        WriteResult writeResult = repository.remove(wAthleteFTP);
+        return wAthleteFTP;
+    }
+
+    public AthleteFTP getAthleteById(long athleteFtpId) {
         AthleteFTP wAthleteFTP = new AthleteFTP();
-        org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("username", pUsername));
+        org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("id", athleteFtpId));
         for (AthleteFTP wFtp : wCursor) {
             wAthleteFTP = wFtp;
         }
