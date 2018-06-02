@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My first Vue app</title>
+</head>
+<body>
+
+<div id="app">
+    <ul>
+        <h2>Plan</h2>
+        <li v-for="athlete in athletes">
+            <h3>Plan for Week: {{ athlete.week }}</h3>,
+            Time @ FTP: {{ athlete.timeAtFtp }},
+            Run distance: {{athlete.runDistance}},
+            Bike distance: {{athlete.bikeDistance}},
+            Swim distance: {{athlete.swimDistance}},
+            Swim Zones: between {{athlete.swimLZone}} and {{athlete.swimHZone}},
+            Bike Zones: between {{athlete.bikeLZone}} and {{athlete.bikeHZone}},
+            Run Zones: between {{athlete.runLZone}} and {{athlete.runHZone}}
+        </li>
+    </ul>
+    <button onclick="getPlan()">
+        Get Plan
+    </button>
+</div>
+
+<script src="https://unpkg.com/vue"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            athletes: []
+        },
+        created() {
+            fetch('http://localhost:8080/api/athlete/plan/eaudet')
+                .then(response => response.json())
+                .then(json => {
+                    this.athletes = json
+                })
+        }
+    })
+</script>
+</body>
+</html>
