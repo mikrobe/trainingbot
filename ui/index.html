@@ -65,16 +65,20 @@
     })
 </script>
 <script>
-    function str_pad_left(string, pad, length) {
-        return (new Array(length + 1).join(pad) + string).slice(-length);
-    }
+
 
     function convertToMinutes(timeInSecs) {
         var minutes = timeInSecs / 60;
         var floor = Math.floor(minutes);
         var decimalPart = minutes - floor;
         var seconds = Math.round(decimalPart * 60); //percentage of a minute
-        return floor.toString() + ":" + seconds.toString();
+        if (floor < 10) {
+            floor = "0" + floor;
+        }
+        if (seconds < 10) {
+            seconds = "0" + seconds;
+        }
+        return floor + ':' + seconds;
     }
 </script>
 </body>
