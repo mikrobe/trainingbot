@@ -2,22 +2,46 @@
 <html>
 <head>
     <title>My first Vue app</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
 
 <div id="app">
     <ul>
         <h2>Plan</h2>
-        <li v-for="athlete in athletes">
-            <h3>Plan for Week: {{ athlete.week }}</h3>,
-            Time @ FTP: {{ athlete.timeAtFtp }},
-            Run distance: {{athlete.runDistance}},
-            Bike distance: {{athlete.bikeDistance}},
-            Swim distance: {{athlete.swimDistance}},
-            Swim Zones: between {{athlete.swimLZone}} and {{athlete.swimHZone}},
-            Bike Zones: between {{athlete.bikeLZone}} and {{athlete.bikeHZone}},
-            Run Zones: between {{athlete.runLZone}} and {{athlete.runHZone}}
-        </li>
+        <table style="width:100%">
+            <tr>
+                <th>Plan for Week</th>
+                <th>Classification</th>
+                <th>Time @ FTP</th>
+                <th>Swim Distance</th>
+                <th>Bike Distance</th>
+                <th>Run Distance</th>
+                <th>Swim Zones</th>
+                <th>Bike Zones</th>
+                <th>Run Zones</th>
+            </tr>
+            <tr v-for="athlete in athletes">
+                <td>{{athlete.week}}</td>
+                <td>{{athlete.classification}}</td>
+                <td>{{Math.round(athlete.timeAtFtp)}}</td>
+                <td>{{Math.round(athlete.runDistance)}}</td>
+                <td>{{Math.round(athlete.bikeDistance)}}</td>
+                <td>{{Math.round(athlete.swimDistance)}}</td>
+                <td>between {{this.convertToMinutes(athlete.swimLZone)}} and
+                    {{this.convertToMinutes(athlete.swimHZone)}}
+                </td>
+                <td>between {{Math.round(athlete.bikeLZone)}} and {{Math.round(athlete.bikeHZone)}}</td>
+                <td>between {{this.convertToMinutes(athlete.runLZone)}} and
+                    {{this.convertToMinutes(athlete.runHZone)}}
+                </td>
+            </tr>
+        </table>
     </ul>
     <button onclick="getPlan()">
         Get Plan
@@ -26,7 +50,7 @@
 
 <script src="https://unpkg.com/vue"></script>
 <script>
-    var app = new Vue({
+    const app = new Vue({
         el: '#app',
         data: {
             athletes: []
@@ -39,6 +63,19 @@
                 })
         }
     })
+</script>
+<script>
+    function str_pad_left(string, pad, length) {
+        return (new Array(length + 1).join(pad) + string).slice(-length);
+    }
+
+    function convertToMinutes(timeInSecs) {
+        var minutes = timeInSecs / 60;
+        var floor = Math.floor(minutes);
+        var decimalPart = minutes - floor;
+        var seconds = Math.round(decimalPart * 60); //percentage of a minute
+        return floor.toString() + ":" + seconds.toString();
+    }
 </script>
 </body>
 </html>
