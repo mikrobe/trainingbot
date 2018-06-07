@@ -144,10 +144,10 @@ Then increase time at sweet spot is following a four weeks pattern:
 * At week 17 start bricks (intensity followed by distance), start new micro-cycle but using repeat week 13 distance
 
 ## Machine Learning
-The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine  learning (ml) algorithm to detect over/under/normal training. The ml is using examples of over/under/normal training sessions.
-The examples are generated using simulations. The simulations creates virtual athletes doing virtual workouts.
+The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine learning (ml) algorithm to predict over/under/normal training. The ml is using a training set of over/under/normal training sessions.
+For supervised hypothesis, training set are carefully created by a specialized data scientist who knows the best metrics to use. Metrics are based in raw strava data that you can find in the above section and listed below. 
 Here are the attributes ml will use to train:
-### Single Workout Attributes:
+### Single Workout Metrics:
 * TSS
 * TSB
 * CTL
@@ -157,9 +157,19 @@ Here are the attributes ml will use to train:
 * Sleep
 * Happiness
 * Stress
-### Training Set
-Starting from a real training ride, run and swim, a simulator will create normal, overtrained and undertrained workout sessions.
-This will be fed into a linear regression algorithm. This supervised ml will converged and be able to classify .... 
+### Algorithm
+#### Hypothesis A - Linear regression of single metrics (supervised)
+How do I predict a continuous variable (regression)? 
+* Linear regression
+* regularization
+* ridge regression, and LASSO; 
+* local linear regression
+* conditional density estimation.
+##### Training Set
+A set of training rides, runs and swims, representing normal, over-trained and under-trained workout sessions.
+This will be fed into an ML algorithm.
+- linear regression 
+#### Hypothesis B - Unsupervised....which one...
 
 ## API
 ### POST /trainbot/plan
