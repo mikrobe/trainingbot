@@ -7,10 +7,10 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class MLService implements MLServiceIf {
+public class RegressionService implements MLServiceIf {
     @Override
     public MLClasses classify(AthleteFTP pAthleteFTP, List<SummaryActivity> pActivities) {
-        GradientDescent wGradientDescent = new GradientDescent();
+
         return MLClasses.normal;
     }
 }

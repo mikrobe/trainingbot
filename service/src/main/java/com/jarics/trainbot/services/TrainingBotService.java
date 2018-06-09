@@ -26,7 +26,8 @@ public class TrainingBotService implements TrainingBotServiceIf {
     @Autowired
     StravaService stravaService;
     @Autowired
-    MLService mlService;
+    RegressionService mlService;
+
     @Autowired
     AthleteRepositoryService athleteRepositoryService;
     //deprecated
@@ -102,6 +103,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
             bikeDistance = bikeDistance + (longIncreaseTable[i % 4] * bikeDistance);
             swimDistance = swimDistance + (longIncreaseTable[i % 4] * swimDistance);
             SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
+            wSimpleSession.setClassification(wAthleteFTP.getClassification().name());
             wSimpleSession.setRunDistance(runDistance);
             wSimpleSession.setBikeDistance(bikeDistance);
             wSimpleSession.setSwimDistance(swimDistance);

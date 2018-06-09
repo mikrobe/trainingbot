@@ -13,6 +13,7 @@ public class SimpleSession {
     double swimLZone;
     double swimHZone;
     String athletesId;
+    String classification;
 
     public SimpleSession() {
     }
@@ -117,5 +118,13 @@ public class SimpleSession {
 
     public void setAthletesId(String athletesId) {
         this.athletesId = athletesId;
+    }
+
+    public String getClassification() {
+        return classification;
+    }
+
+    public void setClassification(String classification) {
+        this.classification = classification;
     }
 }
