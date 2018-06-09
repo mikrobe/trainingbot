@@ -1,5 +1,8 @@
 # AI for Triathlete
-We use a bunch of professional articles (see References section  below) to create an adaptable training plan for Triathletes.
+We use a bunch of professional articles (see References section  below) to create an adaptable training plan for Triathletes. Our ML engine predicts in realtime if an athlete is overtraining and will adapt weekly sessions accordingly. Reducing intensity, volume or perhaps even skipping a week to make sure the athlete does no hurt him/her self.
+
+Interesting idea:
+- use predictive model to create training plan instead of hard coded values for increasing weekly sessions...
 
 ## Terms Definitions
 #### TSS (Training Stress Score)
@@ -145,6 +148,10 @@ Then increase time at sweet spot is following a four weeks pattern:
 
 ## Machine Learning
 The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine learning (ml) algorithm to predict over/under/normal training. The ml is using a training set of over/under/normal training sessions.
+What ML will give us is:
+* How do I predict if an athlete will be over-trained/under-trained so we can adjust his training plan accordingly and notifies him?
+* How training bot learns to distinguish between an over-trained/under-trained/normal athlete?
+
 For supervised hypothesis, training set are carefully created by a specialized data scientist who knows the best metrics to use. Metrics are based in raw strava data that you can find in the above section and listed below. 
 Here are the attributes ml will use to train:
 ### Single Workout Metrics:
@@ -158,8 +165,19 @@ Here are the attributes ml will use to train:
 * Happiness
 * Stress
 ### Algorithm
-#### Hypothesis A - Linear regression of single metrics (supervised)
+#### Hypothesis A - Predictive Analytics [8]
+Using features described above (TSS, TSB, CTL, ATL, ect..) we will use Spark ML Dataframe API to predict if an athlete is overtraining or not.
+1) create training dataset for overtrained
+2) create training dataset for not overtrained athletes
+3) separate each datasets 80% training and 20% testing (we need to test our model)
+4) train using sparl ml RandomForestClassifier (other algos could be tried as well)
+5) test
+6) classify historical data from athletes (real life)
+
+If an athlete is overtrained, we need to adjust % or perhaps even skip a week of training.
+#### Hypothesis B - Linear regression of single or multivariate metrics (supervised)
 How do I predict a continuous variable (regression)? 
+TSS alone (single) or TSS, TSB, CTL (multivariate)
 * Linear regression
 * regularization
 * ridge regression, and LASSO; 
@@ -233,3 +251,4 @@ $ java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHO
 5. https://fascatcoaching.com/tips/how-to-sweet-spot/, BY FRANK OVERTON ON JULY 31, 2016
 6. http://www.trinewbies.com/tno_trainingprograms/tno_18wSp.asp
 7. https://www.active.com/running/articles/3-interval-training-plans-to-build-fitness-fast, By Jason R. Karp, Ph.D.
+8. https://dzone.com/articles/predictive-analytics-with-spark-ml, by David Moyers  ·  Sep. 19, 17 · AI Zone · Tutorial
