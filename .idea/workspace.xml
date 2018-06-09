@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -89,21 +88,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="63" selection-start-column="63" selection-end-column="63" />
+              <caret selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="92">
-                <caret line="4" column="109" selection-start-line="4" selection-start-column="109" selection-end-line="4" selection-end-column="109" />
+              <first_editor relative-caret-position="41">
+                <caret line="2" column="236" selection-start-line="2" selection-start-column="236" selection-end-line="2" selection-end-column="236" />
               </first_editor>
               <second_editor />
             </state>
@@ -213,13 +212,13 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/MLService.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/RegressionService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteFTP.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" />
         <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -666,7 +665,7 @@
       <workItem from="1528076983902" duration="4979000" />
       <workItem from="1528135188438" duration="29000" />
       <workItem from="1528135332166" duration="36000" />
-      <workItem from="1528135634552" duration="9775000" />
+      <workItem from="1528135634552" duration="10319000" />
     </task>
     <task id="LOCAL-00001" summary="Adding gradient descent">
       <created>1524526828855</created>
@@ -927,7 +926,14 @@
       <option name="project" value="LOCAL" />
       <updated>1528557124009</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Fix props">
+      <created>1528559956126</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1528559956126</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -963,7 +969,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154715000" />
+    <option name="totallyTimeSpent" value="155259000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -981,13 +987,13 @@
       <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4969697" weight="0.525641" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50343055" side_tool="true" weight="0.3265097" />
-      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.35334477" visible="true" weight="0.14774115" />
+      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.35334477" weight="0.14774115" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="SBT Execute" order="21" side_tool="true" />
-      <window_info anchor="right" id="Structure" order="12" sideWeight="0.6466552" side_tool="true" visible="true" weight="0.14774115" />
+      <window_info anchor="right" id="Structure" order="12" sideWeight="0.6466552" side_tool="true" weight="0.14774115" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24969475" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.20880246" />
@@ -998,15 +1004,15 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="bottom" id="Run Dashboard" order="0" visible="true" weight="0.40327534" />
+      <window_info anchor="bottom" id="Run Dashboard" order="0" weight="0.40327534" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.25588536" />
       <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.49656945" weight="0.36438075" />
       <window_info anchor="bottom" id="Sequence" order="1" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.2937564" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6174957" visible="true" weight="0.23565324" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6174957" weight="0.23565324" />
       <window_info anchor="right" id="Bean Validation" order="9" />
-      <window_info id="Web" order="6" sideWeight="0.38250428" side_tool="true" visible="true" weight="0.23565324" />
+      <window_info id="Web" order="6" sideWeight="0.38250428" side_tool="true" weight="0.23565324" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32753327" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
@@ -1021,6 +1027,50 @@
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Dependencies Viewer" order="20" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4969697" weight="0.525641" />
+      <window_info anchor="right" id="Palette" order="4" />
+      <window_info anchor="bottom" id="SBT Console" order="16" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.32958034" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="bottom" id="TypeScript" order="19" weight="0.32958034" />
+      <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.49656945" weight="0.36438075" />
+      <window_info anchor="bottom" id="Sequence" order="1" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.24969475" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.2937564" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="5" />
+      <window_info anchor="bottom" id="Usages" order="18" />
+      <window_info anchor="right" id="Commander" order="1" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50343055" side_tool="true" weight="0.3265097" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3285568" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.19242579" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
+      <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.25588536" />
+      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.35334477" visible="true" weight="0.14774115" />
+      <window_info anchor="bottom" id="Inspector" order="17" side_tool="true" />
+      <window_info anchor="bottom" id="SBT Execute" order="21" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32753327" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6174957" visible="true" weight="0.23565324" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info id="Web" order="6" sideWeight="0.38250428" side_tool="true" visible="true" weight="0.23565324" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+      <window_info anchor="right" id="Structure" order="12" sideWeight="0.6466552" side_tool="true" visible="true" weight="0.14774115" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="right" id="Coverage" order="0" sideWeight="0.63339734" side_tool="true" visible="true" weight="0.15069222" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.20880246" />
+      <window_info anchor="bottom" id="Dependencies Viewer" order="20" />
+      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info anchor="bottom" id="Run Dashboard" order="0" visible="true" weight="0.40327534" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -1079,7 +1129,8 @@
     <MESSAGE value="Refactor and enhance testing" />
     <MESSAGE value="UI for visualizing sessions #14" />
     <MESSAGE value="ML training on strava activies as examples #11" />
-    <option name="LAST_COMMIT_MESSAGE" value="ML training on strava activies as examples #11" />
+    <MESSAGE value="Fix props" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix props" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1442,16 +1493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="92">
-            <caret line="4" column="109" selection-start-line="4" selection-start-column="109" selection-end-line="4" selection-end-column="109" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.13.RELEASE/spring-beans-4.3.13.RELEASE.jar!/org/springframework/beans/factory/annotation/Value.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
@@ -1490,7 +1531,17 @@
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="63" selection-start-column="63" selection-end-column="63" />
+          <caret selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="41">
+            <caret line="2" column="236" selection-start-line="2" selection-start-column="236" selection-end-line="2" selection-end-column="236" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

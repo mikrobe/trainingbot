@@ -1,5 +1,6 @@
 # AI for Triathlete
 We use a bunch of professional articles (see References section  below) to create an adaptable training plan for Triathletes. Our ML engine predicts in realtime if an athlete is overtraining and will adapt weekly sessions accordingly. Reducing intensity, volume or perhaps even skipping a week to make sure the athlete does no hurt him/her self.
+On the business side of things, just create you profile with a personal id and ftp values. We will not ask you any registration only credentials to external training sources such as Strava in order to analyse your data for ou ML engine.
 
 Interesting idea:
 - use predictive model to create training plan instead of hard coded values for increasing weekly sessions...
@@ -238,6 +239,9 @@ This will be fed into an ML algorithm.
 ```
 
 ## Deployment and start
+Define properties in file called: application.properties an insert the following variable:
+nitrite.db.file.path={path}/trainingbot.bd
+
 $ scp /Users/erickaudet/Documents/application.properties ubuntu@208.75.75.136:apps
 $ scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
 $ ssh ubuntu@208.75.75.136
