@@ -5,6 +5,7 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.WriteResult;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -15,10 +16,9 @@ public class AthleteRepositoryService {
 
     Nitrite db;
     ObjectRepository<AthleteFTP> repository;
-    @Value("${nitrite.db.file.path}")
-    private String nitriteDbPath;
 
-    public AthleteRepositoryService() {
+    @Autowired
+    public AthleteRepositoryService(@Value("${nitrite.db.file.path}") final String nitriteDbPath) {
         //java initialization
         db = Nitrite.builder()
                 .compressed()
