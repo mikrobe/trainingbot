@@ -37,7 +37,7 @@
 			},
 			"response": [
 				{
-                  "id": "5f93f679-ad64-486f-b958-6b9f4b27d4dc",
+                  "id": "20aac96b-1452-4089-9d2e-9d2fed0b67f1",
 					"name": "Create Plan",
 					"originalRequest": {
 						"method": "POST",
@@ -108,7 +108,7 @@
                   "raw": "{ \"id\":811194388135940}"
 				},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete/session/{{athlete}}/?week=6",
+                  "raw": "http://{{host}}:8080/api/athlete/session/{{athlete}}/?week=7",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -124,7 +124,7 @@
 					"query": [
 						{
 							"key": "week",
-                          "value": "6"
+                          "value": "7"
 						}
 					]
 				}
@@ -173,7 +173,7 @@
           ],
           "body": {
             "mode": "raw",
-            "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"target\": 2,\n    \"id\": 649827680299311,\n    \"classification\": \"normal\",\n    \"username\": \"eaudet\"\n}"
+            "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 90,\n    \"target\": 2,\n    \"id\": 1044562064217388,\n    \"classification\": \"normal\",\n    \"username\": \"eaudet\"\n}"
 				},
 				"url": {
                   "raw": "http://{{host}}:8080/api/athlete/",

@@ -6,6 +6,9 @@ public class SimpleSession {
     double bikeDistance;
     double swimDistance;
     int week;
+    double runFtp;
+    double swimFtp;
+    double bikeFtp;
     double runLZone;
     double runHZone;
     double bikeLZone;
@@ -126,5 +129,29 @@ public class SimpleSession {
 
     public void setClassification(String classification) {
         this.classification = classification;
+    }
+
+    public double getRunFtp() {
+        return runFtp;
+    }
+
+    public void setRunFtp(double runFtp) {
+        this.runFtp = runFtp;
+    }
+
+    public double getSwimFtp() {
+        return swimFtp;
+    }
+
+    public void setSwimFtp(double swimFtp) {
+        this.swimFtp = swimFtp;
+    }
+
+    public double getBikeFtp() {
+        return bikeFtp;
+    }
+
+    public void setBikeFtp(double bikeFtp) {
+        this.bikeFtp = bikeFtp;
     }
 }

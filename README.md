@@ -23,11 +23,18 @@ using a power/pace meter and to measure improvement [2],[4].
 #### IF (Intensity Factor)
 IF is a percentage of the FTP which represents the zones. Values are from 1 to 7.
 #### TSB (Training Stress Balance)
+Training Stress Balance (TSB) or Form represents the balance of training stress.
+
+Form (TSB) = Yesterday's Fitness (CTL) - Yesterday's Fatigue (ATL)
+
+A positive TSB number means that you would have a good chance of performing well during those 'positive' days, and would suggest that you are both fit and fresh.
 
 #### CTL (chronic training load)
+Fitness (CTL) is an exponentially weighted average of your last 42 days of training stress scores (TSS) and reflects the training you have done over the last 6 weeks. However, the workouts you did 15 days ago will impact your Fitness more than the workouts you did 30 days ago.
 [1] Fitness, if you want to look at it that way
 
 #### ATL (acute training load) 
+An exponentially weighted average of your training stress scores from the past 7 days which provides an estimate of your fatigue accounting for the workouts you have done recently.
 [1] fatigue
 
 ### Zones by sports
@@ -256,3 +263,5 @@ $ java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHO
 6. http://www.trinewbies.com/tno_trainingprograms/tno_18wSp.asp
 7. https://www.active.com/running/articles/3-interval-training-plans-to-build-fitness-fast, By Jason R. Karp, Ph.D.
 8. https://dzone.com/articles/predictive-analytics-with-spark-ml, by David Moyers  ·  Sep. 19, 17 · AI Zone · Tutorial
+9. Joe Friel - Part 3- Training Stress Balance—So What?, Joe Friel 07/12/2015
+10. Suggested Weekly TSS And Target CTL, 
