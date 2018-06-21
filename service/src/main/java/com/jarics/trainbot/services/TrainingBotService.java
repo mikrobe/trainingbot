@@ -82,7 +82,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
 
         //use classificatio to adapt sessions (Get Athletes Sessions #12)
         try {
-            MLClasses wMlClasses = mlService.classify(wAthleteFTP, stravaService.getAthleteActivities(wAthleteFTP));
+            MLClasses wMlClasses = mlService.classify(wAthleteFTP, stravaService.getAthleteActivities(wAthleteFTP, 45));
             wAthleteFTP.setClassification(wMlClasses);
             athleteRepositoryService.updateAthleteFTP(wAthleteFTP);
         } catch (Exception e) {
