@@ -1,7 +1,7 @@
 package com.jarics.trainbot.services;
 
 import com.jarics.trainbot.entities.AthleteFTP;
-import io.swagger.client.model.SummaryActivity;
+import com.jarics.trainbot.entities.AthletesFeatures;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;
@@ -26,7 +26,7 @@ public class RegressionService implements MLServiceIf {
     }
 
     @Override
-    public MLClasses classify(AthleteFTP pAthleteFTP, List<SummaryActivity> pActivities) {
+    public MLClasses classify(AthleteFTP pAthleteFTP, List<AthletesFeatures> pAthletesFeatures) {
         System.setProperty("hadoop.home.dir", "/");
         SparkConf sparkConf = new SparkConf().setAppName("RegressionService");
         JavaSparkContext jsc = new JavaSparkContext(sparkConf);

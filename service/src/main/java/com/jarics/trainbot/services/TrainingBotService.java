@@ -1,8 +1,10 @@
 package com.jarics.trainbot.services;
 
 import com.jarics.trainbot.entities.AthleteFTP;
+import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.entities.Session;
 import com.jarics.trainbot.entities.SimpleSession;
+import io.swagger.client.model.SummaryActivity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -75,6 +77,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
         int nbrWeeks = 20;
         double timeAtFtp = 15;
         AthleteFTP wAthleteFTP = null;
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
 
         //persistence
         wAthleteFTP = athleteRepositoryService.findAthleteFtpByUsername(pUsername);
@@ -82,7 +85,12 @@ public class TrainingBotService implements TrainingBotServiceIf {
 
         //use classificatio to adapt sessions (Get Athletes Sessions #12)
         try {
-            MLClasses wMlClasses = mlService.classify(wAthleteFTP, stravaService.getAthleteActivities(wAthleteFTP, 45));
+            //get raw data
+            List<SummaryActivity> wActivities = stravaService.getAthleteActivities(wAthleteFTP, 45);
+            //create machine learning features based on raw data
+
+            List<AthletesFeatures> wAthletesFeatures = wFeatureExtractor.extract(wActivities);
+            MLClasses wMlClasses = mlService.classify(wAthleteFTP, wAthletesFeatures);
             wAthleteFTP.setClassification(wMlClasses);
             athleteRepositoryService.updateAthleteFTP(wAthleteFTP);
         } catch (Exception e) {
