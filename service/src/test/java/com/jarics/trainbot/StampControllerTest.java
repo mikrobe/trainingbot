@@ -14,6 +14,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.Charset;
+import java.util.UUID;
 
 import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -110,7 +111,7 @@ public class StampControllerTest {
     @Test
     public void testChangeAthleteFtpOnWrongUserName() throws Exception {
         AthleteFTP wAthleteFTP = generateAthlete();
-        AthleteFTP wAthleteFTP2 = generateAthlete("toto");
+        AthleteFTP wAthleteFTP2 = generateAthlete();
         createAthlete(wAthleteFTP);
         createAthlete(wAthleteFTP2);
         AthleteFTP wUpdated = findAthlete(wAthleteFTP.getUsername());
@@ -140,17 +141,7 @@ public class StampControllerTest {
         wAthleteFTP.setBikeFtp(228.0);
         wAthleteFTP.setSwimFtp(101.0);
         wAthleteFTP.setTarget(2);
-        wAthleteFTP.setUsername("demoTester");
-        return wAthleteFTP;
-    }
-
-    private AthleteFTP generateAthlete(String pUserName) {
-        AthleteFTP wAthleteFTP = new AthleteFTP();
-        wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
-        wAthleteFTP.setBikeFtp(228.0);
-        wAthleteFTP.setSwimFtp(101.0);
-        wAthleteFTP.setTarget(2);
-        wAthleteFTP.setUsername(pUserName);
+        wAthleteFTP.setUsername(UUID.randomUUID().toString());
         return wAthleteFTP;
     }
 

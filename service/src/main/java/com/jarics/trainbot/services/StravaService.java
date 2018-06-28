@@ -24,6 +24,7 @@ public class StravaService {
      * @param pAthleteFTP
      * @return
      * @throws Exception
+     * @deprecated
      */
     public List<SummaryActivity> _getAthleteActivities(AthleteFTP pAthleteFTP, int pElapseDays) throws Exception {
         LocalDate today = LocalDate.now();
@@ -41,7 +42,6 @@ public class StravaService {
 
     public List<SummaryActivity> getAthleteActivities(AthleteFTP pAthleteFTP, int pElapseDays) {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
-
 // Configure OAuth2 access token for authorization: strava_oauth
         OAuth strava_oauth = (OAuth) defaultClient.getAuthentication("strava_oauth");
         strava_oauth.setAccessToken("eb701aac06d7542441c4857226e9939bac3aa3a1");
@@ -70,7 +70,7 @@ public class StravaService {
      *
      * @return
      */
-    public double getCtl(AthleteFTP pAthleteFTP) throws Exception {
+    public double getCtl(AthleteFTP pAthleteFTP) {
         List<SummaryActivity> wActivities = getAthleteActivities(pAthleteFTP, 42);
         List<Double> TSSs = new ArrayList<Double>();
         double tssTotal = 0;
