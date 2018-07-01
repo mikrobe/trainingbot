@@ -1,11 +1,9 @@
 package com.jarics.trainbot.services;
 
-import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
 import io.swagger.client.model.SummaryActivity;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class FeatureExtractor {
@@ -19,25 +17,38 @@ public class FeatureExtractor {
      *
      * @return
      */
-    private double getCtl(AthleteFTP pAthleteFTP) {
-        List<Double> TSSs = new ArrayList<Double>();
-        double tssTotal = 0;
-        for (Iterator<SummaryActivity> i = activities.iterator(); i.hasNext(); ) {
-            tssTotal = tssTotal + getTss(i.next());
-        }
-        //TODO Should weight in the last 15 days....
-        return tssTotal / activities.size();
+    private double getCtl(List<Double> pTss) {
+        return getWeightedAvg(pTss, 42);
     }
+
+    /**
+     * Returns the weighted average of pDays
+     *
+     * @param pTss
+     * @param pDays
+     * @return
+     */
+    private double getWeightedAvg(List<Double> pTss, int pDays) {
+        if (pTss.size() < pDays) return 0;
+        double lastDaysTss = 0.0;
+        for (int i = pTss.size() - 1; i > pTss.size() - pDays; i--) {
+            lastDaysTss = lastDaysTss + pTss.get(i);
+        }
+        return lastDaysTss / pDays;
+    }
+
 
     /**
      * An exponentially weighted average of your training stress scores from the past 7 days which provides
      * an estimate of your fatigue accounting for the workouts you have done recently. [1] fatigue
      *
      * @return
+     * @param pTss
      */
-    private double getAtl() {
-        return 0;
+    private double getAtl(List<Double> pTss) {
+        return getWeightedAvg(pTss, 7);
     }
+
 
     /**
      * Training Stress Balance (TSB) or Form represents the balance of training stress.
@@ -52,33 +63,53 @@ public class FeatureExtractor {
     }
 
     /**
+     * Return the TSS for a single session.
+     *
+     * NGP = 2399 sec / 5982.9 meters --> 40 min / 6 km --> 40/6 --> 6.66min/km --> 2399/5982.9 --> 0.40sec/meter
+     *
      * TSS = [(s x NP/NGP x IF) / (FTP x 3,600)] x 100 [1] Where “s” is duration of the workout
      * in seconds and “3600” is the number of seconds in an hour.
-     *
-     * @param summaryActivity
-     * @return
+     * @param s workout is seconds (elapse time)
+     * @param NP is average watts or average weighted watt (mutually exclusive to NPG)
+     * @param NGP normalized graded pace for running (mutually exclusive to NP). Means: moving _time/distance
+     * @param IF NGP/FTP  (% of FTP). Ex.: 0.40sec/meter divBy 0.32sec/meter --> 1.25
+     * @return TSS
      */
-    private double getTss(SummaryActivity summaryActivity) {
-        double s = summaryActivity.getMovingTime();
-//        double NP = summaryActivity.
-        double NGP;
-        double FTP;
-        return 0;
+    private double getTss(int s, double NP, double NGP, double IF, double pFtp) {
+        double wNpOrNgp = (NP == 0.0 ? NGP : NP);
+        double wRet = ((s * wNpOrNgp * IF) / (pFtp * 3600)) * 100;
+        return wRet;
     }
 
-    public List<AthletesFeatures> extract(List<SummaryActivity> wActivities) {
-        //TODO calculate
-        activities = wActivities;
-        List<AthletesFeatures> wAthletesFeaturesList = new ArrayList<>();
+    public AthletesFeatures extract(List<SummaryActivity> pActivities, double pSwimFtp, double pBikeFtp, double pRunFtp) {
+        List<Double> wTssValues = new ArrayList<>();
         AthletesFeatures wAthletesFeatures = new AthletesFeatures();
-        wAthletesFeatures.setATL(0.1);
-        wAthletesFeatures.setCTL(0.1);
-        wAthletesFeatures.setNGP(0.1);
-        wAthletesFeatures.setNP(0.1);
-        wAthletesFeatures.setTSB(0.1);
-        wAthletesFeatures.setTSS(0.1);
-        wAthletesFeatures.setS(2);
-        wAthletesFeaturesList.add(wAthletesFeatures);
-        return wAthletesFeaturesList;
+
+        for (SummaryActivity activity : pActivities) {
+            double wCurrentFtp = getFtp(activity, pSwimFtp, pBikeFtp, pRunFtp);
+            //TODO calculate TSS with power raw data (NP)
+            double wNPG = activity.getMovingTime() / activity.getDistance();
+            double IF = wNPG / wCurrentFtp;
+            wTssValues.add(getTss(activity.getElapsedTime(), 0, wNPG, IF, wCurrentFtp));
+        }
+        double wAtl = getAtl(wTssValues);
+        double wCtl = getCtl(wTssValues);
+        wAthletesFeatures.setATL(wAtl);
+        wAthletesFeatures.setCTL(wCtl);
+        wAthletesFeatures.setTSB(wCtl - wAtl);
+        return wAthletesFeatures;
+    }
+
+    private double getFtp(SummaryActivity activity, double wSwimFtp, double wBikeFtp, double wRunFtp) {
+        switch (activity.getType()) {
+            case SWIM:
+                return wSwimFtp;
+            case RIDE:
+                return wBikeFtp;
+            case RUN:
+                return wRunFtp;
+            default:
+                return wRunFtp;
+        }
     }
 }

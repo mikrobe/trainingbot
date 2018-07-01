@@ -89,7 +89,12 @@ public class TrainingBotService implements TrainingBotServiceIf {
             List<SummaryActivity> wActivities = stravaService.getAthleteActivities(wAthleteFTP, 45);
             //create machine learning features based on raw data
 
-            List<AthletesFeatures> wAthletesFeatures = wFeatureExtractor.extract(wActivities);
+            AthletesFeatures wAthletesFeatures =
+                    wFeatureExtractor.extract(
+                            wActivities,
+                            wAthleteFTP.getSwimFtp(),
+                            wAthleteFTP.getBikeFtp(),
+                            wAthleteFTP.getRunFtp());
             MLClasses wMlClasses = mlService.classify(wAthleteFTP, wAthletesFeatures);
             wAthleteFTP.setClassification(wMlClasses);
             athleteRepositoryService.updateAthleteFTP(wAthleteFTP);

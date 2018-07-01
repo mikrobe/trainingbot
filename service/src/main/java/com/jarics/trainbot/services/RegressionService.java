@@ -14,7 +14,6 @@ import org.springframework.stereotype.Component;
 import scala.Tuple2;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Component
@@ -26,7 +25,7 @@ public class RegressionService implements MLServiceIf {
     }
 
     @Override
-    public MLClasses classify(AthleteFTP pAthleteFTP, List<AthletesFeatures> pAthletesFeatures) {
+    public MLClasses classify(AthleteFTP pAthleteFTP, AthletesFeatures pAthletesFeatures) {
         System.setProperty("hadoop.home.dir", "/");
         SparkConf sparkConf = new SparkConf().setAppName("RegressionService");
         JavaSparkContext jsc = new JavaSparkContext(sparkConf);
