@@ -12,7 +12,7 @@ public class AthleteFTP {
     private int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
     @Id
     private long id;
-    private MLClasses classification;
+    private MLClasses classification = MLClasses.normal;
     private String username;
 
     public double getBikeFtp() {

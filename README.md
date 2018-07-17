@@ -80,7 +80,7 @@ The athlete follows the prescribed workout. The bot will adapt the workout plan 
 learning (ml) algorithm to detect over/under training. The ml is using examples of
 over/under/normal training sessions. More in this in the ML section.  
 
-#### Short Workouts
+#### Intensity (aka Short) Workouts
 In the short one, time spent on the sweet spot [5] follows the following rule:
 
 Starting point is (this must be weighted using athlete's level):
@@ -158,11 +158,11 @@ Then increase time at sweet spot is following a four weeks pattern:
 The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine learning (ml) algorithm to predict over/under/normal training. The ml is using a training set of over/under/normal training sessions.
 What ML will give us is:
 * How do I predict if an athlete will be over-trained/under-trained so we can adjust his training plan accordingly and notifies him?
-* How training bot learns to distinguish between an over-trained/under-trained/normal athlete?
+* How training bot learn to distinguish between an over-trained/under-trained/normal athlete?
 
-For supervised hypothesis, training set are carefully created by a specialized data scientist who knows the best metrics to use. Metrics are based in raw strava data that you can find in the above section and listed below. 
+For supervised hypothesis, training set are carefully created by a specialized data scientist who knows the best metrics to use. Metrics (or features) are based in raw strava data that you can find in the above section and listed below. 
 Here are the attributes ml will use to train:
-### Single Workout Metrics:
+### Single Athlete Features:
 * TSS
 * TSB
 * CTL
@@ -172,6 +172,30 @@ Here are the attributes ml will use to train:
 * Sleep
 * Happiness
 * Stress
+
+### Building Training Data Set
+To create realistic features data sets, we need to understand the possible values each feature can take and how they
+influence the classes (normal, undertrained, overtrained). 
+The best would be to have access to existing athletes data sets. But for the sake of this project, we will craft our
+own data set. 
+The way we will achieve this is pretty simple. We are already creating training plan that meant
+to be save and sound with phases for intensity and distance. If an athletes follows the plan, we
+expect ATL, CTL and TSB to be in normal ranges and athlete will never under/over train. 
+To create under/over trained athletes we will simple create variations to create plans that will 
+mock training sessions leading to over/under training. We expect ATL, CTL and TSB values to go along 
+with these variation.
+
+#### Intensity Variations
+Based on rules for intensity workouts for "normal athlete sessions". 
+We will create random ranges for each classes:
+Normal
+Then increase time at sweet spot is following a four weeks pattern:
+* week1: 0.7  undertrained(0.0, 0.49) normal(0.5, 0.75) , overtrained(0.76, 1) 
+* week2: 0.1  undertrained(0.0, 0.01) normal(0.02, 0.15) , overtrained(0.16, 0.2)
+* week3: 0.1  undertrained(0.0, 0.01) normal(0.02, 0.15) , overtrained(0.16, 0.2) 
+* week4: -0.41 (end of micro-cycle) undertrained(-0.60, -0.51) normal(-0.50, -0.45), overtrained(-0.44, 1)  
+* week5: 0.7 (start new micro-cycle) undertrained(0.0, 0.49) normal(0.5, 0.75) , overtrained(0.76, 1) 
+
 ### Algorithm
 #### Hypothesis A - Predictive Analytics [8]
 Using features described above (TSS, TSB, CTL, ATL, ect..) we will use Spark ML Dataframe API to predict if an athlete is overtraining or not.
@@ -265,3 +289,5 @@ $ java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHO
 8. https://dzone.com/articles/predictive-analytics-with-spark-ml, by David Moyers  ·  Sep. 19, 17 · AI Zone · Tutorial
 9. Joe Friel - Part 3- Training Stress Balance—So What?, Joe Friel 07/12/2015
 10. Suggested Weekly TSS And Target CTL, 
+11. https://blog.trainerroad.com/why-tss-atl-ctl-and-tsb-matter/, August 16, 2016  |  Chelsea Hejny
+

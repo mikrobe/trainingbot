@@ -6,6 +6,11 @@ import io.swagger.client.model.SummaryActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The features we extract from raw data are the following:
+ * CTL: normal (), overtrained(), undertrained()
+ * TSS, ATL, CTL and TSB
+ */
 public class FeatureExtractor {
     List<SummaryActivity> activities;
 

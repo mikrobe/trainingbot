@@ -9,6 +9,10 @@ public class AthletesFeatures {
     double NP;
     double NGP;
 
+    public static String toHeaderString() {
+        return "TSB, CTL, ATL, TSS, s, NP, NGP\r\n";
+    }
+
     public AthletesFeatures() {
     }
 
@@ -66,5 +70,9 @@ public class AthletesFeatures {
 
     public void setNGP(double NGP) {
         this.NGP = NGP;
+    }
+
+    public String toCsvString() {
+        return TSB + ", " + CTL + ", " + ATL + ", " + TSS + ", " + s + ", " + NP + ", " + "NGP\r\n";
     }
 }

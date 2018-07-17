@@ -74,16 +74,55 @@ public class TrainingBotService implements TrainingBotServiceIf {
 
     @Override
     public List<SimpleSession> getSession(String pUsername) {
-        int nbrWeeks = 20;
-        double timeAtFtp = 15;
         AthleteFTP wAthleteFTP = null;
-        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
-
         //persistence
         wAthleteFTP = athleteRepositoryService.findAthleteFtpByUsername(pUsername);
-
-
         //use classificatio to adapt sessions (Get Athletes Sessions #12)
+        return getSession(wAthleteFTP);
+    }
+
+    public List<SimpleSession> getSession(AthleteFTP wAthleteFTP) {
+        int nbrWeeks = 20;
+        double timeAtFtp = 15;
+
+        double runDistance = runDistanceStart[wAthleteFTP.getTarget()];
+        double bikeDistance = bikeDistanceStart[wAthleteFTP.getTarget()];
+        double swimDistance = swimDistanceStart[wAthleteFTP.getTarget()];
+        double boost = 1;
+
+        List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
+
+        for (int i = 1; i < nbrWeeks + 1; i++) {
+
+            timeAtFtp = timeAtFtp + (getShortIncreaseTable(i % 4) * timeAtFtp);
+            runDistance = runDistance + (getLongIncreaseTable(i % 4) * runDistance);
+            bikeDistance = bikeDistance + (getLongIncreaseTable(i % 4) * bikeDistance);
+            swimDistance = swimDistance + (getLongIncreaseTable(i % 4) * swimDistance);
+            SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
+            wSimpleSession.setSwimFtp(wAthleteFTP.getSwimFtp());
+            wSimpleSession.setRunFtp(wAthleteFTP.getRunFtp());
+            wSimpleSession.setBikeFtp(wAthleteFTP.getBikeFtp());
+            wSimpleSession.setClassification(wAthleteFTP.getClassification().name());
+            wSimpleSession.setRunDistance(runDistance);
+            wSimpleSession.setBikeDistance(bikeDistance);
+            wSimpleSession.setSwimDistance(swimDistance);
+            wSimpleSession.setBikeLZone(bikingSweetSpots[0] * wAthleteFTP.getBikeFtp());
+            wSimpleSession.setBikeHZone(bikingSweetSpots[1] * wAthleteFTP.getBikeFtp());
+            wSimpleSession.setRunLZone(runningSweetSpots[0] * wAthleteFTP.getRunFtp());
+            wSimpleSession.setRunHZone(runningSweetSpots[1] * wAthleteFTP.getRunFtp());
+            wSimpleSession.setSwimLZone(swimSweetSpots[0] * wAthleteFTP.getSwimFtp());
+            wSimpleSession.setSwimHZone(swimSweetSpots[1] * wAthleteFTP.getSwimFtp());
+            wSimpleSessions.add(wSimpleSession);
+        }
+        return wSimpleSessions;
+    }
+
+    private double getShortIncreaseTable(int i) {
+        return shortIncreaseTable[i];
+    }
+
+    private void classify(AthleteFTP wAthleteFTP) {
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
         try {
             //get raw data
             List<SummaryActivity> wActivities = stravaService.getAthleteActivities(wAthleteFTP, 45);
@@ -101,39 +140,12 @@ public class TrainingBotService implements TrainingBotServiceIf {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        double runDistance = runDistanceStart[wAthleteFTP.getTarget()];
-        double bikeDistance = bikeDistanceStart[wAthleteFTP.getTarget()];
-        double swimDistance = swimDistanceStart[wAthleteFTP.getTarget()];
-        double boost = 1;
-
-        List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
-
-        for (int i = 1; i < nbrWeeks + 1; i++) {
-
-            timeAtFtp = timeAtFtp + (shortIncreaseTable[i % 4] * timeAtFtp);
-            runDistance = runDistance + (longIncreaseTable[i % 4] * runDistance);
-            bikeDistance = bikeDistance + (longIncreaseTable[i % 4] * bikeDistance);
-            swimDistance = swimDistance + (longIncreaseTable[i % 4] * swimDistance);
-            SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
-            wSimpleSession.setSwimFtp(wAthleteFTP.getSwimFtp());
-            wSimpleSession.setRunFtp(wAthleteFTP.getRunFtp());
-            wSimpleSession.setBikeFtp(wAthleteFTP.getBikeFtp());
-            wSimpleSession.setClassification(wAthleteFTP.getClassification().name());
-            wSimpleSession.setRunDistance(runDistance);
-            wSimpleSession.setBikeDistance(bikeDistance);
-            wSimpleSession.setSwimDistance(swimDistance);
-            wSimpleSession.setBikeLZone(bikingSweetSpots[0] * wAthleteFTP.getBikeFtp());
-            wSimpleSession.setBikeHZone(bikingSweetSpots[1] * wAthleteFTP.getBikeFtp());
-            wSimpleSession.setRunLZone(runningSweetSpots[0] * wAthleteFTP.getRunFtp());
-            wSimpleSession.setRunHZone(runningSweetSpots[1] * wAthleteFTP.getRunFtp());
-            wSimpleSession.setSwimLZone(swimSweetSpots[0] * wAthleteFTP.getSwimFtp());
-            wSimpleSession.setSwimHZone(swimSweetSpots[1] * wAthleteFTP.getSwimFtp());
-            wSimpleSessions.add(wSimpleSession);
-        }
-
-        return wSimpleSessions;
     }
+
+    private double getLongIncreaseTable(int i) {
+        return longIncreaseTable[i];
+    }
+
 
 
 }

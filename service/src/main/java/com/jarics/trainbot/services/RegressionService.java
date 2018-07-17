@@ -17,13 +17,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
+/**
+ * This classifier will return MLClass based on regression.
+ */
 public class RegressionService implements MLServiceIf {
-
-    public static void main(String[] args) {
-        RegressionService regressionService = new RegressionService();
-        regressionService.classify(new AthleteFTP(), null);
-    }
-
     @Override
     public MLClasses classify(AthleteFTP pAthleteFTP, AthletesFeatures pAthletesFeatures) {
         System.setProperty("hadoop.home.dir", "/");
