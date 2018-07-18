@@ -5,7 +5,9 @@ import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.entities.SimpleSession;
 import io.swagger.client.model.ActivityType;
 import io.swagger.client.model.SummaryActivity;
+import org.apache.commons.io.FileDeleteStrategy;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -16,29 +18,66 @@ import java.util.Random;
 import java.util.UUID;
 
 public class GenerateTrainingDataset {
+    static String wGenDir = "trainingDataSets/";
+    static String wGenRawDir = "trainingRawData/";
     public static void main(String[] args) throws IOException {
         //use java 8 lambda function
-        NormalTrainingGenerator wNormalTrainingGenerator = new NormalTrainingGenerator();
+        TrainingBotService wNormalTrainingGenerator = new TrainingBotService();
         OverTrainingGenerator wOverTrainingGenerator = new OverTrainingGenerator();
         UndertrainingGenerator wUndertrainingGenerator = new UndertrainingGenerator();
-        Files.write(Paths.get("trainingset_normal.csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-        Files.write(Paths.get("trainingset_over.csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
-        Files.write(Paths.get("trainingset_under.csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.TRUNCATE_EXISTING);
+        prepareDir(wGenDir);
+        prepareDir(wGenRawDir);
+        //features headers
+        Files.write(Paths.get(wGenDir + MLClasses.normal + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
+        Files.write(Paths.get(wGenDir + MLClasses.undertrained + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
+        Files.write(Paths.get(wGenDir + MLClasses.overtrained + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
+
         for (int i = 0; i < 100; i++) {
             AthleteFTP wNormalAthleteFTP = generateAthlete();
+            wNormalAthleteFTP.setClassification(MLClasses.normal);
             AthleteFTP wUnderAthleteFTP = generateAthlete();
+            wUnderAthleteFTP.setClassification(MLClasses.undertrained);
             AthleteFTP wOverAthleteFTP = generateAthlete();
+            wOverAthleteFTP.setClassification(MLClasses.overtrained);
+
             List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSession(wNormalAthleteFTP);
-            write("normal", wSimpleSessions, wNormalAthleteFTP);
+            write(wNormalAthleteFTP, wSimpleSessions);
+            write(wSimpleSessions, wNormalAthleteFTP);
+
             wSimpleSessions = wOverTrainingGenerator.getSession(wOverAthleteFTP);
-            write("over", wSimpleSessions, wOverAthleteFTP);
+            write(wOverAthleteFTP, wSimpleSessions);
+            write(wSimpleSessions, wOverAthleteFTP);
+
             wSimpleSessions = wUndertrainingGenerator.getSession(wUnderAthleteFTP);
-            write("under", wSimpleSessions, wUnderAthleteFTP);
+            write(wUnderAthleteFTP, wSimpleSessions);
+            write(wSimpleSessions, wUnderAthleteFTP);
         }
 
     }
 
-    private static void write(String pClass, List<SimpleSession> wSimpleSessions, AthleteFTP pAthleteFTP) {
+    static private void prepareDir(String wDir) throws IOException {
+        if (!Files.exists(Paths.get(wDir))) {
+            Files.createDirectory(Paths.get(wDir));
+        } else {
+            File fin = Paths.get(wDir).toFile();
+            for (File file : fin.listFiles()) {
+                FileDeleteStrategy.FORCE.delete(file);
+            }
+        }
+    }
+
+    private static void write(AthleteFTP wNormalAthleteFTP, List<SimpleSession> wSimpleSessions) {
+        try {
+            Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), SimpleSession.toHeaderString().getBytes());
+            for (SimpleSession wSimpleSession : wSimpleSessions) {
+                Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), wSimpleSession.toCsvString().getBytes(), StandardOpenOption.APPEND);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void write(List<SimpleSession> wSimpleSessions, AthleteFTP pAthleteFTP) {
         FeatureExtractor wFeatureExtractor = new FeatureExtractor();
         AthletesFeatures wAthletesFeatures =
                 wFeatureExtractor.extract(
@@ -46,8 +85,9 @@ public class GenerateTrainingDataset {
                         pAthleteFTP.getSwimFtp(),
                         pAthleteFTP.getBikeFtp(),
                         pAthleteFTP.getRunFtp());
+        wAthletesFeatures.setAthlete(pAthleteFTP.getUsername());
         try {
-            Files.write(Paths.get("trainingset_" + pClass + ".csv"), wAthletesFeatures.toCsvString().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(wGenDir + pAthleteFTP.getClassification() + ".csv"), wAthletesFeatures.toCsvString().getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }

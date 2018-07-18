@@ -1,5 +1,6 @@
 package com.jarics.trainbot.entities;
 
+
 public class AthletesFeatures {
     double TSB;
     double CTL;
@@ -8,9 +9,10 @@ public class AthletesFeatures {
     double s;
     double NP;
     double NGP;
+    String Athlete;
 
     public static String toHeaderString() {
-        return "TSB, CTL, ATL, TSS, s, NP, NGP\r\n";
+        return "ATHLETE, TSB, CTL, ATL, TSS, s, NP, NGP\r\n";
     }
 
     public AthletesFeatures() {
@@ -72,7 +74,15 @@ public class AthletesFeatures {
         this.NGP = NGP;
     }
 
+    public String getAthlete() {
+        return Athlete;
+    }
+
+    public void setAthlete(String athlete) {
+        Athlete = athlete;
+    }
+
     public String toCsvString() {
-        return TSB + ", " + CTL + ", " + ATL + ", " + TSS + ", " + s + ", " + NP + ", " + "NGP\r\n";
+        return Athlete + ", " + TSB + ", " + CTL + ", " + ATL + ", " + TSS + ", " + s + ", " + NP + ", " + NGP + "\r\n";
     }
 }

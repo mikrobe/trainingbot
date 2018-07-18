@@ -9,11 +9,11 @@ import java.util.Random;
 public class UndertrainingGenerator extends TrainingBotService {
     double range = 0.10;
 
-    private double getShortIncreaseTable(int i) {
+    protected double getShortIncreaseTable(int i) {
         return gen(i, shortIncreaseTable);
     }
 
-    private double getLongIncreaseTable(int i) {
+    protected double getLongIncreaseTable(int i) {
         return gen(i, longIncreaseTable);
     }
 

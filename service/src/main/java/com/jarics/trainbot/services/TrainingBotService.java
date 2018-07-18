@@ -99,6 +99,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
             bikeDistance = bikeDistance + (getLongIncreaseTable(i % 4) * bikeDistance);
             swimDistance = swimDistance + (getLongIncreaseTable(i % 4) * swimDistance);
             SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
+            wSimpleSession.setAthletesId(wAthleteFTP.getUsername());
             wSimpleSession.setSwimFtp(wAthleteFTP.getSwimFtp());
             wSimpleSession.setRunFtp(wAthleteFTP.getRunFtp());
             wSimpleSession.setBikeFtp(wAthleteFTP.getBikeFtp());
@@ -117,7 +118,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
         return wSimpleSessions;
     }
 
-    private double getShortIncreaseTable(int i) {
+    protected double getShortIncreaseTable(int i) {
         return shortIncreaseTable[i];
     }
 
@@ -142,7 +143,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
         }
     }
 
-    private double getLongIncreaseTable(int i) {
+    protected double getLongIncreaseTable(int i) {
         return longIncreaseTable[i];
     }
 
