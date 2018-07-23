@@ -1,10 +1,6 @@
 package com.jarics.trainbot.services;
 
-import com.jarics.trainbot.entities.AthleteFTP;
-import com.jarics.trainbot.entities.AthletesFeatures;
-import com.jarics.trainbot.entities.Session;
-import com.jarics.trainbot.entities.SimpleSession;
-import io.swagger.client.model.SummaryActivity;
+import com.jarics.trainbot.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -126,7 +122,7 @@ public class TrainingBotService implements TrainingBotServiceIf {
         FeatureExtractor wFeatureExtractor = new FeatureExtractor();
         try {
             //get raw data
-            List<SummaryActivity> wActivities = stravaService.getAthleteActivities(wAthleteFTP, 45);
+            List<AthleteActivity> wActivities = stravaService.getAthleteActivities(wAthleteFTP, 45);
             //create machine learning features based on raw data
 
             AthletesFeatures wAthletesFeatures =

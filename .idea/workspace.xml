@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/BotActivityType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Effort.uml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/OverTrainingGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/OverTrainingGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/UndertrainingGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/UndertrainingGenerator.java" afterDir="false" />
     </list>
@@ -22,15 +22,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/trainingbot$StravaServiceTests_testGetSession.ic" NAME="StravaServiceTests.testGetSession Coverage Results" MODIFIED="1532376696291" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.jarics.trainbot.*</FILTER>
+    </SUITE>
     <SUITE FILE_PATH="coverage/trainingbot$.ic" NAME=" Coverage Results" MODIFIED="1525902540885" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="GenerateTrainingDataset.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java">
+      <file leaf-file-name="StravaServiceTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+            <state relative-caret-position="299">
+              <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -38,25 +41,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NormalTrainingGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java">
+      <file leaf-file-name="StravaService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            <state relative-caret-position="189">
+              <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrainingBotService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java">
+      <file leaf-file-name="SummaryActivity.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/SummaryActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+            <state relative-caret-position="203">
+              <caret line="343" column="21" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="21" />
               <folding>
-                <element signature="e#1578#1579#0" expanded="true" />
-                <element signature="e#1609#1610#0" expanded="true" />
-                <element signature="e#2638#2639#0" expanded="true" />
-                <element signature="e#2697#2698#0" expanded="true" />
+                <element signature="e#7904#7905#0" expanded="true" />
+                <element signature="e#7925#7926#0" expanded="true" />
+                <element signature="e#15372#15373#0" expanded="true" />
+                <element signature="e#15400#15401#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ReflectiveCallable.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DetailedActivity.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/DetailedActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="212">
+              <caret line="861" selection-start-line="861" selection-end-line="861" />
+              <folding>
+                <element signature="e#20001#20002#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,8 +94,8 @@
         <option value="UML Class" />
         <option value="Arquillian JUnit Test Class" />
         <option value="Interface" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -82,9 +106,11 @@
       <find>Simu</find>
       <find>indexers</find>
       <find>wat</find>
-      <find>power</find>
       <find>average_watts</find>
       <find>sprint</find>
+      <find>power</find>
+      <find>zone</find>
+      <find>weighted_average_watts</find>
     </findStrings>
     <dirStrings>
       <dir>$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0.jar!/io/swagger/client/model</dir>
@@ -96,10 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pyramid.json" />
-        <option value="$PROJECT_DIR$/src/cardioblaster.json" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/CardioBlaster.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/CardioBlaster.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/HelloController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/AppConfig.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/TrainingBot.java" />
@@ -132,21 +154,25 @@
         <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/test_data/athletet.arff" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/MLServiceIf.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/RegressionService.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GeneratTrainingDataset.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteFTP.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/UndertrainingGenerator.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/OverTrainingGenerator.java" />
         <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/UndertrainingGenerator.java" />
+        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/StravaActivity.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/BotActivityType.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
       </list>
     </option>
   </component>
@@ -195,10 +221,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="307" />
-    <option name="y" value="42" />
-    <option name="width" value="1072" />
-    <option name="height" value="982" />
+    <option name="width" value="1680" />
+    <option name="height" value="1050" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -207,6 +231,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -285,14 +310,6 @@
               <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -315,12 +332,8 @@
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
               <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
-              <item name="trainingDataSets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
-              <item name="trainingRawData" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
@@ -418,6 +431,14 @@
               <item name="Maven: io.swagger:swagger-java-client:1.0.0" type="70bed36:NamedLibraryElementNode" />
               <item name="swagger-java-client-1.0.0.jar" type="462c0819:PsiDirectoryNode" />
               <item name="client" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: io.swagger:swagger-java-client:1.0.0" type="70bed36:NamedLibraryElementNode" />
+              <item name="swagger-java-client-1.0.0.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
@@ -652,12 +673,29 @@
               <item name="method" type="462c0819:PsiDirectoryNode" />
               <item name="annotation" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.threeten:threetenbp:1.3.5" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.threeten:threetenbp:1.3.5" type="70bed36:NamedLibraryElementNode" />
+              <item name="threetenbp-1.3.5.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.threeten:threetenbp:1.3.5" type="70bed36:NamedLibraryElementNode" />
+              <item name="threetenbp-1.3.5.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="bp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -681,6 +719,10 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/ui/trainbot/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jarics.trainbot.entities" />
+      <recent name="com.jarics.trainbot.services" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.jarics.trainbot.services" />
     </key>
@@ -690,12 +732,8 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test_data" />
-      <recent name="$PROJECT_DIR$/ui/libs" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/ui/trainbot/src/components" />
-      <recent name="$PROJECT_DIR$/service/src/main/resources" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.jarics.trainbot.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot" />
@@ -703,12 +741,12 @@
       <recent name="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.jarics.trainbot.services" />
-    </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jarics.trainbot.entities" />
-      <recent name="com.jarics.trainbot.services" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/test_data" />
+      <recent name="$PROJECT_DIR$/ui/libs" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ui/trainbot/src/components" />
+      <recent name="$PROJECT_DIR$/service/src/main/resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -729,7 +767,7 @@
     </option>
     <option name="contentProportion" value="0.13814561" />
   </component>
-  <component name="RunManager" selected="Application.GenerateTrainingDataset">
+  <component name="RunManager" selected="JUnit.StravaServiceTests.testGetSession">
     <configuration name="GenerateTrainingDataset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.services.GenerateTrainingDataset" />
       <module name="service" />
@@ -739,29 +777,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-    </configuration>
-    <configuration name="StampControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.jarics.trainbot" />
-      <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.StampControllerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
     </configuration>
     <configuration name="StampControllerTest.testGetPlan" type="JUnit" factoryName="JUnit" nameIsGenerated="true">
       <module name="service" />
@@ -786,7 +801,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="StampControllerTest.testGetSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StravaServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -797,7 +812,30 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="com.jarics.trainbot" />
-      <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.StampControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.StravaServiceTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="StravaServiceTests.testGetSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.jarics.trainbot" />
+      <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.StravaServiceTests" />
       <option name="METHOD_NAME" value="testGetSession" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" />
@@ -881,19 +919,19 @@
     <list>
       <item itemvalue="JUnit.StampControllerTest.testGetPlan" />
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="JUnit.StampControllerTest.testGetSession" />
-      <item itemvalue="JUnit.StampControllerTest" />
       <item itemvalue="Maven.service [test]" />
       <item itemvalue="Maven.service [surefire:test]" />
       <item itemvalue="Application.GenerateTrainingDataset" />
+      <item itemvalue="JUnit.StravaServiceTests" />
+      <item itemvalue="JUnit.StravaServiceTests.testGetSession" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StravaServiceTests.testGetSession" />
         <item itemvalue="Application.GenerateTrainingDataset" />
+        <item itemvalue="JUnit.StravaServiceTests" />
         <item itemvalue="Maven.service [surefire:test]" />
         <item itemvalue="Maven.service [test]" />
-        <item itemvalue="JUnit.StampControllerTest" />
-        <item itemvalue="JUnit.StampControllerTest.testGetSession" />
       </list>
     </recent_temporary>
   </component>
@@ -942,7 +980,9 @@
       <workItem from="1530452297684" duration="13808000" />
       <workItem from="1531793760523" duration="576000" />
       <workItem from="1531796478689" duration="60000" />
-      <workItem from="1531851044914" duration="12804000" />
+      <workItem from="1531851044914" duration="13044000" />
+      <workItem from="1532011499171" duration="2667000" />
+      <workItem from="1532110383331" duration="8734000" />
     </task>
     <task id="LOCAL-00001" summary="Adding gradient descent">
       <created>1524526828855</created>
@@ -1273,43 +1313,50 @@
       <option name="project" value="LOCAL" />
       <updated>1531859464895</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="ML training on strava activies as examples #11&#10;Now generating training data sets for normal, over and under trained">
+      <created>1531886031612</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1531886031612</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="StampControllerTest_testGetPlan - 2018.07.01 at 09h 20m 38s.xml">
-      <configuration name="StampControllerTest.testGetPlan" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests - 2018.07.23 at 09h 30m 53s.xml">
+      <configuration name="StravaServiceTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetPlan - 2018.07.01 at 09h 21m 46s.xml">
-      <configuration name="StampControllerTest.testGetPlan" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests - 2018.07.23 at 09h 31m 48s.xml">
+      <configuration name="StravaServiceTests" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetSession - 2018.07.01 at 09h 23m 12s.xml">
-      <configuration name="StampControllerTest.testGetSession" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 09h 55m 37s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetSession - 2018.07.01 at 09h 23m 14s.xml">
-      <configuration name="StampControllerTest.testGetSession" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 09h 56m 22s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetSession - 2018.07.01 at 09h 23m 33s.xml">
-      <configuration name="StampControllerTest.testGetSession" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 09h 56m 45s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetPlan - 2018.07.01 at 09h 25m 12s.xml">
-      <configuration name="StampControllerTest.testGetPlan" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 09h 58m 56s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest - 2018.07.01 at 09h 27m 23s.xml">
-      <configuration name="StampControllerTest" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 14h 47m 12s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetPlan - 2018.07.01 at 09h 27m 37s.xml">
-      <configuration name="StampControllerTest.testGetPlan" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 16h 11m 38s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetPlan - 2018.07.01 at 09h 29m 13s.xml">
-      <configuration name="StampControllerTest.testGetPlan" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 16h 11m 58s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="StampControllerTest_testGetPlan - 2018.07.01 at 09h 39m 05s.xml">
-      <configuration name="StampControllerTest.testGetPlan" configurationId="JUnit" />
+    <history-entry file="StravaServiceTests_testGetSession - 2018.07.23 at 16h 15m 44s.xml">
+      <configuration name="StravaServiceTests.testGetSession" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218771000" />
+    <option name="totallyTimeSpent" value="230412000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1327,16 +1374,16 @@
       <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4969697" weight="0.525641" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50343055" side_tool="true" weight="0.3265097" />
-      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.49367088" visible="true" weight="0.13736264" />
+      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.49093655" weight="0.13736264" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="SBT Execute" order="21" side_tool="true" />
-      <window_info anchor="right" id="Structure" order="12" sideWeight="0.5063291" side_tool="true" visible="true" weight="0.13736264" />
+      <window_info anchor="right" id="Structure" order="12" sideWeight="0.5063291" side_tool="true" weight="0.22527473" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24969475" />
       <window_info id="UI Designer" order="3" />
-      <window_info anchor="bottom" id="Debug" order="5" weight="0.32241556" />
+      <window_info active="true" anchor="bottom" id="Debug" order="5" visible="true" weight="0.32241556" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.47594678" />
       <window_info anchor="bottom" id="SBT Console" order="16" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32753327" />
@@ -1345,18 +1392,18 @@
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Run Dashboard" order="0" weight="0.26100308" />
-      <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.49656945" visible="true" weight="0.3531218" />
+      <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.49656945" weight="0.3531218" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.25588536" />
+      <window_info anchor="right" id="Coverage" order="0" sideWeight="0.5060423" side_tool="true" weight="0.22527473" />
       <window_info anchor="bottom" id="Sequence" order="1" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.24155578" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.33455434" />
-      <window_info anchor="right" id="Bean Validation" order="9" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.1923077" />
+      <window_info anchor="right" id="Bean Validation" order="9" sideWeight="0.4939577" visible="true" weight="0.22527473" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.3265097" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
-      <window_info anchor="right" id="Coverage" order="0" sideWeight="0.63339734" side_tool="true" visible="true" weight="0.15069222" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Usages" order="18" />
@@ -1408,7 +1455,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Added json sessions" />
     <MESSAGE value="Springify" />
     <MESSAGE value="Springfy with test." />
     <MESSAGE value="postman collection" />
@@ -1433,7 +1479,8 @@
     <MESSAGE value="ML training on strava activies as examples #11 and fix test with unique athletes" />
     <MESSAGE value="ML training on strava activies as examples #11 and added class FeatureExtractor." />
     <MESSAGE value="ML training on strava activies as examples #11&#10;Now generating training data sets." />
-    <option name="LAST_COMMIT_MESSAGE" value="ML training on strava activies as examples #11&#10;Now generating training data sets." />
+    <MESSAGE value="ML training on strava activies as examples #11&#10;Now generating training data sets for normal, over and under trained" />
+    <option name="LAST_COMMIT_MESSAGE" value="ML training on strava activies as examples #11&#10;Now generating training data sets for normal, over and under trained" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1441,16 +1488,16 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java</url>
-          <line>99</line>
+          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java</url>
+          <line>37</line>
           <properties />
-          <option name="timeStamp" value="88" />
+          <option name="timeStamp" value="105" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java</url>
-          <line>35</line>
+          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java</url>
+          <line>46</line>
           <properties />
-          <option name="timeStamp" value="95" />
+          <option name="timeStamp" value="107" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1460,7 +1507,7 @@
           </selected-grouping-rules>
         </breakpoints-dialog>
       </breakpoints-dialog>
-      <option name="time" value="98" />
+      <option name="time" value="108" />
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
@@ -1490,29 +1537,207 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/lib/rt.jar!/sun/nio/fs/UnixException.class">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="1909">
+          <caret line="96" column="21" selection-start-line="96" selection-start-column="21" selection-end-line="96" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/3cef6109-fb98-4eff-96ee-34c5b4abdb15_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/0d35b78a-632f-4a87-9ea8-948881714bda_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ffccb383-c0bc-4ec1-8b39-e38f47184de9_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingset_under.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/UndertrainingGenerator.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/SummaryAthlete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/ActivityZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1794">
+          <caret line="88" column="32" lean-forward="true" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/threeten/threetenbp/1.3.5/threetenbp-1.3.5.jar!/org/threeten/bp/OffsetDateTime.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1817">
+          <caret line="110" column="12" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="736">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding>
+            <element signature="e#1578#1579#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#2638#2639#0" expanded="true" />
+            <element signature="e#2697#2698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="989">
+          <caret line="55" column="75" lean-forward="true" selection-start-line="55" selection-start-column="75" selection-end-line="55" selection-end-column="75" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/api/ActivitiesApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18676">
+          <caret line="857" column="33" selection-start-line="857" selection-start-column="33" selection-end-line="857" selection-end-column="33" />
+          <folding>
+            <element signature="e#3219#3225#0" expanded="true" />
+            <element signature="e#3293#3299#0" expanded="true" />
+            <element signature="e#3366#3382#0" expanded="true" />
+            <element signature="e#3447#3463#0" expanded="true" />
+            <element signature="e#4923#5430#0" expanded="true" />
+            <element signature="e#5429#5430#0" expanded="true" />
+            <element signature="e#5739#5768#0" expanded="true" />
+            <element signature="e#12384#12655#0" expanded="true" />
+            <element signature="e#12654#12655#0" expanded="true" />
+            <element signature="e#12696#12988#0" expanded="true" />
+            <element signature="e#12987#12988#0" expanded="true" />
+            <element signature="e#14326#14332#0" expanded="true" />
+            <element signature="e#14400#14406#0" expanded="true" />
+            <element signature="e#14617#14633#0" expanded="true" />
+            <element signature="e#14698#14714#0" expanded="true" />
+            <element signature="e#15325#15832#0" expanded="true" />
+            <element signature="e#15831#15832#0" expanded="true" />
+            <element signature="e#16140#16169#0" expanded="true" />
+            <element signature="e#19098#19369#0" expanded="true" />
+            <element signature="e#19368#19369#0" expanded="true" />
+            <element signature="e#19410#19702#0" expanded="true" />
+            <element signature="e#19701#19702#0" expanded="true" />
+            <element signature="e#21048#21054#0" expanded="true" />
+            <element signature="e#21122#21128#0" expanded="true" />
+            <element signature="e#21411#21427#0" expanded="true" />
+            <element signature="e#21492#21508#0" expanded="true" />
+            <element signature="e#22119#22626#0" expanded="true" />
+            <element signature="e#22625#22626#0" expanded="true" />
+            <element signature="e#22934#22963#0" expanded="true" />
+            <element signature="e#26071#26342#0" expanded="true" />
+            <element signature="e#26341#26342#0" expanded="true" />
+            <element signature="e#26383#26675#0" expanded="true" />
+            <element signature="e#26674#26675#0" expanded="true" />
+            <element signature="e#28020#28026#0" expanded="true" />
+            <element signature="e#28094#28100#0" expanded="true" />
+            <element signature="e#28383#28399#0" expanded="true" />
+            <element signature="e#28464#28480#0" expanded="true" />
+            <element signature="e#29091#29598#0" expanded="true" />
+            <element signature="e#29597#29598#0" expanded="true" />
+            <element signature="e#29906#29935#0" expanded="true" />
+            <element signature="e#33180#33451#0" expanded="true" />
+            <element signature="e#33450#33451#0" expanded="true" />
+            <element signature="e#33492#33784#0" expanded="true" />
+            <element signature="e#33783#33784#0" expanded="true" />
+            <element signature="e#34961#34967#0" expanded="true" />
+            <element signature="e#35035#35041#0" expanded="true" />
+            <element signature="e#35108#35124#0" expanded="true" />
+            <element signature="e#35189#35205#0" expanded="true" />
+            <element signature="e#35816#36323#0" expanded="true" />
+            <element signature="e#36322#36323#0" expanded="true" />
+            <element signature="e#36631#36660#0" expanded="true" />
+            <element signature="e#39179#39450#0" expanded="true" />
+            <element signature="e#39449#39450#0" expanded="true" />
+            <element signature="e#39491#39783#0" expanded="true" />
+            <element signature="e#39782#39783#0" expanded="true" />
+            <element signature="e#41242#41248#0" expanded="true" />
+            <element signature="e#41316#41322#0" expanded="true" />
+            <element signature="e#41820#41836#0" expanded="true" />
+            <element signature="e#41901#41917#0" expanded="true" />
+            <element signature="e#42528#43035#0" expanded="true" />
+            <element signature="e#43034#43035#0" expanded="true" />
+            <element signature="e#43343#43372#0" expanded="true" />
+            <element signature="e#47122#47393#0" expanded="true" />
+            <element signature="e#47392#47393#0" expanded="true" />
+            <element signature="e#47434#47726#0" expanded="true" />
+            <element signature="e#47725#47726#0" expanded="true" />
+            <element signature="e#48927#48933#0" expanded="true" />
+            <element signature="e#49001#49007#0" expanded="true" />
+            <element signature="e#49074#49090#0" expanded="true" />
+            <element signature="e#49155#49171#0" expanded="true" />
+            <element signature="e#49782#50289#0" expanded="true" />
+            <element signature="e#50288#50289#0" expanded="true" />
+            <element signature="e#50597#50626#0" expanded="true" />
+            <element signature="e#53213#53484#0" expanded="true" />
+            <element signature="e#53483#53484#0" expanded="true" />
+            <element signature="e#53525#53817#0" expanded="true" />
+            <element signature="e#53816#53817#0" expanded="true" />
+            <element signature="e#55023#55029#0" expanded="true" />
+            <element signature="e#55097#55103#0" expanded="true" />
+            <element signature="e#55170#55186#0" expanded="true" />
+            <element signature="e#55251#55267#0" expanded="true" />
+            <element signature="e#55878#56385#0" expanded="true" />
+            <element signature="e#56384#56385#0" expanded="true" />
+            <element signature="e#56693#56722#0" expanded="true" />
+            <element signature="e#59498#59769#0" expanded="true" />
+            <element signature="e#59768#59769#0" expanded="true" />
+            <element signature="e#59810#60102#0" expanded="true" />
+            <element signature="e#60101#60102#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="24" column="79" selection-start-line="24" selection-start-column="79" selection-end-line="24" selection-end-column="79" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+          <folding>
+            <element signature="e#1578#1579#0" expanded="true" />
+            <element signature="e#1609#1610#0" expanded="true" />
+            <element signature="e#2638#2639#0" expanded="true" />
+            <element signature="e#2697#2698#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1523,24 +1748,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/OverTrainingGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding>
-            <element signature="e#203#204#0" expanded="true" />
-            <element signature="e#252#253#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1548,13 +1755,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingset_normal.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="18" selection-start-column="15" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingset_normal.csv" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/nio/file/Files.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="845">
@@ -1562,93 +1763,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0b6337ba-89e5-4417-8985-33699197f04a_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/1ea12a4d-9d34-4f2b-847b-86a50231100e_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0f230492-0a30-4644-89d3-31ae2217eef3_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/1d6bae19-1434-4917-ae23-d6863ddafb04_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0f55cc12-f451-4b5e-abf2-65bd15a2f9db_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0f9ad9a2-c239-4af6-b72b-e3ab42942937_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0c9d5f7b-b538-48e1-a725-7c29704c52bb_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0d875afd-a53c-4bb8-8828-d395bfea762a_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0a86e5a8-c36f-425d-86a5-ec03dcc361ec_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0af33a09-99f0-4b69-9667-fbe9b2d53ed3_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/fdd999ac-332c-4b92-b1bb-e96931d20b23_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/src.zip!/java/nio/file/StandardOpenOption.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
           <caret line="67" column="4" selection-start-line="67" selection-start-column="4" selection-end-line="67" selection-end-column="4" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/trainingset_under.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/f8d34d56-ac17-4bd5-9fc7-3bd91dd69938_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/fd2ca53c-75b1-434c-a413-4f8a060c4902_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/ffd571c4-87f1-46d9-8192-0df4773e8166_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/trainingset_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/trainingset_over.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0ac9f605-8b94-485a-8e67-1f306b5d0f03_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0a1a660d-9564-4aec-b70c-7b6471e84019_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0bd6d1af-fa67-49f9-9a28-9c99e87aca14_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/0a3cd5de-49f1-46bb-9550-69ea400c4852_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0b28f8d7-9125-41e2-baa0-10924f675c67_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0d9bf7bf-a71e-49aa-a6d8-d98abaa19a6a_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0e1606a6-f205-4ee2-a5b3-8e906a49a867_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0fec7611-bd32-4f0c-b88c-3f657f13d1b4_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/1aa81a60-c920-4d76-8e0d-a589e7587709_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/1cb1a631-4705-4764-9ea5-20a0b0ab7875_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1667,33 +1787,116 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java">
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="88" column="28" selection-start-line="88" selection-start-column="28" selection-end-line="88" selection-end-column="28" />
+        <state relative-caret-position="253">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/UndertrainingGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/threeten/threetenbp/1.3.5/threetenbp-1.3.5.jar!/org/threeten/bp/OffsetDateTime.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1817">
+          <caret line="110" column="12" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/ActivityZone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="44" column="4" selection-start-line="44" selection-start-column="4" selection-end-line="44" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/SummaryAthlete.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/ApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/runners/ParentRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="328" selection-start-line="328" selection-end-line="328" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/api/ActivitiesApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="48" column="41" lean-forward="true" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1300#1301#0" expanded="true" />
+            <element signature="e#3219#3225#0" expanded="true" />
+            <element signature="e#3293#3299#0" expanded="true" />
+            <element signature="e#3366#3382#0" expanded="true" />
+            <element signature="e#3447#3463#0" expanded="true" />
+            <element signature="e#14326#14332#0" expanded="true" />
+            <element signature="e#14400#14406#0" expanded="true" />
+            <element signature="e#14617#14633#0" expanded="true" />
+            <element signature="e#14698#14714#0" expanded="true" />
+            <element signature="e#21048#21054#0" expanded="true" />
+            <element signature="e#21122#21128#0" expanded="true" />
+            <element signature="e#21411#21427#0" expanded="true" />
+            <element signature="e#21492#21508#0" expanded="true" />
+            <element signature="e#28020#28026#0" expanded="true" />
+            <element signature="e#28094#28100#0" expanded="true" />
+            <element signature="e#28383#28399#0" expanded="true" />
+            <element signature="e#28464#28480#0" expanded="true" />
+            <element signature="e#34961#34967#0" expanded="true" />
+            <element signature="e#35035#35041#0" expanded="true" />
+            <element signature="e#35108#35124#0" expanded="true" />
+            <element signature="e#35189#35205#0" expanded="true" />
+            <element signature="e#41242#41248#0" expanded="true" />
+            <element signature="e#41316#41322#0" expanded="true" />
+            <element signature="e#41820#41836#0" expanded="true" />
+            <element signature="e#41901#41917#0" expanded="true" />
+            <element signature="e#48927#48933#0" expanded="true" />
+            <element signature="e#49001#49007#0" expanded="true" />
+            <element signature="e#49074#49090#0" expanded="true" />
+            <element signature="e#49155#49171#0" expanded="true" />
+            <element signature="e#55023#55029#0" expanded="true" />
+            <element signature="e#55097#55103#0" expanded="true" />
+            <element signature="e#55170#55186#0" expanded="true" />
+            <element signature="e#55251#55267#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SECOND">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingDataSets/undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0a9e7f43-ce99-4483-8569-3ad73bf15131_normal.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0cf39d3e-4a2c-48bb-9e85-6975c3542555_undertrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingRawData/0cf38392-37dc-40ef-ad96-ebedb6ca6937_overtrained.csv">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1702,10 +1905,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/OverTrainingGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/ActivityType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/BotActivityType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="18" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+          <folding>
+            <element signature="e#163#164#0" expanded="true" />
+            <element signature="e#195#196#0" expanded="true" />
+            <element signature="e#235#236#0" expanded="true" />
+            <element signature="e#262#263#0" expanded="true" />
+            <element signature="e#313#314#0" expanded="true" />
+            <element signature="e#359#360#0" expanded="true" />
+            <element signature="e#394#395#0" expanded="true" />
+            <element signature="e#428#429#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#635#636#0" expanded="true" />
+            <element signature="e#675#676#0" expanded="true" />
+            <element signature="e#709#710#0" expanded="true" />
+            <element signature="e#740#741#0" expanded="true" />
+            <element signature="e#804#805#0" expanded="true" />
+            <element signature="e#860#861#0" expanded="true" />
+            <element signature="e#903#904#0" expanded="true" />
+            <element signature="e#942#943#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-367">
+          <caret line="77" column="37" lean-forward="true" selection-start-line="77" selection-start-column="37" selection-end-line="77" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/DetailedSegmentEffort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="342" column="15" selection-start-line="342" selection-start-column="15" selection-end-line="342" selection-end-column="15" />
+          <folding>
+            <element signature="e#8147#8148#0" expanded="true" />
+            <element signature="e#8176#8177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+        <state relative-caret-position="692">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="28" />
           <folding>
             <element signature="e#1578#1579#0" expanded="true" />
             <element signature="e#1609#1610#0" expanded="true" />
@@ -1715,13 +2006,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java">
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
+        <state relative-caret-position="270">
+          <caret line="157" column="16" selection-start-line="157" selection-start-column="16" selection-end-line="157" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="35" lean-forward="true" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/DetailedActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="861" selection-start-line="861" selection-end-line="861" />
+          <folding>
+            <element signature="e#20001#20002#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/SummaryActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="343" column="21" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="21" />
+          <folding>
+            <element signature="e#7904#7905#0" expanded="true" />
+            <element signature="e#7925#7926#0" expanded="true" />
+            <element signature="e#15372#15373#0" expanded="true" />
+            <element signature="e#15400#15401#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="43" column="17" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1779,12 +2121,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>TrainingBot</last-edited>
+          <last-edited>Spring|service</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

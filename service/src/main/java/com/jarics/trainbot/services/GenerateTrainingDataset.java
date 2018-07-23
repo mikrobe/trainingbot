@@ -1,10 +1,6 @@
 package com.jarics.trainbot.services;
 
-import com.jarics.trainbot.entities.AthleteFTP;
-import com.jarics.trainbot.entities.AthletesFeatures;
-import com.jarics.trainbot.entities.SimpleSession;
-import io.swagger.client.model.ActivityType;
-import io.swagger.client.model.SummaryActivity;
+import com.jarics.trainbot.entities.*;
 import org.apache.commons.io.FileDeleteStrategy;
 
 import java.io.File;
@@ -52,7 +48,6 @@ public class GenerateTrainingDataset {
             write(wUnderAthleteFTP, wSimpleSessions);
             write(wSimpleSessions, wUnderAthleteFTP);
         }
-
     }
 
     static private void prepareDir(String wDir) throws IOException {
@@ -93,32 +88,33 @@ public class GenerateTrainingDataset {
         }
     }
 
-    private static List<SummaryActivity> generateActivities(List<SimpleSession> wSimpleSessions) {
-        List<SummaryActivity> wSummaryActivities = new ArrayList<>();
+    private static List<AthleteActivity> generateActivities(List<SimpleSession> wSimpleSessions) {
+        List<AthleteActivity> wAthleteActivities = new ArrayList<>();
         for (SimpleSession wSimpleSession : wSimpleSessions) {
             //swim
-            SummaryActivity wActivity = new SummaryActivity();
-            wActivity.setType(ActivityType.SWIM);
+            AthleteActivity wActivity = new AthleteActivity();
+            wActivity.setType(BotActivityType.SWIM);
             wActivity.setDistance((float) wSimpleSession.getSwimDistance());
-            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()));
-            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()));
-            wSummaryActivities.add(wActivity);
+            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+            wAthleteActivities.add(wActivity);
             //bike
-            wActivity = new SummaryActivity();
-            wActivity.setType(ActivityType.RIDE);
+            wActivity = new AthleteActivity();
+            wActivity.setType(BotActivityType.BIKE);
             wActivity.setDistance((float) wSimpleSession.getBikeDistance());
-            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()));
-            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()));
-            wSummaryActivities.add(wActivity);
+            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+            wActivity.setWeigthedAvgWatts(wSimpleSession.getBikeFtp());
+            wAthleteActivities.add(wActivity);
             //run
-            wActivity = new SummaryActivity();
-            wActivity.setType(ActivityType.RUN);
+            wActivity = new AthleteActivity();
+            wActivity.setType(BotActivityType.RUN);
             wActivity.setDistance((float) wSimpleSession.getRunDistance());
-            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()));
-            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()));
-            wSummaryActivities.add(wActivity);
+            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+            wAthleteActivities.add(wActivity);
         }
-        return wSummaryActivities;
+        return wAthleteActivities;
     }
 
     public static AthleteFTP generateAthlete() {

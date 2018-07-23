@@ -1,5 +1,6 @@
 package com.jarics.trainbot.services;
 
+import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthletesFeatures;
 import io.swagger.client.model.SummaryActivity;
 
@@ -86,16 +87,38 @@ public class FeatureExtractor {
         return wRet;
     }
 
-    public AthletesFeatures extract(List<SummaryActivity> pActivities, double pSwimFtp, double pBikeFtp, double pRunFtp) {
+    public AthletesFeatures extract(List<AthleteActivity> pActivities, double pSwimFtp, double pBikeFtp, double pRunFtp) {
         List<Double> wTssValues = new ArrayList<>();
         AthletesFeatures wAthletesFeatures = new AthletesFeatures();
+        for (AthleteActivity activity : pActivities) {
+            double wCurrentFtp;
+            double wNPG = 0;
+            double IF = 0;
+            double wNp = 0;
+            switch (activity.getType()) {
+                case SWIM: {
+                    wCurrentFtp = pSwimFtp;
+                    wNPG = activity.getMovingTime() / activity.getDistance();
+                    IF = wNPG / wCurrentFtp;
+                    wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
+                    break;
+                }
+                case BIKE: {
+                    wCurrentFtp = pBikeFtp;
+                    wNp = pBikeFtp;
+                    IF = wNp / wCurrentFtp;
+                    wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
+                    break;
+                }
+                case RUN: {
+                    wCurrentFtp = pRunFtp;
+                    wNPG = activity.getMovingTime() / activity.getDistance();
+                    IF = wNPG / wCurrentFtp;
+                    wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
+                    break;
+                }
+            }
 
-        for (SummaryActivity activity : pActivities) {
-            double wCurrentFtp = getFtp(activity, pSwimFtp, pBikeFtp, pRunFtp);
-            //TODO calculate TSS with power raw data (NP)
-            double wNPG = activity.getMovingTime() / activity.getDistance();
-            double IF = wNPG / wCurrentFtp;
-            wTssValues.add(getTss(activity.getElapsedTime(), 0, wNPG, IF, wCurrentFtp));
         }
         double wAtl = getAtl(wTssValues);
         double wCtl = getCtl(wTssValues);
@@ -105,16 +128,5 @@ public class FeatureExtractor {
         return wAthletesFeatures;
     }
 
-    private double getFtp(SummaryActivity activity, double wSwimFtp, double wBikeFtp, double wRunFtp) {
-        switch (activity.getType()) {
-            case SWIM:
-                return wSwimFtp;
-            case RIDE:
-                return wBikeFtp;
-            case RUN:
-                return wRunFtp;
-            default:
-                return wRunFtp;
-        }
-    }
+
 }
