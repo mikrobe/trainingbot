@@ -270,6 +270,9 @@ This will be fed into an ML algorithm.
 ```
 
 ## Deployment and start
+Canarie Server Admin: https://nova-ab.dair-atir.canarie.ca/project/
+Canari SSH: ubuntu@208.75.75.136
+
 Define properties in file called: application.properties an insert the following variable:
 nitrite.db.file.path={path}/trainingbot.bd
 
