@@ -154,6 +154,16 @@ Then increase time at sweet spot is following a four weeks pattern:
 * At week 15 (or 75% for all training plan done), we repeat week 14 (or 0% increase)
 * At week 17 start bricks (intensity followed by distance), start new micro-cycle but using repeat week 13 distance
 
+##### Injury Notification
+The Bot will adjust the training schedule based on types and intensity of the injury reported by the athlete. For intances, Erick was following week 14 running schedule and experienced sharp pain during the fifth interval. Week 14 should have been a low intensity (rest week) but a bug in the planning algo kept the intervals high and oups! injury. Anyways, the injury (achilles tendinitis) it is. The Bot will diminish load for at least two weeks and will keep (persist) that week 14 must be rest week and perhaps personalize this week for Erick for next year of 20 weeks planning. 
+Injuries happens when [12]:
+1. Training structure – too much speed work
+1. Long runs are too fast
+1. Rapid change in training type – addition of treadmill
+1. ‘Failure to adapt’   
+
+Training Bot will check and adjust planing according to training log to prevent injury. 
+
 ## Machine Learning
 The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine learning (ml) algorithm to predict over/under/normal training. The ml is using a training set of over/under/normal training sessions.
 What ML will give us is:
@@ -293,4 +303,4 @@ $ java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHO
 9. Joe Friel - Part 3- Training Stress Balance—So What?, Joe Friel 07/12/2015
 10. Suggested Weekly TSS And Target CTL, 
 11. https://blog.trainerroad.com/why-tss-atl-ctl-and-tsb-matter/, August 16, 2016  |  Chelsea Hejny
-
+12. https://blogs.bmj.com/bjsm/2016/07/29/training-error-and-achilles-pain/, Training error and achilles pain, Posted on July 29, 2016 by BJSM
