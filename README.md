@@ -80,7 +80,7 @@ The athlete follows the prescribed workout. The bot will adapt the workout plan 
 learning (ml) algorithm to detect over/under training. The ml is using examples of
 over/under/normal training sessions. More in this in the ML section.  
 
-#### Intensity (aka Short) Workouts
+#### Intensity (aka Short Workouts)
 In the short one, time spent on the sweet spot [5] follows the following rule:
 
 Starting point is (this must be weighted using athlete's level):
@@ -90,11 +90,10 @@ Starting point is (this must be weighted using athlete's level):
 * 120 minutes @ sweet spot (sp) for Ironman distance
 
 Then increase time at sweet spot is following a four weeks pattern:
-* week1: 0.7
-* week2: 0.1
-* week3: 0.1
-* week4: -0.41 (end of micro-cycle)
-* week5: 0.7 (start new micro-cycle)
+* week1: 10%
+* week2: 10%
+* week3: 10%
+* week4: -10% (end of micro-cycle)
 
 ##### Special Weeks
 * At week 15 (or 75% for all training plan done), we repeat week 14 (or 0%)
@@ -132,7 +131,7 @@ Run or bike for 30 seconds at SP. Take three minutes active recovery and repeat 
 Finish with a 10-minute cooldown.
 
 #### Long Workouts
-The long workout is a % increase of the target race distance. The curve for long
+The long workout will increase distances until you get close or a little above the target race distance. The curve for long
 workouts should follow the same rule as short workouts but % effects distances.
 Intensity must remain at z2 or below. The bot will set your race day distance 
 and decrease in time. In some weeks (near the end) you will do distance a little 
