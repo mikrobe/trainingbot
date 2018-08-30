@@ -26,44 +26,6 @@ public class SimpleSession {
         setTimeAtFtp(timeAtFtp);
     }
 
-    public static String toHeaderString() {
-        return "timeAtFtp," +
-                "runDistance," +
-                "bikeDistance," +
-                "swimDistance," +
-                "week," +
-                "runFtp," +
-                "swimFtp," +
-                "bikeFtp," +
-                "runLZone," +
-                "runHZone," +
-                "bikeLZone," +
-                "bikeHZone," +
-                "swimLZone," +
-                "swimHZone," +
-                "athletesId," +
-                "classification\r\n";
-    }
-
-    public String toCsvString() {
-        return timeAtFtp + "," +
-                runDistance + "," +
-                bikeDistance + "," +
-                swimDistance + "," +
-                week + "," +
-                runFtp + "," +
-                swimFtp + "," +
-                bikeFtp + "," +
-                runLZone + "," +
-                runHZone + "," +
-                bikeLZone + "," +
-                bikeHZone + "," +
-                swimLZone + "," +
-                swimHZone + "," +
-                athletesId + "," +
-                classification + "\r\n";
-    }
-
     public double getTimeAtFtp() {
         return timeAtFtp;
     }

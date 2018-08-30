@@ -12,11 +12,10 @@ import java.util.List;
 public class TrainingBotService implements TrainingBotServiceIf {
 
     static double[] phases = {0.05, 0.05, -0.2, 0.1};
-    static double[] shortIncreaseTable = {0.7, 0.1, 0.1, -0.41};
-    static double[] longIncreaseTable = {0.05, 0.08, -0.10, 0.20};
+    static double[] shortIncreaseTable = {0.05, 0.08, -0.10, 0.20}; //{0.7, 0.1, 0.1, -0.41};
+    static double[] longIncreaseTable = {0.05, 0.08, -0.10, 0.20}; //base line
     static double[] runDistanceStart = {21, 10, 5, 3}; //Ironman, Half, Olympic, Sprint distances
     static double[] bikeDistanceStart = {90, 45, 20, 10}; //Ironman, Half, Olympic, Sprint distances
-    //end deprecated
     static double[] swimDistanceStart = {1900, 950, 750, 375}; //Ironman, Half, Olympic, Sprint distances
     static double[] runningSweetSpots = {1.02, 1.10};
     static double[] bikingSweetSpots = {0.84, 0.97};
@@ -87,8 +86,8 @@ public class TrainingBotService implements TrainingBotServiceIf {
         double boost = 1;
 
         List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
-
-        for (int i = 1; i < nbrWeeks + 1; i++) {
+        //TODO verify under, over and normal values
+        for (int i = 0; i < nbrWeeks; i++) {
 
             timeAtFtp = timeAtFtp + (getShortIncreaseTable(i % 4) * timeAtFtp);
             runDistance = runDistance + (getLongIncreaseTable(i % 4) * runDistance);

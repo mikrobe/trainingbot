@@ -1,11 +1,13 @@
 package com.jarics.trainbot.entities;
 
 public class AthleteActivity {
+    int weekNbr;
     BotActivityType type;
     int elapsedTime;
     int movingTime;
     float distance;
     double weigthedAvgWatts;
+    double pace;
 
     public void setType(BotActivityType type) {
         this.type = type;
@@ -45,5 +47,41 @@ public class AthleteActivity {
 
     public double getWeigthedAvgWatts() {
         return weigthedAvgWatts;
+    }
+
+    public double getPace() {
+        return pace;
+    }
+
+    public void setPace(double pace) {
+        this.pace = pace;
+    }
+
+    public int getWeekNbr() {
+        return weekNbr;
+    }
+
+    public void setWeekNbr(int weekNbr) {
+        this.weekNbr = weekNbr;
+    }
+
+    public static String toHeaderString() {
+        return "week, " +
+                "type," +
+                "elapsedTime," +
+                "movingTime," +
+                "distance," +
+                "weigthedAvgWatts," +
+                "pace\r\n";
+    }
+
+    public String toCsvString() {
+        return weekNbr + "," +
+                type + "," +
+                elapsedTime + "," +
+                movingTime + "," +
+                distance + "," +
+                weigthedAvgWatts + "," +
+                pace + "\r\n";
     }
 }

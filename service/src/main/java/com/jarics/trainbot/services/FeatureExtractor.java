@@ -82,11 +82,13 @@ public class FeatureExtractor {
      * @return TSS
      */
     private double getTss(int s, double NP, double NGP, double IF, double pFtp) {
+        //TODO Need to calculate tss differently when bike, run swim...
         double wNpOrNgp = (NP == 0.0 ? NGP : NP);
         double wRet = ((s * wNpOrNgp * IF) / (pFtp * 3600)) * 100;
         return wRet;
     }
 
+    //TODO follow https://docs.google.com/spreadsheets/d/17WGSUFfcUFhNv2n1zmpJHLfjQ89PmMLnhfJaOywIbmU/edit?usp=sharing
     public AthletesFeatures extract(List<AthleteActivity> pActivities, double pSwimFtp, double pBikeFtp, double pRunFtp) {
         List<Double> wTssValues = new ArrayList<>();
         AthletesFeatures wAthletesFeatures = new AthletesFeatures();
@@ -105,7 +107,7 @@ public class FeatureExtractor {
                 }
                 case BIKE: {
                     wCurrentFtp = pBikeFtp;
-                    wNp = pBikeFtp;
+                    wNp = activity.getWeigthedAvgWatts();
                     IF = wNp / wCurrentFtp;
                     wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
                     break;

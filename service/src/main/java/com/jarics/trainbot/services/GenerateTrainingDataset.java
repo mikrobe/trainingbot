@@ -10,13 +10,14 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.UUID;
 
 public class GenerateTrainingDataset {
-    static String wGenDir = "trainingDataSets/";
-    static String wGenRawDir = "trainingRawData/";
-    public static void main(String[] args) throws IOException {
+
+    String wGenDir = "trainingDataSets/";
+    String wGenRawDir = "trainingRawData/";
+
+    public void generate() throws Exception {
         //use java 8 lambda function
         TrainingBotService wNormalTrainingGenerator = new TrainingBotService();
         OverTrainingGenerator wOverTrainingGenerator = new OverTrainingGenerator();
@@ -27,7 +28,6 @@ public class GenerateTrainingDataset {
         Files.write(Paths.get(wGenDir + MLClasses.normal + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
         Files.write(Paths.get(wGenDir + MLClasses.undertrained + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
         Files.write(Paths.get(wGenDir + MLClasses.overtrained + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
-
         for (int i = 0; i < 100; i++) {
             AthleteFTP wNormalAthleteFTP = generateAthlete();
             wNormalAthleteFTP.setClassification(MLClasses.normal);
@@ -37,20 +37,23 @@ public class GenerateTrainingDataset {
             wOverAthleteFTP.setClassification(MLClasses.overtrained);
 
             List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSession(wNormalAthleteFTP);
-            write(wNormalAthleteFTP, wSimpleSessions);
-            write(wSimpleSessions, wNormalAthleteFTP);
+            List<AthleteActivity> wActivities = generateActivities(wSimpleSessions);
+            writeRawData(wNormalAthleteFTP, wActivities);
+            writeFeatures(wNormalAthleteFTP, wActivities);
 
             wSimpleSessions = wOverTrainingGenerator.getSession(wOverAthleteFTP);
-            write(wOverAthleteFTP, wSimpleSessions);
-            write(wSimpleSessions, wOverAthleteFTP);
+            wActivities = generateActivities(wSimpleSessions);
+            writeRawData(wOverAthleteFTP, wActivities);
+            writeFeatures(wOverAthleteFTP, wActivities);
 
             wSimpleSessions = wUndertrainingGenerator.getSession(wUnderAthleteFTP);
-            write(wUnderAthleteFTP, wSimpleSessions);
-            write(wSimpleSessions, wUnderAthleteFTP);
+            wActivities = generateActivities(wSimpleSessions);
+            writeRawData(wUnderAthleteFTP, wActivities);
+            writeFeatures(wUnderAthleteFTP, wActivities);
         }
     }
 
-    static private void prepareDir(String wDir) throws IOException {
+    private void prepareDir(String wDir) throws IOException {
         if (!Files.exists(Paths.get(wDir))) {
             Files.createDirectory(Paths.get(wDir));
         } else {
@@ -61,22 +64,22 @@ public class GenerateTrainingDataset {
         }
     }
 
-    private static void write(AthleteFTP wNormalAthleteFTP, List<SimpleSession> wSimpleSessions) {
+    private void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
         try {
-            Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), SimpleSession.toHeaderString().getBytes());
-            for (SimpleSession wSimpleSession : wSimpleSessions) {
-                Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), wSimpleSession.toCsvString().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), AthleteActivity.toHeaderString().getBytes());
+            for (AthleteActivity wAthleteActivity : wActivities) {
+                Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), wAthleteActivity.toCsvString().getBytes(), StandardOpenOption.APPEND);
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void write(List<SimpleSession> wSimpleSessions, AthleteFTP pAthleteFTP) {
+    private void writeFeatures(AthleteFTP pAthleteFTP, List<AthleteActivity> wAthleteActivities) {
         FeatureExtractor wFeatureExtractor = new FeatureExtractor();
         AthletesFeatures wAthletesFeatures =
                 wFeatureExtractor.extract(
-                        generateActivities(wSimpleSessions),
+                        wAthleteActivities,
                         pAthleteFTP.getSwimFtp(),
                         pAthleteFTP.getBikeFtp(),
                         pAthleteFTP.getRunFtp());
@@ -88,40 +91,87 @@ public class GenerateTrainingDataset {
         }
     }
 
-    private static List<AthleteActivity> generateActivities(List<SimpleSession> wSimpleSessions) {
+    private List<AthleteActivity> generateActivities(List<SimpleSession> wSimpleSessions) {
         List<AthleteActivity> wAthleteActivities = new ArrayList<>();
         for (SimpleSession wSimpleSession : wSimpleSessions) {
-            //swim
-            AthleteActivity wActivity = new AthleteActivity();
-            wActivity.setType(BotActivityType.SWIM);
-            wActivity.setDistance((float) wSimpleSession.getSwimDistance());
-            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-            wAthleteActivities.add(wActivity);
-            //bike
-            wActivity = new AthleteActivity();
-            wActivity.setType(BotActivityType.BIKE);
-            wActivity.setDistance((float) wSimpleSession.getBikeDistance());
-            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-            wActivity.setWeigthedAvgWatts(wSimpleSession.getBikeFtp());
-            wAthleteActivities.add(wActivity);
-            //run
-            wActivity = new AthleteActivity();
-            wActivity.setType(BotActivityType.RUN);
-            wActivity.setDistance((float) wSimpleSession.getRunDistance());
-            wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-            wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-            wAthleteActivities.add(wActivity);
+//            wAthleteActivities.add(newSwimDistanceActivity(wSimpleSession));
+//            wAthleteActivities.add(newSwimIntensityActivity(wSimpleSession));
+//            wAthleteActivities.add(newBikeDistanceActivity(wSimpleSession));
+//            wAthleteActivities.add(newBikeIntensityActivity(wSimpleSession));
+//            wAthleteActivities.add(newRunDistanceActivity(wSimpleSession));
+//            wAthleteActivities.add(newRunIntensityActivity(wSimpleSession));
         }
         return wAthleteActivities;
     }
 
-    public static AthleteFTP generateAthlete() {
-        double wRunFtp = new Random().doubles(275, 450).findFirst().getAsDouble();
-        double wSwimFtp = new Random().doubles(80, 120).findFirst().getAsDouble();
-        double wBikeFtp = new Random().doubles(180, 320).findFirst().getAsDouble();
+    private AthleteActivity newBikeDistanceActivity(SimpleSession wSimpleSession) {
+        AthleteActivity wActivity;
+        wActivity = new AthleteActivity();
+        wActivity.setWeekNbr(wSimpleSession.getWeek());
+        wActivity.setType(BotActivityType.BIKE);
+        wActivity.setDistance((float) wSimpleSession.getBikeDistance());
+        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        return wActivity;
+    }
 
+    private AthleteActivity newBikeIntensityActivity(SimpleSession wSimpleSession) {
+        AthleteActivity wActivity;
+        wActivity = new AthleteActivity();
+        wActivity.setWeekNbr(wSimpleSession.getWeek());
+        wActivity.setType(BotActivityType.BIKE);
+        wActivity.setDistance((float) wSimpleSession.getBikeDistance());
+        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        return wActivity;
+    }
+
+    //TODO Zone 2 5 secs slower than T-Time
+    private AthleteActivity newSwimDistanceActivity(SimpleSession pSimpleSession) {
+        AthleteActivity wActivity = new AthleteActivity();
+        wActivity.setWeekNbr(pSimpleSession.getWeek());
+        wActivity.setType(BotActivityType.SWIM);
+        wActivity.setDistance((float) pSimpleSession.getSwimDistance());
+        wActivity.setMovingTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setElapsedTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setPace((pSimpleSession.getTimeAtFtp() * 100 / pSimpleSession.getSwimDistance()) * 60);
+        return wActivity;
+    }
+
+//    private AthleteActivity newSwimIntensityActivity(){
+//        AthleteActivity wActivity = new AthleteActivity();
+//        wActivity.setWeekNbr(wSimpleSession.getWeek());
+//        wActivity.setType(BotActivityType.SWIM);
+//        wActivity.setDistance((float) wSimpleSession.getSwimDistance());
+//        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+//        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+//        wActivity.setPace( (wSimpleSession.getTimeAtFtp()*100/wSimpleSession.getSwimDistance()) * 60);
+//    }
+//
+//    private AthleteActivity newRunDistanceActivity(){
+//        AthleteActivity wActivity = new AthleteActivity();
+//        wActivity.setWeekNbr(wSimpleSession.getWeek());
+//        wActivity.setType(BotActivityType.RUN);
+//        wActivity.setDistance((float) wSimpleSession.getRunDistance());
+//        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+//        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+//        wActivity.setPace( (wSimpleSession.getTimeAtFtp()/wSimpleSession.getRunDistance()) * 60);
+//    }
+//
+//    private AthleteActivity newRunIntensityActivity(){
+//        AthleteActivity wActivity = new AthleteActivity();
+//        wActivity.setWeekNbr(wSimpleSession.getWeek());
+//        wActivity.setType(BotActivityType.RUN);
+//        wActivity.setDistance((float) wSimpleSession.getRunDistance());
+//        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+//        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+//        wActivity.setPace( (wSimpleSession.getTimeAtFtp()/wSimpleSession.getRunDistance()) * 60);
+//    }
+
+    public AthleteFTP generateAthlete() {
+        double wRunFtp = 332;
+        double wSwimFtp = 101;
+        double wBikeFtp = 228;
         AthleteFTP wAthleteFTP = new AthleteFTP();
         wAthleteFTP.setRunFtp(wRunFtp); //5:45 --> 300+45 = 345
         wAthleteFTP.setBikeFtp(wBikeFtp);
