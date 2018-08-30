@@ -81,7 +81,11 @@ learning (ml) algorithm to detect over/under training. The ml is using examples 
 over/under/normal training sessions. More in this in the ML section.  
 
 #### Intensity (aka Short Workouts)
-In the short one, time spent on the sweet spot [5] follows the following rule:
+Intensity workout cannot be based on a target race pace. You cannot tell your
+body to do a pace. You need to train it to be as fast as possible. The 
+rule of thumb is to never increase more than 10% each week. You also need to 
+train in micro-cylce. So for intensity workouts, the time spent on 
+the sweet spot [5] follows the following rule:
 
 Starting point is (this must be weighted using athlete's level):
 * 15 minutes @ sweet spot (sp) for Spring distance,
@@ -131,23 +135,25 @@ Run or bike for 30 seconds at SP. Take three minutes active recovery and repeat 
 Finish with a 10-minute cooldown.
 
 #### Long Workouts
-The long workout will increase distances until you get close or a little above the target race distance. The curve for long
-workouts should follow the same rule as short workouts but % effects distances.
+The long workout will increase distances until you get close or a little above the target race distance. Sessions for long
+workouts are based on the same rule as short workouts. The 10% rule applies in distances also to prevent injuries. But % effects distances.
 Intensity must remain at z2 or below. The bot will set your race day distance 
-and decrease in time. In some weeks (near the end) you will do distance a little 
+and decrease distances each week. In some weeks (near the end) you will do distance a little 
 above the targeted distance. 
 
-Starting point is:
+Target:
 * 5k for Spring distance,
 * 10k for Olympic distance, 
 * 21k for 70.3 distance,
 * 42k for Ironman distance
 
-Then increase time at sweet spot is following a four weeks pattern:
-* week1: 5%
-* week2: 8%
-* week3: -10%
-* week4: 20% (end/start micro-cycle)
+Then increase distances following a four weeks pattern (weighted):
+* week1: 10%
+* week2: 10%
+* week3: 10%
+* week4: -10% (end/start micro-cycle)
+
+
 
 ##### Special Weeks
 * At week 15 (or 75% for all training plan done), we repeat week 14 (or 0% increase)
@@ -279,16 +285,35 @@ This will be fed into an ML algorithm.
 ```
 
 ## Deployment and start
-Canarie Server Admin: https://nova-ab.dair-atir.canarie.ca/project/
-Canari SSH: ubuntu@208.75.75.136
-
 Define properties in file called: application.properties an insert the following variable:
 nitrite.db.file.path={path}/trainingbot.bd
 
-$ scp /Users/erickaudet/Documents/application.properties ubuntu@208.75.75.136:apps
-$ scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
-$ ssh ubuntu@208.75.75.136
-$ java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar --spring.config.location=/Users/erickaudet/Documents/application.properties 
+The UI is in trainingui project....see readme in that project to visualize a basic training plan...
+### Local
+#### Build
+1. cd trainingbot
+1. mvn clean install
+#### Run
+java -jar trainingbot/service/target/service-1.0-SNAPSHOT.jar --spring.config.location=application.properties
+#### Usage
+You will find most queries in the postman project here: /Training Bot Postman.postman_collection.json
+Simply import and setup the {{host}} variable. There is no security yet.
+##### Create, Update and Get an athlete
+See: Postman examples
+##### Get a 20 days plan or weekly session
+See: Postman examples
+##### Attach you strava profile
+//TODO
+
+### Canarie Server
+Canarie Server Admin: https://nova-ab.dair-atir.canarie.ca/project/
+
+Canari SSH: ubuntu@208.75.75.136
+
+1. scp /Users/erickaudet/Documents/application.properties ubuntu@208.75.75.136:apps
+1. scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
+2. ssh ubuntu@208.75.75.136
+3. java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar --spring.config.location=/Users/erickaudet/Documents/application.properties 
 
 ## References
 1. http://tailwind-coaching.com/2016/04/13/training-stress-score-fatigue/, Coach Rob
