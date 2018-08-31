@@ -1,15 +1,16 @@
 {
 	"info": {
-      "_postman_id": "ec8aaa36-3aa4-461d-a41f-e5f5321ea7e5",
-      "name": "Training Bot Postman",
-      "description": "Training Bot Postman",
+		"_postman_id": "ec8aaa36-3aa4-461d-a41f-e5f5321ea7e5",
+		"name": "Training Bot Postman",
+		"description": "Training Bot Postman",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-          "name": "Get Plan",
+			"_postman_id": "77eab622-c925-4087-b16d-0a3efcda8d20",
+			"name": "Get Plan",
 			"request": {
-              "method": "GET",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -21,7 +22,7 @@
 					"raw": "{\"id\":811194388135934}\n"
 				},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete/plan/{{athlete}}",
+					"raw": "http://{{host}}:8080/api/athlete/plan/{{athlete}}",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -30,14 +31,14 @@
 					"path": [
 						"api",
 						"athlete",
-                      "plan",
-                      "{{athlete}}"
+						"plan",
+						"{{athlete}}"
 					]
 				}
 			},
 			"response": [
 				{
-                  "id": "20aac96b-1452-4089-9d2e-9d2fed0b67f1",
+					"id": "d6ec25db-f93a-4f5c-adce-74f4770e0cf3",
 					"name": "Create Plan",
 					"originalRequest": {
 						"method": "POST",
@@ -94,9 +95,10 @@
 			]
 		},
 		{
-          "name": "Get Session",
+			"_postman_id": "cd50e642-5772-45a6-84d3-ce4376ab0c62",
+			"name": "Get Session",
 			"request": {
-              "method": "GET",
+				"method": "GET",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -105,10 +107,10 @@
 				],
 				"body": {
 					"mode": "raw",
-                  "raw": "{ \"id\":811194388135940}"
+					"raw": "{ \"id\":811194388135940}"
 				},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete/session/{{athlete}}/?week=7",
+					"raw": "http://{{host}}:8080/api/athlete/session/{{athlete}}/?week=7",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -117,14 +119,14 @@
 					"path": [
 						"api",
 						"athlete",
-                      "session",
-                      "{{athlete}}",
-                      ""
+						"session",
+						"{{athlete}}",
+						""
 					],
 					"query": [
 						{
 							"key": "week",
-                          "value": "7"
+							"value": "7"
 						}
 					]
 				}
@@ -132,6 +134,7 @@
 			"response": []
 		},
 		{
+			"_postman_id": "f44b89ad-31a8-4a0f-9637-d87c2d4af0d7",
 			"name": "Create athlete",
 			"request": {
 				"method": "POST",
@@ -143,40 +146,10 @@
 				],
 				"body": {
 					"mode": "raw",
-                  "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"target\": 2,\n    \"username\":\"eaudet\"\n}"
-                },
-              "url": {
-                "raw": "http://{{host}}:8080/api/athlete/",
-                "protocol": "http",
-                "host": [
-                  "{{host}}"
-                ],
-                "port": "8080",
-                "path": [
-                  "api",
-                  "athlete",
-                  ""
-                ]
-              }
-            },
-          "response": []
-        },
-      {
-        "name": "Update athlete",
-        "request": {
-          "method": "PATCH",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            }
-          ],
-          "body": {
-            "mode": "raw",
-            "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 90,\n    \"target\": 2,\n    \"id\": 1044562064217388,\n    \"classification\": \"normal\",\n    \"username\": \"eaudet\"\n}"
+					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"eventType\":\"olympic\",\n    \"athletesRanking\":\"beginner\",\n    \"username\":\"demo1\"\n}"
 				},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete/",
+					"raw": "http://{{host}}:8080/api/athlete/",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -184,21 +157,30 @@
 					"port": "8080",
 					"path": [
 						"api",
-                      "athlete",
-                      ""
+						"athlete",
+						""
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get Athlete",
+			"_postman_id": "3721efb1-ef51-4652-8caa-b45b71212b94",
+			"name": "Update athlete",
 			"request": {
-				"method": "GET",
-				"header": [],
-				"body": {},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"target\": 2,\n    \"id\": 1044562064217388,\n    \"classification\": \"normal\",\n    \"username\": \"eaudet\"\n}"
+				},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete/{{athlete}}",
+					"raw": "http://{{host}}:8080/api/athlete/",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -206,34 +188,57 @@
 					"port": "8080",
 					"path": [
 						"api",
-                      "athlete",
-                      "{{athlete}}"
+						"athlete",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"_postman_id": "12270896-c75a-4331-8450-a95360a3549b",
+			"name": "Get Athlete",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://{{host}}:8080/api/athlete/{{athlete}}",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"athlete",
+						"{{athlete}}"
 					]
 				}
 			},
 			"response": []
 		}
-    ],
-  "event": [
-    {
-      "listen": "prerequest",
-      "script": {
-        "id": "e0e8dc96-6ab9-4fad-85c6-d043e1baa537",
-        "type": "text/javascript",
-        "exec": [
-          ""
-        ]
-      }
-    },
-    {
-      "listen": "test",
-      "script": {
-        "id": "bf99393d-97ea-4cb4-8063-0b50c5edd3cd",
-        "type": "text/javascript",
-        "exec": [
-          ""
-        ]
-      }
-    }
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e0e8dc96-6ab9-4fad-85c6-d043e1baa537",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bf99393d-97ea-4cb4-8063-0b50c5edd3cd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
 	]
 }
