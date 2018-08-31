@@ -5,6 +5,7 @@ import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.services.AthleteRepositoryService;
 import com.jarics.trainbot.services.TrainingBotService;
+import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,11 +23,15 @@ public class TrainingBotController {
     @Autowired
     AthleteRepositoryService athleteRepositoryService;
 
+    @Autowired
+    TrainingPlanService trainingPlanService;
+
 
     @RequestMapping(value = "/athlete/plan/{username}", method = RequestMethod.GET, produces = "application/json")
     public List<SimpleSession> plan(@PathVariable("username") String pUsername) {
         List<SimpleSession> wSessions = null;
-        wSessions = trainingBotService.getSession(pUsername);
+        AthleteFTP wAthleteFTP = athleteRepositoryService.findAthleteFtpByUsername(pUsername);
+        wSessions = trainingPlanService.getSessions(wAthleteFTP, 20);
         return wSessions;
     }
 

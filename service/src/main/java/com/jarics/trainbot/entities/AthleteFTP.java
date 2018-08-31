@@ -1,17 +1,20 @@
 package com.jarics.trainbot.entities;
 
+import com.jarics.trainbot.services.AthletesRanking;
+import com.jarics.trainbot.services.EventTypes;
 import com.jarics.trainbot.services.MLClasses;
 import lombok.EqualsAndHashCode;
 import org.dizitart.no2.objects.Id;
 
 @EqualsAndHashCode
 public class AthleteFTP {
+    @Id
+    private long id;
     private double bikeFtp;
     private double runFtp;
     private double swimFtp;
-    private int target; // 0,1,2,3 for ironman, 70.3, olympic, sprint
-    @Id
-    private long id;
+    private EventTypes eventType = EventTypes.olympic;
+    private AthletesRanking athletesRanking = AthletesRanking.beginner;
     private MLClasses classification = MLClasses.normal;
     private String username;
 
@@ -39,14 +42,6 @@ public class AthleteFTP {
         this.swimFtp = swimFtp;
     }
 
-    public int getTarget() {
-        return target;
-    }
-
-    public void setTarget(int target) {
-        this.target = target;
-    }
-
     public long getId() {
         return id;
     }
@@ -69,6 +64,22 @@ public class AthleteFTP {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public AthletesRanking getAthletesRanking() {
+        return athletesRanking;
+    }
+
+    public void setAthletesRanking(AthletesRanking athletesRanking) {
+        this.athletesRanking = athletesRanking;
+    }
+
+    public EventTypes getEventType() {
+        return eventType;
+    }
+
+    public void setEventType(EventTypes eventType) {
+        this.eventType = eventType;
     }
 }
 

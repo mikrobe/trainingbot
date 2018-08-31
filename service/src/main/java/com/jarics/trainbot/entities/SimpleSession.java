@@ -26,6 +26,36 @@ public class SimpleSession {
         setTimeAtFtp(timeAtFtp);
     }
 
+    public SimpleSession(AthleteFTP athleteFTP,
+                         int week,
+                         double intensityTime,
+                         double swimDistance,
+                         double bikeDistance,
+                         double runDistance,
+                         double swimLowSweetSpot,
+                         double swimHighSweetSpot,
+                         double bikeLowSweetSpot,
+                         double bikeHighSweetSpot,
+                         double runLowSweetSpot,
+                         double runHighSweetSpot) {
+        setWeek(week);
+        setAthletesId(athleteFTP.getUsername());
+        setSwimFtp(athleteFTP.getSwimFtp());
+        setRunFtp(athleteFTP.getRunFtp());
+        setBikeFtp(athleteFTP.getBikeFtp());
+        setClassification(athleteFTP.getClassification().name());
+        setRunDistance(runDistance);
+        setBikeDistance(bikeDistance);
+        setSwimDistance(swimDistance);
+        setBikeLZone(bikeLowSweetSpot);
+        setBikeHZone(bikeHighSweetSpot);
+        setRunLZone(runLowSweetSpot);
+        setRunHZone(runHighSweetSpot);
+        setSwimLZone(swimLowSweetSpot);
+        setSwimHZone(swimHighSweetSpot);
+        setTimeAtFtp(intensityTime);
+    }
+
     public double getTimeAtFtp() {
         return timeAtFtp;
     }

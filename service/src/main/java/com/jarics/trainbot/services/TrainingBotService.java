@@ -4,7 +4,6 @@ import com.jarics.trainbot.entities.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -77,40 +76,41 @@ public class TrainingBotService implements TrainingBotServiceIf {
     }
 
     public List<SimpleSession> getSession(AthleteFTP wAthleteFTP) {
-        int nbrWeeks = 20;
-        double timeAtFtp = 15;
-
-        double runDistance = runDistanceStart[wAthleteFTP.getTarget()];
-        double bikeDistance = bikeDistanceStart[wAthleteFTP.getTarget()];
-        double swimDistance = swimDistanceStart[wAthleteFTP.getTarget()];
-        double boost = 1;
-
-        List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
-        //TODO verify under, over and normal values
-        for (int i = 0; i < nbrWeeks; i++) {
-
-            timeAtFtp = timeAtFtp + (getShortIncreaseTable(i % 4) * timeAtFtp);
-            runDistance = runDistance + (getLongIncreaseTable(i % 4) * runDistance);
-            bikeDistance = bikeDistance + (getLongIncreaseTable(i % 4) * bikeDistance);
-            swimDistance = swimDistance + (getLongIncreaseTable(i % 4) * swimDistance);
-            SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
-            wSimpleSession.setAthletesId(wAthleteFTP.getUsername());
-            wSimpleSession.setSwimFtp(wAthleteFTP.getSwimFtp());
-            wSimpleSession.setRunFtp(wAthleteFTP.getRunFtp());
-            wSimpleSession.setBikeFtp(wAthleteFTP.getBikeFtp());
-            wSimpleSession.setClassification(wAthleteFTP.getClassification().name());
-            wSimpleSession.setRunDistance(runDistance);
-            wSimpleSession.setBikeDistance(bikeDistance);
-            wSimpleSession.setSwimDistance(swimDistance);
-            wSimpleSession.setBikeLZone(bikingSweetSpots[0] * wAthleteFTP.getBikeFtp());
-            wSimpleSession.setBikeHZone(bikingSweetSpots[1] * wAthleteFTP.getBikeFtp());
-            wSimpleSession.setRunLZone(runningSweetSpots[0] * wAthleteFTP.getRunFtp());
-            wSimpleSession.setRunHZone(runningSweetSpots[1] * wAthleteFTP.getRunFtp());
-            wSimpleSession.setSwimLZone(swimSweetSpots[0] * wAthleteFTP.getSwimFtp());
-            wSimpleSession.setSwimHZone(swimSweetSpots[1] * wAthleteFTP.getSwimFtp());
-            wSimpleSessions.add(wSimpleSession);
-        }
-        return wSimpleSessions;
+        return null;
+//        int nbrWeeks = 20;
+//        double timeAtFtp = 15;
+//
+//        double runDistance = runDistanceStart[wAthleteFTP.getTarget()];
+//        double bikeDistance = bikeDistanceStart[wAthleteFTP.getTarget()];
+//        double swimDistance = swimDistanceStart[wAthleteFTP.getTarget()];
+//        double boost = 1;
+//
+//        List<SimpleSession> wSimpleSessions = new ArrayList<SimpleSession>();
+//        //TODO verify under, over and normal values
+//        for (int i = 0; i < nbrWeeks; i++) {
+//
+//            timeAtFtp = timeAtFtp + (getShortIncreaseTable(i % 4) * timeAtFtp);
+//            runDistance = runDistance + (getLongIncreaseTable(i % 4) * runDistance);
+//            bikeDistance = bikeDistance + (getLongIncreaseTable(i % 4) * bikeDistance);
+//            swimDistance = swimDistance + (getLongIncreaseTable(i % 4) * swimDistance);
+//            SimpleSession wSimpleSession = new SimpleSession(i, timeAtFtp);
+//            wSimpleSession.setAthletesId(wAthleteFTP.getUsername());
+//            wSimpleSession.setSwimFtp(wAthleteFTP.getSwimFtp());
+//            wSimpleSession.setRunFtp(wAthleteFTP.getRunFtp());
+//            wSimpleSession.setBikeFtp(wAthleteFTP.getBikeFtp());
+//            wSimpleSession.setClassification(wAthleteFTP.getClassification().name());
+//            wSimpleSession.setRunDistance(runDistance);
+//            wSimpleSession.setBikeDistance(bikeDistance);
+//            wSimpleSession.setSwimDistance(swimDistance);
+//            wSimpleSession.setBikeLZone(bikingSweetSpots[0] * wAthleteFTP.getBikeFtp());
+//            wSimpleSession.setBikeHZone(bikingSweetSpots[1] * wAthleteFTP.getBikeFtp());
+//            wSimpleSession.setRunLZone(runningSweetSpots[0] * wAthleteFTP.getRunFtp());
+//            wSimpleSession.setRunHZone(runningSweetSpots[1] * wAthleteFTP.getRunFtp());
+//            wSimpleSession.setSwimLZone(swimSweetSpots[0] * wAthleteFTP.getSwimFtp());
+//            wSimpleSession.setSwimHZone(swimSweetSpots[1] * wAthleteFTP.getSwimFtp());
+//            wSimpleSessions.add(wSimpleSession);
+//        }
+//        return wSimpleSessions;
     }
 
     protected double getShortIncreaseTable(int i) {

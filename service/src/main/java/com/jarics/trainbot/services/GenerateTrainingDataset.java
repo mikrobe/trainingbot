@@ -176,7 +176,7 @@ public class GenerateTrainingDataset {
         wAthleteFTP.setRunFtp(wRunFtp); //5:45 --> 300+45 = 345
         wAthleteFTP.setBikeFtp(wBikeFtp);
         wAthleteFTP.setSwimFtp(wSwimFtp);
-        wAthleteFTP.setTarget(2);
+        wAthleteFTP.setEventType(EventTypes.olympic);
         wAthleteFTP.setUsername(UUID.randomUUID().toString());
         return wAthleteFTP;
     }

@@ -1,6 +1,7 @@
 package com.jarics.trainbot;
 
 import com.jarics.trainbot.entities.AthleteFTP;
+import com.jarics.trainbot.services.EventTypes;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -140,7 +141,7 @@ public class StampControllerTest {
         wAthleteFTP.setRunFtp(345.0); //5:45 --> 300+45 = 345
         wAthleteFTP.setBikeFtp(228.0);
         wAthleteFTP.setSwimFtp(101.0);
-        wAthleteFTP.setTarget(2);
+        wAthleteFTP.setEventType(EventTypes.olympic);
         wAthleteFTP.setUsername(UUID.randomUUID().toString());
         return wAthleteFTP;
     }
