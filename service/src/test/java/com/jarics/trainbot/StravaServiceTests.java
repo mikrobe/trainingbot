@@ -1,7 +1,7 @@
 package com.jarics.trainbot;
 
 import com.jarics.trainbot.entities.AthleteFTP;
-import com.jarics.trainbot.services.StravaService;
+import com.jarics.trainbot.services.classification.StravaService;
 import org.junit.Test;
 
 

@@ -1,4 +1,4 @@
-package com.jarics.trainbot.services;
+package com.jarics.trainbot.services.classification;
 
 import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthleteFTP;

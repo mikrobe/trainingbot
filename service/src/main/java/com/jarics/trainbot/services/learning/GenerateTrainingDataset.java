@@ -1,6 +1,9 @@
-package com.jarics.trainbot.services;
+package com.jarics.trainbot.services.learning;
 
 import com.jarics.trainbot.entities.*;
+import com.jarics.trainbot.services.EventTypes;
+import com.jarics.trainbot.services.MLClasses;
+import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.apache.commons.io.FileDeleteStrategy;
 
 import java.io.File;
@@ -18,8 +21,8 @@ public class GenerateTrainingDataset {
     String wGenRawDir = "trainingRawData/";
 
     public void generate() throws Exception {
-        //use java 8 lambda function
-        TrainingBotService wNormalTrainingGenerator = new TrainingBotService();
+        //use java 8 lambda function?
+        TrainingPlanService wNormalTrainingGenerator = new TrainingPlanService();
         OverTrainingGenerator wOverTrainingGenerator = new OverTrainingGenerator();
         UndertrainingGenerator wUndertrainingGenerator = new UndertrainingGenerator();
         prepareDir(wGenDir);
@@ -36,17 +39,17 @@ public class GenerateTrainingDataset {
             AthleteFTP wOverAthleteFTP = generateAthlete();
             wOverAthleteFTP.setClassification(MLClasses.overtrained);
 
-            List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSession(wNormalAthleteFTP);
+            List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSessions(wNormalAthleteFTP, 20);
             List<AthleteActivity> wActivities = generateActivities(wSimpleSessions);
             writeRawData(wNormalAthleteFTP, wActivities);
             writeFeatures(wNormalAthleteFTP, wActivities);
 
-            wSimpleSessions = wOverTrainingGenerator.getSession(wOverAthleteFTP);
+            wSimpleSessions = wOverTrainingGenerator.getSessions(wOverAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
             writeRawData(wOverAthleteFTP, wActivities);
             writeFeatures(wOverAthleteFTP, wActivities);
 
-            wSimpleSessions = wUndertrainingGenerator.getSession(wUnderAthleteFTP);
+            wSimpleSessions = wUndertrainingGenerator.getSessions(wUnderAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
             writeRawData(wUnderAthleteFTP, wActivities);
             writeFeatures(wUnderAthleteFTP, wActivities);

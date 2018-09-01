@@ -1,7 +1,8 @@
-package com.jarics.trainbot.services;
+package com.jarics.trainbot.services.classification;
 
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
+import com.jarics.trainbot.services.MLClasses;
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
 import org.apache.spark.api.java.JavaRDD;

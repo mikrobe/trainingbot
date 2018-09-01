@@ -1,4 +1,4 @@
-package com.jarics.trainbot.services;
+package com.jarics.trainbot.services.learning;
 
 import java.util.Arrays;
 

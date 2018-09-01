@@ -4,7 +4,6 @@ package com.jarics.trainbot.controllers;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.services.AthleteRepositoryService;
-import com.jarics.trainbot.services.TrainingBotService;
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +16,6 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:8081")
 public class TrainingBotController {
 
-    @Autowired
-    TrainingBotService trainingBotService;
 
     @Autowired
     AthleteRepositoryService athleteRepositoryService;
@@ -37,7 +34,9 @@ public class TrainingBotController {
 
     @RequestMapping(value = "/athlete/session/{username}", method = RequestMethod.GET, produces = "application/json")
     public SimpleSession session(@PathVariable("username") String pUsername, @RequestParam(value = "week") int week) {
-        return trainingBotService.getSession(pUsername, week);
+//        return trainingBotService.getSession(pUsername, week);
+        //TODO not sure
+        return null;
     }
 
     @RequestMapping(value = "/athlete", method = RequestMethod.POST, produces = "application/json")
