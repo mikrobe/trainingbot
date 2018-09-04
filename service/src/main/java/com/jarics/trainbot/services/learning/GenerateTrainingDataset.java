@@ -45,8 +45,8 @@ public class GenerateTrainingDataset {
         prepareDir(trainingDataSetDir);
         prepareDir(rawDataSetDir);
         LocalDateTime currentTime = LocalDateTime.now();
-        featuresFileName = "activity_features_" + currentTime.toString() + ".txt";
-        Files.write(Paths.get(trainingDataSetDir + featuresFileName), "".getBytes(), StandardOpenOption.CREATE_NEW);
+        featuresFileName = "activity_features.arff";
+        Files.write(Paths.get(trainingDataSetDir + featuresFileName), AthletesFeatures.toArffHeader().getBytes(), StandardOpenOption.CREATE_NEW);
         for (int i = 0; i < 100; i++) {
             AthleteFTP wNormalAthleteFTP = generateAthlete();
             wNormalAthleteFTP.setClassification(MLClasses.normal);
@@ -83,7 +83,7 @@ public class GenerateTrainingDataset {
         }
     }
 
-    private void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
+    public void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
         try {
             Files.write(Paths.get(rawDataSetDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), AthleteActivity.toHeaderString().getBytes());
             for (AthleteActivity wAthleteActivity : wActivities) {
@@ -94,7 +94,7 @@ public class GenerateTrainingDataset {
         }
     }
 
-    private void writeFeatures(AthleteFTP pAthleteFTP, List<AthleteActivity> wAthleteActivities) {
+    public void writeFeatures(AthleteFTP pAthleteFTP, List<AthleteActivity> wAthleteActivities) {
         FeatureExtractor wFeatureExtractor = new FeatureExtractor();
         AthletesFeatures wAthletesFeatures =
                 wFeatureExtractor.extract(
@@ -104,7 +104,7 @@ public class GenerateTrainingDataset {
                         pAthleteFTP.getRunFtp());
         wAthletesFeatures.setAthlete(pAthleteFTP);
         try {
-            Files.write(Paths.get(trainingDataSetDir + featuresFileName), wAthletesFeatures.toLibSvm().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(trainingDataSetDir + featuresFileName), wAthletesFeatures.toArffData().getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }

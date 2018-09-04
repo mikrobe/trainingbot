@@ -115,4 +115,64 @@ public class AthletesFeatures {
         return ret.toString();
     }
 
+    /**
+     * sunny, 85, 85, FALSE, no
+     * sunny,80,90,TRUE,no
+     * overcast,83,86,FALSE,yes
+     * rainy,70,96,FALSE,yes
+     * rainy,68,80,FALSE,yes
+     * rainy,65,70,TRUE,no
+     * overcast,64,65,TRUE,yes
+     * sunny,72,95,FALSE,no
+     * sunny,69,70,FALSE,yes
+     * rainy,75,80,FALSE,yes
+     * sunny,75,70,TRUE,yes
+     * overcast,72,90,TRUE,yes
+     * overcast,81,75,FALSE,yes
+     * rainy,71,91,TRUE,no
+     */
+    public String toArffData() {
+        StringBuilder ret = new StringBuilder();
+        ret.append(tSB + "," + cTL + "," + aTL);
+        switch (athlete.getClassification()) {
+            case normal: {
+                ret.append(",normal");
+                break;
+            }
+            case overtrained: {
+                ret.append(",overtrained");
+                break;
+            }
+            case undertrained: {
+                ret.append(",undertrained");
+                break;
+            }
+        }
+        ret.append("\n");
+        return ret.toString();
+
+    }
+
+    /**
+     * * @relation weather
+     * *
+     * * @attribute outlook {sunny, overcast, rainy}
+     * * @attribute temperature real
+     * * @attribute humidity real
+     * * @attribute windy {TRUE, FALSE}
+     * * @attribute play {yes, no}
+     * *
+     * * @data
+     */
+    public static String toArffHeader() {
+        StringBuilder ret = new StringBuilder();
+        ret.append("@relation training\n");
+        ret.append("@attribute tsb real\n");
+        ret.append("@attribute ctl real\n");
+        ret.append("@attribute atl real\n");
+        ret.append("@attribute class {normal, overtrained, undertrained}\n");
+        ret.append("@data\n");
+        return ret.toString();
+    }
+
 }
