@@ -16,13 +16,11 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:8081")
 public class TrainingBotController {
 
-
     @Autowired
     AthleteRepositoryService athleteRepositoryService;
 
     @Autowired
     TrainingPlanService trainingPlanService;
-
 
     @RequestMapping(value = "/athlete/plan/{username}", method = RequestMethod.GET, produces = "application/json")
     public List<SimpleSession> plan(@PathVariable("username") String pUsername) {
@@ -58,5 +56,6 @@ public class TrainingBotController {
     public AthleteFTP removeAthlete(@PathVariable("username") String pUsername) {
         return athleteRepositoryService.removeAthlete(pUsername);
     }
+
 
 }

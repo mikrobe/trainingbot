@@ -124,9 +124,9 @@ public class FeatureExtractor {
         }
         double wAtl = getAtl(wTssValues);
         double wCtl = getCtl(wTssValues);
-        wAthletesFeatures.setATL(wAtl);
-        wAthletesFeatures.setCTL(wCtl);
-        wAthletesFeatures.setTSB(wCtl - wAtl);
+        wAthletesFeatures.setaTL(wAtl);
+        wAthletesFeatures.setcTL(wCtl);
+        wAthletesFeatures.settSB(wCtl - wAtl);
         return wAthletesFeatures;
     }
 

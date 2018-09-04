@@ -3,34 +3,50 @@ package com.jarics.trainbot.services.learning;
 import com.jarics.trainbot.entities.*;
 import com.jarics.trainbot.services.EventTypes;
 import com.jarics.trainbot.services.MLClasses;
-import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.apache.commons.io.FileDeleteStrategy;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+@Component
 public class GenerateTrainingDataset {
 
-    String wGenDir = "trainingDataSets/";
-    String wGenRawDir = "trainingRawData/";
+
+    @Value("${training.data.set.dir}")
+    private String trainingDataSetDir;
+
+    @Value("${raw.data.set.dir}")
+    private String rawDataSetDir;
+
+    @Autowired
+    NormalTrainingGenerator wNormalTrainingGenerator;
+
+    @Autowired
+    OverTrainingGenerator wOverTrainingGenerator;
+
+    @Autowired
+    UndertrainingGenerator wUndertrainingGenerator;
+
+    String rawDataFileName;
+
+    String featuresFileName;
 
     public void generate() throws Exception {
-        //use java 8 lambda function?
-        TrainingPlanService wNormalTrainingGenerator = new TrainingPlanService();
-        OverTrainingGenerator wOverTrainingGenerator = new OverTrainingGenerator();
-        UndertrainingGenerator wUndertrainingGenerator = new UndertrainingGenerator();
-        prepareDir(wGenDir);
-        prepareDir(wGenRawDir);
-        //features headers
-        Files.write(Paths.get(wGenDir + MLClasses.normal + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
-        Files.write(Paths.get(wGenDir + MLClasses.undertrained + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
-        Files.write(Paths.get(wGenDir + MLClasses.overtrained + ".csv"), AthletesFeatures.toHeaderString().getBytes(), StandardOpenOption.CREATE);
+        prepareDir(trainingDataSetDir);
+        prepareDir(rawDataSetDir);
+        LocalDateTime currentTime = LocalDateTime.now();
+        featuresFileName = "activity_features_" + currentTime.toString() + ".txt";
+        Files.write(Paths.get(trainingDataSetDir + featuresFileName), "".getBytes(), StandardOpenOption.CREATE_NEW);
         for (int i = 0; i < 100; i++) {
             AthleteFTP wNormalAthleteFTP = generateAthlete();
             wNormalAthleteFTP.setClassification(MLClasses.normal);
@@ -41,17 +57,17 @@ public class GenerateTrainingDataset {
 
             List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSessions(wNormalAthleteFTP, 20);
             List<AthleteActivity> wActivities = generateActivities(wSimpleSessions);
-            writeRawData(wNormalAthleteFTP, wActivities);
+//            writeRawData(wNormalAthleteFTP, wActivities);
             writeFeatures(wNormalAthleteFTP, wActivities);
 
             wSimpleSessions = wOverTrainingGenerator.getSessions(wOverAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
-            writeRawData(wOverAthleteFTP, wActivities);
+//            writeRawData(wOverAthleteFTP, wActivities);
             writeFeatures(wOverAthleteFTP, wActivities);
 
             wSimpleSessions = wUndertrainingGenerator.getSessions(wUnderAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
-            writeRawData(wUnderAthleteFTP, wActivities);
+//            writeRawData(wUnderAthleteFTP, wActivities);
             writeFeatures(wUnderAthleteFTP, wActivities);
         }
     }
@@ -69,9 +85,9 @@ public class GenerateTrainingDataset {
 
     private void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
         try {
-            Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), AthleteActivity.toHeaderString().getBytes());
+            Files.write(Paths.get(rawDataSetDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), AthleteActivity.toHeaderString().getBytes());
             for (AthleteActivity wAthleteActivity : wActivities) {
-                Files.write(Paths.get(wGenRawDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), wAthleteActivity.toCsvString().getBytes(), StandardOpenOption.APPEND);
+                Files.write(Paths.get(rawDataSetDir + wNormalAthleteFTP.getUsername() + "_" + wNormalAthleteFTP.getClassification() + ".csv"), wAthleteActivity.toCsvString().getBytes(), StandardOpenOption.APPEND);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -86,9 +102,9 @@ public class GenerateTrainingDataset {
                         pAthleteFTP.getSwimFtp(),
                         pAthleteFTP.getBikeFtp(),
                         pAthleteFTP.getRunFtp());
-        wAthletesFeatures.setAthlete(pAthleteFTP.getUsername());
+        wAthletesFeatures.setAthlete(pAthleteFTP);
         try {
-            Files.write(Paths.get(wGenDir + pAthleteFTP.getClassification() + ".csv"), wAthletesFeatures.toCsvString().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(trainingDataSetDir + featuresFileName), wAthletesFeatures.toLibSvm().getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,10 +113,10 @@ public class GenerateTrainingDataset {
     private List<AthleteActivity> generateActivities(List<SimpleSession> wSimpleSessions) {
         List<AthleteActivity> wAthleteActivities = new ArrayList<>();
         for (SimpleSession wSimpleSession : wSimpleSessions) {
-//            wAthleteActivities.add(newSwimDistanceActivity(wSimpleSession));
+            wAthleteActivities.add(newSwimDistanceActivity(wSimpleSession));
 //            wAthleteActivities.add(newSwimIntensityActivity(wSimpleSession));
-//            wAthleteActivities.add(newBikeDistanceActivity(wSimpleSession));
-//            wAthleteActivities.add(newBikeIntensityActivity(wSimpleSession));
+            wAthleteActivities.add(newBikeDistanceActivity(wSimpleSession));
+            wAthleteActivities.add(newBikeIntensityActivity(wSimpleSession));
 //            wAthleteActivities.add(newRunDistanceActivity(wSimpleSession));
 //            wAthleteActivities.add(newRunIntensityActivity(wSimpleSession));
         }

@@ -2,6 +2,7 @@ package com.jarics.trainbot.services.learning;
 
 
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
@@ -9,6 +10,7 @@ import java.util.Random;
 /**
  * seed = 0.1  range between 0 to 0.1
  */
+@Component
 public class UndertrainingGenerator extends TrainingPlanService {
     double range = 0.10;
 

@@ -2,9 +2,11 @@ package com.jarics.trainbot.services.learning;
 
 
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
+import org.springframework.stereotype.Component;
 
 import java.util.Random;
 
+@Component
 public class NormalTrainingGenerator extends TrainingPlanService {
     double range = 0.10;
 

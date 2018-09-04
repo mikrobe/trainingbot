@@ -114,12 +114,14 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
         double startDistance = getStartDistance(athleteFTP.getEventType(), startDistances);
         distances[nbrWeeks - 2] = startDistance + (startDistance * targetDistanceRatio); //fixed week
         //=LOOKUP(mod($A21,4),weeksIncreases,beginner)*C20+C20
-        double athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, (nbrWeeks - 1) % 4, baseDistanceIncreaseRatio);
+        int phase = (nbrWeeks - 1) % 4;
+        double athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, phase, getBaseDistanceIncreaseRatio(phase));
         distances[nbrWeeks - 1] =
                 distances[nbrWeeks - 2] - (athleteWeightedRatio * distances[nbrWeeks - 2]); // last week
         for (int i = nbrWeeks - 3; i > -1; i--) {
             //=C20-LOOKUP(mod($A19,4),weeksIncreases,beginner)*C20
-            athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, i % 4, baseDistanceIncreaseRatio);
+            phase = i % 4;
+            athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, phase, getBaseDistanceIncreaseRatio(phase));
             distances[i] = distances[i + 1] - (athleteWeightedRatio * distances[i + 1]);
         }
         return distances;
@@ -149,26 +151,26 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
         intensityTimes[0] = startIntensityTime;
         for (int i = 1; i < nbrWeeks; i++) {
             int phase = i % 4;
-            athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, phase, baseIntensityIncreaseRatio);
+            athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, phase, getBaseIntensityIncreaseRatio(phase));
             //=LOOKUP(mod($A3,4),weeksIncreases,beginner)*B2+B2
             intensityTimes[i] = (athleteWeightedRatio * intensityTimes[i - 1]) + intensityTimes[i - 1];
         }
         return intensityTimes;
     }
 
-    private double getAthleteWeightedRatio(AthleteFTP athleteFTP, int phase, double[] baseIncreaseRatio) {
+    private double getAthleteWeightedRatio(AthleteFTP athleteFTP, int phase, double phasedBaseIncreaseRatio) {
         double athleteWeightedRation = 0;
         switch (athleteFTP.getAthletesRanking()) {
             case beginner: {
-                athleteWeightedRation = baseIncreaseRatio[phase] - beginnerWeightedIncreaseRatio;
+                athleteWeightedRation = phasedBaseIncreaseRatio - beginnerWeightedIncreaseRatio;
                 break;
             }
             case intermediate: {
-                athleteWeightedRation = baseIncreaseRatio[phase] - intermediateWeightedIncreaseRatio;
+                athleteWeightedRation = phasedBaseIncreaseRatio - intermediateWeightedIncreaseRatio;
                 break;
             }
             case expert: {
-                athleteWeightedRation = baseIncreaseRatio[phase] - expertWeightedIncreaseRatio;
+                athleteWeightedRation = phasedBaseIncreaseRatio - expertWeightedIncreaseRatio;
                 break;
             }
         }
