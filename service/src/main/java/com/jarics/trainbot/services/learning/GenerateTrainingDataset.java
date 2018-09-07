@@ -57,17 +57,17 @@ public class GenerateTrainingDataset {
 
             List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSessions(wNormalAthleteFTP, 20);
             List<AthleteActivity> wActivities = generateActivities(wSimpleSessions);
-//            writeRawData(wNormalAthleteFTP, wActivities);
+            writeRawData(wNormalAthleteFTP, wActivities);
             writeFeatures(wNormalAthleteFTP, wActivities);
 
             wSimpleSessions = wOverTrainingGenerator.getSessions(wOverAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
-//            writeRawData(wOverAthleteFTP, wActivities);
+            writeRawData(wOverAthleteFTP, wActivities);
             writeFeatures(wOverAthleteFTP, wActivities);
 
             wSimpleSessions = wUndertrainingGenerator.getSessions(wUnderAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
-//            writeRawData(wUnderAthleteFTP, wActivities);
+            writeRawData(wUnderAthleteFTP, wActivities);
             writeFeatures(wUnderAthleteFTP, wActivities);
         }
     }
