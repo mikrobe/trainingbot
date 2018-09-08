@@ -27,6 +27,6 @@ public class MLTest {
 
     @Test
     public void testMLPC() throws Exception {
-        generateTrainingDataset.generate();
+        generateTrainingDataset.generate(false);
     }
 }

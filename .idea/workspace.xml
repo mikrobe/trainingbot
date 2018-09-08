@@ -2,30 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_jniloader_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_native_ref_java_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_native_system_java_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_ref_linux_armhf_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_ref_linux_i686_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_ref_linux_x86_64_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_ref_osx_x86_64_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_ref_win_i686_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_ref_win_x86_64_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_system_linux_armhf_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_system_linux_i686_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_system_linux_x86_64_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_system_osx_x86_64_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_system_win_i686_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_fommil_netlib_netlib_native_system_win_x86_64_natives_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_matrix_toolkits_java_mtj_1_0_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_googlecode_netlib_java_netlib_java_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_thirdparty_bounce_0_18.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_thirdparty_java_cup_11b_2015_03_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nz_ac_waikato_cms_weka_thirdparty_java_cup_11b_runtime_2015_03_26.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/samples/activity_features.arff_copy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -44,11 +26,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AthletesFeatures.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java">
+      <file leaf-file-name="GenerateTrainingDataset.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="132" column="7" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+            <state relative-caret-position="518">
+              <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#719#745#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_features.arff_copy" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/samples/activity_features.arff_copy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="23">
+              <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MLTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="403">
+              <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -56,7 +63,7 @@
       <file leaf-file-name="ClassificationService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/classification/ClassificationService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="529">
+            <state relative-caret-position="406">
               <caret line="23" selection-start-line="23" selection-start-column="2" selection-end-line="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -65,11 +72,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="692">
+                <caret line="330" column="4" selection-start-line="330" selection-start-column="4" selection-end-line="330" selection-end-column="4" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="TrainMLService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/TrainMLService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
+            <state relative-caret-position="186">
+              <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -77,11 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WekaMLService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WekaMLService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+            <state relative-caret-position="966">
+              <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -100,39 +128,6 @@
                 <element signature="e#35077#35078#0" expanded="true" />
                 <element signature="e#35122#35123#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UndertrainingGenerator.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/UndertrainingGenerator.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="89" column="21" selection-start-line="89" selection-start-column="21" selection-end-line="89" selection-end-column="21" />
-              <folding>
-                <marker date="1536333309782" expanded="true" signature="3764:3956" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MLServiceIf.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/classification/MLServiceIf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -194,7 +189,6 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/BotActivityType.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/FeatureExtractor.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/SessionServiceIf.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/SessionService.java" />
@@ -216,16 +210,17 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/NormalTrainingGenerator.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/OverTrainingGenerator.java" />
-        <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/UndertrainingGenerator.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/classification/ClassificationService.java" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/TrainMLService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" />
+        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" />
       </list>
     </option>
   </component>
@@ -283,6 +278,11 @@
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
               <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="samples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
@@ -513,10 +513,6 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/ui/trainbot/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jarics.trainbot.services" />
-      <recent name="com.jarics.trainbot.entities" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.jarics.trainbot.services" />
     </key>
@@ -529,6 +525,13 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.jarics.trainbot.services.sessions" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/samples" />
+      <recent name="$PROJECT_DIR$/test_data" />
+      <recent name="$PROJECT_DIR$/ui/libs" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ui/trainbot/src/components" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.jarics.trainbot.services" />
     </key>
@@ -538,12 +541,9 @@
       <recent name="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/test_data" />
-      <recent name="$PROJECT_DIR$/ui/libs" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/ui/trainbot/src/components" />
-      <recent name="$PROJECT_DIR$/service/src/main/resources" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jarics.trainbot.services" />
+      <recent name="com.jarics.trainbot.entities" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -591,7 +591,7 @@
     <configuration name="WekaMLService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.services.learning.WekaMLService" />
       <module name="service" />
-      <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/Documents/trainingBot/activity_features.arff" />
+      <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$/samples/activity_features.arff" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.jarics.trainbot.services.learning.*" />
@@ -762,14 +762,7 @@
       <workItem from="1533819768083" duration="5579000" />
       <workItem from="1535395059771" duration="15861000" />
       <workItem from="1535717626819" duration="27056000" />
-      <workItem from="1536033849004" duration="13906000" />
-    </task>
-    <task id="LOCAL-00013" summary="google split f(x)">
-      <created>1525870721405</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1525870721405</updated>
+      <workItem from="1536033849004" duration="14620000" />
     </task>
     <task id="LOCAL-00014" summary="Generate a basic plan">
       <created>1525903538671</created>
@@ -1107,13 +1100,17 @@
       <option name="project" value="LOCAL" />
       <updated>1536284091907</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="ML training on strava activities as examples (Learning Process) #11&#10;Implementation of a Bayesian Network for classification of 300 athletes samples. The classifier is able to learn 100% of the samples. The API is Weka. We now have to save the model and run real classification (see 18.7. CLASSIFICATION in http://localhost:63342/weka-3.8/wekadocs/WekaManual.pdf">
+      <created>1536406717099</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1536406717099</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MLTest - 2018.09.03 at 22h 24m 48s.xml">
-      <configuration name="MLTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MLTest - 2018.09.03 at 22h 35m 33s.xml">
       <configuration name="MLTest" configurationId="JUnit" />
     </history-entry>
@@ -1141,9 +1138,12 @@
     <history-entry file="MLTest - 2018.09.04 at 11h 18m 37s.xml">
       <configuration name="MLTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MLTest - 2018.09.08 at 07h 42m 38s.xml">
+      <configuration name="MLTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="305325000" />
+    <option name="totallyTimeSpent" value="306039000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1161,30 +1161,30 @@
       <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4924812" weight="0.525641" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50343055" side_tool="true" weight="0.3265097" />
-      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.4858044" visible="true" weight="0.22344323" />
+      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.48554033" visible="true" weight="0.22344323" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
       <window_info id="Designer" order="0" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="bottom" id="SBT Execute" order="21" side_tool="true" />
-      <window_info anchor="right" id="Structure" order="12" sideWeight="0.51419556" side_tool="true" visible="true" weight="0.22344323" />
+      <window_info anchor="right" id="Structure" order="12" sideWeight="0.51445967" side_tool="true" visible="true" weight="0.22344323" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.24969475" />
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.29068577" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.20368475" />
       <window_info anchor="bottom" id="SBT Console" order="16" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32753327" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32753327" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Run Dashboard" order="0" weight="0.29273286" />
       <window_info anchor="bottom" id="Version Control" order="15" weight="0.25588536" />
-      <window_info active="true" anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.49656945" visible="true" weight="0.35107473" />
+      <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.49656945" weight="0.35107473" />
       <window_info anchor="bottom" id="Sequence" order="1" weight="0.2517912" />
       <window_info anchor="bottom" id="Spring" order="8" weight="0.32958034" />
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.53735924" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.24420024" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.26251528" />
       <window_info anchor="right" id="Bean Validation" order="9" sideWeight="0.48769897" weight="0.18803419" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1252,7 +1252,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Generate a basic plan" />
     <MESSAGE value="Create zones based on athlete FTP and add to resulting sessions #6" />
     <MESSAGE value="Create zones based on athlete FTP and add to resulting sessions #6. Fixing plan vs session" />
     <MESSAGE value="Add bike long swim and run in simple session #7" />
@@ -1277,7 +1276,8 @@
     <MESSAGE value="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20" />
     <MESSAGE value="ML training on strava activities as examples (Learning Process) #11" />
     <MESSAGE value="ML training on strava activities as examples (Learning Process) #11&#10;Adding arff format to play with Weka  perceptron. Works cool!" />
-    <option name="LAST_COMMIT_MESSAGE" value="ML training on strava activities as examples (Learning Process) #11&#10;Adding arff format to play with Weka  perceptron. Works cool!" />
+    <MESSAGE value="ML training on strava activities as examples (Learning Process) #11&#10;Implementation of a Bayesian Network for classification of 300 athletes samples. The classifier is able to learn 100% of the samples. The API is Weka. We now have to save the model and run real classification (see 18.7. CLASSIFICATION in http://localhost:63342/weka-3.8/wekadocs/WekaManual.pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="ML training on strava activities as examples (Learning Process) #11&#10;Implementation of a Bayesian Network for classification of 300 athletes samples. The classifier is able to learn 100% of the samples. The API is Weka. We now have to save the model and run real classification (see 18.7. CLASSIFICATION in http://localhost:63342/weka-3.8/wekadocs/WekaManual.pdf" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1357,49 +1357,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthletesRanking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" selection-start-line="3" selection-end-line="5" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanServiceIf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1774">
-          <caret line="155" column="18" selection-start-line="155" selection-start-column="18" selection-end-line="155" selection-end-column="18" />
-          <folding>
-            <element signature="e#3124#3125#0" expanded="true" />
-            <element signature="e#3170#3171#0" expanded="true" />
-            <element signature="e#3883#3884#0" expanded="true" />
-            <element signature="e#3916#3917#0" expanded="true" />
-            <element signature="e#4053#4054#0" expanded="true" />
-            <element signature="e#4090#4091#0" expanded="true" />
-            <element signature="e#4308#4309#0" expanded="true" />
-            <element signature="e#4344#4345#0" expanded="true" />
-            <element signature="e#4526#4527#0" expanded="true" />
-            <element signature="e#4556#4557#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Training Bot Postman.postman_collection.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1597,23 +1554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="759">
-          <caret line="33" column="62" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/TestUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="92">
@@ -1632,16 +1572,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13">
           <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="70" column="56" selection-start-line="70" selection-start-column="56" selection-end-line="70" selection-end-column="56" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1683,14 +1613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-218" />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
@@ -1722,16 +1644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/TrainMLService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="35" column="52" selection-start-line="35" selection-start-column="52" selection-end-line="35" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../weka-3.8/weka/src/main/java/weka/core/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
@@ -1753,16 +1665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/classification/ClassificationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="23" selection-start-line="23" selection-start-column="2" selection-end-line="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../weka-3.8/weka/src/main/java/weka/classifiers/Evaluation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1778,8 +1680,82 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="43" column="60" selection-start-line="43" selection-start-column="60" selection-end-line="43" selection-end-column="60" />
+        <state relative-caret-position="966">
+          <caret line="42" column="60" selection-start-line="42" selection-start-column="60" selection-end-line="42" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="33" column="32" selection-start-line="33" selection-start-column="32" selection-end-line="33" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="692">
+            <caret line="330" column="4" selection-start-line="330" selection-start-column="4" selection-end-line="330" selection-end-column="4" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/TrainMLService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="28" column="38" lean-forward="true" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/classification/ClassificationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="23" selection-start-line="23" selection-start-column="2" selection-end-line="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/abc71844-f6de-4c1c-bcc6-7bd3bb0f0be5_undertrained.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/ff2f085e-58b3-45a2-97f1-9c3d9a7e85a9_normal.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/ad4cbf69-b8c7-4728-90dd-6bfbd214cc69_overtrained.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="69" column="29" selection-start-line="69" selection-start-column="29" selection-end-line="69" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#719#745#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/samples/activity_features.arff_copy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="8" selection-start-line="1" selection-start-column="8" selection-end-line="1" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="403">
+          <caret line="29" column="46" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

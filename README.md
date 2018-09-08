@@ -328,3 +328,4 @@ Canari SSH: ubuntu@208.75.75.136
 10. Suggested Weekly TSS And Target CTL, 
 11. https://blog.trainerroad.com/why-tss-atl-ctl-and-tsb-matter/, August 16, 2016  |  Chelsea Hejny
 12. https://blogs.bmj.com/bjsm/2016/07/29/training-error-and-achilles-pain/, Training error and achilles pain, Posted on July 29, 2016 by BJSM
+13. /weka-3.8/wekadocs/WekaManual.pdf

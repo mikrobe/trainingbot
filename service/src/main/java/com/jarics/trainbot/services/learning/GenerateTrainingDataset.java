@@ -41,7 +41,7 @@ public class GenerateTrainingDataset {
 
     String featuresFileName;
 
-    public void generate() throws Exception {
+    public void generate(boolean keepRawData) throws Exception {
         prepareDir(trainingDataSetDir);
         prepareDir(rawDataSetDir);
         LocalDateTime currentTime = LocalDateTime.now();
@@ -57,17 +57,17 @@ public class GenerateTrainingDataset {
 
             List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSessions(wNormalAthleteFTP, 20);
             List<AthleteActivity> wActivities = generateActivities(wSimpleSessions);
-            writeRawData(wNormalAthleteFTP, wActivities);
+            if (keepRawData) writeRawData(wNormalAthleteFTP, wActivities);
             writeFeatures(wNormalAthleteFTP, wActivities);
 
             wSimpleSessions = wOverTrainingGenerator.getSessions(wOverAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
-            writeRawData(wOverAthleteFTP, wActivities);
+            if (keepRawData) writeRawData(wOverAthleteFTP, wActivities);
             writeFeatures(wOverAthleteFTP, wActivities);
 
             wSimpleSessions = wUndertrainingGenerator.getSessions(wUnderAthleteFTP, 20);
             wActivities = generateActivities(wSimpleSessions);
-            writeRawData(wUnderAthleteFTP, wActivities);
+            if (keepRawData) writeRawData(wUnderAthleteFTP, wActivities);
             writeFeatures(wUnderAthleteFTP, wActivities);
         }
     }
