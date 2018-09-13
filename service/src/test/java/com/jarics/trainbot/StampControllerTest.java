@@ -39,12 +39,16 @@ public class StampControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    //MockMcv workaround for buggy spring context load. See: https://stackoverflow.com/questions/42693789/spring-boot-integration-tests-autoconfiguremockmvc-and-context-caching
+    static {
+        System.setProperty("testing", "true");
+    }
+
     private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
 
 
     @Before
     public void before() {
-
     }
 
     @After

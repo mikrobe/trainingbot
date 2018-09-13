@@ -16,11 +16,16 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:8081")
 public class TrainingBotController {
 
-    @Autowired
     AthleteRepositoryService athleteRepositoryService;
+    TrainingPlanService trainingPlanService;
 
     @Autowired
-    TrainingPlanService trainingPlanService;
+    public TrainingBotController(
+            AthleteRepositoryService athleteRepositoryService,
+            TrainingPlanService trainingPlanService) {
+        this.athleteRepositoryService = athleteRepositoryService;
+        this.trainingPlanService = trainingPlanService;
+    }
 
     @RequestMapping(value = "/athlete/plan/{username}", method = RequestMethod.GET, produces = "application/json")
     public List<SimpleSession> plan(@PathVariable("username") String pUsername) {

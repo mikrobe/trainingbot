@@ -1,8 +1,8 @@
 package com.jarics.trainbot.services.learning;
 
-import com.sun.xml.internal.ws.api.policy.ModelGenerator;
 import weka.classifiers.Evaluation;
 import weka.classifiers.bayes.BayesNet;
+import weka.classifiers.evaluation.output.prediction.CSV;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils;
 
@@ -27,7 +27,7 @@ public class WekaMLService {
                 dataset.setClassIndex(dataset.numAttributes() - 1);
             }
         } catch (Exception ex) {
-            Logger.getLogger(ModelGenerator.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WekaMLService.class.getName()).log(Level.SEVERE, null, ex);
         }
         return dataset;
     }
@@ -38,9 +38,17 @@ public class WekaMLService {
         try {
             eval = new Evaluation(instances);
             bayesNet.setOptions(new String[]{"-D"});
-            eval.crossValidateModel(bayesNet, instances, 10, new Random(1));
+            StringBuffer buffer = new StringBuffer();
+            CSV csv = new CSV();
+            csv.setBuffer(buffer);
+            csv.setNumDecimals(8); // use 8 decimals instead of default 6
+            csv.setOutputFile(new java.io.File("predictions.csv"));
+            eval.crossValidateModel(bayesNet, instances, 10, new Random(1), csv);
             System.out.println(eval.toSummaryString("\nResults\n\n", false));
             System.out.println(eval.toMatrixString("Training"));
+            // output collected predictions
+            System.out.println(buffer.toString());
+
 //            bayesNet.buildClassifier(instances);
         } catch (Exception e) {
             e.printStackTrace();

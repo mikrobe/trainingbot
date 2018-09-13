@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.util.UUID;
+
 import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 @Component
@@ -20,9 +22,14 @@ public class AthleteRepositoryService {
     @Autowired
     public AthleteRepositoryService(@Value("${nitrite.db.file.path}") final String nitriteDbPath) {
         //java initialization
+        String aPath = nitriteDbPath;
+        //MockMcv workaround for buggy spring context load. See: https://stackoverflow.com/questions/42693789/spring-boot-integration-tests-autoconfiguremockmvc-and-context-caching
+        if (System.getProperty("testing") != null) {
+            aPath = nitriteDbPath + "_" + UUID.randomUUID();
+        }
         db = Nitrite.builder()
                 .compressed()
-                .filePath(nitriteDbPath)
+                .filePath(aPath)
                 .openOrCreate("system", "admin");
         repository = db.getRepository(AthleteFTP.class);
     }
