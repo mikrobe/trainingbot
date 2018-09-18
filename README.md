@@ -158,6 +158,16 @@ Then increase distances following a four weeks pattern (weighted):
 ##### Special Weeks
 * At week 15 (or 75% for all training plan done), we repeat week 14 (or 0% increase)
 * At week 17 start bricks (intensity followed by distance), start new micro-cycle but using repeat week 13 distance
+* At last week, rest rest rest....no bricks
+
+###### Bricks (week 16, 17 and 18)
+Monday: swim intensity —> bike distance, 
+Tuesday: bike intensity —> run distance,  
+Wednesday: swim distance, 
+Thursday: rest day, 
+Friday: run intensity
+Sat: rest
+Sun: rest or race
 
 ##### Injury Notification
 The Bot will adjust the training schedule based on types and intensity of the injury reported by the athlete. For intances, Erick was following week 14 running schedule and experienced sharp pain during the fifth interval. Week 14 should have been a low intensity (rest week) but a bug in the planning algo kept the intervals high and oups! injury. Anyways, the injury (achilles tendinitis) it is. The Bot will diminish load for at least two weeks and will keep (persist) that week 14 must be rest week and perhaps personalize this week for Erick for next year of 20 weeks planning. 
