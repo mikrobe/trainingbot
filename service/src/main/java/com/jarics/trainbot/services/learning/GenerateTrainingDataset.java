@@ -1,14 +1,13 @@
 package com.jarics.trainbot.services.learning;
 
+import com.jarics.trainbot.com.jarics.trainbot.utils.FileUtils;
 import com.jarics.trainbot.entities.*;
 import com.jarics.trainbot.services.EventTypes;
 import com.jarics.trainbot.services.MLClasses;
-import org.apache.commons.io.FileDeleteStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -22,10 +21,13 @@ import java.util.UUID;
 public class GenerateTrainingDataset {
 
 
-    @Value("${training.data.set.dir}")
+    @Value("${training.dataset.dir}")
     private String trainingDataSetDir;
 
-    @Value("${raw.data.set.dir}")
+    @Value("${training.dataset.filename}")
+    private String trainingDataSetFileName;
+
+    @Value("${raw.dataset.dir}")
     private String rawDataSetDir;
 
     @Autowired
@@ -37,16 +39,12 @@ public class GenerateTrainingDataset {
     @Autowired
     UndertrainingGenerator wUndertrainingGenerator;
 
-    String rawDataFileName;
-
-    String featuresFileName;
 
     public void generate(boolean keepRawData) throws Exception {
-        prepareDir(trainingDataSetDir);
-        prepareDir(rawDataSetDir);
+        FileUtils.prepareDir(trainingDataSetDir);
+        FileUtils.prepareDir(rawDataSetDir);
         LocalDateTime currentTime = LocalDateTime.now();
-        featuresFileName = "activity_features.arff";
-        Files.write(Paths.get(trainingDataSetDir + featuresFileName), AthletesFeatures.toArffHeader().getBytes(), StandardOpenOption.CREATE_NEW);
+        Files.write(Paths.get(trainingDataSetDir + trainingDataSetFileName), AthletesFeatures.toArffHeader().getBytes(), StandardOpenOption.CREATE);
         for (int i = 0; i < 100; i++) {
             AthleteFTP wNormalAthleteFTP = generateAthlete();
             wNormalAthleteFTP.setClassification(MLClasses.normal);
@@ -72,16 +70,7 @@ public class GenerateTrainingDataset {
         }
     }
 
-    private void prepareDir(String wDir) throws IOException {
-        if (!Files.exists(Paths.get(wDir))) {
-            Files.createDirectory(Paths.get(wDir));
-        } else {
-            File fin = Paths.get(wDir).toFile();
-            for (File file : fin.listFiles()) {
-                FileDeleteStrategy.FORCE.delete(file);
-            }
-        }
-    }
+
 
     public void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
         try {
@@ -104,7 +93,7 @@ public class GenerateTrainingDataset {
                         pAthleteFTP.getRunFtp());
         wAthletesFeatures.setAthlete(pAthleteFTP);
         try {
-            Files.write(Paths.get(trainingDataSetDir + featuresFileName), wAthletesFeatures.toArffData().getBytes(), StandardOpenOption.APPEND);
+            Files.write(Paths.get(trainingDataSetDir + trainingDataSetFileName), wAthletesFeatures.toArffData().getBytes(), StandardOpenOption.APPEND);
         } catch (IOException e) {
             e.printStackTrace();
         }
