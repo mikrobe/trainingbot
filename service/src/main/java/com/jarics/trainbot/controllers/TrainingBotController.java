@@ -2,8 +2,11 @@ package com.jarics.trainbot.controllers;
 
 
 import com.jarics.trainbot.entities.AthleteFTP;
+import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.services.AthleteRepositoryService;
+import com.jarics.trainbot.services.MLClasses;
+import com.jarics.trainbot.services.learning.WekaMLService;
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,13 +21,15 @@ public class TrainingBotController {
 
     AthleteRepositoryService athleteRepositoryService;
     TrainingPlanService trainingPlanService;
+    WekaMLService wekaMLService;
 
     @Autowired
     public TrainingBotController(
             AthleteRepositoryService athleteRepositoryService,
-            TrainingPlanService trainingPlanService) {
+            TrainingPlanService trainingPlanService, WekaMLService wekaMLService) {
         this.athleteRepositoryService = athleteRepositoryService;
         this.trainingPlanService = trainingPlanService;
+        this.wekaMLService = wekaMLService;
     }
 
     @RequestMapping(value = "/athlete/plan/{username}", method = RequestMethod.GET, produces = "application/json")
@@ -60,6 +65,11 @@ public class TrainingBotController {
     @RequestMapping(value = "/athlete/{username}", method = RequestMethod.DELETE, produces = "application/json")
     public AthleteFTP removeAthlete(@PathVariable("username") String pUsername) {
         return athleteRepositoryService.removeAthlete(pUsername);
+    }
+
+    @RequestMapping(value = "/ml", method = RequestMethod.POST, produces = "application/json")
+    public MLClasses createAthlete(@RequestBody AthletesFeatures athletesFeatures) throws Exception {
+        return wekaMLService.classify(athletesFeatures.gettSB(), athletesFeatures.getcTL(), athletesFeatures.getaTL());
     }
 
 

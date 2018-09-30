@@ -78,6 +78,12 @@ public class AthletesFeatures {
     public AthletesFeatures() {
     }
 
+    public AthletesFeatures(double tsb, double ctl, double atl) {
+        tSB = tsb;
+        cTL = ctl;
+        aTL = atl;
+    }
+
     /*
      *
      * libsvm-format
