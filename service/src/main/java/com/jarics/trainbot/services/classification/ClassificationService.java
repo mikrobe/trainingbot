@@ -2,6 +2,7 @@ package com.jarics.trainbot.services.classification;
 
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.services.AthleteRepositoryService;
+import com.jarics.trainbot.services.StravaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

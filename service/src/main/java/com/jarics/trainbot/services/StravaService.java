@@ -1,8 +1,10 @@
-package com.jarics.trainbot.services.classification;
+package com.jarics.trainbot.services;
 
 import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthleteFTP;
+import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.entities.BotActivityType;
+import com.jarics.trainbot.services.learning.FeatureExtractor;
 import io.swagger.client.ApiClient;
 import io.swagger.client.ApiException;
 import io.swagger.client.Configuration;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
-public class StravaService {
+public class StravaService implements TrainingLogger {
 
     public List<AthleteActivity> getAthleteActivities(AthleteFTP pAthleteFTP, int pElapseDays) {
         prepareDefaultClient();
@@ -42,7 +44,8 @@ public class StravaService {
                 if (wSummaryActivity.getType().equals(ActivityType.RIDE)) {
                     wAthleteActivity.setWeigthedAvgWatts(calculateWeightedAvgWatts(wDetailedActivity.getSegmentEfforts()));
                 }
-                wAthleteActivities.add(wAthleteActivity);
+                if (wAthleteActivity.getType() != null)
+                    wAthleteActivities.add(wAthleteActivity);
             }
             return wAthleteActivities;
         } catch (ApiException e) {
@@ -87,6 +90,7 @@ public class StravaService {
         wAthleteActivity.setElapsedTime(pSummaryActivity.getElapsedTime());
         wAthleteActivity.setMovingTime(pSummaryActivity.getMovingTime());
         switch (pSummaryActivity.getType()) {
+
             case SWIM:
                 wAthleteActivity.setType(BotActivityType.SWIM);
                 break; // optional
@@ -95,11 +99,24 @@ public class StravaService {
                 wAthleteActivity.setType(BotActivityType.BIKE);
                 break; // optional
 
+            case VIRTUALRIDE:
+                wAthleteActivity.setType(BotActivityType.BIKE);
+                break; // optional
+
             case RUN:
+                wAthleteActivity.setType(BotActivityType.RUN);
+                break; // optional
+
+            case WALK:
                 wAthleteActivity.setType(BotActivityType.RUN);
                 break; // optional
         }
         return wAthleteActivity;
     }
 
+    @Override
+    public AthletesFeatures extractAthletesFeatures(AthleteFTP athleteFTP) {
+        FeatureExtractor featureExtractor = new FeatureExtractor();
+        return featureExtractor.extract(getAthleteActivities(athleteFTP, 45), athleteFTP.getSwimFtp(), athleteFTP.getBikeFtp(), athleteFTP.getRunFtp());
+    }
 }

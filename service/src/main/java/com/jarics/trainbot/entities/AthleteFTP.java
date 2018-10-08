@@ -15,7 +15,7 @@ public class AthleteFTP {
     private double swimFtp;
     private EventTypes eventType = EventTypes.olympic;
     private AthletesRanking athletesRanking = AthletesRanking.beginner;
-    private MLClasses classification = MLClasses.normal;
+    private MLClasses classification = MLClasses.unknown;
     private String username;
 
     public double getBikeFtp() {

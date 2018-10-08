@@ -124,8 +124,6 @@ public class WekaMLService {
         instance.setValue(2, atl);
         try {
             classification = classifier.classifyInstance(instance);
-            System.out.println("Instance: " + instance.toString());
-            System.out.println("Class is: " + classification);
             if (classification == 0) {
                 return MLClasses.normal;
             } else {

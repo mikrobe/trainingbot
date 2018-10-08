@@ -68,8 +68,12 @@ public class TrainingBotController {
     }
 
     @RequestMapping(value = "/ml", method = RequestMethod.POST, produces = "application/json")
-    public MLClasses createAthlete(@RequestBody AthletesFeatures athletesFeatures) throws Exception {
-        return wekaMLService.classify(athletesFeatures.gettSB(), athletesFeatures.getcTL(), athletesFeatures.getaTL());
+    public AthleteFTP classifyAthlete(@RequestBody AthletesFeatures athletesFeatures) throws Exception {
+
+        MLClasses clazz = wekaMLService.classify(athletesFeatures.gettSB(), athletesFeatures.getcTL(), athletesFeatures.getaTL());
+        AthleteFTP athleteFTP = athleteRepositoryService.findAthleteFtpByUsername(athletesFeatures.getAthlete().getUsername());
+        athleteFTP.setClassification(clazz);
+        return athleteFTP;
     }
 
 
