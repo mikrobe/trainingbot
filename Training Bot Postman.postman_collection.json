@@ -7,7 +7,6 @@
 	},
 	"item": [
 		{
-			"_postman_id": "77eab622-c925-4087-b16d-0a3efcda8d20",
 			"name": "Get Plan",
 			"request": {
 				"method": "GET",
@@ -22,7 +21,7 @@
 					"raw": "{\"id\":811194388135934}\n"
 				},
 				"url": {
-					"raw": "http://{{host}}:8080/api/athlete/plan/{{athlete}}",
+                  "raw": "http://{{host}}:8080/api/athlete/plan/erickaudet",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -32,13 +31,12 @@
 						"api",
 						"athlete",
 						"plan",
-						"{{athlete}}"
+                      "erickaudet"
 					]
 				}
 			},
 			"response": [
 				{
-					"id": "d6ec25db-f93a-4f5c-adce-74f4770e0cf3",
 					"name": "Create Plan",
 					"originalRequest": {
 						"method": "POST",
@@ -95,7 +93,6 @@
 			]
 		},
 		{
-			"_postman_id": "cd50e642-5772-45a6-84d3-ce4376ab0c62",
 			"name": "Get Session",
 			"request": {
 				"method": "GET",
@@ -134,7 +131,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "f44b89ad-31a8-4a0f-9637-d87c2d4af0d7",
 			"name": "Create athlete",
 			"request": {
 				"method": "POST",
@@ -146,7 +142,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"eventType\":\"olympic\",\n    \"athletesRanking\":\"beginner\",\n    \"username\":\"demo1\"\n}"
+                  "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"eventType\":\"olympic\",\n    \"athletesRanking\":\"beginner\",\n    \"username\":\"demo\"\n}"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/",
@@ -165,7 +161,36 @@
 			"response": []
 		},
 		{
-			"_postman_id": "3721efb1-ef51-4652-8caa-b45b71212b94",
+          "name": "Request a classification",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\t\n\t\"tSB\":1.0511188630639134E-7,\n\t\"cTL\":2.0750096254564565E-7,\n\t\"aTL\":1.023890762392543E-7\n\t,\"athlete\":\n\t\t{\"username\":\"eaudet\"}\n}\n"
+            },
+            "url": {
+              "raw": "http://{{host}}:8080/api/ml/",
+              "protocol": "http",
+              "host": [
+                "{{host}}"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "ml",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+      {
 			"name": "Update athlete",
 			"request": {
 				"method": "PATCH",
@@ -196,7 +221,6 @@
 			"response": []
 		},
 		{
-			"_postman_id": "12270896-c75a-4331-8450-a95360a3549b",
 			"name": "Get Athlete",
 			"request": {
 				"method": "GET",

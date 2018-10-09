@@ -68,6 +68,7 @@ public class MLTest {
         AthleteFTP athleteFTP = new AthleteFTP();
         athleteFTP.setUsername(stravaUserName);
         athletesFeatures.setAthlete(athleteFTP);
+        System.out.println(TestUtil.convertObjectToJsonBytes(athletesFeatures));
         MvcResult result = mockMvc.perform(post("/api/ml").contentType(contentType).
                 content(TestUtil.convertObjectToJsonBytes(athletesFeatures)))
                 .andReturn();
