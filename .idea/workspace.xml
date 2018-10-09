@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/application.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -22,102 +21,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StravaServiceTests.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="27" selection-start-line="27" selection-end-line="28" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="418">
               <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="337">
-                <caret line="313" column="25" selection-start-line="313" selection-start-column="25" selection-end-line="313" selection-end-column="25" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FeatureExtractor.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
-              <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-              <folding>
-                <element signature="e#906#907#0" expanded="true" />
-                <element signature="e#953#954#0" expanded="true" />
-                <element signature="e#1707#1708#0" expanded="true" />
-                <element signature="e#1753#1754#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingBotController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="71" selection-start-line="71" selection-end-line="71" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StampControllerTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="33" selection-start-line="33" selection-end-line="34" selection-end-column="44" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MLTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="service.yaml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/service.yaml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="service.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/service.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-793" />
           </provider>
         </entry>
       </file>
@@ -731,21 +640,7 @@
       <workItem from="1538998363395" duration="40000" />
       <workItem from="1538998418595" duration="5532000" />
       <workItem from="1539090616706" duration="193000" />
-      <workItem from="1539090814880" duration="3958000" />
-    </task>
-    <task id="LOCAL-00023" summary="Add persistence. AthletesFTP, Trained data. #9">
-      <created>1527241060118</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1527241060119</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Add persistence. AthletesFTP, Trained data. #9">
-      <created>1527241319208</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1527241319208</updated>
+      <workItem from="1539090814880" duration="4364000" />
     </task>
     <task id="LOCAL-00025" summary="Use id instead of athleteFtp to get sessions or plan #13">
       <created>1527245114049</created>
@@ -1076,7 +971,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539094747903</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20">
+      <created>1539106238999</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1539106238999</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Fix mvn clean install test and adjusting application.properties for strava username and key.">
+      <created>1539106292133</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1539106292133</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1112,7 +1021,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="355123000" />
+    <option name="totallyTimeSpent" value="355529000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1129,7 +1038,7 @@
     <layout>
       <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4924812" weight="0.525641" />
       <window_info anchor="right" id="Palette" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.11294261" side_tool="true" visible="true" weight="0.39162305" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.113553114" side_tool="true" visible="true" weight="0.39162305" />
       <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.45783132" visible="true" weight="0.15384616" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
@@ -1152,8 +1061,8 @@
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.498779" weight="0.25588536" />
       <window_info anchor="bottom" id="Sequence" order="1" weight="0.2517912" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4993895" weight="0.32879582" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.88705736" visible="true" weight="0.39162305" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.20512821" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.8864469" visible="true" weight="0.39162305" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.26923078" />
       <window_info anchor="right" id="Bean Validation" order="9" sideWeight="0.48769897" weight="0.18803419" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1238,13 +1147,13 @@
     <MESSAGE value="Update deployment instructions (Readme) #19" />
     <MESSAGE value="week 14 is not rest week for intervals but it is for distance. #18" />
     <MESSAGE value="Rest weeks for intensity is not align with distance (out of phase) #18" />
-    <MESSAGE value="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20" />
     <MESSAGE value="ML training on strava activities as examples (Learning Process) #11" />
     <MESSAGE value="ML training on strava activities as examples (Learning Process) #11&#10;Adding arff format to play with Weka  perceptron. Works cool!" />
     <MESSAGE value="ML training on strava activities as examples (Learning Process) #11&#10;Implementation of a Bayesian Network for classification of 300 athletes samples. The classifier is able to learn 100% of the samples. The API is Weka. We now have to save the model and run real classification (see 18.7. CLASSIFICATION in http://localhost:63342/weka-3.8/wekadocs/WekaManual.pdf" />
     <MESSAGE value="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20&#10;Workaround for maven testing using mvcmock buggy spring context loading." />
     <MESSAGE value="Add Spring Controller to play with classification service #21" />
     <MESSAGE value="Import strava data and return classification #22" />
+    <MESSAGE value="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20" />
     <MESSAGE value="Fix mvn clean install test and adjusting application.properties for strava username and key." />
     <option name="LAST_COMMIT_MESSAGE" value="Fix mvn clean install test and adjusting application.properties for strava username and key." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1618,7 +1527,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
+        <state relative-caret-position="189">
           <caret line="71" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
@@ -1631,24 +1540,6 @@
             <element signature="imports" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/service.yaml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/service.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-793" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/pom.xml">
@@ -1667,6 +1558,24 @@
           <second_editor />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/service.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-438" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/service.iml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
