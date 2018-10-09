@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/trainingbot.dataset" beforeDir="false" afterPath="$PROJECT_DIR$/model/trainingbot.dataset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/trainingbot.modeltrainingbot.model" beforeDir="false" afterPath="$PROJECT_DIR$/model/trainingbot.modeltrainingbot.model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/trainingbotLeanringResults.csv" beforeDir="false" afterPath="$PROJECT_DIR$/model/trainingbotLeanringResults.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/samples/activity_features.arff" beforeDir="false" afterPath="$PROJECT_DIR$/samples/activity_features.arff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -48,16 +40,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="47" column="23" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="23" />
+            <state relative-caret-position="418">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
@@ -109,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
-              <caret line="78" column="82" selection-start-line="78" selection-start-column="82" selection-end-line="78" selection-end-column="82" />
+              <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -220,10 +212,10 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" />
         <option value="$PROJECT_DIR$/service/src/test/resources/application.properties" />
-        <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -739,21 +731,7 @@
       <workItem from="1538998363395" duration="40000" />
       <workItem from="1538998418595" duration="5532000" />
       <workItem from="1539090616706" duration="193000" />
-      <workItem from="1539090814880" duration="3449000" />
-    </task>
-    <task id="LOCAL-00021" summary="Add persistence. AthletesFTP, Trained data. #9">
-      <created>1527075037012</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1527075037012</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Add persistence. AthletesFTP, Trained data. #9">
-      <created>1527111309794</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1527111309794</updated>
+      <workItem from="1539090814880" duration="3958000" />
     </task>
     <task id="LOCAL-00023" summary="Add persistence. AthletesFTP, Trained data. #9">
       <created>1527241060118</created>
@@ -1084,7 +1062,21 @@
       <option name="project" value="LOCAL" />
       <updated>1539002952987</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Fix mvn clean install test and adjusting application.properties for strava username and key.">
+      <created>1539094680667</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1539094680667</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Fix mvn clean install test and adjusting application.properties for strava username and key.">
+      <created>1539094747903</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1539094747903</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1120,7 +1112,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354614000" />
+    <option name="totallyTimeSpent" value="355123000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1161,7 +1153,7 @@
       <window_info anchor="bottom" id="Sequence" order="1" weight="0.2517912" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4993895" weight="0.32879582" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.88705736" visible="true" weight="0.39162305" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.20512821" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.20512821" />
       <window_info anchor="right" id="Bean Validation" order="9" sideWeight="0.48769897" weight="0.18803419" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
       <window_info anchor="right" id="Theme Preview" order="8" />
@@ -1229,7 +1221,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Add strava API support #8" />
     <MESSAGE value="Add persistence. AthletesFTP, Trained data. #9" />
     <MESSAGE value="Use id instead of athleteFtp to get sessions or plan #13" />
     <MESSAGE value="Add username to athlete #15" />
@@ -1254,7 +1245,8 @@
     <MESSAGE value="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20&#10;Workaround for maven testing using mvcmock buggy spring context loading." />
     <MESSAGE value="Add Spring Controller to play with classification service #21" />
     <MESSAGE value="Import strava data and return classification #22" />
-    <option name="LAST_COMMIT_MESSAGE" value="Import strava data and return classification #22" />
+    <MESSAGE value="Fix mvn clean install test and adjusting application.properties for strava username and key." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix mvn clean install test and adjusting application.properties for strava username and key." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1644,7 +1636,7 @@
     <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
-          <caret line="78" column="82" selection-start-line="78" selection-start-column="82" selection-end-line="78" selection-end-column="82" />
+          <caret line="74" column="83" selection-start-line="74" selection-start-column="83" selection-end-line="74" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1666,13 +1658,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="47" column="23" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -1680,6 +1665,13 @@
             <caret line="313" column="25" selection-start-line="313" selection-start-column="25" selection-end-line="313" selection-end-column="25" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
         </state>
       </provider>
     </entry>
