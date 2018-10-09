@@ -10,6 +10,7 @@ import com.jarics.trainbot.services.learning.WekaMLService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -24,6 +25,8 @@ public class StravaServiceTests {
     private AthleteRepositoryService athleteRepositoryService;
     @Autowired
     private WekaMLService wekaMLService;
+    @Value("${strava.user.name}")
+    private String stravaUserName;
 
     @Test
     public void testGetSession() {
@@ -34,9 +37,12 @@ public class StravaServiceTests {
         }
     }
 
+    /**
+     * @throws Exception
+     */
     @Test
     public void testFeatures() throws Exception {
-        AthleteFTP athleteFTP = athleteRepositoryService.findAthleteFtpByUsername("eaudet");
+        AthleteFTP athleteFTP = athleteRepositoryService.findAthleteFtpByUsername(stravaUserName);
         AthletesFeatures athletesFeatures = stravaService.extractAthletesFeatures(athleteFTP);
         athletesFeatures.setAthlete(athleteFTP);
         System.out.print(athletesFeatures.toArffData());

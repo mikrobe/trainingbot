@@ -295,13 +295,23 @@ This will be fed into an ML algorithm.
 ```
 
 ## Deployment and start
-Define properties in file called: application.properties an insert the following variable:
+Define properties (or copy the one in resources folder) in file called: 
+application.properties an insert the following variable:
+
 nitrite.db.file.path={path}/trainingbot.bd
+strava.user.name={strava user name}
+strava.user.key={strava key}
 
 The UI is in trainingui project....see readme in that project to visualize a basic training plan...
 ### Local
+### application.properties
+Make sure you change the following otherwise unit test won't work for strava related tests.:
+```
+strava.user.name={strava user name}
+strava.user.key={strava key}
+```
 #### Build
-1. cd trainingbot
+1. cd trainingbot/service
 1. mvn clean install
 #### Run
 java -jar trainingbot/service/target/service-1.0-SNAPSHOT.jar --spring.config.location=application.properties

@@ -14,6 +14,7 @@ import io.swagger.client.model.ActivityType;
 import io.swagger.client.model.DetailedActivity;
 import io.swagger.client.model.DetailedSegmentEffort;
 import io.swagger.client.model.SummaryActivity;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -24,6 +25,9 @@ import java.util.List;
 
 @Component
 public class StravaService implements TrainingLogger {
+
+    @Value("${strava.user.key}")
+    private String stravaUserKey;
 
     public List<AthleteActivity> getAthleteActivities(AthleteFTP pAthleteFTP, int pElapseDays) {
         prepareDefaultClient();
@@ -81,7 +85,7 @@ public class StravaService implements TrainingLogger {
     private void prepareDefaultClient() {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         OAuth strava_oauth = (OAuth) defaultClient.getAuthentication("strava_oauth");
-        strava_oauth.setAccessToken("eb701aac06d7542441c4857226e9939bac3aa3a1");
+        strava_oauth.setAccessToken(stravaUserKey);
     }
 
     private AthleteActivity convert(SummaryActivity pSummaryActivity) {

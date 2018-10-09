@@ -1,5 +1,6 @@
 package com.jarics.trainbot;
 
+import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.services.MLClasses;
 import com.jarics.trainbot.services.learning.WekaMLService;
@@ -9,17 +10,17 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.Charset;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
@@ -38,6 +39,9 @@ public class MLTest {
 
     @Autowired
     private WekaMLService wekaMLService;
+
+    @Value("${strava.user.name}")
+    private String stravaUserName;
 
     @Before
     public void before() {
@@ -58,12 +62,16 @@ public class MLTest {
     }
 
     @Test
-    public void testCreateAthleteTwoTimes() throws Exception {
-
-        mockMvc.perform(post("/api/ml").contentType(contentType).
-                content(TestUtil.convertObjectToJsonBytes(new AthletesFeatures(1.0511188630639134E-7, 2.0750096254564565E-7, 1.023890762392543E-7))))
-                .andExpect(content().string("\"undertrained\""))
-                .andDo(print());
-
+    public void testMLRestApi() throws Exception {
+        AthletesFeatures athletesFeatures =
+                new AthletesFeatures(1.0511188630639134E-7, 2.0750096254564565E-7, 1.023890762392543E-7);
+        AthleteFTP athleteFTP = new AthleteFTP();
+        athleteFTP.setUsername(stravaUserName);
+        athletesFeatures.setAthlete(athleteFTP);
+        MvcResult result = mockMvc.perform(post("/api/ml").contentType(contentType).
+                content(TestUtil.convertObjectToJsonBytes(athletesFeatures)))
+                .andReturn();
+        AthleteFTP athleteFTP1 = (AthleteFTP) TestUtil.convertJsonBytesToObject(result.getResponse().getContentAsString(), AthleteFTP.class);
+        Assert.assertEquals(MLClasses.undertrained, athleteFTP1.getClassification());
     }
 }
