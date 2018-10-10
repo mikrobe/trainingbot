@@ -295,14 +295,18 @@ This will be fed into an ML algorithm.
 ```
 
 ## How to build, deploy and start the application
-Define properties in the file called: 
-application.properties (trainingbot/service/src/main/resources/application.properties) an set the following properties:
+Define or copy properties file called: 
+application.properties (trainingbot/service/src/main/resources/application.properties) an set the following properties here:
 
 ```
-LEARNING AND CLASSIFICATION PROPERTIES
-nitrite.db.file.path={path}/trainingbot.bd
-strava.user.name={strava user name}
-strava.user.key={strava key}
+## ------------------------------------------
+# To change for every deployment
+## ------------------------------------------
+```
+Special note for strava properties:
+```
+strava.user.name={strava_user_name}
+strava.user.key={strava_user_key}
 ```
 
 The UI is in trainingui project....see readme in that project to visualize a basic training plan...
@@ -314,6 +318,7 @@ strava.user.name={strava user name}
 strava.user.key={strava key}
 ```
 #### Build
+1. (Optionally) Manually run the test testMLPC in /trainingbot/service/src/test/java/com/jarics/trainbot/MLTest.java to generate Weka model if you really need it. Otherwise it will take the committed model in /trainingBotFiles.
 1. cd trainingbot/service
 1. mvn clean install
 #### Run
