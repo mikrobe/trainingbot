@@ -1,5 +1,6 @@
 package com.jarics.trainbot.services;
 
+import com.jarics.trainbot.com.jarics.trainbot.utils.FileUtils;
 import com.jarics.trainbot.entities.AthleteFTP;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteId;
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.UUID;
 
 import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
@@ -20,12 +22,17 @@ public class AthleteRepositoryService {
     ObjectRepository<AthleteFTP> repository;
 
     @Autowired
-    public AthleteRepositoryService(@Value("${nitrite.db.file.path}") final String nitriteDbPath) {
+    public AthleteRepositoryService(@Value("${nitrite.dir}") final String nitriteDir,
+                                    @Value("${nitrite.file.name}") final String nitriteFileName) {
         //java initialization
-        String aPath = nitriteDbPath;
-        //MockMcv workaround for buggy spring context load. See: https://stackoverflow.com/questions/42693789/spring-boot-integration-tests-autoconfiguremockmvc-and-context-caching
+        try {
+            FileUtils.prepareDir(nitriteDir);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        String aPath = nitriteDir + nitriteFileName;
         if (System.getProperty("testing") != null) {
-            aPath = nitriteDbPath + "_" + UUID.randomUUID();
+            aPath = aPath + "_" + UUID.randomUUID();
         }
         db = Nitrite.builder()
                 .compressed()

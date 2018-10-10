@@ -294,13 +294,16 @@ This will be fed into an ML algorithm.
 } 
 ```
 
-## Deployment and start
-Define properties (or copy the one in resources folder) in file called: 
-application.properties an insert the following variable:
+## How to build, deploy and start the application
+Define properties in the file called: 
+application.properties (trainingbot/service/src/main/resources/application.properties) an set the following properties:
 
+```
+LEARNING AND CLASSIFICATION PROPERTIES
 nitrite.db.file.path={path}/trainingbot.bd
 strava.user.name={strava user name}
 strava.user.key={strava key}
+```
 
 The UI is in trainingui project....see readme in that project to visualize a basic training plan...
 ### Local
