@@ -15,7 +15,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 public class SwaggerConfig {
     @Bean
     public Docket productApi() {
-        return new Docket(DocumentationType.SWAGGER_2)
+        return new Docket(DocumentationType.SWAGGER_2).host(System.getProperty("swagger.host"))
                 .select().apis(RequestHandlerSelectors.basePackage("com.jarics.trainbot.controllers"))
                 .paths(regex("/api.*"))
                 .build();

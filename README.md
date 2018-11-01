@@ -338,10 +338,10 @@ Canarie Server Admin: https://nova-ab.dair-atir.canarie.ca/project/
 
 Canari SSH: ubuntu@208.75.75.136
 
-1. scp /Users/erickaudet/Documents/application.properties ubuntu@208.75.75.136:apps
-1. scp /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.136:apps
-2. ssh ubuntu@208.75.75.136
-3. java -jar /Users/erickaudet/dev/trainingbot/service/target/service-1.0-SNAPSHOT.jar --spring.config.location=/Users/erickaudet/Documents/application.properties 
+1. scp ./service/src/main/resources/application.properties ubuntu@208.75.75.24:apps
+2. scp ./service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.24:apps
+3. ssh ubuntu@
+4. java -jar service-1.0-SNAPSHOT.jar 
 
 ## References
 1. http://tailwind-coaching.com/2016/04/13/training-stress-score-fatigue/, Coach Rob

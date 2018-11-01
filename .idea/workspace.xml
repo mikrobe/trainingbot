@@ -1,39 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_9_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_guava_guava_18_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_7_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_9_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_13.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_6_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_reflections_reflections_0_9_11.xml" beforeDir="false" />
+    <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="House keeping path properties.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service/service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/NormalTrainingGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/NormalTrainingGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/OverTrainingGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/OverTrainingGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainingBotFiles/activity_features.arff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainingBotFiles/trainingbot.dataset" beforeDir="false" afterPath="$PROJECT_DIR$/trainingBotFiles/trainingbot.dataset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainingBotFiles/trainingbot.model" beforeDir="false" afterPath="$PROJECT_DIR$/trainingBotFiles/trainingbot.model" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainingBotFiles/trainingbotLeanringResults.csv" beforeDir="false" afterPath="$PROJECT_DIR$/trainingBotFiles/trainingbotLeanringResults.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -76,7 +47,8 @@
           <entry key="dataset" value="2" />
           <entry key="iml" value="1" />
           <entry key="java" value="74" />
-          <entry key="md" value="1" />
+          <entry key="json" value="2" />
+          <entry key="md" value="2" />
           <entry key="model" value="2" />
           <entry key="properties" value="4" />
           <entry key="xml" value="6" />
@@ -87,7 +59,8 @@
           <entry key="CLASS" value="1" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="JAVA" value="74" />
-          <entry key="Markdown" value="1" />
+          <entry key="JSON" value="2" />
+          <entry key="Markdown" value="2" />
           <entry key="PLAIN_TEXT" value="41" />
           <entry key="Properties" value="4" />
           <entry key="XML" value="6" />
@@ -95,15 +68,17 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="752" />
-          <entry key="properties" value="91" />
+          <entry key="java" value="804" />
+          <entry key="md" value="9" />
+          <entry key="properties" value="92" />
           <entry key="xml" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="752" />
-          <entry key="Properties" value="91" />
+          <entry key="JAVA" value="804" />
+          <entry key="Markdown" value="9" />
+          <entry key="Properties" value="92" />
           <entry key="XML" value="87" />
         </counts>
       </usages-collector>
@@ -132,11 +107,33 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+            <state relative-caret-position="30">
+              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/cardioblaster.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/pyramid.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="218">
+                <caret line="338" column="32" selection-start-line="338" selection-start-column="32" selection-end-line="338" selection-end-column="32" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -144,8 +141,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            <state relative-caret-position="120">
+              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -162,11 +159,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
+            <state relative-caret-position="255">
+              <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -182,36 +179,6 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1530">
-              <caret line="110" selection-start-line="110" selection-end-line="110" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="44" column="5" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -299,7 +266,6 @@
         <option value="$PROJECT_DIR$/service/src/test/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/DeserUtils.java" />
@@ -312,10 +278,11 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" />
       </list>
     </option>
   </component>
@@ -409,24 +376,6 @@
               <item name="service" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -462,7 +411,7 @@
     <property name="SearchEverywhereHistoryKey" value="Training&#9;FILE&#9;file:///Users/erickaudet/dev/trainingbot/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java&#10;AthleteRepositoryService&#9;PSI&#9;JAVA://com.jarics.trainbot.services.AthleteRepositoryService&#10;LibSVMFileFormat&#9;PSI&#9;JAVA://org.apache.spark.ml.source.libsvm.LibSVMFileFormat" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541045609639" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541053200591" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -654,6 +603,9 @@
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.jarics.trainbot.Application" />
       <option name="DEBUG_MODE" value="true" />
       <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="swagger.host" value="localhost" />
+      </envs>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -769,14 +721,7 @@
       <workItem from="1540394895235" duration="1249000" />
       <workItem from="1540433117170" duration="1924000" />
       <workItem from="1540993149578" duration="1206000" />
-      <workItem from="1541040896261" duration="2732000" />
-    </task>
-    <task id="LOCAL-00031" summary="UI for visualizing sessions #14">
-      <created>1528038005793</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1528038005793</updated>
+      <workItem from="1541040896261" duration="7382000" />
     </task>
     <task id="LOCAL-00032" summary="UI for visualizing sessions #14">
       <created>1528038598792</created>
@@ -1114,7 +1059,14 @@
       <option name="project" value="LOCAL" />
       <updated>1539141980733</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="House keeping path properties.">
+      <created>1541045799116</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1541045799117</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1150,7 +1102,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390362000" />
+    <option name="totallyTimeSpent" value="395012000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1163,16 +1115,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" weight="0.32967034" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" x="594" y="273" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.17948718" />
+      <window_info content_ui="combo" x="594" y="273" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.17948718" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
-      <window_info anchor="bottom" id="Run Dashboard" order="0" sideWeight="0.82661784" visible="true" weight="0.2987552" />
+      <window_info anchor="bottom" id="Run Dashboard" order="0" sideWeight="0.8247863" weight="0.7738589" />
       <window_info anchor="bottom" id="Sequence" order="1" weight="0.2517912" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" sideWeight="0.4945055" weight="0.30912864" />
@@ -1181,11 +1132,11 @@
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4993895" weight="0.32879582" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.88095236" weight="0.32883817" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.87851036" visible="true" weight="0.32883817" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.20368475" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4969475" weight="0.32676348" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.17338218" side_tool="true" visible="true" weight="0.2987552" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.12148962" side_tool="true" visible="true" weight="0.32883817" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4981685" weight="0.25583863" />
       <window_info anchor="bottom" id="SBT Console" order="16" />
@@ -1204,9 +1155,9 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" sideWeight="0.48769897" weight="0.18803419" />
-      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.41715977" visible="true" weight="0.15384616" />
+      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.41731066" visible="true" weight="0.15384616" />
       <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4924812" weight="0.525641" />
-      <window_info anchor="right" id="Structure" order="12" sideWeight="0.58284026" side_tool="true" visible="true" weight="0.15384616" />
+      <window_info anchor="right" id="Structure" order="12" sideWeight="0.58268934" side_tool="true" visible="true" weight="0.15384616" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1673,9 +1624,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0bdde214-5d7f-4160-901e-ef1d3b1335c0_overtrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0ab14c58-1e7d-4dbe-93f5-55cfe69efdf5_undertrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0bfe64dd-f721-42ed-90ee-30fedc8ede15_normal.csv" />
     <entry file="file://$PROJECT_DIR$/trainingBotFiles/0ab7d6ae-980b-4350-9ba5-4dc037d626e3_undertrained.csv" />
     <entry file="file://$PROJECT_DIR$/trainingBotFiles/0a196c8a-0ab8-4b99-afc5-fc52cc2e8747_normal.csv" />
     <entry file="file://$PROJECT_DIR$/trainingBotFiles/0a44e72e-a0ae-42de-bb5c-755025195083_overtrained.csv" />
@@ -1787,7 +1735,7 @@
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1530">
-          <caret line="110" selection-start-line="110" selection-end-line="110" />
+          <caret line="109" selection-start-line="109" selection-end-line="109" />
         </state>
       </provider>
     </entry>
@@ -1804,7 +1752,7 @@
     <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="44" />
+          <caret line="18" selection-start-line="18" selection-end-line="19" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1818,30 +1766,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="67" selection-start-line="9" selection-start-column="67" selection-end-line="9" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1862,10 +1790,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="218">
+            <caret line="338" column="32" selection-start-line="338" selection-start-column="32" selection-end-line="338" selection-end-column="32" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/cardioblaster.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/pyramid.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="30">
+          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
