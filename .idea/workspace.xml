@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="House keeping path properties.">
+    <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="implemented basic swagger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -69,15 +68,17 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="804" />
-          <entry key="md" value="9" />
+          <entry key="md" value="11" />
           <entry key="properties" value="92" />
+          <entry key="txt" value="27" />
           <entry key="xml" value="87" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="804" />
-          <entry key="Markdown" value="9" />
+          <entry key="Markdown" value="11" />
+          <entry key="PLAIN_TEXT" value="27" />
           <entry key="Properties" value="92" />
           <entry key="XML" value="87" />
         </counts>
@@ -126,12 +127,12 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="218">
-                <caret line="338" column="32" selection-start-line="338" selection-start-column="32" selection-end-line="338" selection-end-column="32" />
+                <caret line="338" column="31" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
               </first_editor>
               <second_editor />
             </state>
@@ -159,7 +160,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
@@ -280,9 +281,9 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -411,7 +412,7 @@
     <property name="SearchEverywhereHistoryKey" value="Training&#9;FILE&#9;file:///Users/erickaudet/dev/trainingbot/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java&#10;AthleteRepositoryService&#9;PSI&#9;JAVA://com.jarics.trainbot.services.AthleteRepositoryService&#10;LibSVMFileFormat&#9;PSI&#9;JAVA://org.apache.spark.ml.source.libsvm.LibSVMFileFormat" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541053200591" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541053254589" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -721,14 +722,7 @@
       <workItem from="1540394895235" duration="1249000" />
       <workItem from="1540433117170" duration="1924000" />
       <workItem from="1540993149578" duration="1206000" />
-      <workItem from="1541040896261" duration="7382000" />
-    </task>
-    <task id="LOCAL-00032" summary="UI for visualizing sessions #14">
-      <created>1528038598792</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1528038598792</updated>
+      <workItem from="1541040896261" duration="7435000" />
     </task>
     <task id="LOCAL-00033" summary="UI for visualizing sessions #14">
       <created>1528040429936</created>
@@ -1066,7 +1060,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541045799117</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="implemented basic swagger">
+      <created>1541053220227</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1541053220227</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1102,7 +1103,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395012000" />
+    <option name="totallyTimeSpent" value="395065000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1115,13 +1116,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" weight="0.32967034" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" x="594" y="273" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.17948718" />
+      <window_info active="true" content_ui="combo" x="594" y="273" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.17948718" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
       <window_info anchor="bottom" id="Run Dashboard" order="0" sideWeight="0.8247863" weight="0.7738589" />
       <window_info anchor="bottom" id="Sequence" order="1" weight="0.2517912" />
@@ -1132,7 +1134,7 @@
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4993895" weight="0.32879582" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.87851036" visible="true" weight="0.32883817" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.87851036" visible="true" weight="0.32883817" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.20368475" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
       <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4969475" weight="0.32676348" />
@@ -1503,7 +1505,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="Use id instead of athleteFtp to get sessions or plan #13" />
     <MESSAGE value="Add username to athlete #15" />
     <MESSAGE value="Refactor and enhance testing" />
     <MESSAGE value="UI for visualizing sessions #14" />
@@ -1528,7 +1529,8 @@
     <MESSAGE value="Build error dependency for io.swagger:swagger-java-client:jar:1.0.0 #20" />
     <MESSAGE value="Fix mvn clean install test and adjusting application.properties for strava username and key." />
     <MESSAGE value="House keeping path properties." />
-    <option name="LAST_COMMIT_MESSAGE" value="House keeping path properties." />
+    <MESSAGE value="implemented basic swagger" />
+    <option name="LAST_COMMIT_MESSAGE" value="implemented basic swagger" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1790,16 +1792,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="218">
-            <caret line="338" column="32" selection-start-line="338" selection-start-column="32" selection-end-line="338" selection-end-column="32" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/cardioblaster.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1830,6 +1822,16 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="218">
+            <caret line="338" column="31" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

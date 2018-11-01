@@ -336,12 +336,12 @@ See: Postman examples
 ### Canarie Server
 Canarie Server Admin: https://nova-ab.dair-atir.canarie.ca/project/
 
-Canari SSH: ubuntu@208.75.75.136
+Canari SSH: ubuntu@208.75.75.24
 
 1. scp ./service/src/main/resources/application.properties ubuntu@208.75.75.24:apps
 2. scp ./service/target/service-1.0-SNAPSHOT.jar ubuntu@208.75.75.24:apps
 3. ssh ubuntu@
-4. java -jar service-1.0-SNAPSHOT.jar 
+4. java -jar service-1.0-SNAPSHOT.jar -Dswagger.host=208.75.75.24
 
 ## References
 1. http://tailwind-coaching.com/2016/04/13/training-stress-score-fatigue/, Coach Rob
