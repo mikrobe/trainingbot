@@ -23,6 +23,7 @@ public class TrainingBotController {
     TrainingPlanService trainingPlanService;
     WekaMLService wekaMLService;
 
+
     @Autowired
     public TrainingBotController(
             AthleteRepositoryService athleteRepositoryService,

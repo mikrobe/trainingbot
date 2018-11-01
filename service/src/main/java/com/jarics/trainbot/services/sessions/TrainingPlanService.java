@@ -87,6 +87,9 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
         double[] swimDistances = getDistances(athleteFTP, nbrWeeks, startSwimDistances, targetSwimDistanceRatio);
         double[] bikeDistances = getDistances(athleteFTP, nbrWeeks, startBikeDistances, targetBikeDistanceRatio);
         double[] runDistances = getDistances(athleteFTP, nbrWeeks, startRunDistances, targetRunDistanceRatio);
+        double[] bikeLowSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeLowSweetSpot * athleteFTP.getBikeFtp());
+        double[] bikeHighSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeHighSweetSpot * athleteFTP.getBikeFtp());
+
 
         for (int i = 0; i < nbrWeeks; i++) {
             SimpleSession simpleSession =
@@ -98,14 +101,24 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
                             runDistances[i],
                             swimLowSweetSpot * athleteFTP.getSwimFtp(),
                             swimHighSweetSpot * athleteFTP.getSwimFtp(),
-                            bikeLowSweetSpot * athleteFTP.getBikeFtp(),
-                            bikeHighSweetSpot * athleteFTP.getBikeFtp(),
+                            bikeLowSweetSpots[i],
+                            bikeHighSweetSpots[i],
                             runLowSweetSpot * athleteFTP.getRunFtp(),
-                            runHighSweetSpot * athleteFTP.getRunFtp()
-                    );
+                            runHighSweetSpot * athleteFTP.getRunFtp());
             simpleSessions.add(simpleSession);
         }
         return simpleSessions;
+    }
+
+    protected double[] getSweetSpots(AthleteFTP athleteFTP, int nbrWeeks, double sweetSpot) {
+        double[] sweetspots = new double[nbrWeeks];
+        sweetspots[0] = sweetSpot;
+        for (int i = 1; i < nbrWeeks; i++) {
+            int phase = i % 4;
+            double athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, phase, getBaseIntensityIncreaseRatio(phase));
+            sweetspots[i] = athleteWeightedRatio * sweetSpot + sweetSpot;
+        }
+        return sweetspots;
     }
 
 

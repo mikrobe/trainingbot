@@ -108,6 +108,7 @@ public class FeatureExtractor {
                 case BIKE: {
                     wCurrentFtp = pBikeFtp;
                     wNp = activity.getWeigthedAvgWatts();
+                    wNPG = activity.getMovingTime() / activity.getDistance();
                     IF = wNp / wCurrentFtp;
                     wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
                     break;

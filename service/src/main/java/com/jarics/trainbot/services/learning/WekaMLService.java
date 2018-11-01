@@ -70,7 +70,7 @@ public class WekaMLService {
     }
 
     public void generate() throws Exception {
-        generateTrainingDataset.generate(false);
+        generateTrainingDataset.generate(true);
     }
 
     public void learn() {

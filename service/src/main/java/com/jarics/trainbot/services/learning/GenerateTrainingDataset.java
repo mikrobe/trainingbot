@@ -103,16 +103,14 @@ public class GenerateTrainingDataset {
         List<AthleteActivity> wAthleteActivities = new ArrayList<>();
         for (SimpleSession wSimpleSession : wSimpleSessions) {
             wAthleteActivities.add(newSwimDistanceActivity(wSimpleSession));
-//            wAthleteActivities.add(newSwimIntensityActivity(wSimpleSession));
-            wAthleteActivities.add(newBikeDistanceActivity(wSimpleSession));
-            wAthleteActivities.add(newBikeIntensityActivity(wSimpleSession));
-//            wAthleteActivities.add(newRunDistanceActivity(wSimpleSession));
-//            wAthleteActivities.add(newRunIntensityActivity(wSimpleSession));
+            wAthleteActivities.add(newSwimIntensityActivity(wSimpleSession));
+            wAthleteActivities.add(newBikeActivity(wSimpleSession));
+            wAthleteActivities.add(newRunActivity(wSimpleSession));
         }
         return wAthleteActivities;
     }
 
-    private AthleteActivity newBikeDistanceActivity(SimpleSession wSimpleSession) {
+    private AthleteActivity newBikeActivity(SimpleSession wSimpleSession) {
         AthleteActivity wActivity;
         wActivity = new AthleteActivity();
         wActivity.setWeekNbr(wSimpleSession.getWeek());
@@ -120,17 +118,19 @@ public class GenerateTrainingDataset {
         wActivity.setDistance((float) wSimpleSession.getBikeDistance());
         wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
         wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setWeigthedAvgWatts((wSimpleSession.getBikeHZone() + wSimpleSession.getBikeHZone()) / 2);
         return wActivity;
     }
 
-    private AthleteActivity newBikeIntensityActivity(SimpleSession wSimpleSession) {
+    private AthleteActivity newRunActivity(SimpleSession wSimpleSession) {
         AthleteActivity wActivity;
         wActivity = new AthleteActivity();
         wActivity.setWeekNbr(wSimpleSession.getWeek());
-        wActivity.setType(BotActivityType.BIKE);
-        wActivity.setDistance((float) wSimpleSession.getBikeDistance());
+        wActivity.setType(BotActivityType.RUN);
+        wActivity.setDistance((float) wSimpleSession.getRunDistance());
         wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
         wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setPace((wSimpleSession.getRunHZone() + wSimpleSession.getRunHZone()) / 2);
         return wActivity;
     }
 
@@ -142,19 +142,21 @@ public class GenerateTrainingDataset {
         wActivity.setDistance((float) pSimpleSession.getSwimDistance());
         wActivity.setMovingTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
         wActivity.setElapsedTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
-        wActivity.setPace((pSimpleSession.getTimeAtFtp() * 100 / pSimpleSession.getSwimDistance()) * 60);
+//        wActivity.setPace(  );
         return wActivity;
     }
 
-//    private AthleteActivity newSwimIntensityActivity(){
-//        AthleteActivity wActivity = new AthleteActivity();
-//        wActivity.setWeekNbr(wSimpleSession.getWeek());
-//        wActivity.setType(BotActivityType.SWIM);
-//        wActivity.setDistance((float) wSimpleSession.getSwimDistance());
-//        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-//        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-//        wActivity.setPace( (wSimpleSession.getTimeAtFtp()*100/wSimpleSession.getSwimDistance()) * 60);
-//    }
+    private AthleteActivity newSwimIntensityActivity(SimpleSession pSimpleSession) {
+        AthleteActivity wActivity = new AthleteActivity();
+//        wActivity.setWeekNbr(SimpleSession pSimpleSession.getWeek());
+        wActivity.setType(BotActivityType.SWIM);
+        double avgPace = (pSimpleSession.getSwimHZone() + pSimpleSession.getSwimLZone()) / 2;
+        wActivity.setDistance((float) (pSimpleSession.getTimeAtFtp() * 100 / avgPace));
+        wActivity.setMovingTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setElapsedTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setPace(avgPace);
+        return wActivity;
+    }
 //
 //    private AthleteActivity newRunDistanceActivity(){
 //        AthleteActivity wActivity = new AthleteActivity();

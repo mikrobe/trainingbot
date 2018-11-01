@@ -1,6 +1,8 @@
 package com.jarics.trainbot.entities;
 
-public class AthleteActivity {
+import java.io.Serializable;
+
+public class AthleteActivity implements Serializable {
     int weekNbr;
     BotActivityType type;
     int elapsedTime;

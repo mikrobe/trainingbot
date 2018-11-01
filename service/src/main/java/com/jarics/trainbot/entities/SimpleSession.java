@@ -5,6 +5,7 @@ public class SimpleSession {
     double runDistance;
     double bikeDistance;
     double swimDistance;
+    double weigthedAvgWatts;
     int week;
     double runFtp;
     double swimFtp;
@@ -184,4 +185,5 @@ public class SimpleSession {
     public void setBikeFtp(double bikeFtp) {
         this.bikeFtp = bikeFtp;
     }
+
 }
