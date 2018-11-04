@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="implemented basic swagger">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/TestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/JsonUtil.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/service/target/" />
@@ -39,13 +44,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="LICENSE" value="1" />
+          <entry key="MF" value="1" />
           <entry key="arff" value="2" />
-          <entry key="class" value="1" />
+          <entry key="class" value="4" />
           <entry key="csv" value="35" />
           <entry key="dataset" value="2" />
+          <entry key="html" value="6" />
           <entry key="iml" value="1" />
-          <entry key="java" value="74" />
-          <entry key="json" value="2" />
+          <entry key="java" value="82" />
+          <entry key="json" value="3" />
           <entry key="md" value="2" />
           <entry key="model" value="2" />
           <entry key="properties" value="4" />
@@ -54,19 +62,22 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="1" />
+          <entry key="CLASS" value="4" />
+          <entry key="HTML" value="6" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="74" />
-          <entry key="JSON" value="2" />
+          <entry key="JAVA" value="82" />
+          <entry key="JSON" value="3" />
+          <entry key="Manifest" value="1" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="41" />
+          <entry key="PLAIN_TEXT" value="42" />
           <entry key="Properties" value="4" />
           <entry key="XML" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="804" />
+          <entry key="dummy" value="4" />
+          <entry key="java" value="1540" />
           <entry key="md" value="11" />
           <entry key="properties" value="92" />
           <entry key="txt" value="27" />
@@ -75,9 +86,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="804" />
+          <entry key="JAVA" value="1540" />
           <entry key="Markdown" value="11" />
-          <entry key="PLAIN_TEXT" value="27" />
+          <entry key="PLAIN_TEXT" value="31" />
           <entry key="Properties" value="92" />
           <entry key="XML" value="87" />
         </counts>
@@ -89,17 +100,21 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="7" selection-start-line="7" selection-end-line="15" selection-end-column="47" />
+            <state relative-caret-position="172">
+              <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#6015#6046#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/JsonUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="135">
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -108,66 +123,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/FileUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/resources/cardioblaster.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/resources/pyramid.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7" />
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="193">
-                <caret line="338" column="31" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="60">
+              <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/pom.xml">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="120" column="14" selection-start-line="120" selection-end-line="127" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="17" column="88" selection-start-line="17" selection-start-column="88" selection-end-line="17" selection-end-column="88" />
+            <state relative-caret-position="396">
+              <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,15 +144,41 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/response.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/service/src/main/resources/pyramid.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-7">
-              <caret line="151" column="48" selection-start-line="151" selection-start-column="48" selection-end-line="151" selection-end-column="48" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="172">
+              <caret line="54" selection-start-line="54" selection-end-line="54" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="43" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/auth.html">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LICENSE">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -236,8 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/MLServiceIf.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/RegressionService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GeneratTrainingDataset.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/NormalTrainingGenerator.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/OverTrainingGenerator.java" />
@@ -281,12 +273,14 @@
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/pom.xml" />
         <option value="$PROJECT_DIR$/service/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/SwaggerConfig.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/TestUtil.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/JsonUtil.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
       </list>
     </option>
   </component>
@@ -339,6 +333,158 @@
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
               <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="trainbot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="trainbot" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-web:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-web-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="support" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-webmvc:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-webmvc:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-webmvc-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Maven: org.springframework:spring-webmvc:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
+              <item name="spring-webmvc-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="annotation" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -372,7 +518,7 @@
     <property name="SearchEverywhereHistoryKey" value="Training&#9;FILE&#9;file:///Users/erickaudet/dev/trainingbot/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java&#10;AthleteRepositoryService&#9;PSI&#9;JAVA://com.jarics.trainbot.services.AthleteRepositoryService&#10;LibSVMFileFormat&#9;PSI&#9;JAVA://org.apache.spark.ml.source.libsvm.LibSVMFileFormat" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541271725332" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541332087461" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -380,10 +526,14 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.general" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/ui/trainbot/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jarics.trainbot.services" />
+      <recent name="com.jarics.trainbot.entities" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.jarics.trainbot.services" />
     </key>
@@ -394,14 +544,8 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.jarics.trainbot" />
       <recent name="com.jarics.trainbot.services.sessions" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/samples" />
-      <recent name="$PROJECT_DIR$/test_data" />
-      <recent name="$PROJECT_DIR$/ui/libs" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/ui/trainbot/src/components" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.jarics.trainbot" />
@@ -414,9 +558,12 @@
       <recent name="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot" />
       <recent name="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jarics.trainbot.services" />
-      <recent name="com.jarics.trainbot.entities" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/src/main/resources/public" />
+      <recent name="$PROJECT_DIR$/service/src/main/resources" />
+      <recent name="$PROJECT_DIR$/samples" />
+      <recent name="$PROJECT_DIR$/test_data" />
+      <recent name="$PROJECT_DIR$/ui/libs" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -442,7 +589,7 @@
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -460,7 +607,7 @@
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -478,7 +625,7 @@
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -496,7 +643,7 @@
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -515,7 +662,7 @@
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -533,7 +680,7 @@
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -682,14 +829,7 @@
       <workItem from="1540394895235" duration="1249000" />
       <workItem from="1540433117170" duration="1924000" />
       <workItem from="1540993149578" duration="1206000" />
-      <workItem from="1541040896261" duration="10784000" />
-    </task>
-    <task id="LOCAL-00034" summary="UI for visualizing sessions #14">
-      <created>1528040446328</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1528040446328</updated>
+      <workItem from="1541040896261" duration="19142000" />
     </task>
     <task id="LOCAL-00035" summary="ML training on strava activies as examples #11">
       <created>1528368711621</created>
@@ -1027,7 +1167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1541053266628</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="implemented basic swagger">
+      <created>1541271750065</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1541271750065</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1063,7 +1210,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="398414000" />
+    <option name="totallyTimeSpent" value="406772000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1076,30 +1223,31 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Designer" order="0" />
       <window_info id="Favorites" order="1" sideWeight="0.5209205" side_tool="true" weight="0.18681319" />
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" weight="0.32967034" />
       <window_info id="Capture Tool" order="4" />
-      <window_info active="true" content_ui="combo" x="594" y="273" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.17948718" />
+      <window_info active="true" content_ui="combo" x="594" y="273" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.26556778" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
-      <window_info anchor="bottom" id="Run Dashboard" order="0" sideWeight="0.8247863" weight="0.7738589" />
+      <window_info anchor="bottom" id="Run Dashboard" order="0" sideWeight="0.82295483" visible="true" weight="0.36618257" />
       <window_info anchor="bottom" id="Sequence" order="1" weight="0.2517912" />
       <window_info anchor="bottom" id="Message" order="2" />
-      <window_info anchor="bottom" id="Find" order="3" sideWeight="0.4945055" weight="0.30912864" />
+      <window_info anchor="bottom" id="Find" order="3" sideWeight="0.493895" weight="0.30912864" />
       <window_info anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.8333333" weight="0.31846473" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.8247863" weight="0.33195022" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4993895" weight="0.32879582" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.87851036" visible="true" weight="0.32883817" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.87851036" weight="0.32883817" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.20368475" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32958034" />
-      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4969475" weight="0.32676348" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.12148962" side_tool="true" visible="true" weight="0.32883817" />
+      <window_info anchor="bottom" id="Messages" order="12" sideWeight="0.4957265" weight="0.32676348" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.17704518" side_tool="true" visible="true" weight="0.36618257" />
       <window_info anchor="bottom" id="Database Changes" order="14" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.4981685" weight="0.25583863" />
+      <window_info anchor="bottom" id="Version Control" order="15" sideWeight="0.497558" weight="0.25518674" />
       <window_info anchor="bottom" id="SBT Console" order="16" />
       <window_info anchor="bottom" id="Inspector" order="17" side_tool="true" />
       <window_info anchor="bottom" id="Usages" order="18" />
@@ -1116,24 +1264,15 @@
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="Bean Validation" order="9" sideWeight="0.48769897" weight="0.18803419" />
-      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.41731066" visible="true" weight="0.15384616" />
+      <window_info anchor="right" id="Maven Projects" order="10" sideWeight="0.41734862" visible="true" weight="0.15384616" />
       <window_info anchor="right" id="PlantUML" order="11" sideWeight="0.4924812" weight="0.525641" />
-      <window_info anchor="right" id="Structure" order="12" sideWeight="0.58268934" side_tool="true" visible="true" weight="0.15384616" />
+      <window_info anchor="right" id="Structure" order="12" sideWeight="0.5826514" side_tool="true" visible="true" weight="0.15384616" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/../dgiglab/prototypes-ui/models/packages/policy-auto-gateway-api/target/swagger-output/api.js" />
-        <option value="$PROJECT_DIR$/../dgiglab/prototypes-ui/models/packages/policy-auto-gateway-api/target/swagger-output/configuration.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Utils.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Logger.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/RuntimeConfig.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/RuntimeConfig.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Logger.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Utils.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/server/dev/server.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/dev/server.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/middlewares/index.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/middlewares/index.js.map" />
@@ -1142,14 +1281,13 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/server/routes/StaticRoutes.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/routes/SSRRoutes.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelBody/VuePanelBody.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelBody/VuePanelBody.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelHeader/VuePanelHeader.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelHeader/VuePanelHeader.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelFooter/VuePanelFooter.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelFooter/VuePanelFooter.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/fixtures/IAutocompleteFixture.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/fixtures/IAutocompleteFixture.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTableHeader/VueDataTableHeader.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Utils.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Logger.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/RuntimeConfig.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/RuntimeConfig.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Logger.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/utils/Utils.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/server/dev/server.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTableHeader/VueDataTableHeader.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTableSearch/VueDataTableSearch.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTableSearch/VueDataTableSearch.spec.js.map" />
@@ -1158,14 +1296,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabItem/VueTabItem.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabItem/VueTabItem.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePagination/VuePagination.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelBody/VuePanelBody.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelHeader/VuePanelHeader.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelHeader/VuePanelHeader.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelFooter/VuePanelFooter.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanelFooter/VuePanelFooter.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/fixtures/IAutocompleteFixture.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/fixtures/IAutocompleteFixture.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTableHeader/VueDataTableHeader.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePagination/VuePagination.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePagination/VuePagination.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePagination/VuePagination.stories.js.map" />
@@ -1174,14 +1312,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueInput/VueInput.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueInput/VueInput.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/IAutocompleteOption.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/IAutocompleteOption.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGrid/VueGrid.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueButton/VueButton.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePagination/VuePagination.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueBreadcrumb/VueBreadcrumb.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueBreadcrumb/VueBreadcrumb.spec.js" />
@@ -1190,14 +1328,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTooltip/VueTooltip.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTooltip/VueTooltip.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTooltip/VueTooltip.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTooltip/VueTooltip.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTable.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/DataTableFixtures.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/IDataTable.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/IAutocompleteOption.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/IAutocompleteOption.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAutocomplete/VueAutocomplete.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VuePanel/VuePanel.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/IDataTable.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/DataTableFixtures.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTable.stories.js" />
@@ -1206,14 +1344,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/icons/icons.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/icons/icons.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/algorithms.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/algorithms.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTooltip/VueTooltip.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueLoader/VueLoader.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/VueDataTable.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/DataTableFixtures.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDataTable/IDataTable.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/algorithms.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/algorithms.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.spec.js.map" />
@@ -1222,14 +1360,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNotificationStack/utils.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNotificationStack/VueNotificationStack.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNotificationStack/VueNotificationStack.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNotificationStack/VueNotificationStack.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTabGroup/VueTabGroup.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/algorithms.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/VueSlider.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSlider/algorithms.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueFooter/VueFooter.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueFooter/VueFooter.spec.js" />
@@ -1238,14 +1376,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavigationProgress/VueNavigationProgress.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavigationProgress/VueNavigationProgress.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavigationProgress/VueNavigationProgress.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavigationProgress/VueNavigationProgress.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNotificationStack/VueNotificationStack.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueSelect/VueSelect.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCollapse/VueCollapse.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueBadge/VueBadge.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueBadge/VueBadge.stories.js" />
@@ -1254,14 +1392,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCalendar/VueCalendar.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCalendar/VueCalendar.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCalendar/VueCalendar.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCalendar/VueCalendar.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavigationProgress/VueNavigationProgress.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueTruncate/VueTruncate.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCookieConsent/VueCookieConsent.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCheckbox/VueCheckbox.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCheckbox/VueCheckbox.stories.js" />
@@ -1270,14 +1408,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridItem/VueGridItem.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridItem/VueGridItem.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridItem/VueGridItem.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridItem/VueGridItem.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCalendar/VueCalendar.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDatePicker/VueDatePicker.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueNavBar/VueNavBar.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridRow/VueGridRow.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridRow/VueGridRow.spec.js.map" />
@@ -1286,14 +1424,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDateRangePicker/VueDateRangePicker.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDateRangePicker/VueDateRangePicker.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDateRangePicker/VueDateRangePicker.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDateRangePicker/VueDateRangePicker.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.stories.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.stories.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueGridItem/VueGridItem.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueModal/VueModal.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueCarousel/VueCarousel.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.stories.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueMarkdown/VueMarkdown.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueMarkdown/VueMarkdown.stories.js" />
@@ -1302,14 +1440,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/FadeAnimation/FadeAnimation.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/FadeAnimation/FadeAnimation.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CollapseAnimation/CollapseAnimation.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CollapseAnimation/CollapseAnimation.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistCookieStorage.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistLocalStorage.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistLocalStorage.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueDateRangePicker/VueDateRangePicker.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.stories.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueAccordion/VueAccordion.stories.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/components/VueToggle/VueToggle.stories.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistLocalStorage.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/vuex-persist.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistCookieStorage.spec.js" />
@@ -1318,14 +1456,16 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/vuex-persist.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/vuex-persist.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistCookieStorage.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/vuex-persist.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/HttpService.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/HttpService.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/EventBus.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/EventBus.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CollapseAnimation/CollapseAnimation.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/i18n/i18n.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistCookieStorage.js" />
+        <option value="$PROJECT_DIR$/../dgiglab/prototypes-ui/models/packages/policy-auto-gateway-api/target/swagger-output/api.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistLocalStorage.spec.js" />
+        <option value="$PROJECT_DIR$/../dgiglab/prototypes-ui/models/packages/policy-auto-gateway-api/target/swagger-output/configuration.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/PersistLocalStorage.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/utils/misc.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/utils/misc.js" />
@@ -1334,14 +1474,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/home/EnterpriseReady/EnterpriseReady.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/home/EnterpriseReady/EnterpriseReady.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Home/Home.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Home/Home.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Stage/Stage.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Stage/Stage.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/DevEx/DevEx.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/DevEx/DevEx.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/QuickStart/QuickStart.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/QuickStart/QuickStart.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/UserExperience/UserExperience.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/plugins/vuex-persist/vuex-persist.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/HttpService.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/HttpService.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/EventBus.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/services/EventBus.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/shared/animations/CircleAnimation.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/home/UserExperience/UserExperience.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/NotFound/NotFound.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/NotFound/NotFound.spec.js" />
@@ -1350,14 +1490,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/home/routes.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/home/routes.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/config/IAppConfig.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/config/IAppConfig.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/config/AppConfig.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/config/AppConfig.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/routes.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/state.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/actions.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/getters.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/actions.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Home/Home.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Stage/Stage.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/Stage/Stage.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/DevEx/DevEx.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/DevEx/DevEx.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/QuickStart/QuickStart.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/QuickStart/QuickStart.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/home/UserExperience/UserExperience.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/getters.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/actions.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/getters.js" />
@@ -1366,14 +1506,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/getters.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/actions.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app/module.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/mutations.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/routes.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/module.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/mutations.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/state.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/client/sw.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/client/index.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/client/sw.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/config/IAppConfig.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/config/AppConfig.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/config/AppConfig.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/routes.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/state.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/actions.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/getters.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/actions.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/client/index.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/server.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/index.js" />
@@ -1382,6 +1522,14 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/server/index.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/server/server.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/state.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/mutations.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/routes.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/module.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/mutations.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/app/state.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/client/sw.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/client/index.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/client/sw.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/store.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/router.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/state.js.map" />
@@ -1389,22 +1537,18 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/store.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/app.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/module/index.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/component/index.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/connected/index.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/scripts/Utils.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/scripts/extract-i18n-messages.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/scripts/Utils.spec.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/scripts/update.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/ast.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/index.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/utils.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/tools/generators/helpers.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/Plan/Plan.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/Plan/Plan.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/mutations.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/actions.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/mutations.spec.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/actions.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/module.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/mutations.spec.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/getters.js.map" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/routes.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/mutations.js" />
+        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/state.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/actions.spec.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/state.js.map" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/getters.spec.js.map" />
@@ -1413,13 +1557,6 @@
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/actions.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/getters.spec.js" />
         <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/module.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/actions.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/module.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/mutations.spec.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/getters.js.map" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/routes.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/mutations.js" />
-        <option value="$PROJECT_DIR$/../vue-starter/src/app/plan/state.js" />
       </list>
     </option>
   </component>
@@ -1504,7 +1641,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java</url>
-          <line>155</line>
+          <line>157</line>
           <properties />
           <option name="timeStamp" value="117" />
         </line-breakpoint>
@@ -1537,6 +1674,12 @@
           <line>139</line>
           <properties />
           <option name="timeStamp" value="180" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java</url>
+          <line>136</line>
+          <properties />
+          <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1585,24 +1728,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0ab7d6ae-980b-4350-9ba5-4dc037d626e3_undertrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0a196c8a-0ab8-4b99-afc5-fc52cc2e8747_normal.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0a44e72e-a0ae-42de-bb5c-755025195083_overtrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0db8b976-5ea6-41ad-bc9e-78063b3afabd_normal.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0c0c5e79-3122-47a0-83dd-f3acc2d8e7a3_undertrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0a3eebfa-b0fb-448f-86ad-555ccc3235ba_overtrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/ffa16d2f-f6df-4224-956e-3a786f55362a_normal.csv" />
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/UndertrainingGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0b99df80-4f94-432a-bed5-bbbe36df2665_overtrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0b840dd7-633c-4740-a18a-5d2bd21881fc_undertrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0c87b395-315b-4069-a6fb-c00f81a9afe2_normal.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0aa70eb1-2e90-4e87-8acf-9efd52d16ba4_overtrained.csv" />
     <entry file="file://$PROJECT_DIR$/trainingBotFiles/9ff69773-a2cf-4d3b-9d24-804dfa17b6c1_overtrained.csv" />
     <entry file="file://$PROJECT_DIR$/trainingBotFiles/9da995c4-1762-49e9-886b-20bb32c2c3b5_undertrained.csv" />
     <entry file="file://$PROJECT_DIR$/trainingBotFiles/10a169a7-5646-43a1-bf57-ab83cb74317b_overtrained.csv" />
@@ -1652,13 +1777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/FileUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1727,38 +1845,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7">
-          <caret line="7" selection-start-line="7" selection-end-line="15" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/cardioblaster.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/pyramid.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-7" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/Application.java">
@@ -1781,20 +1870,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/service/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="535">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="193">
-            <caret line="338" column="31" selection-start-line="338" selection-start-column="31" selection-end-line="338" selection-end-column="31" />
+          <first_editor relative-caret-position="335">
+            <caret line="343" column="53" selection-start-line="343" selection-start-column="53" selection-end-line="343" selection-end-column="65" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="120" column="14" selection-start-line="120" selection-end-line="127" selection-end-column="21" />
+        <state relative-caret-position="215">
+          <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/api/ActivitiesApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="55" column="18" lean-forward="true" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/auth/OAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="28" column="47" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="47" />
+          <folding>
+            <element signature="e#670#671#0" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/ApiClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-830">
+          <caret line="78" column="11" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/Configuration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#721#722#0" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/auth.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="54" selection-start-line="54" selection-end-line="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/META-INF/MANIFEST.MF">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/pyramid.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/stravaAuth.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/response.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/FileUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="135" column="18" selection-start-line="135" selection-start-column="18" selection-end-line="135" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6015#6046#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="104" column="40" selection-start-line="104" selection-start-column="40" selection-end-line="104" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

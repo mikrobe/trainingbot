@@ -1,9 +1,13 @@
 package com.jarics.trainbot;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+
+import com.jarics.trainbot.com.jarics.trainbot.utils.JsonUtil;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.services.MLClasses;
 import com.jarics.trainbot.services.learning.WekaMLService;
+import java.nio.charset.Charset;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -17,10 +21,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-
-import java.nio.charset.Charset;
-
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
@@ -68,11 +68,13 @@ public class MLTest {
         AthleteFTP athleteFTP = new AthleteFTP();
         athleteFTP.setUsername(stravaUserName);
         athletesFeatures.setAthlete(athleteFTP);
-        System.out.println(TestUtil.convertObjectToJsonBytes(athletesFeatures));
+        System.out.println(JsonUtil.convertObjectToJsonBytes(athletesFeatures));
         MvcResult result = mockMvc.perform(post("/api/ml").contentType(contentType).
-                content(TestUtil.convertObjectToJsonBytes(athletesFeatures)))
+                content(JsonUtil.convertObjectToJsonBytes(athletesFeatures)))
                 .andReturn();
-        AthleteFTP athleteFTP1 = (AthleteFTP) TestUtil.convertJsonBytesToObject(result.getResponse().getContentAsString(), AthleteFTP.class);
+        AthleteFTP athleteFTP1 = (AthleteFTP) JsonUtil
+                .convertJsonBytesToObject(result.getResponse().getContentAsString(),
+                        AthleteFTP.class);
         Assert.assertEquals(MLClasses.undertrained, athleteFTP1.getClassification());
     }
 }

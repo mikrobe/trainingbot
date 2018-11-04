@@ -1,13 +1,12 @@
-package com.jarics.trainbot;
+package com.jarics.trainbot.com.jarics.trainbot.utils;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.http.MediaType;
-
 import java.io.IOException;
 import java.nio.charset.Charset;
+import org.springframework.http.MediaType;
 
-public class TestUtil {
+public class JsonUtil {
 
 
 

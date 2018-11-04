@@ -14,14 +14,20 @@ import io.swagger.client.model.ActivityType;
 import io.swagger.client.model.DetailedActivity;
 import io.swagger.client.model.DetailedSegmentEffort;
 import io.swagger.client.model.SummaryActivity;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class StravaService implements TrainingLogger {
@@ -122,5 +128,27 @@ public class StravaService implements TrainingLogger {
     public AthletesFeatures extractAthletesFeatures(AthleteFTP athleteFTP) {
         FeatureExtractor featureExtractor = new FeatureExtractor();
         return featureExtractor.extract(getAthleteActivities(athleteFTP, 45), athleteFTP.getSwimFtp(), athleteFTP.getBikeFtp(), athleteFTP.getRunFtp());
+    }
+
+    public String getAccesToken(String clientId, String clientSecret, String code,
+        String grantType) {
+        RestTemplate restTemplate = new RestTemplate();
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+
+        MultiValueMap<String, String> map = new LinkedMultiValueMap<>();
+        map.add("client_id", clientId);
+        map.add("client_secret", clientSecret);
+        map.add("code", code);
+        map.add("grant_type", grantType);
+
+        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(
+            map, headers);
+
+        ResponseEntity<String> response = restTemplate
+            .postForEntity("https://www.strava.com/oauth/token",
+                request, String.class);
+        return response.getBody();
     }
 }

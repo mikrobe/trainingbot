@@ -1,7 +1,19 @@
 package com.jarics.trainbot;
 
+import static org.junit.Assert.fail;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import com.jarics.trainbot.com.jarics.trainbot.utils.JsonUtil;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.services.EventTypes;
+import java.nio.charset.Charset;
+import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,15 +25,6 @@ import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
-
-import java.nio.charset.Charset;
-import java.util.UUID;
-
-import static org.junit.Assert.fail;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * PersonController Tester.
@@ -70,7 +73,7 @@ public class StampControllerTest {
 
         try {
             mockMvc.perform(post("/api/athlete").contentType(contentType).
-                    content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)))
+                    content(JsonUtil.convertObjectToJsonBytes(wAthleteFTP)))
                     .andExpect(status().isInternalServerError())
                     .andExpect(content().string("Athlete with same username already exists..."))
                     .andDo(print());
@@ -82,7 +85,8 @@ public class StampControllerTest {
     }
 
     private void createAthlete(AthleteFTP wAthleteFTP) throws Exception {
-        mockMvc.perform(post("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
+        mockMvc.perform(post("/api/athlete").contentType(contentType)
+                .content(JsonUtil.convertObjectToJsonBytes(wAthleteFTP))).andReturn();
     }
 
     private void deleteAthlete(String pUsername) throws Exception {
@@ -95,7 +99,9 @@ public class StampControllerTest {
         String wUrl = "/api/athlete/" + pUsername;
         MvcResult wMvcResult = mockMvc.perform(get(wUrl)).andExpect(status().isOk()).andExpect(content().
                 string(org.hamcrest.Matchers.containsString("username\":\"" + pUsername + "\""))).andReturn();
-        AthleteFTP wFtp = (AthleteFTP) TestUtil.convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(), AthleteFTP.class);
+        AthleteFTP wFtp = (AthleteFTP) JsonUtil
+                .convertJsonBytesToObject(wMvcResult.getResponse().getContentAsString(),
+                        AthleteFTP.class);
         return wFtp;
     }
 
@@ -124,7 +130,8 @@ public class StampControllerTest {
         wUpdated.setUsername(wAthleteFTP2.getUsername());
         //update and handle exception
         try {
-            mockMvc.perform(patch("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)))
+            mockMvc.perform(patch("/api/athlete").contentType(contentType)
+                    .content(JsonUtil.convertObjectToJsonBytes(wAthleteFTP)))
                     .andExpect(status().isInternalServerError())
                     .andExpect(content().string("Illegal update"))
                     .andDo(print());
@@ -137,7 +144,8 @@ public class StampControllerTest {
     }
 
     private void updateAthlete(AthleteFTP wAthleteFTP) throws Exception {
-        mockMvc.perform(patch("/api/athlete").contentType(contentType).content(TestUtil.convertObjectToJsonBytes(wAthleteFTP)));
+        mockMvc.perform(patch("/api/athlete").contentType(contentType)
+                .content(JsonUtil.convertObjectToJsonBytes(wAthleteFTP)));
     }
 
     private AthleteFTP generateAthlete() {

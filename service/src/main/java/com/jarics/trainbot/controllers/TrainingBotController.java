@@ -6,12 +6,18 @@ import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.services.AthleteRepositoryService;
 import com.jarics.trainbot.services.MLClasses;
+import com.jarics.trainbot.services.StravaService;
 import com.jarics.trainbot.services.learning.WekaMLService;
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -22,15 +28,18 @@ public class TrainingBotController {
     AthleteRepositoryService athleteRepositoryService;
     TrainingPlanService trainingPlanService;
     WekaMLService wekaMLService;
+    StravaService stravaService;
 
 
     @Autowired
     public TrainingBotController(
             AthleteRepositoryService athleteRepositoryService,
-            TrainingPlanService trainingPlanService, WekaMLService wekaMLService) {
+        TrainingPlanService trainingPlanService, WekaMLService wekaMLService,
+        StravaService stravaService) {
         this.athleteRepositoryService = athleteRepositoryService;
         this.trainingPlanService = trainingPlanService;
         this.wekaMLService = wekaMLService;
+        this.stravaService = stravaService;
     }
 
     @RequestMapping(value = "/athlete/plan/{username}", method = RequestMethod.GET, produces = "application/json")
@@ -76,6 +85,29 @@ public class TrainingBotController {
         athleteFTP.setClassification(clazz);
         return athleteFTP;
     }
+
+
+    /**
+     * This is the callback from strava 1) In browser or in html page from TrainingBot do a get:
+     * https://www.strava.com/oauth/authorize?client_id=24819&redirect_uri=http://localhost:8080/api/athlete/auth/&response_type=code&scope=public&approval_prompt=force
+     * 2) Step (1) will response to this endpoint 3) This endpoint will post to POST
+     * https://www.strava.com/oauth/token See.: https://developers.strava.com/docs/authentication/
+     */
+    @RequestMapping(value = "/athlete/auth/", method = RequestMethod.GET, produces = "application/json")
+    public void auth(
+        @RequestParam(value = "error", required = false) String error,
+        @RequestParam(value = "code") String code,
+        @RequestParam(value = "scope") String scope) {
+        //TODO POST to POST https://www.strava.com/oauth/token
+        String accessTokenJson = stravaService.getAccesToken("24819",
+            "0d3567dd661754637b9df94f90e3334b283628c4",
+            code,
+            "authorization_code");
+        System.out.print(accessTokenJson);
+        //TODO store under username the tokens
+    }
+
+
 
 
 }
