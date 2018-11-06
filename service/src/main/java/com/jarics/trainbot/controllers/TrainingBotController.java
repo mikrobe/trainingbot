@@ -92,9 +92,11 @@ public class TrainingBotController {
 
 
     /**
-     * This is the callback from strava 1) In browser or in html page from TrainingBot do a get:
+     * This is the callback from strava
+     * 1) In browser or in html page from TrainingBot do a get:
      * https://www.strava.com/oauth/authorize?client_id=24819&redirect_uri=http://localhost:8080/api/athlete/auth/&response_type=code&scope=public&approval_prompt=force
-     * 2) Step (1) will response to this endpoint 3) This endpoint will post to POST
+     * 2) Step (1) will response to this endpoint
+     * 3) This endpoint will post to POST
      * https://www.strava.com/oauth/token See.: https://developers.strava.com/docs/authentication/
      */
     @RequestMapping(value = "/athlete/auth/", method = RequestMethod.GET, produces = "application/json")
@@ -104,19 +106,19 @@ public class TrainingBotController {
         @RequestParam(value = "scope") String scope) {
         AccessToken accessToken = null;
         ModelAndView mav = new ModelAndView();
-        String accessTokenJson = stravaService.getAccesToken("24819",
-            "0d3567dd661754637b9df94f90e3334b283628c4",
-            code,
-            "authorization_code");
+      String accessTokenJson = stravaService.getAccesToken(code);
         try {
             accessToken = (AccessToken) JsonUtil
                 .convertJsonBytesToObject(accessTokenJson, AccessToken.class);
-            //TODO store under username the tokens
+          athleteRepositoryService.setAccessToken(accessToken, code);
 //            response.setCookie(cookie);
             mav.setViewName("redirect:/swagger-ui.html");
         } catch (IOException e) {
-            e.printStackTrace();
-            mav.setViewName("redirect:/errorAccessToken.html");
+          e.printStackTrace();
+          mav.setViewName("redirect:/errorAccessToken.html");
+        } catch (Exception e) {
+          e.printStackTrace();
+          mav.setViewName("redirect:/errorAccessToken.html");
         }
         return mav;
 

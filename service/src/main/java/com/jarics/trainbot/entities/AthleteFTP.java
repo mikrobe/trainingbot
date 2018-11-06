@@ -17,6 +17,10 @@ public class AthleteFTP {
     private AthletesRanking athletesRanking = AthletesRanking.beginner;
     private MLClasses classification = MLClasses.unknown;
     private String username;
+    private String tokenType;
+    private String accessToken;
+    private String code;
+
 
     public double getBikeFtp() {
         return bikeFtp;
@@ -80,6 +84,31 @@ public class AthleteFTP {
 
     public void setEventType(EventTypes eventType) {
         this.eventType = eventType;
+    }
+
+
+    public String getTokenType() {
+        return tokenType;
+    }
+
+    public void setTokenType(String tokenType) {
+        this.tokenType = tokenType;
+    }
+
+    public String getAccessToken() {
+        return accessToken;
+    }
+
+    public void setAccessToken(String accessToken) {
+        this.accessToken = accessToken;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getCode() {
+        return code;
     }
 }
 

@@ -32,8 +32,11 @@ import org.springframework.web.client.RestTemplate;
 @Component
 public class StravaService implements TrainingLogger {
 
-    @Value("${strava.user.key}")
-    private String stravaUserKey;
+    @Value("${client.id}")
+    private String clientId;
+
+    @Value("${client.secret}")
+    private String clientSecret;
 
     public List<AthleteActivity> getAthleteActivities(AthleteFTP pAthleteFTP, int pElapseDays) {
         prepareDefaultClient();
@@ -91,7 +94,7 @@ public class StravaService implements TrainingLogger {
     private void prepareDefaultClient() {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         OAuth strava_oauth = (OAuth) defaultClient.getAuthentication("strava_oauth");
-        strava_oauth.setAccessToken(stravaUserKey);
+        strava_oauth.setAccessToken(clientId);
     }
 
     private AthleteActivity convert(SummaryActivity pSummaryActivity) {
@@ -130,8 +133,7 @@ public class StravaService implements TrainingLogger {
         return featureExtractor.extract(getAthleteActivities(athleteFTP, 45), athleteFTP.getSwimFtp(), athleteFTP.getBikeFtp(), athleteFTP.getRunFtp());
     }
 
-    public String getAccesToken(String clientId, String clientSecret, String code,
-        String grantType) {
+    public String getAccesToken(String code) {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();
@@ -141,7 +143,7 @@ public class StravaService implements TrainingLogger {
         map.add("client_id", clientId);
         map.add("client_secret", clientSecret);
         map.add("code", code);
-        map.add("grant_type", grantType);
+        map.add("grant_type", "authorization_code");
 
         HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(
             map, headers);
@@ -151,4 +153,5 @@ public class StravaService implements TrainingLogger {
                 request, String.class);
         return response.getBody();
     }
+
 }

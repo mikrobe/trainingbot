@@ -1,7 +1,12 @@
 package com.jarics.trainbot.services;
 
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
+
 import com.jarics.trainbot.com.jarics.trainbot.utils.FileUtils;
+import com.jarics.trainbot.entities.AccessToken;
 import com.jarics.trainbot.entities.AthleteFTP;
+import java.io.IOException;
+import java.util.UUID;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.WriteResult;
@@ -9,11 +14,6 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-
-import java.io.IOException;
-import java.util.UUID;
-
-import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 @Component
 public class AthleteRepositoryService {
@@ -45,18 +45,16 @@ public class AthleteRepositoryService {
         AthleteFTP wAthleteFTP = null;
         if (pAthleteFTP.getId() > 0)
             return updateAthleteFTP(pAthleteFTP);
-        wAthleteFTP = findAthleteFtpByUsername(pAthleteFTP.getUsername());
-        if (wAthleteFTP.getUsername() == null) {
-            pAthleteFTP.setId(NitriteId.newId().getIdValue());
-            WriteResult result = repository.insert(pAthleteFTP);
-            return getAthleteFromResult(wAthleteFTP, result);
-        } else {
-            throw new Exception("Athlete with same username already exists...");
-        }
+        pAthleteFTP.setId(NitriteId.newId().getIdValue());
+        WriteResult result = repository.insert(pAthleteFTP);
+        return getAthleteFromResult(wAthleteFTP, result);
+//        } else {
+//            throw new Exception("Athlete with same username already exists...");
+//        }
     }
 
     public AthleteFTP updateAthleteFTP(AthleteFTP pAthleteFTP) throws Exception {
-        AthleteFTP wAthleteFTP = new AthleteFTP();
+        AthleteFTP wAthleteFTP = null;
         // make sure same id with same username
         wAthleteFTP = getAthleteById(pAthleteFTP.getId());
         if (!wAthleteFTP.getUsername().equals(pAthleteFTP.getUsername()))
@@ -73,7 +71,7 @@ public class AthleteRepositoryService {
     }
 
     public AthleteFTP findAthleteFtpByUsername(String pUsername) {
-        AthleteFTP wAthleteFTP = new AthleteFTP();
+        AthleteFTP wAthleteFTP = null;
         org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("username", pUsername));
         for (AthleteFTP wFtp : wCursor) {
             wAthleteFTP = wFtp;
@@ -95,4 +93,23 @@ public class AthleteRepositoryService {
         }
         return wAthleteFTP;
     }
+
+
+    public void setAccessToken(AccessToken accessToken, String code) throws Exception {
+        AthleteFTP athleteFTP = null;
+        //get athlete
+        athleteFTP = findAthleteFtpByUsername(accessToken.getAthlete().getUsername());
+        if (athleteFTP == null) {
+            athleteFTP = new AthleteFTP();
+            athleteFTP.setUsername(accessToken.getAthlete().getUsername());
+            setAthleteFTP(athleteFTP);
+        }
+        athleteFTP.setTokenType(accessToken.getTokenType());
+        athleteFTP.setAccessToken(accessToken.getAccessToken());
+        athleteFTP.setCode(code);
+        updateAthleteFTP(athleteFTP);
+    }
+
+
+
 }
