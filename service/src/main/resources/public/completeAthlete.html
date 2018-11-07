@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text], select, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+      .col-25, .col-75, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+      }
+    }
+
+    .button {
+      position: relative;
+      background-color: #4CAF50;
+      border: none;
+      font-size: 28px;
+      color: #FFFFFF;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+      text-decoration: none;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .button:after {
+      content: "";
+      background: #90EE90;
+      display: block;
+      position: absolute;
+      padding-top: 300%;
+      padding-left: 350%;
+      margin-left: -20px !important;
+      margin-top: -120%;
+      opacity: 0;
+      transition: all 0.8s
+    }
+
+    .button:active:after {
+      padding: 0;
+      margin: 0;
+      opacity: 1;
+      transition: 0s
+    }
+  </style>
+</head>
+<body>
+
+<h2>Complete Athlete Information</h2>
+<p>Enter FTP for all disciplines.</p>
+
+<div class="container">
+  <form action="/api/athlete" method="post">
+
+    <div class="row">
+      <div class="col-25">
+        <label for="username">Username</label>
+      </div>
+      <div class="col-75">
+        <input type="text" id="username" name="username"
+               placeholder="Your username">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="swimFtp">Swim FTP</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="swimFtp" name="swimFtp"
+               placeholder="Your latest swim FTP in seconds per 100 meters..">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="bikeFtp">Bike FTP</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="bikeFtp" name="bikeFtp"
+               placeholder="Your latest bike FTP in watts..">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="runFtp">Run FTP</label>
+      </div>
+      <div class="col-75">
+        <input type="number" id="runFtp" name="runFtp"
+               placeholder="Your latest run FTP in seconds per kilometer...">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-25">
+        <label for="raceDay">Race Day</label>
+      </div>
+      <div class="col-75">
+        <input type="date" id="raceDay" name="raceDay" placeholder="Your Next Race Day...">
+      </div>
+    </div>
+
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+
+<script>
+  var username = getUrlParameter('username');
+  document.getElementById('username').value = username;
+
+  function getUrlParameter(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+    var results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+  }
+</script>
+
+</body>
+</html>

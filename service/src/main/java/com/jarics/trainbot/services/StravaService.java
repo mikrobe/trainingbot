@@ -133,7 +133,7 @@ public class StravaService implements TrainingLogger {
         return featureExtractor.extract(getAthleteActivities(athleteFTP, 45), athleteFTP.getSwimFtp(), athleteFTP.getBikeFtp(), athleteFTP.getRunFtp());
     }
 
-    public String getAccesToken(String code) {
+    public String getAccessToken(String code) {
         RestTemplate restTemplate = new RestTemplate();
 
         HttpHeaders headers = new HttpHeaders();

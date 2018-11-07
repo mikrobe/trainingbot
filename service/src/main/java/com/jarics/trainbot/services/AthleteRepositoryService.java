@@ -48,11 +48,11 @@ public class AthleteRepositoryService {
         pAthleteFTP.setId(NitriteId.newId().getIdValue());
         WriteResult result = repository.insert(pAthleteFTP);
         return getAthleteFromResult(wAthleteFTP, result);
-//        } else {
-//            throw new Exception("Athlete with same username already exists...");
-//        }
     }
 
+    /**
+     * Make sure you get athlete before updating.
+     */
     public AthleteFTP updateAthleteFTP(AthleteFTP pAthleteFTP) throws Exception {
         AthleteFTP wAthleteFTP = null;
         // make sure same id with same username
@@ -95,7 +95,7 @@ public class AthleteRepositoryService {
     }
 
 
-    public void setAccessToken(AccessToken accessToken, String code) throws Exception {
+    public AthleteFTP setAccessToken(AccessToken accessToken, String code) throws Exception {
         AthleteFTP athleteFTP = null;
         //get athlete
         athleteFTP = findAthleteFtpByUsername(accessToken.getAthlete().getUsername());
@@ -107,7 +107,7 @@ public class AthleteRepositoryService {
         athleteFTP.setTokenType(accessToken.getTokenType());
         athleteFTP.setAccessToken(accessToken.getAccessToken());
         athleteFTP.setCode(code);
-        updateAthleteFTP(athleteFTP);
+        return updateAthleteFTP(athleteFTP);
     }
 
 
