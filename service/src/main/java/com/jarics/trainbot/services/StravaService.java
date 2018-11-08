@@ -42,6 +42,9 @@ public class StravaService implements TrainingLogger {
         prepareDefaultClient();
         List<AthleteActivity> wAthleteActivities = new ArrayList<>();
         ActivitiesApi apiInstance = new ActivitiesApi();
+      //refresh the access token
+
+      apiInstance.getApiClient().setAccessToken(pAthleteFTP.getAccessToken());
         LocalDate today = LocalDate.now();
         LocalDate elapseDays = today.minus(pElapseDays, ChronoUnit.DAYS);
         ZoneId zoneId = ZoneId.systemDefault(); // or: ZoneId.of("Europe/Oslo");
@@ -52,10 +55,13 @@ public class StravaService implements TrainingLogger {
         try {
             List<SummaryActivity> result = apiInstance.getLoggedInAthleteActivities(before, after, page, perPage);
             for (SummaryActivity wSummaryActivity : result) {
-                DetailedActivity wDetailedActivity = getAthleteDetailedActivity(wSummaryActivity.getId());
+              DetailedActivity wDetailedActivity = apiInstance
+                  .getActivityById(wSummaryActivity.getId(), Boolean.TRUE);
                 AthleteActivity wAthleteActivity = convert(wSummaryActivity);
-                if (wSummaryActivity.getType().equals(ActivityType.RIDE)) {
-                    wAthleteActivity.setWeigthedAvgWatts(calculateWeightedAvgWatts(wDetailedActivity.getSegmentEfforts()));
+              if (wSummaryActivity.getType().equals(ActivityType.RIDE)
+                  && wDetailedActivity != null) {
+                wAthleteActivity.setWeigthedAvgWatts(
+                    calculateWeightedAvgWatts(wDetailedActivity.getSegmentEfforts()));
                 }
                 if (wAthleteActivity.getType() != null)
                     wAthleteActivities.add(wAthleteActivity);
@@ -76,20 +82,6 @@ public class StravaService implements TrainingLogger {
         return wAvgWatts / segmentEfforts.size();
     }
 
-    public DetailedActivity getAthleteDetailedActivity(Long pActivityId) {
-        prepareDefaultClient();
-
-        DetailedActivity wDetailedActivity;
-        ActivitiesApi apiInstance = new ActivitiesApi();
-        try {
-            wDetailedActivity = apiInstance.getActivityById(pActivityId, Boolean.TRUE);
-        } catch (ApiException e) {
-            System.err.println("Exception when calling ActivitiesApi#getLoggedInAthleteActivities");
-            e.printStackTrace();
-            return null;
-        }
-        return wDetailedActivity;
-    }
 
     private void prepareDefaultClient() {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
