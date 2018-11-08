@@ -23,7 +23,7 @@ public class StravaServiceTests {
     private AthleteRepositoryService athleteRepositoryService;
     @Autowired
     private WekaMLService wekaMLService;
-    private String stravaUserName = "eaudet";
+    private String stravaUserName = "pascale_brire";
 
     @Test
     public void testGetActivities() {
