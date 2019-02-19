@@ -1,19 +1,8 @@
 package com.jarics.trainbot;
 
-import static org.junit.Assert.fail;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.patch;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-
 import com.jarics.trainbot.com.jarics.trainbot.utils.JsonUtil;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.services.EventTypes;
-import java.nio.charset.Charset;
-import java.util.UUID;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -26,6 +15,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
+import java.nio.charset.Charset;
+import java.util.UUID;
+
+import static org.junit.Assert.fail;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 /**
  * PersonController Tester.
  *
@@ -37,7 +35,7 @@ import org.springframework.test.web.servlet.MvcResult;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 @AutoConfigureMockMvc
-public class StampControllerTest {
+public class TrainingBotControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -72,6 +70,7 @@ public class StampControllerTest {
         createAthlete(wAthleteFTP);
 
         try {
+
             mockMvc.perform(post("/api/athlete").contentType(contentType).
                     content(JsonUtil.convertObjectToJsonBytes(wAthleteFTP)))
                     .andExpect(status().isInternalServerError())

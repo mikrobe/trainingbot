@@ -1,12 +1,8 @@
 package com.jarics.trainbot.services;
 
-import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
-
 import com.jarics.trainbot.com.jarics.trainbot.utils.FileUtils;
 import com.jarics.trainbot.entities.AccessToken;
 import com.jarics.trainbot.entities.AthleteFTP;
-import java.io.IOException;
-import java.util.UUID;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.NitriteId;
 import org.dizitart.no2.WriteResult;
@@ -14,6 +10,11 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+
+import java.io.IOException;
+import java.util.UUID;
+
+import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 @Component
 public class AthleteRepositoryService {
@@ -41,10 +42,16 @@ public class AthleteRepositoryService {
         repository = db.getRepository(AthleteFTP.class);
     }
 
-    public AthleteFTP setAthleteFTP(AthleteFTP pAthleteFTP) throws Exception {
-        AthleteFTP wAthleteFTP = null;
-        if (pAthleteFTP.getId() > 0)
-            return updateAthleteFTP(pAthleteFTP);
+    /**
+     * This method creates an athlete. Will throw error if athlete with same username exists.
+     * @param pAthleteFTP
+     * @return
+     * @throws Exception
+     */
+    public AthleteFTP createAthleteFTP(AthleteFTP pAthleteFTP) throws Exception {
+        AthleteFTP wAthleteFTP;
+        wAthleteFTP = findAthleteFtpByUsername(pAthleteFTP.getUsername());
+        if (wAthleteFTP != null) throw new Exception("Athlete with same username already exists...");
         pAthleteFTP.setId(NitriteId.newId().getIdValue());
         WriteResult result = repository.insert(pAthleteFTP);
         return getAthleteFromResult(wAthleteFTP, result);
@@ -102,7 +109,7 @@ public class AthleteRepositoryService {
         if (athleteFTP == null) {
             athleteFTP = new AthleteFTP();
             athleteFTP.setUsername(accessToken.getAthlete().getUsername());
-            setAthleteFTP(athleteFTP);
+            createAthleteFTP(athleteFTP);
         }
         athleteFTP.setTokenType(accessToken.getTokenType());
         athleteFTP.setAccessToken(accessToken.getAccessToken());

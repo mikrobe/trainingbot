@@ -14,11 +14,6 @@ import io.swagger.client.model.ActivityType;
 import io.swagger.client.model.DetailedActivity;
 import io.swagger.client.model.DetailedSegmentEffort;
 import io.swagger.client.model.SummaryActivity;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
-import java.util.ArrayList;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -29,42 +24,50 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class StravaService implements TrainingLogger {
 
-    @Value("${client.id}")
-    private String clientId;
+    @Value("${client.id}") private String clientId;
 
-    @Value("${client.secret}")
-    private String clientSecret;
+    @Value("${client.secret}") private String clientSecret;
 
     public List<AthleteActivity> getAthleteActivities(AthleteFTP pAthleteFTP, int pElapseDays) {
         prepareDefaultClient();
         List<AthleteActivity> wAthleteActivities = new ArrayList<>();
         ActivitiesApi apiInstance = new ActivitiesApi();
-      //refresh the access token
+        //refresh the access token
 
-      apiInstance.getApiClient().setAccessToken(pAthleteFTP.getAccessToken());
+        apiInstance
+          .getApiClient()
+          .setAccessToken(pAthleteFTP.getAccessToken());
         LocalDate today = LocalDate.now();
         LocalDate elapseDays = today.minus(pElapseDays, ChronoUnit.DAYS);
         ZoneId zoneId = ZoneId.systemDefault(); // or: ZoneId.of("Europe/Oslo");
-        Integer before = new Long(today.atStartOfDay(zoneId).toEpochSecond()).intValue();
-        Integer after = new Long(elapseDays.atStartOfDay(zoneId).toEpochSecond()).intValue();
+        Integer before = new Long(today
+          .atStartOfDay(zoneId)
+          .toEpochSecond()).intValue();
+        Integer after = new Long(elapseDays
+          .atStartOfDay(zoneId)
+          .toEpochSecond()).intValue();
         Integer page = null;
         Integer perPage = null;
         try {
             List<SummaryActivity> result = apiInstance.getLoggedInAthleteActivities(before, after, page, perPage);
             for (SummaryActivity wSummaryActivity : result) {
-              DetailedActivity wDetailedActivity = apiInstance
-                  .getActivityById(wSummaryActivity.getId(), Boolean.TRUE);
+                DetailedActivity wDetailedActivity = apiInstance.getActivityById(wSummaryActivity.getId(), Boolean.TRUE);
                 AthleteActivity wAthleteActivity = convert(wSummaryActivity);
-              if (wSummaryActivity.getType().equals(ActivityType.RIDE)
-                  && wDetailedActivity != null) {
-                wAthleteActivity.setWeigthedAvgWatts(
-                    calculateWeightedAvgWatts(wDetailedActivity.getSegmentEfforts()));
+                if (wSummaryActivity
+                  .getType()
+                  .equals(ActivityType.RIDE) && wDetailedActivity != null) {
+                    wAthleteActivity.setWeigthedAvgWatts(calculateWeightedAvgWatts(wDetailedActivity.getSegmentEfforts()));
                 }
-                if (wAthleteActivity.getType() != null)
-                    wAthleteActivities.add(wAthleteActivity);
+                if (wAthleteActivity.getType() != null) wAthleteActivities.add(wAthleteActivity);
             }
             return wAthleteActivities;
         } catch (ApiException e) {
@@ -82,7 +85,6 @@ public class StravaService implements TrainingLogger {
         return wAvgWatts / segmentEfforts.size();
     }
 
-
     private void prepareDefaultClient() {
         ApiClient defaultClient = Configuration.getDefaultApiClient();
         OAuth strava_oauth = (OAuth) defaultClient.getAuthentication("strava_oauth");
@@ -96,25 +98,25 @@ public class StravaService implements TrainingLogger {
         wAthleteActivity.setMovingTime(pSummaryActivity.getMovingTime());
         switch (pSummaryActivity.getType()) {
 
-            case SWIM:
-                wAthleteActivity.setType(BotActivityType.SWIM);
-                break; // optional
+        case SWIM:
+            wAthleteActivity.setType(BotActivityType.SWIM);
+            break; // optional
 
-            case RIDE:
-                wAthleteActivity.setType(BotActivityType.BIKE);
-                break; // optional
+        case RIDE:
+            wAthleteActivity.setType(BotActivityType.BIKE);
+            break; // optional
 
-            case VIRTUALRIDE:
-                wAthleteActivity.setType(BotActivityType.BIKE);
-                break; // optional
+        case VIRTUALRIDE:
+            wAthleteActivity.setType(BotActivityType.BIKE);
+            break; // optional
 
-            case RUN:
-                wAthleteActivity.setType(BotActivityType.RUN);
-                break; // optional
+        case RUN:
+            wAthleteActivity.setType(BotActivityType.RUN);
+            break; // optional
 
-            case WALK:
-                wAthleteActivity.setType(BotActivityType.RUN);
-                break; // optional
+        case WALK:
+            wAthleteActivity.setType(BotActivityType.RUN);
+            break; // optional
         }
         return wAthleteActivity;
     }
@@ -137,12 +139,9 @@ public class StravaService implements TrainingLogger {
         map.add("code", code);
         map.add("grant_type", "authorization_code");
 
-        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(
-            map, headers);
+        HttpEntity<MultiValueMap<String, String>> request = new HttpEntity<MultiValueMap<String, String>>(map, headers);
 
-        ResponseEntity<String> response = restTemplate
-            .postForEntity("https://www.strava.com/oauth/token",
-                request, String.class);
+        ResponseEntity<String> response = restTemplate.postForEntity("https://www.strava.com/oauth/token", request, String.class);
         return response.getBody();
     }
 

@@ -316,6 +316,8 @@ Make sure you change the following otherwise unit test won't work for strava rel
 ```
 strava.user.name={strava user name}
 strava.user.key={strava key}
+client.id={strava id}
+client.secret={strava secret}
 ```
 #### Build
 1. (Optionally) Manually run the test testMLPC in /trainingbot/service/src/test/java/com/jarics/trainbot/MLTest.java to generate Weka model if you really need it. Otherwise it will take the committed model in /trainingBotFiles.
