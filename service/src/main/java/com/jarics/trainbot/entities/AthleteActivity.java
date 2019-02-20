@@ -67,6 +67,19 @@ public class AthleteActivity implements Serializable {
         this.weekNbr = weekNbr;
     }
 
+    public AthleteActivity(int weekNbr, BotActivityType type, int elapsedTime, int movingTime, float distance, double weigthedAvgWatts, double pace) {
+        this.weekNbr = weekNbr;
+        this.type = type;
+        this.elapsedTime = elapsedTime;
+        this.movingTime = movingTime;
+        this.distance = distance;
+        this.weigthedAvgWatts = weigthedAvgWatts;
+        this.pace = pace;
+    }
+
+    public AthleteActivity() {
+    }
+
     public static String toHeaderString() {
         return "week, " +
                 "type," +

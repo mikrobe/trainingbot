@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="Unit tests using real accesstoken done">
-      <change afterPath="$PROJECT_DIR$/service/src/main/resources/public/demo_ajax.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/resources/public/test-ajax.txt" afterDir="false" />
+    <list default="true" id="df2712a0-4cea-439d-b7e0-9049c683bd56" name="Default" comment="Fixed readme.md to remove false attributes username ect. Remove wrong &quot;submit&quot; post controller. Fixed broken tests in ML. It was pushing the &quot;testing&quot; attribute in environment but is trying to use trainingbot &quot;eaudet&quot; test username. Since &quot;tetsing&quot; attribute is only used in testing trainingBot where we use a bran new database each time it was not finding testing user eaudet.">
+      <change afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/services/learning/FeatureExtractorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StampControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/TrainingBotControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,47 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
-              <folding>
-                <element signature="e#816#832#1" expanded="true" />
-                <element signature="e#902#924#1" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
+        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/services/learning/FeatureExtractorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="405">
+              <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/TrainingBotControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="44" selection-start-line="44" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="478">
+              <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1091#1092#0" expanded="true" />
+                <element signature="e#1121#1122#0" expanded="true" />
+                <element signature="e#4149#4150#0" expanded="true" />
+                <element signature="e#4333#4334#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -81,10 +54,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="UML Class" />
-        <option value="Arquillian JUnit Test Class" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Arquillian JUnit Test Class" />
+        <option value="JUnit4 Test Class" />
       </list>
     </option>
   </component>
@@ -128,9 +102,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/SessionService.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthletesRanking.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/EventTypes.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/sessions/TrainingPlanServiceIf.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/GenerateTrainingDataset.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingBotService.java" />
@@ -144,12 +115,9 @@
         <option value="$PROJECT_DIR$/samples/activity_features.arff_copy" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/MLClasses.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/com/jarics/trainbot/utils/FileUtils.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/classification/StravaService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/TrainingLogger.java" />
         <option value="$PROJECT_DIR$/service/src/test/resources/application.properties" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java" />
-        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/DeserUtils.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/WekaMLService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/SimpleSession.java" />
@@ -173,12 +141,18 @@
         <option value="$PROJECT_DIR$/service/src/main/resources/public/demo_ajax.txt" />
         <option value="$PROJECT_DIR$/service/src/main/resources/public/test.html" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java" />
         <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/TrainingBotControllerTest.java" />
         <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java" />
+        <option value="$PROJECT_DIR$/trainingBotFiles0a3100d9-45d9-43c6-9c3b-73feafadc37a_normal.csv" />
+        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/FeatureExtractTest.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java" />
+        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java" />
+        <option value="$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java" />
+        <option value="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/services/learning/FeatureExtractorTest.java" />
       </list>
     </option>
   </component>
@@ -218,22 +192,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="trainingbot" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="58d84e3e:PackageViewProjectNode" />
-              <item name="service" type="616d4139:PackageViewModuleNode" />
-              <item name="com.jarics.trainbot" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -275,7 +233,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+              <item name="entities" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
@@ -285,6 +243,32 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
@@ -312,82 +296,28 @@
             </path>
             <path>
               <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="trainingbot" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="learning" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="trainingbot" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service" type="616d4139:PackageViewModuleNode" />
             </path>
             <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="reflect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
-              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="reflect" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.12.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: junit:junit:4.12" type="70bed36:NamedLibraryElementNode" />
-              <item name="junit-4.12.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="trainingbot" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: org.springframework:spring-beans:4.3.13.RELEASE" type="70bed36:NamedLibraryElementNode" />
-              <item name="spring-beans-4.3.13.RELEASE.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="support" type="462c0819:PsiDirectoryNode" />
+              <item name="trainingbot" type="58d84e3e:PackageViewProjectNode" />
+              <item name="service" type="616d4139:PackageViewModuleNode" />
+              <item name="com.jarics.trainbot" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
@@ -422,9 +352,10 @@
     <property name="SearchEverywhereHistoryKey" value="Training&#9;FILE&#9;file:///Users/erickaudet/dev/trainingbot/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java&#10;AthleteRepositoryService&#9;PSI&#9;JAVA://com.jarics.trainbot.services.AthleteRepositoryService&#10;LibSVMFileFormat&#9;PSI&#9;JAVA://org.apache.spark.ml.source.libsvm.LibSVMFileFormat" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550587364500" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550706127791" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -435,14 +366,11 @@
     <property name="ts.external.directory.path" value="$PROJECT_DIR$/ui/trainbot/node_modules/typescript/lib" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.jarics.trainbot.services" />
-      <recent name="com.jarics.trainbot.entities" />
-    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.jarics.trainbot.services" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.jarics.trainbot.services.learning" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -451,6 +379,13 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.jarics.trainbot" />
       <recent name="com.jarics.trainbot.services.sessions" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/src/main/resources/public" />
+      <recent name="$PROJECT_DIR$/service/src/main/resources" />
+      <recent name="$PROJECT_DIR$/samples" />
+      <recent name="$PROJECT_DIR$/test_data" />
+      <recent name="$PROJECT_DIR$/ui/libs" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.jarics.trainbot" />
@@ -463,12 +398,9 @@
       <recent name="$PROJECT_DIR$/samples" />
       <recent name="$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/service/src/main/resources/public" />
-      <recent name="$PROJECT_DIR$/service/src/main/resources" />
-      <recent name="$PROJECT_DIR$/samples" />
-      <recent name="$PROJECT_DIR$/test_data" />
-      <recent name="$PROJECT_DIR$/ui/libs" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.jarics.trainbot.services" />
+      <recent name="com.jarics.trainbot.entities" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -489,7 +421,23 @@
     </option>
     <option name="contentProportion" value="0.13814561" />
   </component>
-  <component name="RunManager" selected="JUnit.MLTest">
+  <component name="RunManager" selected="JUnit.FeatureExtractorTest.extract">
+    <configuration name="FeatureExtractorTest.extract" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.jarics.trainbot.services.learning.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.jarics.trainbot.services.learning" />
+      <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.services.learning.FeatureExtractorTest" />
+      <option name="METHOD_NAME" value="extract" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MLTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
@@ -505,25 +453,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MLTest.testMLRestApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MLTest.testFeatures" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.com.jarics.trainbot.utils.*" />
+          <option name="PATTERN" value="com.jarics.trainbot.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.jarics.trainbot" />
       <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.MLTest" />
-      <option name="METHOD_NAME" value="testMLRestApi" />
+      <option name="METHOD_NAME" value="testFeatures" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StravaServiceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StravaServiceTests.testFeatureExtraction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
         <pattern>
@@ -533,7 +479,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.jarics.trainbot" />
       <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.StravaServiceTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testFeatureExtraction" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -550,21 +497,6 @@
       <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.StravaServiceTests" />
       <option name="METHOD_NAME" value="testGetActivities" />
       <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TrainingBotControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.jarics.trainbot.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.jarics.trainbot" />
-      <option name="MAIN_CLASS_NAME" value="com.jarics.trainbot.TrainingBotControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -615,21 +547,21 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.TrainingBotControllerTest.testGetPlan" />
-      <item itemvalue="JUnit.MLTest.testMLRestApi" />
+      <item itemvalue="JUnit.StravaServiceTests.testGetActivities" />
+      <item itemvalue="JUnit.MLTest" />
       <item itemvalue="Remote.Remote Debug Maven Test" />
       <item itemvalue="Spring Boot.Application" />
-      <item itemvalue="JUnit.TrainingBotControllerTest" />
-      <item itemvalue="JUnit.StravaServiceTests.testGetActivities" />
-      <item itemvalue="JUnit.StravaServiceTests" />
-      <item itemvalue="JUnit.MLTest" />
+      <item itemvalue="JUnit.MLTest.testFeatures" />
+      <item itemvalue="JUnit.StravaServiceTests.testFeatureExtraction" />
+      <item itemvalue="JUnit.FeatureExtractorTest.extract" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MLTest" />
-        <item itemvalue="JUnit.StravaServiceTests" />
-        <item itemvalue="JUnit.TrainingBotControllerTest" />
+        <item itemvalue="JUnit.FeatureExtractorTest.extract" />
+        <item itemvalue="JUnit.StravaServiceTests.testFeatureExtraction" />
         <item itemvalue="JUnit.StravaServiceTests.testGetActivities" />
-        <item itemvalue="JUnit.MLTest.testMLRestApi" />
+        <item itemvalue="JUnit.MLTest.testFeatures" />
+        <item itemvalue="JUnit.MLTest" />
       </list>
     </recent_temporary>
   </component>
@@ -743,14 +675,8 @@
       <workItem from="1544828862839" duration="268000" />
       <workItem from="1545151623555" duration="13000" />
       <workItem from="1550489693793" duration="341000" />
-      <workItem from="1550545678187" duration="5160000" />
-    </task>
-    <task id="LOCAL-00043" summary="ML training on strava activies as examples #11">
-      <created>1529619493004</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1529619493004</updated>
+      <workItem from="1550545678187" duration="6796000" />
+      <workItem from="1550702815644" duration="3231000" />
     </task>
     <task id="LOCAL-00044" summary="ML training on strava activies as examples #11 and fix test with unique athletes">
       <created>1530212823446</created>
@@ -1088,43 +1014,50 @@
       <option name="project" value="LOCAL" />
       <updated>1541652943330</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="Fixed readme.md to remove false attributes username ect. Remove wrong &quot;submit&quot; post controller. Fixed broken tests in ML. It was pushing the &quot;testing&quot; attribute in environment but is trying to use trainingbot &quot;eaudet&quot; test username. Since &quot;tetsing&quot; attribute is only used in testing trainingBot where we use a bran new database each time it was not finding testing user eaudet.">
+      <created>1550587660029</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1550587660030</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MLTest_testMLRestApi - 2019.02.19 at 09h 29m 34s.xml">
-      <configuration name="MLTest.testMLRestApi" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MLTest_testMLRestApi - 2019.02.19 at 09h 30m 29s.xml">
-      <configuration name="MLTest.testMLRestApi" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TrainingBotControllerTest - 2019.02.19 at 09h 30m 55s.xml">
-      <configuration name="TrainingBotControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StravaServiceTests_testGetActivities - 2019.02.19 at 09h 31m 58s.xml">
-      <configuration name="StravaServiceTests.testGetActivities" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StravaServiceTests_testGetActivities - 2019.02.19 at 09h 33m 17s.xml">
-      <configuration name="StravaServiceTests.testGetActivities" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StravaServiceTests - 2019.02.19 at 09h 35m 50s.xml">
-      <configuration name="StravaServiceTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="StravaServiceTests - 2019.02.19 at 09h 36m 51s.xml">
-      <configuration name="StravaServiceTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TrainingBotControllerTest - 2019.02.19 at 09h 38m 19s.xml">
-      <configuration name="TrainingBotControllerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="StravaServiceTests - 2019.02.19 at 09h 38m 50s.xml">
       <configuration name="StravaServiceTests" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MLTest - 2019.02.19 at 09h 41m 21s.xml">
       <configuration name="MLTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MLTest_testFeatures - 2019.02.20 at 17h 49m 23s.xml">
+      <configuration name="MLTest.testFeatures" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StravaServiceTests_testGetActivities - 2019.02.20 at 17h 50m 38s.xml">
+      <configuration name="StravaServiceTests.testGetActivities" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StravaServiceTests_testFeatureExtraction - 2019.02.20 at 18h 01m 48s.xml">
+      <configuration name="StravaServiceTests.testFeatureExtraction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="StravaServiceTests_testFeatureExtraction - 2019.02.20 at 18h 19m 28s.xml">
+      <configuration name="StravaServiceTests.testFeatureExtraction" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FeatureExtractorTest_extract - 2019.02.20 at 18h 31m 28s.xml">
+      <configuration name="FeatureExtractorTest.extract" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FeatureExtractorTest_extract - 2019.02.20 at 18h 36m 45s.xml">
+      <configuration name="FeatureExtractorTest.extract" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FeatureExtractorTest_extract - 2019.02.20 at 18h 37m 59s.xml">
+      <configuration name="FeatureExtractorTest.extract" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="FeatureExtractorTest_extract - 2019.02.20 at 18h 41m 49s.xml">
+      <configuration name="FeatureExtractorTest.extract" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="464270000" />
+    <option name="totallyTimeSpent" value="469137000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1144,13 +1077,13 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="UI Designer" order="3" weight="0.32967034" />
       <window_info id="Capture Tool" order="4" />
-      <window_info content_ui="combo" x="572" y="184" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.18009768" />
+      <window_info content_ui="combo" x="572" y="184" width="489" height="504" id="Project" order="5" sideWeight="0.6129944" visible="true" weight="0.16727717" />
       <window_info id="Web" order="6" sideWeight="0.38700566" side_tool="true" weight="0.25152627" />
       <window_info anchor="bottom" id="Sequence" order="0" weight="0.2517912" />
       <window_info anchor="bottom" id="Run Dashboard" order="1" sideWeight="0.8052503" weight="0.3578838" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" sideWeight="0.4908425" weight="0.28630707" />
-      <window_info active="true" anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.83150184" visible="true" weight="0.4460581" />
+      <window_info active="true" anchor="bottom" x="202" y="144" width="1324" height="703" id="Run" order="4" sideWeight="0.83150184" visible="true" weight="0.3039419" />
       <window_info anchor="bottom" id="Debug" order="5" sideWeight="0.82051283" weight="0.343361" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Spring" order="7" sideWeight="0.4993895" weight="0.32879582" />
@@ -1180,7 +1113,7 @@
       <window_info anchor="right" id="Bean Validation" order="8" sideWeight="0.48769897" weight="0.18803419" />
       <window_info anchor="right" id="Maven Projects" order="9" sideWeight="0.3921162" visible="true" weight="0.15384616" />
       <window_info anchor="right" id="PlantUML" order="10" sideWeight="0.4924812" weight="0.525641" />
-      <window_info anchor="right" id="Structure" order="11" sideWeight="0.6078838" side_tool="true" visible="true" weight="0.2020757" />
+      <window_info anchor="right" id="Structure" order="11" sideWeight="0.6078838" side_tool="true" visible="true" weight="0.13736264" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="12" weight="0.25" />
       <window_info anchor="right" id="Maven" order="13" />
     </layout>
@@ -1528,7 +1461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
-    <MESSAGE value="ML training on strava activies as examples #11 and fix test with unique athletes" />
     <MESSAGE value="ML training on strava activies as examples #11 and added class FeatureExtractor." />
     <MESSAGE value="ML training on strava activies as examples #11&#10;Now generating training data sets." />
     <MESSAGE value="ML training on strava activies as examples #11&#10;Now generating training data sets for normal, over and under trained" />
@@ -1553,7 +1485,8 @@
     <MESSAGE value="Srava OAuTH integration." />
     <MESSAGE value="Added complete html5 form." />
     <MESSAGE value="Unit tests using real accesstoken done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Unit tests using real accesstoken done" />
+    <MESSAGE value="Fixed readme.md to remove false attributes username ect. Remove wrong &quot;submit&quot; post controller. Fixed broken tests in ML. It was pushing the &quot;testing&quot; attribute in environment but is trying to use trainingbot &quot;eaudet&quot; test username. Since &quot;tetsing&quot; attribute is only used in testing trainingBot where we use a bran new database each time it was not finding testing user eaudet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed readme.md to remove false attributes username ect. Remove wrong &quot;submit&quot; post controller. Fixed broken tests in ML. It was pushing the &quot;testing&quot; attribute in environment but is trying to use trainingbot &quot;eaudet&quot; test username. Since &quot;tetsing&quot; attribute is only used in testing trainingBot where we use a bran new database each time it was not finding testing user eaudet." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -1580,21 +1513,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java</url>
-          <line>125</line>
-          <properties />
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java</url>
           <line>42</line>
           <properties />
           <option name="timeStamp" value="176" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java</url>
-          <line>93</line>
-          <properties />
-          <option name="timeStamp" value="178" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/GenerateTrainingDataset.java</url>
@@ -1604,19 +1525,19 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java</url>
-          <line>67</line>
+          <line>66</line>
           <properties />
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java</url>
-          <line>90</line>
+          <line>84</line>
           <properties />
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java</url>
-          <line>81</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="183" />
         </line-breakpoint>
@@ -1625,6 +1546,12 @@
           <line>33</line>
           <properties />
           <option name="timeStamp" value="186" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java</url>
+          <line>140</line>
+          <properties />
+          <option name="timeStamp" value="187" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -1688,40 +1615,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AccessToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/Configuration.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/ApiClient.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/api/ActivitiesApi.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/dizitart/nitrite/3.0.0/nitrite-3.0.0.jar!/org/dizitart/no2/objects/filters/ObjectFilters.class" />
-    <entry file="file://$PROJECT_DIR$/auth.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/trainingBotFiles/ffe8fb79-4f9a-49a4-93a9-7452de54b763_normal.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/0df55d94-8665-4512-818a-f91e52ab70ef_undertrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/a1b68f45-0da6-4701-a997-95458de326e5_overtrained.csv" />
-    <entry file="file://$PROJECT_DIR$/trainingBotFiles/c0868d05-e3a2-4900-8356-3dd823a0a3e6_overtrained.csv" />
-    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/runners/model/ReflectiveCallable.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/io/swagger/swagger-java-client/1.0.0/swagger-java-client-1.0.0-sources.jar!/io/swagger/client/model/SummaryActivity.java" />
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/demo_test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/test-ajax.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7605">
-          <caret line="507" column="17" lean-forward="true" selection-start-line="507" selection-start-column="17" selection-end-line="507" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/test.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1875">
@@ -1747,13 +1640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/completeAthlete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="515">
-          <caret line="161" selection-start-line="161" selection-end-line="169" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1858,23 +1744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#1121#1122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteFTP.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -1897,13 +1766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
         </state>
       </provider>
     </entry>
@@ -1973,39 +1835,139 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/AthleteRepositoryService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="82" column="68" selection-start-line="82" selection-start-column="68" selection-end-line="82" selection-end-column="68" />
-          <folding>
-            <element signature="e#816#832#1" expanded="true" />
-            <element signature="e#902#924#1" expanded="true" />
-          </folding>
+        <state relative-caret-position="1005">
+          <caret line="81" column="68" selection-start-line="81" selection-start-column="68" selection-end-line="81" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/controllers/TrainingBotController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="104" column="10" selection-start-line="104" selection-start-column="10" selection-end-line="104" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/ModelAndView.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/resources/public/completeAthlete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Training Bot Postman.postman_collection.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TrainingBot.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFilesfd7caaf7-1af4-433c-9390-95c3eccca739_normal.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFilesff635e27-6bc4-4686-9736-a534972cba02_normal.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFilestrainingbotLeanringResults.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFilestrainingbot.dataset">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFilestrainingbot.model">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFilesff660fc2-5a71-4b03-abac-69af3f50cd46_undertrained.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainingBotFiles0a3100d9-45d9-43c6-9c3b-73feafadc37a_normal.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/TrainingBotControllerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="44" selection-start-line="44" selection-end-line="47" selection-end-column="5" />
+        <state relative-caret-position="490">
+          <caret line="42" selection-start-line="42" selection-end-line="45" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/FeatureExtractTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/StravaServiceTests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="23" column="14" selection-start-line="23" selection-start-column="14" selection-end-line="23" selection-end-column="14" />
+        <state relative-caret-position="345">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/MLTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="363">
+          <caret line="87" column="62" selection-start-line="87" selection-start-column="62" selection-end-line="87" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthleteActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="70" column="11" selection-start-line="70" selection-start-column="11" selection-end-line="70" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/StravaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="124" column="40" lean-forward="true" selection-start-line="124" selection-start-column="40" selection-end-line="124" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/services/learning/FeatureExtractor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="91" column="31" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <folding>
+            <element signature="e#1707#1708#0" expanded="true" />
+            <element signature="e#1753#1754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/main/java/com/jarics/trainbot/entities/AthletesFeatures.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="184" column="18" selection-start-line="184" selection-start-column="18" selection-end-line="184" selection-end-column="18" />
+          <folding>
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1121#1122#0" expanded="true" />
+            <element signature="e#4149#4150#0" expanded="true" />
+            <element signature="e#4333#4334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/service/src/test/java/com/jarics/trainbot/services/learning/FeatureExtractorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="33" column="47" lean-forward="true" selection-start-line="33" selection-start-column="47" selection-end-line="33" selection-end-column="47" />
         </state>
       </provider>
     </entry>

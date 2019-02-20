@@ -181,4 +181,8 @@ public class AthletesFeatures {
         return ret.toString();
     }
 
+    @Override
+    public String toString() {
+        return "AthletesFeatures{" + "tSB=" + tSB + ", cTL=" + cTL + ", aTL=" + aTL + ", tSS=" + tSS + ", s=" + s + ", nP=" + nP + ", nGP=" + nGP + ", athlete=" + athlete + '}';
+    }
 }

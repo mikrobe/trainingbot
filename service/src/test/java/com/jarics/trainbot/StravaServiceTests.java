@@ -16,12 +16,9 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Application.class)
 public class StravaServiceTests {
-    @Autowired
-    private StravaService stravaService;
-    @Autowired
-    private AthleteRepositoryService athleteRepositoryService;
-    @Autowired
-    private WekaMLService wekaMLService;
+    @Autowired private StravaService stravaService;
+    @Autowired private AthleteRepositoryService athleteRepositoryService;
+    @Autowired private WekaMLService wekaMLService;
     private String trainingBotUserName = "eaudet";
 
     /**
@@ -35,6 +32,5 @@ public class StravaServiceTests {
             System.out.println(activity.toCsvString());
         }
     }
-
 
 }
