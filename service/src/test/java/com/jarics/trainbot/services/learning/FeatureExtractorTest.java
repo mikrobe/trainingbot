@@ -30,7 +30,7 @@ public class FeatureExtractorTest {
         activities.add(new AthleteActivity(0, BotActivityType.BIKE, 1354, 1308, 12486.6f, 0.0, 0.0));
         activities.add(new AthleteActivity(0, BotActivityType.BIKE, 3637, 3604, 33557.7f, 0.0, 0.0));
         FeatureExtractor wFeatureExtractor = new FeatureExtractor();
-        AthletesFeatures extract = wFeatureExtractor.extract(activities, 100, 237, 100);
+        AthletesFeatures extract = wFeatureExtractor.extract(activities, 101.0, 228.0, 345.0);
         System.out.println(extract.toString());
     }
 

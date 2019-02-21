@@ -94,30 +94,47 @@ public class FeatureExtractor {
         AthletesFeatures wAthletesFeatures = new AthletesFeatures();
         for (AthleteActivity activity : pActivities) {
             double wCurrentFtp;
-            double wNPG = 0;
-            double IF = 0;
-            double wNp = 0;
+            double wNGP = 0;
+            double wIF = 0;
+            double wNP = 0;
             switch (activity.getType()) {
                 case SWIM: {
                     wCurrentFtp = pSwimFtp;
-                    wNPG = activity.getMovingTime() / activity.getDistance();
-                    IF = wNPG / wCurrentFtp;
-                    wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
+                    if (activity.getDistance() == 0.0) {
+                        wNGP = pSwimFtp;
+                    } else {
+                        wNGP = activity.getMovingTime() / activity.getDistance();
+                    }
+                    wIF = wNGP / wCurrentFtp;
+                    wTssValues.add(getTss(activity.getElapsedTime(), 0.0, wNGP, wIF, wCurrentFtp));
                     break;
                 }
                 case BIKE: {
+                    //The FTP for bike is in watts.
                     wCurrentFtp = pBikeFtp;
-                    wNp = activity.getWeigthedAvgWatts();
-                    wNPG = activity.getMovingTime() / activity.getDistance();
-                    IF = wNp / wCurrentFtp;
-                    wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
+                    if (activity.getWeigthedAvgWatts() == 0.0) {
+                        wNP = pBikeFtp;
+                    } else {
+                        wNP = activity.getWeigthedAvgWatts();
+                    }
+                    if (activity.getDistance() == 0.0) {
+                        wNGP = 0.0;
+                    } else {
+                        wNGP = activity.getMovingTime() / activity.getDistance();
+                    }
+                    wIF = wNP / wCurrentFtp;
+                    wTssValues.add(getTss(activity.getElapsedTime(), wNP, wNGP, wIF, wCurrentFtp));
                     break;
                 }
                 case RUN: {
                     wCurrentFtp = pRunFtp;
-                    wNPG = activity.getMovingTime() / activity.getDistance();
-                    IF = wNPG / wCurrentFtp;
-                    wTssValues.add(getTss(activity.getElapsedTime(), wNp, wNPG, IF, wCurrentFtp));
+                    if (activity.getDistance() == 0.0) {
+                        wNGP = pRunFtp;
+                    } else {
+                        wNGP = activity.getMovingTime() / activity.getDistance();
+                    }
+                    wIF = wNGP / wCurrentFtp;
+                    wTssValues.add(getTss(activity.getElapsedTime(), wNP, wNGP, wIF, wCurrentFtp));
                     break;
                 }
             }
