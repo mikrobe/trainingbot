@@ -41,10 +41,14 @@ public class TrainingBotController {
   }
 
   @RequestMapping(value = "/athlete/plan/{username}", method = RequestMethod.GET, produces = "application/json")
-  public List<SimpleSession> plan(@PathVariable("username") String pUsername) {
+  public List<SimpleSession> plan(@PathVariable("username") String pUsername) throws Exception {
     List<SimpleSession> wSessions = null;
     AthleteFTP wAthleteFTP = athleteRepositoryService.findAthleteFtpByUsername(pUsername);
-    wSessions = trainingPlanService.getSessions(wAthleteFTP, 20);
+      if (wAthleteFTP != null) {
+          wSessions = trainingPlanService.getSessions(wAthleteFTP, 20);
+      } else {
+          throw new Exception("User does not exist");
+      }
     return wSessions;
   }
 
