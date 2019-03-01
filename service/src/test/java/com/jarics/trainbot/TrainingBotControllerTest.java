@@ -162,7 +162,10 @@ public class TrainingBotControllerTest {
         AthleteFTP wAthleteFTP = generateAthlete();
         createAthlete(wAthleteFTP);
         String wUrl = "/api/athlete/plan" + wAthleteFTP.getUsername();
-        mockMvc.perform(get(wUrl)).andExpect(status().isOk());
+        mockMvc
+          .perform(get(wUrl))
+          .andExpect(status().isOk())
+          .andDo(print());
         deleteAthlete(wAthleteFTP.getUsername());
     }
 

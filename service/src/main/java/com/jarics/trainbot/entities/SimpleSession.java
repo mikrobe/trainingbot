@@ -186,4 +186,10 @@ public class SimpleSession {
         this.bikeFtp = bikeFtp;
     }
 
+    @Override
+    public String toString() {
+        return "SimpleSession{" + "timeAtFtp=" + timeAtFtp + ", runDistance=" + runDistance + ", bikeDistance=" + bikeDistance + ", swimDistance=" + swimDistance + ", weigthedAvgWatts=" + weigthedAvgWatts + ", week=" + week + ", runFtp=" + runFtp
+          + ", swimFtp=" + swimFtp + ", bikeFtp=" + bikeFtp + ", runLZone=" + runLZone + ", runHZone=" + runHZone + ", bikeLZone=" + bikeLZone + ", bikeHZone=" + bikeHZone + ", swimLZone=" + swimLZone + ", swimHZone=" + swimHZone + ", athletesId='"
+          + athletesId + '\'' + ", classification='" + classification + '\'' + '}';
+    }
 }
