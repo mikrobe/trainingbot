@@ -20,6 +20,10 @@ To be completed.
 FTP stands for Functional Threshold Power/Pace, which is commonly defined as the highest average power/pace 
 you can sustain for an hour, measured in watts. FTP is often used to determine training zones when 
 using a power/pace meter and to measure improvement [2],[4].
+
+* For the Swimiming, the FTP is the average pace per 100 meters. Ex.: 00:01:36 per 100 meters.
+* For the biking, the FTPw is the watts. Ex.: 238 watts.
+* For the running, the FTP is the average pace per kilometer. Ex.: 00:05:36 per Km.
 #### IF (Intensity Factor)
 IF is a percentage of the FTP which represents the zones. Values are from 1 to 7.
 #### TSB (Training Stress Balance)
@@ -330,6 +334,7 @@ You will find most queries in the postman project here: /Training Bot Postman.po
 Simply import and setup the {{host}} variable. There is no security yet.
 ##### Create, Update and Get an athlete
 See: Postman examples
+Goto: 
 ##### Get a 20 days plan or weekly session
 See: Postman examples
 ##### Attach you strava profile
