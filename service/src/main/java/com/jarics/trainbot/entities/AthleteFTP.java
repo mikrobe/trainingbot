@@ -5,11 +5,15 @@ import com.jarics.trainbot.services.EventTypes;
 import com.jarics.trainbot.services.MLClasses;
 import lombok.EqualsAndHashCode;
 import org.dizitart.no2.objects.Id;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.io.Serializable;
+import java.util.Collection;
 
 @EqualsAndHashCode
-public class AthleteFTP {
-    @Id
-    private long id;
+public class AthleteFTP implements Serializable, UserDetails {
+    @Id private long id;
     private double bikeFtp;
     private double runFtp;
     private double swimFtp;
@@ -17,10 +21,10 @@ public class AthleteFTP {
     private AthletesRanking athletesRanking = AthletesRanking.beginner;
     private MLClasses classification = MLClasses.unknown;
     private String username;
+    private String password;
     private String tokenType;
     private String accessToken;
     private String code;
-
 
     public double getBikeFtp() {
         return bikeFtp;
@@ -62,14 +66,6 @@ public class AthleteFTP {
         this.classification = classification;
     }
 
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
     public AthletesRanking getAthletesRanking() {
         return athletesRanking;
     }
@@ -85,7 +81,6 @@ public class AthleteFTP {
     public void setEventType(EventTypes eventType) {
         this.eventType = eventType;
     }
-
 
     public String getTokenType() {
         return tokenType;
@@ -103,12 +98,54 @@ public class AthleteFTP {
         this.accessToken = accessToken;
     }
 
+    public String getCode() {
+        return code;
+    }
+
     public void setCode(String code) {
         this.code = code;
     }
 
-    public String getCode() {
-        return code;
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
 }

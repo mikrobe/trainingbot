@@ -66,6 +66,10 @@ public class TrainingBotController {
 
     @RequestMapping(value = "/athlete/{username}", method = RequestMethod.GET, produces = "application/json")
     public AthleteFTP getAthlete(@PathVariable("username") String pUsername) {
+
+        //IF Needed        AthleteFTP user = (AthleteFTP) SecurityContextHolder
+        //          .getContext().getAuthentication().getPrincipal();
+
         return athleteRepositoryService.findAthleteFtpByUsername(pUsername);
     }
 

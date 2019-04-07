@@ -9,6 +9,9 @@ import org.dizitart.no2.WriteResult;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -17,7 +20,7 @@ import java.util.UUID;
 import static org.dizitart.no2.objects.filters.ObjectFilters.eq;
 
 @Component
-public class AthleteRepositoryService {
+public class AthleteRepositoryService implements UserDetailsService {
 
     Nitrite db;
     ObjectRepository<AthleteFTP> repository;
@@ -78,6 +81,7 @@ public class AthleteRepositoryService {
     }
 
     public AthleteFTP findAthleteFtpByUsername(String pUsername) {
+
         AthleteFTP wAthleteFTP = null;
         org.dizitart.no2.objects.Cursor<AthleteFTP> wCursor = repository.find(eq("username", pUsername));
         for (AthleteFTP wFtp : wCursor) {
@@ -117,6 +121,10 @@ public class AthleteRepositoryService {
         return updateAthleteFTP(athleteFTP);
     }
 
-
-
+    @Override
+    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        AthleteFTP athleteFTP = this.findAthleteFtpByUsername(s);
+        if (athleteFTP == null) throw new UsernameNotFoundException("User not found");
+        return athleteFTP;
+    }
 }
