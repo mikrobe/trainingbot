@@ -20,7 +20,9 @@ public class AppAuthProvider extends DaoAuthenticationProvider {
           .getCredentials()
           .toString();
         UserDetails user = userDetailsService.findAthleteFtpByUsername(name);
-        if (user == null) {
+        if (user == null || !user
+          .getPassword()
+          .equals(password)) {
             throw new BadCredentialsException("Username/Password does not match for " + auth.getPrincipal());
         }
         return new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
