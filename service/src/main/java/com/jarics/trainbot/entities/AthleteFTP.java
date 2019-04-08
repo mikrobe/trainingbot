@@ -1,5 +1,6 @@
 package com.jarics.trainbot.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.jarics.trainbot.services.AthletesRanking;
 import com.jarics.trainbot.services.EventTypes;
 import com.jarics.trainbot.services.MLClasses;
@@ -12,6 +13,7 @@ import java.io.Serializable;
 import java.util.Collection;
 
 @EqualsAndHashCode
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AthleteFTP implements Serializable, UserDetails {
     @Id private long id;
     private double bikeFtp;
