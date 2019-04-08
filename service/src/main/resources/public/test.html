@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
+</head>
+<body>
+
+<h2>Use the XMLHttpRequest to get the content of a file.</h2>
+<p>The content is written in JSON format, and can easily be converted into a JavaScript object.</p>
+
+
+<p>
+    to a <span id="sessions">text</span> node.
+</p>
+
+<table id="example" class="display" style="width:100%">
+    <thead>
+    <tr>
+        <th>Week</th>
+        <th>Swim</th>
+        <th>Bike</th>
+        <th>Run</th>
+    </tr>
+    </thead>
+    <tfoot>
+    <tr>
+        <th>Week</th>
+        <th>Swim</th>
+        <th>Bike</th>
+        <th>Run</th>
+    </tr>
+    </tfoot>
+</table>
+
+<script>
+
+    function show_items_() {
+        $('#example').DataTable({
+            "ajax": "demo_ajax.txt",
+            "columns": [
+                {"data": "week"},
+                {"data": "swim"},
+                {"data": "bike"},
+                {"data": "run"}
+            ]
+        });
+    }
+
+    function show_items() {
+        jQuery.get('http://localhost:8080/api/athlete/plan/eaudet', function (data) {
+            var i, html;
+            html = '<ul>';
+            // console.log(data);
+            $.each(data, function (index, value) {
+                html += '<li>';
+                html += '<table style="width:100%">';
+                html += '<tr>';
+                html += '<th>Plan for Week/th>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '<td>swim distance</td>';
+                html += '<td>' + value.swimDistance + '</td>';
+                html += '</tr>';
+                html += '<tr>';
+                html += '<td>bike distance</td>';
+                html += '<td>' + value.bikeDistance + '</td>';
+                html += '</tr>';
+                html += '<td>run distance</td>';
+                html += '<td>' + value.runDistance + '</td>';
+                html += '</tr>';
+                html += '</table>';
+                html += '</li>';
+            });
+
+            html += '</ul>';
+            $("#sessions").html(html);
+        });
+    }
+
+    function convertToMinutes(timeInSecs) {
+        var minutes = timeInSecs / 60;
+        var floor = Math.floor(minutes);
+        var decimalPart = minutes - floor;
+        var seconds = Math.round(decimalPart * 60);// percentage of a minute
+        if (floor < 10) {
+            floor = '0' + floor;
+        }
+        if (seconds < 10) {
+            seconds = '0' + seconds;
+        }
+        return floor + ':' + seconds;
+    }
+
+    function calcultateReps(timeAtFtpInSecs, lengthInMeters, paceInSecsPer100Meters) {
+        var secsPerLenght = paceInSecsPer100Meters * (lengthInMeters / 100);
+        var reps = Math.round(timeAtFtpInSecs * 60 / secsPerLenght);
+        return reps;
+    }
+
+    function calcultateRunReps(timeAtFtpInSecs, secsPerReps) {
+        return Math.round(timeAtFtpInSecs / secsPerReps);
+    }
+
+    function load(athlete) {
+        fetch('http://localhost:8080/api/athlete/plan/' + athlete)
+            .then(response => response.json())
+            .then(json => {
+                this.sessions = json
+            });
+    }
+
+</script>
+
+<button onclick="show_items()">Show Items</button>
+
+<p>Take a look at <a href="demo_test.txt" target="_blank">demo_test.txt</a></p>
+
+</body>
+</html>
+
