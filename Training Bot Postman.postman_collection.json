@@ -18,10 +18,10 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"id\":811194388135934}\n"
+					"raw": ""
 				},
 				"url": {
-                  "raw": "http://{{host}}:8080/api/athlete/plan/erickaudet",
+					"raw": "http://{{host}}:8080/api/athlete/plan/eaudet",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -31,11 +31,115 @@
 						"api",
 						"athlete",
 						"plan",
-                      "erickaudet"
+						"eaudet"
 					]
 				}
 			},
 			"response": [
+				{
+					"name": "Get Plan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{host}}:8080/api/athlete/plan/eaudet",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"athlete",
+								"plan",
+								"eaudet"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8",
+							"name": "Content-Type",
+							"description": "The mime type of this content"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 24 Sep 2018 19:43:28 GMT",
+							"name": "Date",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked",
+							"name": "Transfer-Encoding",
+							"description": "The form of encoding used to safely transfer the entity to the user. Currently defined methods are: chunked, compress, deflate, gzip, identity."
+						}
+					],
+					"cookie": [],
+					"body": "[{\"timeAtFtp\":15.0,\"runDistance\":7083.637032766545,\"bikeDistance\":35418.18516383272,\"swimDistance\":1593.8183323724727,\"week\":0,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":16.05,\"runDistance\":7616.814013727469,\"bikeDistance\":38084.07006863733,\"swimDistance\":1713.7831530886804,\"week\":1,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":17.1735,\"runDistance\":8190.12259540588,\"bikeDistance\":40950.612977029385,\"swimDistance\":1842.777583966323,\"week\":2,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":14.940945000000001,\"runDistance\":7247.896102129097,\"bikeDistance\":36239.48051064547,\"swimDistance\":1630.7766229790468,\"week\":3,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":15.986811150000001,\"runDistance\":7793.436668956018,\"bikeDistance\":38967.18334478008,\"swimDistance\":1753.523250515104,\"week\":4,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":17.1058879305,\"runDistance\":8380.039428984966,\"bikeDistance\":41900.19714492482,\"swimDistance\":1885.5088715216173,\"week\":5,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":18.303300085635,\"runDistance\":9010.795084930072,\"bikeDistance\":45053.97542465035,\"swimDistance\":2027.428894109266,\"week\":6,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":15.92387107450245,\"runDistance\":7974.154942415993,\"bikeDistance\":39870.774712079954,\"swimDistance\":1794.184862043598,\"week\":7,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":17.038542049717623,\"runDistance\":8574.360153135476,\"bikeDistance\":42871.80076567737,\"swimDistance\":1929.231034455482,\"week\":8,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":18.231239993197857,\"runDistance\":9219.742100145673,\"bikeDistance\":46098.71050072835,\"swimDistance\":2074.441972532776,\"week\":9,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":19.507426792721706,\"runDistance\":9913.701182952336,\"bikeDistance\":49568.50591476167,\"swimDistance\":2230.5827661642757,\"week\":10,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":16.971461309667884,\"runDistance\":8773.18688756844,\"bikeDistance\":43865.93443784219,\"swimDistance\":1973.9670497028987,\"week\":11,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":18.159463601344637,\"runDistance\":9433.534287708,\"bikeDistance\":47167.67143853999,\"swimDistance\":2122.5452147343,\"week\":12,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":19.43062605343876,\"runDistance\":10143.5852556,\"bikeDistance\":50717.92627799999,\"swimDistance\":2282.30668251,\"week\":13,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":20.790769877179475,\"runDistance\":10907.08092,\"bikeDistance\":54535.404599999994,\"swimDistance\":2454.093207,\"week\":14,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":18.087969793146144,\"runDistance\":9652.284,\"bikeDistance\":48261.42,\"swimDistance\":2171.7639,\"week\":15,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":19.354127678666373,\"runDistance\":10378.8,\"bikeDistance\":51894.0,\"swimDistance\":2335.23,\"week\":16,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":20.70891661617302,\"runDistance\":11160.0,\"bikeDistance\":55800.0,\"swimDistance\":2511.0,\"week\":17,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":22.15854077930513,\"runDistance\":12000.0,\"bikeDistance\":60000.0,\"swimDistance\":2700.0,\"week\":18,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"},{\"timeAtFtp\":19.277930477995465,\"runDistance\":11160.0,\"bikeDistance\":55800.0,\"swimDistance\":2511.0,\"week\":19,\"runFtp\":332.0,\"swimFtp\":101.0,\"bikeFtp\":228.0,\"runLZone\":338.64,\"runHZone\":365.20000000000005,\"bikeLZone\":191.51999999999998,\"bikeHZone\":221.16,\"swimLZone\":103.02,\"swimHZone\":111.10000000000001,\"athletesId\":\"eaudet\",\"classification\":\"normal\"}]"
+				},
+				{
+					"name": "Get Plan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://{{host}}:8080/api/athlete/plan/eaudet",
+							"protocol": "http",
+							"host": [
+								"{{host}}"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"athlete",
+								"plan",
+								"eaudet"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 29 Mar 2019 02:43:09 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"timeAtFtp\": 15,\n        \"runDistance\": 7083.637032766545,\n        \"bikeDistance\": 35418.18516383272,\n        \"swimDistance\": 1593.8183323724727,\n        \"week\": 0,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 84.84,\n        \"bikeHZone\": 97.97,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 16.05,\n        \"runDistance\": 7616.814013727469,\n        \"bikeDistance\": 38084.07006863733,\n        \"swimDistance\": 1713.7831530886804,\n        \"week\": 1,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 17.1735,\n        \"runDistance\": 8190.12259540588,\n        \"bikeDistance\": 40950.612977029385,\n        \"swimDistance\": 1842.777583966323,\n        \"week\": 2,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 14.940945000000001,\n        \"runDistance\": 7247.896102129097,\n        \"bikeDistance\": 36239.48051064547,\n        \"swimDistance\": 1630.7766229790468,\n        \"week\": 3,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 73.8108,\n        \"bikeHZone\": 85.2339,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 15.986811150000001,\n        \"runDistance\": 7793.436668956018,\n        \"bikeDistance\": 38967.18334478008,\n        \"swimDistance\": 1753.523250515104,\n        \"week\": 4,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 17.1058879305,\n        \"runDistance\": 8380.039428984966,\n        \"bikeDistance\": 41900.19714492482,\n        \"swimDistance\": 1885.5088715216173,\n        \"week\": 5,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 18.303300085635,\n        \"runDistance\": 9010.795084930072,\n        \"bikeDistance\": 45053.97542465035,\n        \"swimDistance\": 2027.428894109266,\n        \"week\": 6,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 15.92387107450245,\n        \"runDistance\": 7974.154942415993,\n        \"bikeDistance\": 39870.774712079954,\n        \"swimDistance\": 1794.184862043598,\n        \"week\": 7,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 73.8108,\n        \"bikeHZone\": 85.2339,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 17.038542049717623,\n        \"runDistance\": 8574.360153135476,\n        \"bikeDistance\": 42871.80076567737,\n        \"swimDistance\": 1929.231034455482,\n        \"week\": 8,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 18.231239993197857,\n        \"runDistance\": 9219.742100145673,\n        \"bikeDistance\": 46098.71050072835,\n        \"swimDistance\": 2074.441972532776,\n        \"week\": 9,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 19.507426792721706,\n        \"runDistance\": 9913.701182952336,\n        \"bikeDistance\": 49568.50591476167,\n        \"swimDistance\": 2230.5827661642757,\n        \"week\": 10,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 16.971461309667884,\n        \"runDistance\": 8773.18688756844,\n        \"bikeDistance\": 43865.93443784219,\n        \"swimDistance\": 1973.9670497028987,\n        \"week\": 11,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 73.8108,\n        \"bikeHZone\": 85.2339,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 18.159463601344637,\n        \"runDistance\": 9433.534287708,\n        \"bikeDistance\": 47167.67143853999,\n        \"swimDistance\": 2122.5452147343,\n        \"week\": 12,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 19.43062605343876,\n        \"runDistance\": 10143.5852556,\n        \"bikeDistance\": 50717.92627799999,\n        \"swimDistance\": 2282.30668251,\n        \"week\": 13,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 20.790769877179475,\n        \"runDistance\": 10907.08092,\n        \"bikeDistance\": 54535.404599999994,\n        \"swimDistance\": 2454.093207,\n        \"week\": 14,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 18.087969793146144,\n        \"runDistance\": 9652.284,\n        \"bikeDistance\": 48261.42,\n        \"swimDistance\": 2171.7639,\n        \"week\": 15,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 73.8108,\n        \"bikeHZone\": 85.2339,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 19.354127678666373,\n        \"runDistance\": 10378.8,\n        \"bikeDistance\": 51894,\n        \"swimDistance\": 2335.23,\n        \"week\": 16,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 20.70891661617302,\n        \"runDistance\": 11160,\n        \"bikeDistance\": 55800,\n        \"swimDistance\": 2511,\n        \"week\": 17,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 22.15854077930513,\n        \"runDistance\": 12000,\n        \"bikeDistance\": 60000,\n        \"swimDistance\": 2700,\n        \"week\": 18,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 90.7788,\n        \"bikeHZone\": 104.8279,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    },\n    {\n        \"timeAtFtp\": 19.277930477995465,\n        \"runDistance\": 11160,\n        \"bikeDistance\": 55800,\n        \"swimDistance\": 2511,\n        \"week\": 19,\n        \"runFtp\": 236,\n        \"swimFtp\": 101,\n        \"bikeFtp\": 101,\n        \"runLZone\": 240.72,\n        \"runHZone\": 259.6,\n        \"bikeLZone\": 73.8108,\n        \"bikeHZone\": 85.2339,\n        \"swimLZone\": 103.02,\n        \"swimHZone\": 111.10000000000001,\n        \"athletesId\": \"eaudet\",\n        \"classification\": \"normal\"\n    }\n]"
+				},
 				{
 					"name": "Create Plan",
 					"originalRequest": {
@@ -104,7 +208,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{ \"id\":811194388135940}"
+					"raw": ""
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/session/{{athlete}}/?week=7",
@@ -133,6 +237,31 @@
 		{
 			"name": "Create athlete",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "demo",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
 				"method": "POST",
 				"header": [
 					{
@@ -142,7 +271,7 @@
 				],
 				"body": {
 					"mode": "raw",
-                  "raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"eventType\":\"olympic\",\n    \"athletesRanking\":\"beginner\",\n    \"username\":\"demo\"\n}"
+					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"eventType\":\"olympic\",\n    \"athletesRanking\":\"beginner\",\n    \"username\":\"demo\",\n    \"password\":\"demo\"\n}"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/",
@@ -161,36 +290,46 @@
 			"response": []
 		},
 		{
-          "name": "Request a classification",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Content-Type",
-                "value": "application/json"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\t\n\t\"tSB\":1.0511188630639134E-7,\n\t\"cTL\":2.0750096254564565E-7,\n\t\"aTL\":1.023890762392543E-7\n\t,\"athlete\":\n\t\t{\"username\":\"eaudet\"}\n}\n"
-            },
-            "url": {
-              "raw": "http://{{host}}:8080/api/ml/",
-              "protocol": "http",
-              "host": [
-                "{{host}}"
-              ],
-              "port": "8080",
-              "path": [
-                "api",
-                "ml",
-                ""
-              ]
-            }
-          },
-          "response": []
-        },
-      {
+			"name": "Request a classification",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://{{host}}:8080/api/ml/eaudet?",
+					"protocol": "http",
+					"host": [
+						"{{host}}"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"ml",
+						"eaudet"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "eaudet",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Update athlete",
 			"request": {
 				"method": "PATCH",
@@ -202,7 +341,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 332,\n    \"swimFtp\": 101,\n    \"target\": 2,\n    \"id\": 1044562064217388,\n    \"classification\": \"normal\",\n    \"username\": \"eaudet\"\n}"
+					"raw": "{\n    \"bikeFtp\": 228,\n    \"runFtp\": 343,\n    \"swimFtp\": 101,\n    \"id\": 22334215957853,\n    \"username\": \"eaudet\",\n}\n"
 				},
 				"url": {
 					"raw": "http://{{host}}:8080/api/athlete/",
@@ -223,11 +362,39 @@
 		{
 			"name": "Get Athlete",
 			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "Triat001!",
+							"type": "string"
+						},
+						{
+							"key": "saveHelperData",
+							"value": true,
+							"type": "boolean"
+						},
+						{
+							"key": "showPassword",
+							"value": false,
+							"type": "boolean"
+						}
+					]
+				},
 				"method": "GET",
 				"header": [],
-				"body": {},
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "http://{{host}}:8080/api/athlete/{{athlete}}",
+					"raw": "http://{{host}}:8080/api/athlete/demo",
 					"protocol": "http",
 					"host": [
 						"{{host}}"
@@ -236,7 +403,7 @@
 					"path": [
 						"api",
 						"athlete",
-						"{{athlete}}"
+						"demo"
 					]
 				}
 			},
