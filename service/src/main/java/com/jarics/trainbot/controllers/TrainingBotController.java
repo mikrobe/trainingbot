@@ -1,16 +1,14 @@
 package com.jarics.trainbot.controllers;
 
 import com.jarics.trainbot.com.jarics.trainbot.utils.JsonUtil;
-import com.jarics.trainbot.entities.AccessToken;
-import com.jarics.trainbot.entities.AthleteFTP;
-import com.jarics.trainbot.entities.AthletesFeatures;
-import com.jarics.trainbot.entities.SimpleSession;
+import com.jarics.trainbot.entities.*;
 import com.jarics.trainbot.services.AthleteRepositoryService;
 import com.jarics.trainbot.services.MLClasses;
 import com.jarics.trainbot.services.StravaService;
 import com.jarics.trainbot.services.learning.WekaMLService;
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -67,10 +65,24 @@ public class TrainingBotController {
     @RequestMapping(value = "/athlete/{username}", method = RequestMethod.GET, produces = "application/json")
     public AthleteFTP getAthlete(@PathVariable("username") String pUsername) {
 
-        //IF Needed        AthleteFTP user = (AthleteFTP) SecurityContextHolder
-        //          .getContext().getAuthentication().getPrincipal();
+        // security check....can this be achieve without doing this in every method?
+        AthleteFTP user = (AthleteFTP) SecurityContextHolder
+          .getContext()
+          .getAuthentication()
+          .getPrincipal();
 
         return athleteRepositoryService.findAthleteFtpByUsername(pUsername);
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
+    public LoginResponse login(@RequestBody Credentials credentials) {
+        AthleteFTP athleteFTP = athleteRepositoryService.findAthleteFtpByUsername(credentials.getUsername());
+        if (athleteFTP == null || !credentials
+          .getPassword()
+          .equals(athleteFTP.getPassword())) {
+            return new LoginResponse("Invalid username or password");
+        }
+        return new LoginResponse("Valid credentials");
     }
 
     @RequestMapping(value = "/athlete/{username}", method = RequestMethod.DELETE, produces = "application/json")
