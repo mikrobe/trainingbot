@@ -17,7 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:8081")
+@CrossOrigin(origins = "https://www.test-cors.org", maxAge = 3600)
 public class TrainingBotController {
 
     AthleteRepositoryService athleteRepositoryService;
