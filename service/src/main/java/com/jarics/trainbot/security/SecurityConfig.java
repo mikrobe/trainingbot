@@ -58,12 +58,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .authenticationProvider(getProvider());
     }
 
-    //    public void configure(WebSecurity web) throws Exception {
-    //        web
-    //          .ignoring()
-    //          .antMatchers(HttpMethod.POST, "/api/login");
-    //    }
-
     @Bean
     public AuthenticationProvider getProvider() {
         AppAuthProvider provider = new AppAuthProvider();

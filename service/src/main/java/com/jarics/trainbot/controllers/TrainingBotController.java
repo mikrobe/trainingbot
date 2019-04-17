@@ -17,7 +17,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://www.test-cors.org", maxAge = 3600)
 public class TrainingBotController {
 
     AthleteRepositoryService athleteRepositoryService;
@@ -54,7 +53,8 @@ public class TrainingBotController {
 
     @RequestMapping(value = "/athlete", method = RequestMethod.POST, produces = "application/json")
     public AthleteFTP createAthlete(@RequestBody AthleteFTP pAthleteFTP) throws Exception {
-        return athleteRepositoryService.createAthleteFTP(pAthleteFTP);
+        AthleteFTP athleteFTP = athleteRepositoryService.createAthleteFTP(pAthleteFTP);
+        return athleteFTP;
     }
 
     @RequestMapping(value = "/athlete", method = RequestMethod.PATCH, produces = "application/json")
