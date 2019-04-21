@@ -47,8 +47,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .csrf()
           .disable()
           .authorizeRequests()
-          .antMatchers("/api/login")
-          .permitAll()
           .anyRequest()
           .authenticated()
           .and()
@@ -56,6 +54,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
           .authenticationEntryPoint(authenticationEntryPoint)
           .and()
           .authenticationProvider(getProvider());
+
+        //        http.addFilterBefore(corsFilter(), SessionManagementFilter.class) //adds your custom CorsFilter
+        //          .csrf()
+        //          .disable()
+        //          .authorizeRequests()
+        //          .antMatchers("/api/login")
+        //          .permitAll()
+        //          .anyRequest()
+        //          .authenticated()
+        //          .and()
+        //          .httpBasic()
+        //          .authenticationEntryPoint(authenticationEntryPoint)
+        //          .and()
+        //          .authenticationProvider(getProvider());
     }
 
     @Bean

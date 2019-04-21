@@ -22,12 +22,13 @@ public class CorsFilter implements Filter {
         response.setHeader("Access-Control-Allow-Headers", "authorization, Content-Type");
         response.setHeader("Access-Control-Max-Age", "3600");
 
-        //        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
-        //            response.setStatus(HttpServletResponse.SC_OK);
-        //        } else {
-        //            filterChain.doFilter(servletRequest, servletResponse);
-        //        }
-        filterChain.doFilter(servletRequest, servletResponse);
+        //To solve: Access to XMLHttpRequest at 'http://localhost:8080/api/athlete' from origin 'http://localhost:8081'
+        // has been blocked by CORS policy: Response to preflight request doesn't pass access control check: It does not have HTTP ok status.
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            response.setStatus(HttpServletResponse.SC_OK);
+        } else {
+            filterChain.doFilter(servletRequest, servletResponse);
+        }
 
     }
 
