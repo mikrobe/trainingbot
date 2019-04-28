@@ -105,29 +105,28 @@ public class TrainingBotController {
     }
 
     /**
-     * This is the callback from strava 1) In browser or in html page from TrainingBot do a get:
+     * This is the callback from strava
+     * 1) In browser or in html page from TrainingBot do a get:
      * https://www.strava.com/oauth/authorize?client_id=24819&redirect_uri=http://localhost:8080/api/athlete/auth/&response_type=code&scope=public&approval_prompt=force
-     * 2) Step (1) will response to this endpoint 3) This endpoint will post to POST
+     * 2) Step (1) will response to this endpoint
+     * 3) This endpoint will post to POST
      * https://www.strava.com/oauth/token See.: https://developers.strava.com/docs/authentication/
      */
     @RequestMapping(value = "/athlete/auth/", method = RequestMethod.GET, produces = "application/json")
     public ModelAndView auth(@RequestParam(value = "error", required = false) String error, @RequestParam(value = "code") String code, @RequestParam(value = "scope") String scope) {
         AccessToken accessToken = null;
-        ModelAndView mav = new ModelAndView();
+        AthleteFTP athleteFTP = null;
+        String projectUrl = "http://localhost:8081/login";
         String accessTokenJson = stravaService.getAccessToken(code);
         try {
             accessToken = (AccessToken) JsonUtil.convertJsonBytesToObject(accessTokenJson, AccessToken.class);
-            AthleteFTP athleteFTP = athleteRepositoryService.setAccessToken(accessToken, code);
-            //            response.setCookie(cookie);
-            mav.setViewName("redirect:/completeAthlete.html?username=" + athleteFTP.getUsername());
+            athleteFTP = athleteRepositoryService.setAccessToken(accessToken, code);
         } catch (IOException e) {
             e.printStackTrace();
-            mav.setViewName("redirect:/errorAccessToken.html");
         } catch (Exception e) {
             e.printStackTrace();
-            mav.setViewName("redirect:/errorAccessToken.html");
         }
-        return mav;
+        return new ModelAndView("redirect:" + projectUrl);
     }
 
 }
