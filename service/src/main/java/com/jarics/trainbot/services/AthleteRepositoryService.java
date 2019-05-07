@@ -105,19 +105,10 @@ public class AthleteRepositoryService implements UserDetailsService {
         return wAthleteFTP;
     }
 
+    public AthleteFTP setAccessToken(AthleteFTP athleteFTP, AccessToken accessToken) throws Exception {
 
-    public AthleteFTP setAccessToken(AccessToken accessToken, String code) throws Exception {
-        AthleteFTP athleteFTP = null;
-        //get athlete
-        athleteFTP = findAthleteFtpByUsername(accessToken.getAthlete().getUsername());
-        if (athleteFTP == null) {
-            athleteFTP = new AthleteFTP();
-            athleteFTP.setUsername(accessToken.getAthlete().getUsername());
-            createAthleteFTP(athleteFTP);
-        }
         athleteFTP.setTokenType(accessToken.getTokenType());
         athleteFTP.setAccessToken(accessToken.getAccessToken());
-        athleteFTP.setCode(code);
         return updateAthleteFTP(athleteFTP);
     }
 

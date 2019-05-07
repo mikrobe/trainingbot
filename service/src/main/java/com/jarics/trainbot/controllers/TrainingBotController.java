@@ -1,7 +1,10 @@
 package com.jarics.trainbot.controllers;
 
 import com.jarics.trainbot.com.jarics.trainbot.utils.JsonUtil;
-import com.jarics.trainbot.entities.*;
+import com.jarics.trainbot.entities.AccessToken;
+import com.jarics.trainbot.entities.AthleteFTP;
+import com.jarics.trainbot.entities.AthletesFeatures;
+import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.services.AthleteRepositoryService;
 import com.jarics.trainbot.services.MLClasses;
 import com.jarics.trainbot.services.StravaService;
@@ -9,8 +12,8 @@ import com.jarics.trainbot.services.learning.WekaMLService;
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import java.io.IOException;
 import java.util.List;
@@ -63,27 +66,34 @@ public class TrainingBotController {
     }
 
     @RequestMapping(value = "/athlete/{username}", method = RequestMethod.GET, produces = "application/json")
-    public AthleteFTP getAthlete(@PathVariable("username") String pUsername) {
+    public AthleteFTP getAthlete(@PathVariable("username") String pUsername, @RequestParam(value = "code", required = false) String code) {
+        AccessToken accessToken;
+        AthleteFTP athleteFTP = null;
 
-        // security check....can this be achieve without doing this in every method?
-        AthleteFTP user = (AthleteFTP) SecurityContextHolder
+        //TODO security check....can this be achieve without doing this in every method?
+        UserDetails user = (UserDetails) SecurityContextHolder
           .getContext()
           .getAuthentication()
           .getPrincipal();
 
-        return athleteRepositoryService.findAthleteFtpByUsername(pUsername);
+        athleteFTP = athleteRepositoryService.findAthleteFtpByUsername(pUsername);
+
+        if (code != null) {
+
+            String accessTokenJson = stravaService.getAccessToken(code);
+            try {
+                accessToken = (AccessToken) JsonUtil.convertJsonBytesToObject(accessTokenJson, AccessToken.class);
+                athleteRepositoryService.setAccessToken(athleteFTP, accessToken);
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        return athleteFTP;
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "application/json")
-    public LoginResponse login(@RequestBody Credentials credentials) {
-        AthleteFTP athleteFTP = athleteRepositoryService.findAthleteFtpByUsername(credentials.getUsername());
-        if (athleteFTP == null || !credentials
-          .getPassword()
-          .equals(athleteFTP.getPassword())) {
-            return new LoginResponse("Invalid username or password");
-        }
-        return new LoginResponse("Valid credentials");
-    }
 
     @RequestMapping(value = "/athlete/{username}", method = RequestMethod.DELETE, produces = "application/json")
     public AthleteFTP removeAthlete(@PathVariable("username") String pUsername) {
@@ -104,29 +114,5 @@ public class TrainingBotController {
         return athleteFTP;
     }
 
-    /**
-     * This is the callback from strava
-     * 1) In browser or in html page from TrainingBot do a get:
-     * https://www.strava.com/oauth/authorize?client_id=24819&redirect_uri=http://localhost:8080/api/athlete/auth/&response_type=code&scope=public&approval_prompt=force
-     * 2) Step (1) will response to this endpoint
-     * 3) This endpoint will post to POST
-     * https://www.strava.com/oauth/token See.: https://developers.strava.com/docs/authentication/
-     */
-    @RequestMapping(value = "/athlete/auth/", method = RequestMethod.GET, produces = "application/json")
-    public ModelAndView auth(@RequestParam(value = "error", required = false) String error, @RequestParam(value = "code") String code, @RequestParam(value = "scope") String scope) {
-        AccessToken accessToken = null;
-        AthleteFTP athleteFTP = null;
-        String projectUrl = "http://localhost:8081/login";
-        String accessTokenJson = stravaService.getAccessToken(code);
-        try {
-            accessToken = (AccessToken) JsonUtil.convertJsonBytesToObject(accessTokenJson, AccessToken.class);
-            athleteFTP = athleteRepositoryService.setAccessToken(accessToken, code);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return new ModelAndView("redirect:" + projectUrl);
-    }
 
 }

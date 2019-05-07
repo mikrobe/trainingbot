@@ -26,7 +26,6 @@ public class AthleteFTP implements Serializable, UserDetails {
     private String password;
     private String tokenType;
     private String accessToken;
-    private String code;
 
     public double getBikeFtp() {
         return bikeFtp;
@@ -98,14 +97,6 @@ public class AthleteFTP implements Serializable, UserDetails {
 
     public void setAccessToken(String accessToken) {
         this.accessToken = accessToken;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
     }
 
     @Override
