@@ -145,7 +145,7 @@ Intensity must remain at z2 or below. The bot will set your race day distance
 and decrease distances each week. In some weeks (near the end) you will do distance a little 
 above the targeted distance. 
 
-The algorithm use different metrics for each sports.
+The algorithm uses different metrics for each sports.
 
 Target:
 * 5k for Spring distance,
