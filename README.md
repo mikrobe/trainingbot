@@ -75,10 +75,10 @@ An exponentially weighted average of your training stress scores from the past 7
 ### Rules
 The bot will generate two workouts per sport each week [6]. A short one (focus: intensity) and a long one (focus: volume). The training plan is a balanced amount of intensity and volume that increases an athlete’s functional threshold power (FTP) [5].
 The bot uses a weight factor to slightly adapt the weekly increase/decrease in workouts.
-depending of you level. 
-beginner : -2
-Normal : 0
-Advance : +2
+depending of you level:
+* beginner : -2
+* Normal : 0
+* Advance : +2
 
 The athlete follows the prescribed workout. The bot will adapt the workout plan by using a machine 
 learning (ml) algorithm to detect over/under training. The ml is using examples of
@@ -88,7 +88,7 @@ over/under/normal training sessions. More in this in the ML section.
 Intensity workout cannot be based on a target race pace. You cannot tell your
 body to do a pace. You need to train it to be as fast as possible. The 
 rule of thumb is to never increase more than 10% each week. You also need to 
-train in micro-cylce. So for intensity workouts, the time spent on 
+train in micro-cycle. So for intensity workouts, the time spent on 
 the sweet spot [5] follows the following rule:
 
 Starting point is (this must be weighted using athlete's level):
@@ -140,10 +140,12 @@ Finish with a 10-minute cooldown.
 
 #### Long Workouts
 The long workout will increase distances until you get close or a little above the target race distance. Sessions for long
-workouts are based on the same rule as short workouts. The 10% rule applies in distances also to prevent injuries. But % effects distances.
+workouts are based on statistical METS values [14]. The 10% rule applies in distances also to prevent injuries. But % effects distances.
 Intensity must remain at z2 or below. The bot will set your race day distance 
 and decrease distances each week. In some weeks (near the end) you will do distance a little 
 above the targeted distance. 
+
+The algorithm use different metrics for each sports.
 
 Target:
 * 5k for Spring distance,
@@ -364,3 +366,5 @@ Canari SSH: ubuntu@208.75.75.24
 11. https://blog.trainerroad.com/why-tss-atl-ctl-and-tsb-matter/, August 16, 2016  |  Chelsea Hejny
 12. https://blogs.bmj.com/bjsm/2016/07/29/training-error-and-achilles-pain/, Training error and achilles pain, Posted on July 29, 2016 by BJSM
 13. /weka-3.8/wekadocs/WekaManual.pdf
+14. https://onlinelibrary.wiley.com/doi/pdf/10.1002/clc.4960130809, Metabolic Equivalents (METS) in Exercise Testing, Exercise Prescription,
+                                                                    and Evaluation of Functional Capacity, M. Jetté, K. Sidney, G. Blumchen, Clin. Cardiol. 13, 555-565 (1990)
