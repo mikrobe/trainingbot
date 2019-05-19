@@ -47,20 +47,11 @@ public abstract class PlanService {
     }
 
     public double getMet(double ftp) {
-        double myNumber = ftp;
-        double distance = Math.abs(getPace()[0] - myNumber);
-        int idx = 0;
-        for (int c = 1; c < getPace().length; c++) {
-            double cdistance = Math.abs(getPace()[c] - myNumber);
-            if (cdistance < distance) {
-                idx = c;
-                distance = cdistance;
-            }
-        }
+        int idx = getIdx(ftp);
         return getMet()[idx];
     }
 
-    public double getSpeed(double ftp) {
+    private int getIdx(double ftp) {
         double myNumber = ftp;
         double distance = Math.abs(getPace()[0] - myNumber);
         int idx = 0;
@@ -71,6 +62,11 @@ public abstract class PlanService {
                 distance = cdistance;
             }
         }
+        return idx;
+    }
+
+    public double getSpeed(double ftp) {
+        int idx = getIdx(ftp);
         return getSpeed()[idx];
     }
 
