@@ -9,19 +9,19 @@ import java.util.List;
 @Component
 public class SessionManager {
 
-    @Value("${training.plan.reducer.ratio}") private double trainingPlanReducerRatio;
-
-    @Value("${training.plan.increase.ratio}") private double trainingPlanIncreaseRatio;
+    @Value("${training.plan.reducer.ratio}") private double trainingPlanAdjusterRatio;
 
     public void reduceLoad(List<SimpleSession> sessions) {
         sessions.forEach((n) -> reduceSession(n));
     }
 
     private void reduceSession(SimpleSession n) {
-        n.setTimeAtFtp(n.getTimeAtFtp() - trainingPlanReducerRatio * n.getTimeAtFtp());
-        n.setBikeDistance(n.getBikeDistance() - trainingPlanReducerRatio * n.getBikeDistance());
-        n.setSwimDistance(n.getSwimDistance() - trainingPlanReducerRatio * n.getSwimDistance());
-        n.setRunDistance(n.getRunDistance() - trainingPlanReducerRatio * n.getRunDistance());
+        n.setSwimIntensityTime((n.getSwimIntensityTime() - trainingPlanAdjusterRatio * n.getSwimIntensityTime()));
+        n.setBikeIntensityTime((n.getBikeIntensityTime() - trainingPlanAdjusterRatio * n.getBikeIntensityTime()));
+        n.setRunIntensityTime((n.getRunIntensityTime() - trainingPlanAdjusterRatio * n.getRunIntensityTime()));
+        n.setBikeDistance(n.getBikeDistance() - trainingPlanAdjusterRatio * n.getBikeDistance());
+        n.setSwimDistance(n.getSwimDistance() - trainingPlanAdjusterRatio * n.getSwimDistance());
+        n.setRunDistance(n.getRunDistance() - trainingPlanAdjusterRatio * n.getRunDistance());
     }
 
     public void increaseLoad(List<SimpleSession> sessions) {
@@ -29,10 +29,12 @@ public class SessionManager {
     }
 
     private void increaseSession(SimpleSession n) {
-        n.setTimeAtFtp(n.getTimeAtFtp() + trainingPlanReducerRatio * n.getTimeAtFtp());
-        n.setBikeDistance(n.getBikeDistance() + trainingPlanReducerRatio * n.getBikeDistance());
-        n.setSwimDistance(n.getSwimDistance() + trainingPlanReducerRatio * n.getSwimDistance());
-        n.setRunDistance(n.getRunDistance() + trainingPlanReducerRatio * n.getRunDistance());
+        n.setSwimIntensityTime((n.getSwimIntensityTime() + trainingPlanAdjusterRatio * n.getSwimIntensityTime()));
+        n.setBikeIntensityTime((n.getBikeIntensityTime() + trainingPlanAdjusterRatio * n.getBikeIntensityTime()));
+        n.setRunIntensityTime((n.getRunIntensityTime() + trainingPlanAdjusterRatio * n.getRunIntensityTime()));
+        n.setBikeDistance(n.getBikeDistance() + trainingPlanAdjusterRatio * n.getBikeDistance());
+        n.setSwimDistance(n.getSwimDistance() + trainingPlanAdjusterRatio * n.getSwimDistance());
+        n.setRunDistance(n.getRunDistance() + trainingPlanAdjusterRatio * n.getRunDistance());
     }
 
 }

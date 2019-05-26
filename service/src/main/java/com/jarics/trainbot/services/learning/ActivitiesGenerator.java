@@ -26,8 +26,8 @@ public class ActivitiesGenerator {
         wActivity.setWeekNbr(wSimpleSession.getWeek());
         wActivity.setType(BotActivityType.BIKE);
         wActivity.setDistance((float) wSimpleSession.getBikeDistance());
-        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setMovingTime((int) Math.round(wSimpleSession.getBikeIntensityTime()) * 60);
+        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getBikeIntensityTime()) * 60);
         wActivity.setWeigthedAvgWatts((wSimpleSession.getBikeHZone() + wSimpleSession.getBikeHZone()) / 2);
         return wActivity;
     }
@@ -38,8 +38,8 @@ public class ActivitiesGenerator {
         wActivity.setWeekNbr(wSimpleSession.getWeek());
         wActivity.setType(BotActivityType.RUN);
         wActivity.setDistance((float) wSimpleSession.getRunDistance());
-        wActivity.setMovingTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
-        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setMovingTime((int) Math.round(wSimpleSession.getRunIntensityTime()) * 60);
+        wActivity.setElapsedTime((int) Math.round(wSimpleSession.getRunIntensityTime()) * 60);
         wActivity.setPace((wSimpleSession.getRunHZone() + wSimpleSession.getRunHZone()) / 2);
         return wActivity;
     }
@@ -50,8 +50,8 @@ public class ActivitiesGenerator {
         wActivity.setWeekNbr(pSimpleSession.getWeek());
         wActivity.setType(BotActivityType.SWIM);
         wActivity.setDistance((float) pSimpleSession.getSwimDistance());
-        wActivity.setMovingTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
-        wActivity.setElapsedTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setMovingTime((int) Math.round(pSimpleSession.getSwimIntensityTime()) * 60);
+        wActivity.setElapsedTime((int) Math.round(pSimpleSession.getSwimIntensityTime()) * 60);
         return wActivity;
     }
 
@@ -59,9 +59,9 @@ public class ActivitiesGenerator {
         AthleteActivity wActivity = new AthleteActivity();
         wActivity.setType(BotActivityType.SWIM);
         double avgPace = (pSimpleSession.getSwimHZone() + pSimpleSession.getSwimLZone()) / 2;
-        wActivity.setDistance((float) (pSimpleSession.getTimeAtFtp() * 100 / avgPace));
-        wActivity.setMovingTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
-        wActivity.setElapsedTime((int) Math.round(pSimpleSession.getTimeAtFtp()) * 60);
+        wActivity.setDistance((float) (pSimpleSession.getSwimIntensityTime() * 100 / avgPace));
+        wActivity.setMovingTime((int) Math.round(pSimpleSession.getSwimIntensityTime()) * 60);
+        wActivity.setElapsedTime((int) Math.round(pSimpleSession.getSwimIntensityTime()) * 60);
         wActivity.setPace(avgPace);
         return wActivity;
     }

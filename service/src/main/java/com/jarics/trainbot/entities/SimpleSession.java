@@ -1,7 +1,9 @@
 package com.jarics.trainbot.entities;
 
 public class SimpleSession {
-    double timeAtFtp;
+    double swimIntensityTime;
+    double bikeIntensityTime;
+    double runIntensityTime;
     double runDistance;
     double bikeDistance;
     double swimDistance;
@@ -22,14 +24,8 @@ public class SimpleSession {
     public SimpleSession() {
     }
 
-    public SimpleSession(int week, double timeAtFtp) {
-        setWeek(week);
-        setTimeAtFtp(timeAtFtp);
-    }
-
     public SimpleSession(AthleteFTP athleteFTP,
-                         int week,
-                         double intensityTime,
+                         int week, double swimIntensityTime, double bikeIntensityTime, double runIntensityTime,
                          double swimDistance,
                          double bikeDistance,
                          double runDistance,
@@ -54,15 +50,9 @@ public class SimpleSession {
         setRunHZone(runHighSweetSpot);
         setSwimLZone(swimLowSweetSpot);
         setSwimHZone(swimHighSweetSpot);
-        setTimeAtFtp(intensityTime);
-    }
-
-    public double getTimeAtFtp() {
-        return timeAtFtp;
-    }
-
-    public void setTimeAtFtp(double timeAtFtp) {
-        this.timeAtFtp = timeAtFtp;
+        setSwimIntensityTime(swimIntensityTime);
+        setBikeIntensityTime(bikeIntensityTime);
+        setRunIntensityTime(runIntensityTime);
     }
 
 
@@ -186,9 +176,41 @@ public class SimpleSession {
         this.bikeFtp = bikeFtp;
     }
 
+    public double getSwimIntensityTime() {
+        return swimIntensityTime;
+    }
+
+    public void setSwimIntensityTime(double swimIntensityTime) {
+        this.swimIntensityTime = swimIntensityTime;
+    }
+
+    public double getBikeIntensityTime() {
+        return bikeIntensityTime;
+    }
+
+    public void setBikeIntensityTime(double bikeIntensityTime) {
+        this.bikeIntensityTime = bikeIntensityTime;
+    }
+
+    public double getRunIntensityTime() {
+        return runIntensityTime;
+    }
+
+    public void setRunIntensityTime(double runIntensityTime) {
+        this.runIntensityTime = runIntensityTime;
+    }
+
+    public double getWeigthedAvgWatts() {
+        return weigthedAvgWatts;
+    }
+
+    public void setWeigthedAvgWatts(double weigthedAvgWatts) {
+        this.weigthedAvgWatts = weigthedAvgWatts;
+    }
+
     @Override
     public String toString() {
-        return "SimpleSession{" + "timeAtFtp=" + timeAtFtp + ", runDistance=" + runDistance + ", bikeDistance=" + bikeDistance + ", swimDistance=" + swimDistance + ", weigthedAvgWatts=" + weigthedAvgWatts + ", week=" + week + ", runFtp=" + runFtp
+        return "SimpleSession{" + ", runDistance=" + runDistance + ", bikeDistance=" + bikeDistance + ", swimDistance=" + swimDistance + ", weigthedAvgWatts=" + weigthedAvgWatts + ", week=" + week + ", runFtp=" + runFtp
           + ", swimFtp=" + swimFtp + ", bikeFtp=" + bikeFtp + ", runLZone=" + runLZone + ", runHZone=" + runHZone + ", bikeLZone=" + bikeLZone + ", bikeHZone=" + bikeHZone + ", swimLZone=" + swimLZone + ", swimHZone=" + swimHZone + ", athletesId='"
           + athletesId + '\'' + ", classification='" + classification + '\'' + '}';
     }

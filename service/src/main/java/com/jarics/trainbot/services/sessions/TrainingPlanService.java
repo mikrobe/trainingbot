@@ -2,7 +2,10 @@ package com.jarics.trainbot.services.sessions;
 
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.SimpleSession;
+import com.jarics.trainbot.services.BikingPlanService;
 import com.jarics.trainbot.services.EventTypes;
+import com.jarics.trainbot.services.RunningPlanService;
+import com.jarics.trainbot.services.SwimmingPlanService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -12,99 +15,72 @@ import java.util.List;
 @Component
 public class TrainingPlanService implements TrainingPlanServiceIf {
 
-    @Value("#{'${base.intensity.increase.ratio}'.split(',')}")
-    protected double[] baseIntensityIncreaseRatio;
+    @Value("#{'${base.intensity.increase.ratio}'.split(',')}") protected double[] baseIntensityIncreaseRatio;
 
-    @Value("#{'${base.distance.increase.ratio}'.split(',')}")
-    protected double[] baseDistanceIncreaseRatio;
+    @Value("#{'${base.distance.increase.ratio}'.split(',')}") protected double[] baseDistanceIncreaseRatio;
 
-    @Value("${beginner.weighted.increase.ratio}")
-    private double beginnerWeightedIncreaseRatio;
+    @Value("${beginner.weighted.increase.ratio}") private double beginnerWeightedIncreaseRatio;
 
-    @Value("${intermediate.weighted.increase.ratio}")
-    private double intermediateWeightedIncreaseRatio;
+    @Value("${intermediate.weighted.increase.ratio}") private double intermediateWeightedIncreaseRatio;
 
-    @Value("${expert.weighted.increase.ratio}")
-    private double expertWeightedIncreaseRatio;
+    @Value("${expert.weighted.increase.ratio}") private double expertWeightedIncreaseRatio;
 
-    @Value("${start.intensity.time}")
-    private double startIntensityTime;
+    @Value("${start.intensity.time}") private double startIntensityTime;
 
-    @Value("#{'${start.swim.distances}'.split(',')}")
-    private double[] startSwimDistances;
+    @Value("#{'${start.swim.distances}'.split(',')}") private double[] startSwimDistances;
 
-    @Value("#{'${start.bike.distances}'.split(',')}")
-    private double[] startBikeDistances;
+    @Value("#{'${start.bike.distances}'.split(',')}") private double[] startBikeDistances;
 
-    @Value("#{'${start.run.distances}'.split(',')}")
-    private double[] startRunDistances;
+    @Value("#{'${start.run.distances}'.split(',')}") private double[] startRunDistances;
 
-    @Value("${target.swim.distance.ratio}")
-    private double targetSwimDistanceRatio;
+    @Value("${target.swim.distance.ratio}") private double targetSwimDistanceRatio;
 
-    @Value("${target.bike.distance.ratio}")
-    private double targetBikeDistanceRatio;
+    @Value("${target.bike.distance.ratio}") private double targetBikeDistanceRatio;
 
-    @Value("${target.run.distance.ratio}")
-    private double targetRunDistanceRatio;
+    @Value("${target.run.distance.ratio}") private double targetRunDistanceRatio;
 
-    @Value("${swim.low.sweet.spot}")
-    private double swimLowSweetSpot;
+    @Value("${swim.low.sweet.spot}") private double swimLowSweetSpot;
 
-    @Value("${swim.high.sweet.spot}")
-    private double swimHighSweetSpot;
+    @Value("${swim.high.sweet.spot}") private double swimHighSweetSpot;
 
-    @Value("${bike.low.sweet.spot}")
-    private double bikeLowSweetSpot;
+    @Value("${bike.low.sweet.spot}") private double bikeLowSweetSpot;
 
-    @Value("${bike.high.sweet.spot}")
-    private double bikeHighSweetSpot;
+    @Value("${bike.high.sweet.spot}") private double bikeHighSweetSpot;
 
-    @Value("${run.low.sweet.spot}")
-    private double runLowSweetSpot;
+    @Value("${run.low.sweet.spot}") private double runLowSweetSpot;
 
-    @Value("${run.high.sweet.spot}")
-    private double runHighSweetSpot;
+    @Value("${run.high.sweet.spot}") private double runHighSweetSpot;
 
-    /**
-     * The first week is not weighted for intensity workouts. All other weeks have to
-     * be weighted using athletes ranking and are calculated in incremental order.
-     * For distance workouts, we establish the target distance (race distance + percentage) at
-     * the end of the plan and decrease distances towards week 0. To make sure the athletes ends
-     * the training plan on a easy week, the last hard phase is nbrWeek - 1. Hence, nbrWeek - 1
-     * must be equal to target distance.
-     *
-     * @param athleteFTP
-     * @param nbrWeeks
-     * @return
-     */
     @Override
     public List<SimpleSession> getSessions(AthleteFTP athleteFTP, int nbrWeeks) {
 
         List<SimpleSession> simpleSessions = new ArrayList<>();
 
-        double[] intensityTimes = getIntensityTimes(athleteFTP, nbrWeeks, startIntensityTime);
-        double[] swimDistances = getDistances(athleteFTP, nbrWeeks, startSwimDistances, targetSwimDistanceRatio);
-        double[] bikeDistances = getDistances(athleteFTP, nbrWeeks, startBikeDistances, targetBikeDistanceRatio);
-        double[] runDistances = getDistances(athleteFTP, nbrWeeks, startRunDistances, targetRunDistanceRatio);
+        SwimmingPlanService swimmingPlanService = new SwimmingPlanService();
+        BikingPlanService bikingPlanService = new BikingPlanService();
+        RunningPlanService runningPlanService = new RunningPlanService();
+
+        double[] swimVolumePlan = swimmingPlanService.getVolumePlan(getStartDistance(athleteFTP.getEventType(), startSwimDistances), athleteFTP.getSwimFtp(), 20);
+        double[] swimIntensityPlan = swimmingPlanService.getIntensityPlan(getStartDistance(athleteFTP.getEventType(), startSwimDistances), athleteFTP.getSwimFtp(), 20);
+        double[] swimVolumeMinutesPlan = swimmingPlanService.getVolumeTime(swimVolumePlan, athleteFTP.getSwimFtp());
+        double[] swimIntensityMinutesPlan = swimmingPlanService.getIntensityTime(swimIntensityPlan, athleteFTP.getSwimFtp());
+
+        double[] bikeVolumePlan = bikingPlanService.getVolumePlan(getStartDistance(athleteFTP.getEventType(), startBikeDistances), athleteFTP.getBikeFtp(), 20);
+        double[] bikeIntensityPlan = bikingPlanService.getIntensityPlan(getStartDistance(athleteFTP.getEventType(), startSwimDistances), athleteFTP.getBikeFtp(), 20);
+        double[] bikeVolumeMinutesPlan = bikingPlanService.getVolumeTime(bikeVolumePlan, athleteFTP.getBikeFtp());
+        double[] bikeIntensityMinutesPlan = bikingPlanService.getIntensityTime(bikeIntensityPlan, athleteFTP.getBikeFtp());
+
+        double[] runVolumePlan = runningPlanService.getVolumePlan(getStartDistance(athleteFTP.getEventType(), startRunDistances), athleteFTP.getRunFtp(), 20);
+        double[] runIntensityPlan = runningPlanService.getIntensityPlan(getStartDistance(athleteFTP.getEventType(), startRunDistances), athleteFTP.getRunFtp(), 20);
+        double[] runVolumeMinutesPlan = runningPlanService.getVolumeTime(runVolumePlan, athleteFTP.getRunFtp());
+        double[] runIntensityMinutesPlan = runningPlanService.getIntensityTime(runIntensityPlan, athleteFTP.getRunFtp());
+
         double[] bikeLowSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeLowSweetSpot * athleteFTP.getBikeFtp());
         double[] bikeHighSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeHighSweetSpot * athleteFTP.getBikeFtp());
 
-
         for (int i = 0; i < nbrWeeks; i++) {
-            SimpleSession simpleSession =
-                    new SimpleSession(
-                            athleteFTP, i,
-                            intensityTimes[i],
-                            swimDistances[i],
-                            bikeDistances[i],
-                            runDistances[i],
-                            swimLowSweetSpot * athleteFTP.getSwimFtp(),
-                            swimHighSweetSpot * athleteFTP.getSwimFtp(),
-                            bikeLowSweetSpots[i],
-                            bikeHighSweetSpots[i],
-                            runLowSweetSpot * athleteFTP.getRunFtp(),
-                            runHighSweetSpot * athleteFTP.getRunFtp());
+            SimpleSession simpleSession = new SimpleSession(athleteFTP, i, swimIntensityMinutesPlan[i], bikeIntensityMinutesPlan[i], runIntensityMinutesPlan[i], swimVolumePlan[i], bikeVolumePlan[i], runVolumePlan[i], swimLowSweetSpot * athleteFTP.getSwimFtp(),
+              swimHighSweetSpot * athleteFTP.getSwimFtp(), bikeLowSweetSpots[i], bikeHighSweetSpots[i], runLowSweetSpot * athleteFTP.getRunFtp(), runHighSweetSpot * athleteFTP.getRunFtp());
             simpleSessions.add(simpleSession);
         }
         return simpleSessions;
@@ -121,7 +97,6 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
         return sweetspots;
     }
 
-
     private double[] getDistances(AthleteFTP athleteFTP, int nbrWeeks, double[] startDistances, double targetDistanceRatio) {
         double[] distances = new double[nbrWeeks];
         double startDistance = getStartDistance(athleteFTP.getEventType(), startDistances);
@@ -129,8 +104,7 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
         //=LOOKUP(mod($A21,4),weeksIncreases,beginner)*C20+C20
         int phase = (nbrWeeks - 1) % 4;
         double athleteWeightedRatio = getAthleteWeightedRatio(athleteFTP, phase, getBaseDistanceIncreaseRatio(phase));
-        distances[nbrWeeks - 1] =
-                distances[nbrWeeks - 2] - (athleteWeightedRatio * distances[nbrWeeks - 2]); // last week
+        distances[nbrWeeks - 1] = distances[nbrWeeks - 2] - (athleteWeightedRatio * distances[nbrWeeks - 2]); // last week
         for (int i = nbrWeeks - 3; i > -1; i--) {
             //=C20-LOOKUP(mod($A19,4),weeksIncreases,beginner)*C20
             phase = i % 4;
@@ -142,18 +116,18 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
 
     private double getStartDistance(EventTypes eventType, double[] startDistances) {
         switch (eventType) {
-            case sprint: {
-                return startDistances[0];
-            }
-            case olympic: {
-                return startDistances[1];
-            }
-            case half: {
-                return startDistances[2];
-            }
-            case ironman: {
-                return startDistances[3];
-            }
+        case sprint: {
+            return startDistances[0];
+        }
+        case olympic: {
+            return startDistances[1];
+        }
+        case half: {
+            return startDistances[2];
+        }
+        case ironman: {
+            return startDistances[3];
+        }
         }
         return 0;
     }
@@ -174,18 +148,18 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
     private double getAthleteWeightedRatio(AthleteFTP athleteFTP, int phase, double phasedBaseIncreaseRatio) {
         double athleteWeightedRation = 0;
         switch (athleteFTP.getAthletesRanking()) {
-            case beginner: {
-                athleteWeightedRation = phasedBaseIncreaseRatio - beginnerWeightedIncreaseRatio;
-                break;
-            }
-            case intermediate: {
-                athleteWeightedRation = phasedBaseIncreaseRatio - intermediateWeightedIncreaseRatio;
-                break;
-            }
-            case expert: {
-                athleteWeightedRation = phasedBaseIncreaseRatio - expertWeightedIncreaseRatio;
-                break;
-            }
+        case beginner: {
+            athleteWeightedRation = phasedBaseIncreaseRatio - beginnerWeightedIncreaseRatio;
+            break;
+        }
+        case intermediate: {
+            athleteWeightedRation = phasedBaseIncreaseRatio - intermediateWeightedIncreaseRatio;
+            break;
+        }
+        case expert: {
+            athleteWeightedRation = phasedBaseIncreaseRatio - expertWeightedIncreaseRatio;
+            break;
+        }
         }
         return (phase == 4 ? -1 * athleteWeightedRation : athleteWeightedRation);
     }

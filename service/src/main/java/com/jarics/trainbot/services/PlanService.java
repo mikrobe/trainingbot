@@ -19,24 +19,7 @@ public abstract class PlanService {
 
     public abstract double[] getMet();
 
-    public static void main(String[] args) {
-        SwimmingPlanService swimmingPlanService = new SwimmingPlanService();
-        double[] volumePlan = swimmingPlanService.getVolumePlan(1500, 120, 20);
-        double[] intensityPlan = swimmingPlanService.getIntensityPlan(1500, 120, 20);
-        double[] volumeMinutesPlan = swimmingPlanService.getVolumeTime(volumePlan, 120);
-        double[] intensityMinutesPlan = swimmingPlanService.getIntensityTime(intensityPlan, 120);
-
-        for (int i = 0; i < volumePlan.length; i++) {
-            System.out.print(i + 1 + ", ");
-            System.out.print(volumePlan[i] + ", ");
-            System.out.print(intensityPlan[i] + ", ");
-            System.out.print(volumeMinutesPlan[i] + ", ");
-            System.out.print(intensityMinutesPlan[i] + ", ");
-            System.out.println();
-        }
-    }
-
-    public double[] getPlan(int numberOfWeeks, double distance) {
+    private double[] getPlan(int numberOfWeeks, double distance) {
         double[] plan = new double[numberOfWeeks];
         plan[numberOfWeeks - 1] = distance;
         for (int i = numberOfWeeks - 2; i > -1; i--) {
@@ -65,18 +48,18 @@ public abstract class PlanService {
         return idx;
     }
 
-    public double getSpeed(double ftp) {
+    protected double getSpeed(double ftp) {
         int idx = getIdx(ftp);
         return getSpeed()[idx];
     }
 
-    public double[] getVolumePlan(int raceDistance, double ftp, int numberOfWeeks) {
+    public double[] getVolumePlan(double raceDistance, double ftp, int numberOfWeeks) {
         double distanceVolume = getVolumeDistanceRatio() * raceDistance + raceDistance;
         double raceWeekDistanceVolume = distanceVolume + distanceVolume * getMet(ftp) / 100;
         return getPlan(numberOfWeeks, raceWeekDistanceVolume);
     }
 
-    public double[] getIntensityPlan(int raceDistance, double ftp, int numberOfWeeks) {
+    public double[] getIntensityPlan(double raceDistance, double ftp, int numberOfWeeks) {
         double distance = raceDistance + raceDistance * getMet(ftp) / 100;
         return getPlan(numberOfWeeks, distance);
     }
