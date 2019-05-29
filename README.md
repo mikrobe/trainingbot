@@ -44,6 +44,7 @@ An exponentially weighted average of your training stress scores from the past 7
 ### Zones by sports
 FTP Zones, generally from 1 to 6 where 6 is toughest zone. 
 [5] Technically, the Sweet Spot is located between high zone 3 and low zone 4: between 84% to 97% of your FTP (power at threshold). For riders who aren’t using a power meter, I’d call Sweet Spot “medium hard”. Sweet Spot is just below your 40k time trial race pace, but harder than a traditional tempo workout.
+
 #### Bike Power Zones:
 * Zone 1 (Active recovery) Less than 55% of FTPw
 * Zone 2 (Endurance) 55% to 74% of FTPw
@@ -52,15 +53,28 @@ FTP Zones, generally from 1 to 6 where 6 is toughest zone.
 * Zone 4 (Threshold) 90% to 104% of FTPw
 * Zone 5 (VO2 Max) 105% to 120% of FTPw
 * Zone 6 (Anaerobic capacity) More than 120% of FTPw
+
 #### Run Pace Zones [2]:
-* Zone 1 78% of FTP
-* Zone 2 78% to 88% of FTP
-* Zone 3 88% to 94% of FTP
-* Sweetspot 88% to 101% of FTP 
-* Zone 4 95% to 101% of FTP
-* Zone 5a 100% to 103% of FTP
-* Zone 5b 104% to 111% of FTP
-* Zone 5c 111% of FTP
+
+If my ftp is 5:38 per km. This is 338 seconds per km. Running in sweetspot (99% and 106%) would be between (335 secs) 5:35 and (358 secs) 5:58. This is between 99%% and 106% of you FTP.
+This is how our algorithm calculates zones. It uses a simple rule of three.
+
+Ex.:
+
+For sweetspot target paces:
+100% --> 5:38 (398secs)
+
+low 99% --> 338 * 0.99 = 334 secs (5:35)
+high 106% --> 338 * 1.06 = 358 secs (5:58)
+
+* Zone 1 Slower than 129% of FTP 
+* Zone 2 114% to 129% of FTP 
+* Zone 3 106% to 113% of FTP 
+* Sweetspot 99% to 106% of FTP
+* Zone 4 99% to 105% of FTP 
+* Zone 5a 97% to 100% of FTP 
+* Zone 5b 90% to 96% of FTP
+* Zone 5c Faster than 90% of FTP
 #### Swim Pace Zones [3]:
 * Zone 1 SW (slow)
 * Zone 2 5 secs slower than T-Time
