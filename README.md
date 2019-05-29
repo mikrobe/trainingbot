@@ -42,8 +42,7 @@ An exponentially weighted average of your training stress scores from the past 7
 [1] fatigue
 
 ### Zones by sports
-**Notes**
-
+FTP Zones, generally from 1 to 6 where 6 is toughest zone. 
 [5] Technically, the Sweet Spot is located between high zone 3 and low zone 4: between 84% to 97% of your FTP (power at threshold). For riders who aren’t using a power meter, I’d call Sweet Spot “medium hard”. Sweet Spot is just below your 40k time trial race pace, but harder than a traditional tempo workout.
 #### Bike Power Zones:
 * Zone 1 (Active recovery) Less than 55% of FTPw
@@ -54,23 +53,21 @@ An exponentially weighted average of your training stress scores from the past 7
 * Zone 5 (VO2 Max) 105% to 120% of FTPw
 * Zone 6 (Anaerobic capacity) More than 120% of FTPw
 #### Run Pace Zones [2]:
-* Zone 1 Slower than 129% of FTP
-* Zone 2 114% to 129% of FTP
-* Zone 3 106% to 113% of FTP
-* Sweetspot 102% to 110% of FTP 
-* Zone 4 99% to 105% of FTP
-* Zone 5a 97% to 100% of FTP
-* Zone 5b 90% to 96% of FTP
-* Zone 5c Faster than 90% of FTP
+* Zone 1 78% of FTP
+* Zone 2 78% to 88% of FTP
+* Zone 3 88% to 94% of FTP
+* Sweetspot 88% to 101% of FTP 
+* Zone 4 95% to 101% of FTP
+* Zone 5a 100% to 103% of FTP
+* Zone 5b 104% to 111% of FTP
+* Zone 5c 111% of FTP
 #### Swim Pace Zones [3]:
 * Zone 1 SW (slow)
 * Zone 2 5 secs slower than T-Time
 * Zone 3 T-Time
 * Sweetspot 102% to 110% of FTP 
-* Zone 4 99% to 105% of T-Time
-* Zone 5a 97% to 100% of T-Time
-* Zone 5b 90% to 96% of T-Time
-* Zone 5c Faster than 90% of T-Time
+* Zone 4 T-Time - 5 secs
+* Zone 5 all out
 
 ### Rules
 The bot will generate two workouts per sport each week [6]. A short one (focus: intensity) and a long one (focus: volume). The training plan is a balanced amount of intensity and volume that increases an athlete’s functional threshold power (FTP) [5].
