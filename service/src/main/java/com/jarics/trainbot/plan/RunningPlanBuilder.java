@@ -39,7 +39,7 @@ public class RunningPlanBuilder extends PlanBuilder {
      */
     public List<Session> getVolumeSessions(int numberOfWeeks, double ftp, double distance) {
         List<Session> sessions = new ArrayList<>();
-        double targetVolumeFtp = ftp + ftp * volumeRatio; //$C$28+$C$28*$C$27 where C28 is FTP
+        double targetVolumeFtp = ftp + ftp * ftpVolumeRatio; //$C$28+$C$28*$C$27 where C28 is FTP
 
         double[] volumeDistances = getVolumeDistances(distance, ftp, numberOfWeeks);
         for (int i = 0; i < numberOfWeeks; i++) {

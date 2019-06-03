@@ -13,7 +13,7 @@ public abstract class PlanBuilder {
      * This ratio is used to reduce target FTP to train longer (volume) without risking injuries.
      *
      */
-    protected double volumeRatio = 0.3;
+    protected double ftpVolumeRatio = 0.3;
 
     /**
      * This ration is used to set end of training distance to a value above the race distance.
