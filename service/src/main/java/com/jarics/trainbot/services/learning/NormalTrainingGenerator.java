@@ -20,7 +20,7 @@ public class NormalTrainingGenerator extends TrainingPlanService {
         return gen(phase, baseDistanceIncreaseRatio);
     }
 
-    private double gen(int i, double[] values) {
+    public double gen(int i, double[] values) {
         Random wRand = new Random();
         double wSeed = values[i];
         double wLow = wSeed - range;

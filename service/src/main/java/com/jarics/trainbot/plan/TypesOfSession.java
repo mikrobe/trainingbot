@@ -1,4 +1,4 @@
-package com.jarics.trainbot.services;
+package com.jarics.trainbot.plan;
 
 public enum TypesOfSession {
     regular,

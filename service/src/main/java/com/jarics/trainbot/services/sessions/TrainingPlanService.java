@@ -2,10 +2,7 @@ package com.jarics.trainbot.services.sessions;
 
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.SimpleSession;
-import com.jarics.trainbot.services.BikingPlanService;
-import com.jarics.trainbot.services.EventTypes;
-import com.jarics.trainbot.services.RunningPlanService;
-import com.jarics.trainbot.services.SwimmingPlanService;
+import com.jarics.trainbot.plan.EventType;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -56,33 +53,33 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
 
         List<SimpleSession> simpleSessions = new ArrayList<>();
 
-        SwimmingPlanService swimmingPlanService = new SwimmingPlanService();
-        BikingPlanService bikingPlanService = new BikingPlanService();
-        RunningPlanService runningPlanService = new RunningPlanService();
-
-        double[] swimVolumePlan = swimmingPlanService.getVolumePlan(getStartDistance(athleteFTP.getEventType(), startSwimDistances), athleteFTP.getSwimFtp(), 20);
-        double[] swimIntensityPlan = swimmingPlanService.getIntensityPlan(getStartDistance(athleteFTP.getEventType(), startSwimDistances), athleteFTP.getSwimFtp(), 20);
-        double[] swimVolumeMinutesPlan = swimmingPlanService.getVolumeTime(swimVolumePlan, athleteFTP.getSwimFtp());
-        double[] swimIntensityMinutesPlan = swimmingPlanService.getIntensityTime(swimIntensityPlan, athleteFTP.getSwimFtp());
-
-        double[] bikeVolumePlan = bikingPlanService.getVolumePlan(getStartDistance(athleteFTP.getEventType(), startBikeDistances), athleteFTP.getBikeFtp(), 20);
-        double[] bikeIntensityPlan = bikingPlanService.getIntensityPlan(getStartDistance(athleteFTP.getEventType(), startSwimDistances), athleteFTP.getBikeFtp(), 20);
-        double[] bikeVolumeMinutesPlan = bikingPlanService.getVolumeTime(bikeVolumePlan, athleteFTP.getBikeFtp());
-        double[] bikeIntensityMinutesPlan = bikingPlanService.getIntensityTime(bikeIntensityPlan, athleteFTP.getBikeFtp());
-
-        double[] runVolumePlan = runningPlanService.getVolumePlan(getStartDistance(athleteFTP.getEventType(), startRunDistances), athleteFTP.getRunFtp(), 20);
-        double[] runIntensityPlan = runningPlanService.getIntensityPlan(getStartDistance(athleteFTP.getEventType(), startRunDistances), athleteFTP.getRunFtp(), 20);
-        double[] runVolumeMinutesPlan = runningPlanService.getVolumeTime(runVolumePlan, athleteFTP.getRunFtp());
-        double[] runIntensityMinutesPlan = runningPlanService.getIntensityTime(runIntensityPlan, athleteFTP.getRunFtp());
-
-        double[] bikeLowSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeLowSweetSpot * athleteFTP.getBikeFtp());
-        double[] bikeHighSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeHighSweetSpot * athleteFTP.getBikeFtp());
-
-        for (int i = 0; i < nbrWeeks; i++) {
-            SimpleSession simpleSession = new SimpleSession(athleteFTP, i, swimIntensityMinutesPlan[i], bikeIntensityMinutesPlan[i], runIntensityMinutesPlan[i], swimVolumePlan[i], bikeVolumePlan[i], runVolumePlan[i], swimLowSweetSpot * athleteFTP.getSwimFtp(),
-              swimHighSweetSpot * athleteFTP.getSwimFtp(), bikeLowSweetSpots[i], bikeHighSweetSpots[i], runLowSweetSpot * athleteFTP.getRunFtp(), runHighSweetSpot * athleteFTP.getRunFtp());
-            simpleSessions.add(simpleSession);
-        }
+        //        SwimmingPlanBuilder swimmingPlanService = new SwimmingPlanBuilder();
+        //        BikingPlanBuilder bikingPlanService = new BikingPlanBuilder();
+        //        RunningPlanBuilder runningPlanService = new RunningPlanBuilder();
+        //
+        //        double[] swimVolumePlan = swimmingPlanService.getPlannedDistances(swimmingPlanService.getTargetVolume(startSwimDistances[1]), athleteFTP.getSwimFtp(), 20);
+        //        double[] swimIntensityPlan = swimmingPlanService.getPlannedDistances(startSwimDistances[1], athleteFTP.getSwimFtp(), 20);
+        //        double[] swimVolumeMinutesPlan = swimmingPlanService.getVolumeTime(swimVolumePlan, athleteFTP.getSwimFtp());
+        //        double[] swimIntensityMinutesPlan = swimmingPlanService.getIntensityTime(swimIntensityPlan, athleteFTP.getSwimFtp());
+        //
+        //        double[] bikeVolumePlan = bikingPlanService.getPlannedDistances(startBikeDistances[1], athleteFTP.getBikeFtp(), 20);
+        //        double[] bikeIntensityPlan = bikingPlanService.getPlannedDistances(startBikeDistances[1], athleteFTP.getBikeFtp(), 20);
+        //        double[] bikeVolumeMinutesPlan = bikingPlanService.getVolumeTime(bikeVolumePlan, athleteFTP.getBikeFtp());
+        //        double[] bikeIntensityMinutesPlan = bikingPlanService.getIntensityTime(bikeIntensityPlan, athleteFTP.getBikeFtp());
+        //
+        //        double[] runVolumePlan = runningPlanService.getPlannedDistances(startRunDistances[1], athleteFTP.getRunFtp(), 20);
+        //        double[] runIntensityPlan = runningPlanService.getPlannedDistances(startRunDistances[1], athleteFTP.getRunFtp(), 20);
+        //        double[] runVolumeMinutesPlan = runningPlanService.getVolumeTime(runVolumePlan, athleteFTP.getRunFtp());
+        //        double[] runIntensityMinutesPlan = runningPlanService.getIntensityTime(runIntensityPlan, athleteFTP.getRunFtp());
+        //
+        //        double[] bikeLowSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeLowSweetSpot * athleteFTP.getBikeFtp());
+        //        double[] bikeHighSweetSpots = getSweetSpots(athleteFTP, nbrWeeks, bikeHighSweetSpot * athleteFTP.getBikeFtp());
+        //
+        //        for (int i = 0; i < nbrWeeks; i++) {
+        //            SimpleSession simpleSession = new SimpleSession(athleteFTP, i, swimIntensityMinutesPlan[i], bikeIntensityMinutesPlan[i], runIntensityMinutesPlan[i], swimVolumePlan[i], bikeVolumePlan[i], runVolumePlan[i], swimLowSweetSpot * athleteFTP.getSwimFtp(),
+        //              swimHighSweetSpot * athleteFTP.getSwimFtp(), bikeLowSweetSpots[i], bikeHighSweetSpots[i], runLowSweetSpot * athleteFTP.getRunFtp(), runHighSweetSpot * athleteFTP.getRunFtp());
+        //            simpleSessions.add(simpleSession);
+        //        }
         return simpleSessions;
     }
 
@@ -114,7 +111,7 @@ public class TrainingPlanService implements TrainingPlanServiceIf {
         return distances;
     }
 
-    private double getStartDistance(EventTypes eventType, double[] startDistances) {
+    private double getStartDistance(EventType eventType, double[] startDistances) {
         switch (eventType) {
         case sprint: {
             return startDistances[0];

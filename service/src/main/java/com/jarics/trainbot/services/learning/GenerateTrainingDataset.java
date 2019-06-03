@@ -5,7 +5,7 @@ import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
 import com.jarics.trainbot.entities.SimpleSession;
-import com.jarics.trainbot.services.EventTypes;
+import com.jarics.trainbot.plan.EventType;
 import com.jarics.trainbot.services.MLClasses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -111,7 +111,7 @@ public class GenerateTrainingDataset {
         wAthleteFTP.setRunFtp(wRunFtp); //5:45 --> 300+45 = 345
         wAthleteFTP.setBikeFtp(wBikeFtp);
         wAthleteFTP.setSwimFtp(wSwimFtp);
-        wAthleteFTP.setEventType(EventTypes.olympic);
+        wAthleteFTP.setEventType(EventType.olympic);
         wAthleteFTP.setUsername(UUID.randomUUID().toString());
         return wAthleteFTP;
     }

@@ -24,7 +24,7 @@ public class UndertrainingGenerator extends TrainingPlanService {
         return gen(phase, baseDistanceIncreaseRatio);
     }
 
-    private double gen(int i, double[] values) {
+    public double gen(int i, double[] values) {
         Random wRand = new Random();
         double wSeed = values[i];
         double wHigh = wSeed - range;

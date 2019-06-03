@@ -1,8 +1,8 @@
 package com.jarics.trainbot.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.jarics.trainbot.plan.EventType;
 import com.jarics.trainbot.services.AthletesRanking;
-import com.jarics.trainbot.services.EventTypes;
 import com.jarics.trainbot.services.MLClasses;
 import lombok.EqualsAndHashCode;
 import org.dizitart.no2.objects.Id;
@@ -11,6 +11,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.util.Collection;
+import java.util.Date;
 
 @EqualsAndHashCode
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -19,13 +20,14 @@ public class AthleteFTP implements Serializable, UserDetails {
     private double bikeFtp;
     private double runFtp;
     private double swimFtp;
-    private EventTypes eventType = EventTypes.olympic;
+    private EventType eventType = EventType.olympic;
     private AthletesRanking athletesRanking = AthletesRanking.beginner;
     private MLClasses classification = MLClasses.unknown;
     private String username;
     private String password;
     private String tokenType;
     private String accessToken;
+    private Date raceDate;
 
     public double getBikeFtp() {
         return bikeFtp;
@@ -75,11 +77,11 @@ public class AthleteFTP implements Serializable, UserDetails {
         this.athletesRanking = athletesRanking;
     }
 
-    public EventTypes getEventType() {
+    public EventType getEventType() {
         return eventType;
     }
 
-    public void setEventType(EventTypes eventType) {
+    public void setEventType(EventType eventType) {
         this.eventType = eventType;
     }
 
@@ -141,6 +143,13 @@ public class AthleteFTP implements Serializable, UserDetails {
         this.username = username;
     }
 
+    public Date getRaceDate() {
+        return raceDate;
+    }
+
+    public void setRaceDate(Date raceDate) {
+        this.raceDate = raceDate;
+    }
 }
 
 
