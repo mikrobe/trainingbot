@@ -8,11 +8,14 @@ import java.util.List;
  */
 public class RunningPlanBuilder extends PlanBuilder {
 
-    double ftpSweetspotLowRatio = 1.1;
-    double ftpSweetspotHighRatio = 0.88;
     int[] pace = { 400, 327, 277, 240 };
     double[] met = { 8.8, 11.2, 12.9, 14.9 };
     double[] speed = { 9, 11, 13, 15 };
+
+    protected double ftpSweetSpotLowRatio = 1.1;
+    protected double ftpSweetSpotHighRatio = 0.88;
+    protected double ftpVolumeLowRatio = 1.5;
+    protected double ftpVolumeHighRatio = 1.3;
 
     public int[] getPace() {
         return pace;
@@ -26,7 +29,7 @@ public class RunningPlanBuilder extends PlanBuilder {
         return speed;
     }
 
-    public double getMaximumVolumeRatio() {
+    protected double getMaximumVolumeRatio() {
         return maximumVolumeRatio;
     }
 
@@ -39,14 +42,18 @@ public class RunningPlanBuilder extends PlanBuilder {
      */
     public List<Session> getVolumeSessions(int numberOfWeeks, double ftp, double distance) {
         List<Session> sessions = new ArrayList<>();
-        double targetVolumeFtp = ftp + ftp * ftpVolumeRatio; //$C$28+$C$28*$C$27 where C28 is FTP
+        double targetHighFtp = ftp * ftpVolumeHighRatio;
+        double targetLowFtp = ftp * ftpVolumeLowRatio;
 
         double[] volumeDistances = getVolumeDistances(distance, ftp, numberOfWeeks);
         for (int i = 0; i < numberOfWeeks; i++) {
             Session session = new Session();
+            session.setSportType(SportType.run);
             session.setTargetDistance(volumeDistances[i]);
-            session.setTargetVolumeFtp(targetVolumeFtp);
-            session.setTargetVolumeTime(volumeDistances[i] * targetVolumeFtp / 60); // =B21*($C$28+$C$28*$C$27)/60 where B21 is distance
+            session.setTargetHighFtp(targetHighFtp);
+            session.setTargetLowFtp(targetLowFtp);
+            session.setTargetHighTime(volumeDistances[i] * targetHighFtp / 60);
+            session.setTargetLowTime(volumeDistances[i] * targetLowFtp / 60);
             sessions.add(session);
         }
         return sessions;
@@ -60,16 +67,19 @@ public class RunningPlanBuilder extends PlanBuilder {
      */
     public List<Session> getIntervalsSessions(int numberOfWeeks, double ftp, double distance) {
         List<Session> sessions = new ArrayList<>();
-        double targetHighFtp = ftp * ftpSweetspotHighRatio;
-        double targetLowFtp = ftp * ftpSweetspotLowRatio;
+
+        double targetHighFtp = ftp * ftpSweetSpotHighRatio;
+        double targetLowFtp = ftp * ftpSweetSpotLowRatio;
+
         double[] intervalsDistances = getIntervalsDistances(distance, ftp, numberOfWeeks);
         for (int i = 0; i < numberOfWeeks; i++) {
             Session session = new Session();
+            session.setSportType(SportType.run);
             session.setTargetDistance(intervalsDistances[i]);
             session.setTargetHighFtp(targetHighFtp);
             session.setTargetLowFtp(targetLowFtp);
-            session.setTargetIntervalsHighTime(intervalsDistances[i] * targetHighFtp / 60);
-            session.setTargetIntervalsLowTime(intervalsDistances[i] * targetLowFtp / 60);
+            session.setTargetHighTime(intervalsDistances[i] * targetHighFtp / 60);
+            session.setTargetLowTime(intervalsDistances[i] * targetLowFtp / 60);
             sessions.add(session);
         }
         return sessions;

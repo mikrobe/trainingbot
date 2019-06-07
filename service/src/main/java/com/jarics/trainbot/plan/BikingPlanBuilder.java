@@ -8,9 +8,11 @@ public class BikingPlanBuilder extends PlanBuilder {
     int[] pace = { 84, 103, 124, 147, 172 };
     double[] met = { 4.8, 5.9, 7.1, 8.4, 9.8 };
     double[] speed = { 10, 15, 20, 25, 30 };
-    private double ftpSweetspotLowRatio = 0.97;
-    private double ftpSweetspotHighRatio = 0.84;
-    protected double ftpVolumeRatio = 0.3;
+    protected double ftpSweetSpotLowRatio = 0.97;
+    protected double ftpSweetSpotHighRatio = 0.84;
+    protected double ftpVolumeLowRatio = 0.56;
+    protected double ftpVolumeHighRatio = 0.90;
+
 
     public int[] getPace() {
         return pace;
@@ -24,18 +26,8 @@ public class BikingPlanBuilder extends PlanBuilder {
         return speed;
     }
 
-    public double getMaximumVolumeRatio() {
+    protected double getMaximumVolumeRatio() {
         return maximumVolumeRatio;
-    }
-
-    public List<Session> getVolumeSessions_(int numberOfWeeks, double ftp, double distance) {
-        return null;
-        //        // =60*$B21/$C$29-$C$29*$C$27
-        //        double[] plan = new double[volumePlan.length];
-        //        for (int i = 0; i < volumePlan.length; i++) {
-        //            plan[i] = 60 * volumePlan[i] / getSpeed(ftp) - getSpeed(ftp) * ftpVolumeRatio;
-        //        }
-        //        return plan;
     }
 
     /**
@@ -47,34 +39,20 @@ public class BikingPlanBuilder extends PlanBuilder {
      */
     public List<Session> getVolumeSessions(int numberOfWeeks, double ftp, double distance) {
         List<Session> sessions = new ArrayList<>();
-        double targetVolumeFtp = ftp - ftp * ftpVolumeRatio;
-
+        double targetHighFtp = ftp * ftpVolumeHighRatio;
+        double targetLowFtp = ftp * ftpVolumeLowRatio;
         double[] volumeDistances = getVolumeDistances(distance, ftp, numberOfWeeks);
         for (int i = 0; i < numberOfWeeks; i++) {
             Session session = new Session();
+            session.setSportType(SportType.bike);
             session.setTargetDistance(volumeDistances[i]);
-            session.setTargetVolumeFtp(targetVolumeFtp);
-            session.setTargetVolumeTime(60 * volumeDistances[i] / getSpeed(targetVolumeFtp));
+            session.setTargetLowFtp(targetLowFtp);
+            session.setTargetHighFtp(targetHighFtp);
+            session.setTargetLowTime(60 * volumeDistances[i] / getSpeed(targetLowFtp));
+            session.setTargetHighTime(60 * volumeDistances[i] / getSpeed(targetHighFtp));
             sessions.add(session);
         }
         return sessions;
-    }
-
-    /**
-     * The formula is 60 * dist(km) / ftpSpeedSweetStop(km/hr)   (in our excel: =60*$C21/$C$30.
-     * Sweetspot 90% of FTPSpeed.
-     * @param intensityPlan
-     * @param ftpWatts (watts)
-     * @return
-     */
-    public List<Session> getIntervalsSessions_(int numberOfWeeks, double ftp, double distance) {
-        return null;
-        //        double ftpSpeedSweetSpot = sweetSpotRatio * getSpeed(ftpWatts);
-        //        double[] plan = new double[intensityPlan.length];
-        //        for (int i = 0; i < intensityPlan.length; i++) {
-        //            plan[i] = 60 * intensityPlan[i] / ftpSpeedSweetSpot;
-        //        }
-        //        return plan;
     }
 
     /**
@@ -85,16 +63,17 @@ public class BikingPlanBuilder extends PlanBuilder {
      */
     public List<Session> getIntervalsSessions(int numberOfWeeks, double ftp, double distance) {
         List<Session> sessions = new ArrayList<>();
-        double targetHighFtp = ftp * ftpSweetspotHighRatio;
-        double targetLowFtp = ftp * ftpSweetspotLowRatio;
+        double targetHighFtp = ftp * ftpSweetSpotHighRatio;
+        double targetLowFtp = ftp * ftpSweetSpotLowRatio;
         double[] intervalsDistances = getIntervalsDistances(distance, ftp, numberOfWeeks);
         for (int i = 0; i < numberOfWeeks; i++) {
             Session session = new Session();
+            session.setSportType(SportType.bike);
             session.setTargetDistance(intervalsDistances[i]);
             session.setTargetHighFtp(targetHighFtp);
             session.setTargetLowFtp(targetLowFtp);
-            session.setTargetIntervalsHighTime(60 * intervalsDistances[i] / targetHighFtp);
-            session.setTargetIntervalsLowTime(60 * intervalsDistances[i] / targetLowFtp);
+            session.setTargetHighTime(60 * intervalsDistances[i] / targetHighFtp);
+            session.setTargetLowTime(60 * intervalsDistances[i] / targetLowFtp);
             sessions.add(session);
         }
         return sessions;

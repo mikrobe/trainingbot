@@ -4,10 +4,12 @@ import com.jarics.trainbot.com.jarics.trainbot.utils.FileUtils;
 import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
-import com.jarics.trainbot.entities.SimpleSession;
 import com.jarics.trainbot.plan.EventType;
+import com.jarics.trainbot.plan.Plan;
+import com.jarics.trainbot.plan.PlannedWeek;
+import com.jarics.trainbot.plan.Session;
 import com.jarics.trainbot.services.MLClasses;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.jarics.trainbot.services.PlanService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +18,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -32,15 +35,6 @@ public class GenerateTrainingDataset {
     @Value("${raw.dataset.dir}")
     private String rawDataSetDir;
 
-    @Autowired
-    NormalTrainingGenerator wNormalTrainingGenerator;
-
-    @Autowired
-    OverTrainingGenerator wOverTrainingGenerator;
-
-    @Autowired
-    UndertrainingGenerator wUndertrainingGenerator;
-
 
     public void generate(boolean keepRawData) throws Exception {
         ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
@@ -49,31 +43,42 @@ public class GenerateTrainingDataset {
         LocalDateTime currentTime = LocalDateTime.now();
         Files.write(Paths.get(trainingDataSetDir + trainingDataSetFileName), AthletesFeatures.toArffHeader().getBytes(), StandardOpenOption.CREATE);
         for (int i = 0; i < 100; i++) {
-            AthleteFTP wNormalAthleteFTP = generateAthlete();
-            wNormalAthleteFTP.setClassification(MLClasses.normal);
-            AthleteFTP wUnderAthleteFTP = generateAthlete();
-            wUnderAthleteFTP.setClassification(MLClasses.undertrained);
+
+            PlanService planService = new PlanService();
+
             AthleteFTP wOverAthleteFTP = generateAthlete();
             wOverAthleteFTP.setClassification(MLClasses.overtrained);
+            Plan plan = planService.getTriathlonOverTrainingPlan(wOverAthleteFTP);
+            generateActivities(plan, keepRawData, activitiesGenerator, wOverAthleteFTP);
 
-            List<SimpleSession> wSimpleSessions = wNormalTrainingGenerator.getSessions(wNormalAthleteFTP, 20);
-            List<AthleteActivity> wActivities = activitiesGenerator.generateActivities(wSimpleSessions);
-            if (keepRawData) writeRawData(wNormalAthleteFTP, wActivities);
-            writeFeatures(wNormalAthleteFTP, wActivities);
+            AthleteFTP wUnderAthleteFTP = generateAthlete();
+            wOverAthleteFTP.setClassification(MLClasses.undertrained);
+            plan = planService.getTriathlonUnderTrainingPlan(wUnderAthleteFTP);
+            generateActivities(plan, keepRawData, activitiesGenerator, wUnderAthleteFTP);
 
-            wSimpleSessions = wOverTrainingGenerator.getSessions(wOverAthleteFTP, 20);
-            wActivities = activitiesGenerator.generateActivities(wSimpleSessions);
-            if (keepRawData) writeRawData(wOverAthleteFTP, wActivities);
-            writeFeatures(wOverAthleteFTP, wActivities);
+            AthleteFTP wNormalAthleteFTP = generateAthlete();
+            wOverAthleteFTP.setClassification(MLClasses.normal);
+            plan = planService.getTriathlonPlan(wNormalAthleteFTP);
+            generateActivities(plan, keepRawData, activitiesGenerator, wNormalAthleteFTP);
 
-            wSimpleSessions = wUndertrainingGenerator.getSessions(wUnderAthleteFTP, 20);
-            wActivities = activitiesGenerator.generateActivities(wSimpleSessions);
-            if (keepRawData) writeRawData(wUnderAthleteFTP, wActivities);
-            writeFeatures(wUnderAthleteFTP, wActivities);
         }
     }
 
-
+    private void generateActivities(Plan plan, boolean keepRawData, ActivitiesGenerator activitiesGenerator, AthleteFTP wOverAthleteFTP) {
+        List<Session> sessions = new ArrayList<>();
+        List<AthleteActivity> wActivities = new ArrayList<>();
+        for (PlannedWeek plannedWeek : plan.getPlannedWeeks()) {
+            sessions.add(plannedWeek.getSwimVolumeSession());
+            sessions.add(plannedWeek.getSwimIntevalSession());
+            sessions.add(plannedWeek.getBikeVolumeSession());
+            sessions.add(plannedWeek.getBikeIntevalSession());
+            sessions.add(plannedWeek.getRunVolumeSession());
+            sessions.add(plannedWeek.getRunIntevalSession());
+            wActivities.addAll(activitiesGenerator.generateActivities(plannedWeek.getWeek(), sessions));
+        }
+        if (keepRawData) writeRawData(wOverAthleteFTP, wActivities);
+        writeFeatures(wOverAthleteFTP, wActivities);
+    }
 
     public void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
         try {

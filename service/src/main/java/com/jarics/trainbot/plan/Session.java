@@ -2,13 +2,12 @@ package com.jarics.trainbot.plan;
 
 public class Session {
     double targetDistance;
-    double targetIntervalsLowTime;
-    double targetIntervalsHighTime;
+    double targetLowTime;
+    double targetHighTime;
     double lastFtp;
     double targetHighFtp;
     double targetLowFtp;
-    double targetVolumeTime;
-    double targetVolumeFtp;
+    private SportType sportType;
 
     public Session() {
     }
@@ -21,20 +20,20 @@ public class Session {
         this.targetDistance = targetDistance;
     }
 
-    public double getTargetIntervalsLowTime() {
-        return targetIntervalsLowTime;
+    public double getTargetLowTime() {
+        return targetLowTime;
     }
 
-    public void setTargetIntervalsLowTime(double targetIntervalsLowTime) {
-        this.targetIntervalsLowTime = targetIntervalsLowTime;
+    public void setTargetLowTime(double targetLowTime) {
+        this.targetLowTime = targetLowTime;
     }
 
-    public double getTargetIntervalsHighTime() {
-        return targetIntervalsHighTime;
+    public double getTargetHighTime() {
+        return targetHighTime;
     }
 
-    public void setTargetIntervalsHighTime(double targetIntervalsHighTime) {
-        this.targetIntervalsHighTime = targetIntervalsHighTime;
+    public void setTargetHighTime(double targetHighTime) {
+        this.targetHighTime = targetHighTime;
     }
 
     public double getLastFtp() {
@@ -61,19 +60,11 @@ public class Session {
         this.targetLowFtp = targetLowFtp;
     }
 
-    public double getTargetVolumeTime() {
-        return targetVolumeTime;
+    public SportType getSportType() {
+        return sportType;
     }
 
-    public void setTargetVolumeTime(double targetVolumeTime) {
-        this.targetVolumeTime = targetVolumeTime;
-    }
-
-    public double getTargetVolumeFtp() {
-        return targetVolumeFtp;
-    }
-
-    public void setTargetVolumeFtp(double targetVolumeFtp) {
-        this.targetVolumeFtp = targetVolumeFtp;
+    public void setSportType(SportType sportType) {
+        this.sportType = sportType;
     }
 }

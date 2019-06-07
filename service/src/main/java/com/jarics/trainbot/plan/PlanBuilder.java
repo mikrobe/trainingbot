@@ -10,12 +10,6 @@ import java.util.List;
 public abstract class PlanBuilder {
 
     /**
-     * This ratio is used to reduce target FTP to train longer (volume) without risking injuries.
-     *
-     */
-    protected double ftpVolumeRatio = 0.3;
-
-    /**
      * This ration is used to set end of training distance to a value above the race distance.
      * If you plan on doing a 10k race, you need to sustain longer distance 15km for instance.
      */
@@ -31,7 +25,10 @@ public abstract class PlanBuilder {
      * Returns the maximum volume you should train for the target distance.
      * @return
      */
-    protected abstract double getMaximumVolumeRatio();
+    protected double getMaximumVolumeRatio() {
+        return maximumVolumeRatio;
+    }
+
 
     /**
      * Returns the approximate volume training time for each distance in the plan and a given ftp.
