@@ -10,24 +10,20 @@ import java.util.List;
 public abstract class PlanBuilder {
 
     /**
-     * This ration is used to set end of training distance to a value above the race distance.
-     * If you plan on doing a 10k race, you need to sustain longer distance 15km for instance.
-     */
-    protected double maximumVolumeRatio = 0.35;
-
-    /**
      * These four ratios are used to increment the first three weeks and decrease the fourth one.
      * This is what modulates the "phase" workout. The fourth week is the end of a micro cycle.
      */
-    protected double[] weekIncrementRatio = { 0.1, 0.1, 0.1, -0.1 };
+    protected double[] weekDecrementRatio = { 0.09, 0.09, 0.09, -0.11 };
 
     /**
      * Returns the maximum volume you should train for the target distance.
+     * This is used when calculating highest distance to train at low intensity.
+     * This ratio is used to set end of training distance to a value above the race distance.
+     * If you plan on doing a 10k race, you need to sustain longer distance 15km for instance.
+     * This is used in the calculation for volume training.
      * @return
      */
-    protected double getMaximumVolumeRatio() {
-        return maximumVolumeRatio;
-    }
+    protected abstract double getMaximumVolumeRatio();
 
 
     /**
@@ -49,19 +45,22 @@ public abstract class PlanBuilder {
     public abstract List<Session> getIntervalsSessions(int numberOfWeeks, double ftp, double distance);
 
     /**
-     * Pace is a min/km or sec/meters etc.
+     * Pace is a min/km or sec/meters etc. All values must be
+     * synchronized with Speed and Pace. For instances: for met[i] et calculated with pace[i] and speed[i]
      * @return
      */
     protected abstract int[] getPace();
 
     /**
-     * Speed is km/hr
+     * Speed is km/hr. All values must be
+     * synchronized with Speed and Pace. For instances: for met[i] et calculated with pace[i] and speed[i]
      * @return
      */
     protected abstract double[] getSpeed();
 
     /**
-     * MET is sport specific effort based on statistical studies
+     * MET is sport specific effort based on statistical studies. All values must be
+     * synchronized with Speed and Pace. For instances: for met[i] et calculated with pace[i] and speed[i]
      * @return
      */
     protected abstract double[] getMet();
@@ -73,7 +72,7 @@ public abstract class PlanBuilder {
      * @return
      */
     protected double getWeekIncrementRatio(int idx) {
-        return weekIncrementRatio[idx];
+        return weekDecrementRatio[idx];
     }
 
     /**
@@ -144,6 +143,8 @@ public abstract class PlanBuilder {
 
     /**
      * This will return the intensity plan for each week.
+     * We modulate the distance using you MET score. The better is you MET
+     * the farther your capable to train.
      * @param raceDistance
      * @param ftp
      * @param numberOfWeeks
@@ -156,6 +157,8 @@ public abstract class PlanBuilder {
 
     /**
      * This will return the intensity plan for each week.
+     * We modulate the distance using you MET score. The better is you MET
+     * the farther your capable to train.
      * @param raceDistance
      * @param ftp
      * @param numberOfWeeks

@@ -5,13 +5,19 @@ import java.util.List;
 
 public class BikingPlanBuilder extends PlanBuilder {
 
-    int[] pace = { 84, 103, 124, 147, 172 };
-    double[] met = { 4.8, 5.9, 7.1, 8.4, 9.8 };
-    double[] speed = { 10, 15, 20, 25, 30 };
+    /** Start statistical values - don't change **/
+    static final int[] pace = { 84, 103, 124, 147, 172 };
+    static final double[] met = { 4.8, 5.9, 7.1, 8.4, 9.8 };
+    static final double[] speed = { 10, 15, 20, 25, 30 };
+    /** End statistical values - don't change **/
+
     protected double ftpSweetSpotLowRatio = 0.97;
     protected double ftpSweetSpotHighRatio = 0.84;
     protected double ftpVolumeLowRatio = 0.56;
     protected double ftpVolumeHighRatio = 0.90;
+
+    /** overrides PlanBuilder **/
+    protected double maximumVolumeRatio = 0.15;
 
 
     public int[] getPace() {

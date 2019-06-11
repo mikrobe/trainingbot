@@ -5,13 +5,19 @@ import java.util.List;
 
 public class SwimmingPlanBuilder extends PlanBuilder {
 
-    int[] pace = { 180, 144, 120, 103, 90 };
-    double[] met = { 4.3, 6.8, 8.9, 11.5, 13.6 };
-    protected double maximumVolumeRatio = 0.5;
+    /** Start statistical values - don't change **/
+    static final int[] pace = { 180, 144, 120, 103, 90 };
+    static final double[] met = { 4.3, 6.8, 8.9, 11.5, 13.6 };
+    static final double[] speed = { 180, 144, 120, 103, 90 };
+    /** End statistical values - don't change **/
+
     protected double ftpSweetspotLowRatio = 1.10;
     protected double ftpSweetspotHighRatio = 1.02;
     protected double ftpVolumeLowRatio = 0.56;
     protected double ftpVolumeHighRatio = 0.90;
+
+    /** overrides PlanBuilder **/
+    protected double maximumVolumeRatio = 0.5;
 
     public int[] getPace() {
         return pace;
@@ -25,6 +31,10 @@ public class SwimmingPlanBuilder extends PlanBuilder {
         return null;
     }
 
+    protected double getMaximumVolumeRatio() {
+        return maximumVolumeRatio;
+    }
+
     /**
      * Returns the volume sessions
      * @param numberOfWeeks
@@ -34,10 +44,8 @@ public class SwimmingPlanBuilder extends PlanBuilder {
      */
     public List<Session> getVolumeSessions(int numberOfWeeks, double ftp, double distance) {
         List<Session> sessions = new ArrayList<>();
-
         double targetHighFtp = ftp * ftpVolumeHighRatio;
         double targetLowFtp = ftp * ftpVolumeLowRatio;
-
         double[] volumeDistances = getVolumeDistances(distance, ftp, numberOfWeeks);
         for (int i = 0; i < numberOfWeeks; i++) {
             Session session = new Session();

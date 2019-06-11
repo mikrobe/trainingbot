@@ -8,14 +8,19 @@ import java.util.List;
  */
 public class RunningPlanBuilder extends PlanBuilder {
 
+    /** Start statistical values - don't change **/
     int[] pace = { 400, 327, 277, 240 };
     double[] met = { 8.8, 11.2, 12.9, 14.9 };
     double[] speed = { 9, 11, 13, 15 };
+    /** End statistical values - don't change **/
 
-    protected double ftpSweetSpotLowRatio = 1.1;
-    protected double ftpSweetSpotHighRatio = 0.88;
+    protected double ftpSweetSpotLowRatio = 1.13;
+    protected double ftpSweetSpotHighRatio = 0.99;
     protected double ftpVolumeLowRatio = 1.5;
     protected double ftpVolumeHighRatio = 1.3;
+
+    /** overrides PlanBuilder **/
+    protected double maximumVolumeRatio = 0.35;
 
     public int[] getPace() {
         return pace;
