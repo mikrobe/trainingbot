@@ -66,6 +66,14 @@ public abstract class PlanBuilder {
     protected abstract double[] getMet();
 
     /**
+     * Implementing classes can modulate values using this method.
+     * This method is used by getIncrementalDistances().
+     */
+    protected double gen(double seed) {
+        return seed;
+    }
+
+    /**
      * Returns weekly increment ratio. This may vary between individuals, sports and if
      * you want to simulate a different variation in the plan (e.i. undertraing etc)
      * @param idx
@@ -84,7 +92,7 @@ public abstract class PlanBuilder {
      */
     private double[] getIncrementalDistances(int numberOfWeeks, double targetDistance) {
         double[] incrementalDistances = new double[numberOfWeeks];
-        incrementalDistances[numberOfWeeks - 1] = targetDistance;
+        incrementalDistances[numberOfWeeks - 1] = gen(targetDistance);
         for (int i = numberOfWeeks - 2; i > -1; i--) {
             double volume = incrementalDistances[i + 1] - getWeekIncrementRatio((i + 1) % 4) * incrementalDistances[i + 1];
             incrementalDistances[i] = volume;

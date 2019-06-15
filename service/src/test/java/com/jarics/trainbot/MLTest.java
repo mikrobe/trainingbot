@@ -104,22 +104,24 @@ public class MLTest {
 
     @Test
     public void typical_normal_guy_following_normal_plan() throws Exception {
-        //        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
-        //        List<AthleteActivity> normalTrainingActivities;
-        //        AthleteFTP athleteFTP = new AthleteFTP();
-        //        athleteFTP.setUsername("normal trained guy");
+        //                ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
+        //                List<AthleteActivity> normalTrainingActivities;
+        //                AthleteFTP athleteFTP = new AthleteFTP();
+        //                athleteFTP.setUsername("normal trained guy");
         //
-        //        List<SimpleSession> wNormalSessions = trainingPlanService.getSessions(athleteFTP, 20);
+        //                List<SimpleSession> wNormalSessions = trainingPlanService.getSessions(athleteFTP, 20);
+        //        PlanService wPlanService = new PlanService();
+        //        Plan plan = wPlanService.getTriathlonPlan(athleteFTP);
         //
-        //        normalTrainingActivities = activitiesGenerator.generateActivities(wNormalSessions);
+        //                normalTrainingActivities = activitiesGenerator.generateActivities(wNormalSessions);
         //
-        //        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
-        //        AthletesFeatures extract = wFeatureExtractor.extract(normalTrainingActivities, 101.0, 228.0, 345.0);
-        //        extract.setAthlete(athleteFTP);
-        //        MLClasses mlClasse = wekaMLService.classify(extract.gettSB(), extract.getcTL(), extract.getaTL());
-        //        athleteFTP.setClassification(mlClasse);
+        //                FeatureExtractor wFeatureExtractor = new FeatureExtractor();
+        //                AthletesFeatures extract = wFeatureExtractor.extract(normalTrainingActivities, 101.0, 228.0, 345.0);
+        //                extract.setAthlete(athleteFTP);
+        //                MLClasses mlClasse = wekaMLService.classify(extract.gettSB(), extract.getcTL(), extract.getaTL());
+        //                athleteFTP.setClassification(mlClasse);
         //
-        //        Assert.assertEquals(MLClasses.normal, mlClasse);
+        //                Assert.assertEquals(MLClasses.normal, mlClasse);
 
     }
 

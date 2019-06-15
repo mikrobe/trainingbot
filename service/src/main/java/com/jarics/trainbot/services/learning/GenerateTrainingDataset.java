@@ -46,28 +46,28 @@ public class GenerateTrainingDataset {
 
             PlanService planService = new PlanService();
 
-            AthleteFTP wOverAthleteFTP = generateAthlete();
-            wOverAthleteFTP.setClassification(MLClasses.overtrained);
-            Plan plan = planService.getTriathlonOverTrainingPlan(wOverAthleteFTP);
-            generateActivities(plan, keepRawData, activitiesGenerator, wOverAthleteFTP);
+            AthleteFTP wAthleteFTP = generateAthlete();
+            wAthleteFTP.setClassification(MLClasses.overtrained);
+            Plan plan = planService.getTriathlonOverTrainingPlan(wAthleteFTP);
+            generateActivities(plan, keepRawData, activitiesGenerator, wAthleteFTP);
 
-            AthleteFTP wUnderAthleteFTP = generateAthlete();
-            wOverAthleteFTP.setClassification(MLClasses.undertrained);
-            plan = planService.getTriathlonUnderTrainingPlan(wUnderAthleteFTP);
-            generateActivities(plan, keepRawData, activitiesGenerator, wUnderAthleteFTP);
+            wAthleteFTP = generateAthlete();
+            wAthleteFTP.setClassification(MLClasses.undertrained);
+            plan = planService.getTriathlonUnderTrainingPlan(wAthleteFTP);
+            generateActivities(plan, keepRawData, activitiesGenerator, wAthleteFTP);
 
-            AthleteFTP wNormalAthleteFTP = generateAthlete();
-            wOverAthleteFTP.setClassification(MLClasses.normal);
-            plan = planService.getTriathlonPlan(wNormalAthleteFTP);
-            generateActivities(plan, keepRawData, activitiesGenerator, wNormalAthleteFTP);
+            wAthleteFTP = generateAthlete();
+            wAthleteFTP.setClassification(MLClasses.normal);
+            plan = planService.getTriathlonPlan(wAthleteFTP);
+            generateActivities(plan, keepRawData, activitiesGenerator, wAthleteFTP);
 
         }
     }
 
     private void generateActivities(Plan plan, boolean keepRawData, ActivitiesGenerator activitiesGenerator, AthleteFTP wOverAthleteFTP) {
-        List<Session> sessions = new ArrayList<>();
         List<AthleteActivity> wActivities = new ArrayList<>();
         for (PlannedWeek plannedWeek : plan.getPlannedWeeks()) {
+            List<Session> sessions = new ArrayList<>();
             sessions.add(plannedWeek.getSwimVolumeSession());
             sessions.add(plannedWeek.getSwimIntevalSession());
             sessions.add(plannedWeek.getBikeVolumeSession());
