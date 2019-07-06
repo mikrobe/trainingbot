@@ -126,12 +126,12 @@ public class WekaMLService {
             classification = classifier.classifyInstance(instance);
             if (classification == 0) {
                 return MLClasses.normal;
+            } else if (classification == 1) {
+                return MLClasses.overtrained;
+            } else if (classification == 2) {
+                return MLClasses.undertrained;
             } else {
-                if (classification == 1)
-                    return MLClasses.overtrained;
-                else {
-                    return MLClasses.undertrained;
-                }
+                return MLClasses.unknown;
             }
 
         } catch (Exception e) {

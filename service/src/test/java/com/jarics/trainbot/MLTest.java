@@ -1,13 +1,19 @@
 package com.jarics.trainbot;
 
 import com.jarics.trainbot.com.jarics.trainbot.utils.JsonUtil;
+import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthleteFTP;
 import com.jarics.trainbot.entities.AthletesFeatures;
+import com.jarics.trainbot.plan.Plan;
 import com.jarics.trainbot.services.AthleteRepositoryService;
 import com.jarics.trainbot.services.MLClasses;
+import com.jarics.trainbot.services.PlanService;
 import com.jarics.trainbot.services.StravaService;
+import com.jarics.trainbot.services.learning.ActivitiesGenerator;
+import com.jarics.trainbot.services.learning.FeatureExtractor;
+import com.jarics.trainbot.services.learning.GenerateTrainingDataset;
 import com.jarics.trainbot.services.learning.WekaMLService;
-import com.jarics.trainbot.services.sessions.SessionManager;
+import com.jarics.trainbot.services.sessions.PlanManager;
 import com.jarics.trainbot.services.sessions.TrainingPlanService;
 import org.junit.After;
 import org.junit.Assert;
@@ -24,6 +30,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.Charset;
+import java.util.List;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -40,7 +47,7 @@ public class MLTest {
 
     @Autowired private TrainingPlanService trainingPlanService;
 
-    @Autowired private SessionManager sessionManager;
+    @Autowired private PlanManager sessionManager;
 
     private MediaType contentType = new MediaType(MediaType.APPLICATION_JSON.getType(), MediaType.APPLICATION_JSON.getSubtype(), Charset.forName("utf8"));
 
@@ -66,7 +73,8 @@ public class MLTest {
         wekaMLService.generate();
         wekaMLService.learn();
         //1.0511188630639134E-7,2.0750096254564565E-7,1.023890762392543E-7,undertrained
-        MLClasses mlClasses = wekaMLService.classify(1.0511188630639134E-7, 2.0750096254564565E-7, 1.023890762392543E-7);
+        //        MLClasses mlClasses = wekaMLService.classify(1.0511188630639134E-7, 2.0750096254564565E-7, 1.023890762392543E-7);
+        MLClasses mlClasses = wekaMLService.classify(6.461005180496485E-4, 0.002280756384819742, 0.0016346558667700937);
         Assert.assertEquals(MLClasses.undertrained, mlClasses);
     }
 
@@ -104,86 +112,108 @@ public class MLTest {
 
     @Test
     public void typical_normal_guy_following_normal_plan() throws Exception {
-        //                ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
-        //                List<AthleteActivity> normalTrainingActivities;
-        //                AthleteFTP athleteFTP = new AthleteFTP();
-        //                athleteFTP.setUsername("normal trained guy");
-        //
-        //                List<SimpleSession> wNormalSessions = trainingPlanService.getSessions(athleteFTP, 20);
-        //        PlanService wPlanService = new PlanService();
-        //        Plan plan = wPlanService.getTriathlonPlan(athleteFTP);
-        //
-        //                normalTrainingActivities = activitiesGenerator.generateActivities(wNormalSessions);
-        //
-        //                FeatureExtractor wFeatureExtractor = new FeatureExtractor();
-        //                AthletesFeatures extract = wFeatureExtractor.extract(normalTrainingActivities, 101.0, 228.0, 345.0);
-        //                extract.setAthlete(athleteFTP);
-        //                MLClasses mlClasse = wekaMLService.classify(extract.gettSB(), extract.getcTL(), extract.getaTL());
-        //                athleteFTP.setClassification(mlClasse);
-        //
-        //                Assert.assertEquals(MLClasses.normal, mlClasse);
+
+        PlanService planService = new PlanService();
+        GenerateTrainingDataset generateTrainingDataset = new GenerateTrainingDataset();
+        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
+
+        AthleteFTP wAthleteFTP = generateTrainingDataset.generateAthlete();
+        Plan plan = planService.getTriathlonPlan(wAthleteFTP);
+        List<AthleteActivity> activities = generateTrainingDataset.generateActivities(plan, activitiesGenerator);
+
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
+        AthletesFeatures wAthletesFeatures = wFeatureExtractor.extract(activities, 101.0, 228.0, 345.0);
+        wAthletesFeatures.setAthlete(wAthleteFTP);
+
+        MLClasses mlClasse = wekaMLService.classify(wAthletesFeatures.gettSB(), wAthletesFeatures.getcTL(), wAthletesFeatures.getaTL());
+        wAthleteFTP.setClassification(mlClasse);
+
+        Assert.assertEquals(MLClasses.normal, mlClasse);
 
     }
 
     @Test
     public void typical_stressedout_guy_undertrained_with_very_high_but_few_intense_workouts() throws Exception {
-        //        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
-        //        List<AthleteActivity> overTrainingActivities;
-        //        AthleteFTP athleteFTP = new AthleteFTP();
-        //        athleteFTP.setUsername("over trained guy");
-        //
-        //        List<SimpleSession> wNormalSessions = trainingPlanService.getSessions(athleteFTP, 20);
-        //        double saved = wNormalSessions
-        //          .get(7)
-        //          .getBikeDistance();
-        //
-        //        List<SimpleSession> wOverSessions = overTrainingGenerator.getSessions(athleteFTP, 20);
-        //        wOverSessions = wOverSessions.subList(0, 5);
-        //
-        //        overTrainingActivities = activitiesGenerator.generateActivities(wOverSessions);
-        //
-        //        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
-        //        AthletesFeatures extract = wFeatureExtractor.extract(overTrainingActivities, 101.0, 228.0, 345.0);
-        //        extract.setAthlete(athleteFTP);
-        //        MLClasses mlClasse = wekaMLService.classify(extract.gettSB(), extract.getcTL(), extract.getaTL());
-        //        athleteFTP.setClassification(mlClasse);
-        //
-        //        Assert.assertEquals(MLClasses.undertrained, mlClasse);
-        //
-        //        sessionManager.reduceLoad(wNormalSessions);
-        //        Assert.assertTrue(wNormalSessions
-        //          .get(7)
-        //          .getBikeDistance() < saved);
+
+        PlanService planService = new PlanService();
+        GenerateTrainingDataset generateTrainingDataset = new GenerateTrainingDataset();
+        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
+
+        AthleteFTP wAthleteFTP = generateTrainingDataset.generateAthlete();
+        Plan plan = planService.getTriathlonOverTrainingPlan(wAthleteFTP);
+        List<AthleteActivity> activities = generateTrainingDataset.generateActivities(plan, activitiesGenerator);
+
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
+        AthletesFeatures wAthletesFeatures = wFeatureExtractor.extract(activities, 101.0, 228.0, 345.0);
+        wAthletesFeatures.setAthlete(wAthleteFTP);
+
+        MLClasses mlClasse = wekaMLService.classify(wAthletesFeatures.gettSB(), wAthletesFeatures.getcTL(), wAthletesFeatures.getaTL());
+        wAthleteFTP.setClassification(mlClasse);
+
+        Assert.assertEquals(MLClasses.overtrained, mlClasse);
     }
 
     @Test
     public void plan_must_lower_distances_and_time_at_ftp_for_overtrained() throws Exception {
-        //        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
-        //        List<AthleteActivity> overTrainingActivities;
-        //        AthleteFTP athleteFTP = new AthleteFTP();
-        //        athleteFTP.setUsername("over trained guy");
-        //
-        //        List<SimpleSession> wNormalSessions = trainingPlanService.getSessions(athleteFTP, 20);
-        //        double saved = wNormalSessions
-        //          .get(7)
-        //          .getBikeDistance();
-        //
-        //        List<SimpleSession> wOverSessions = overTrainingGenerator.getSessions(athleteFTP, 20);
-        //        wOverSessions.forEach((n) -> System.out.println(n.toString()));
-        //
-        //        overTrainingActivities = activitiesGenerator.generateActivities(wOverSessions);
-        //
-        //        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
-        //        AthletesFeatures extract = wFeatureExtractor.extract(overTrainingActivities, 101.0, 228.0, 345.0);
-        //        extract.setAthlete(athleteFTP);
-        //        MLClasses mlClasse = wekaMLService.classify(extract.gettSB(), extract.getcTL(), extract.getaTL());
-        //        athleteFTP.setClassification(mlClasse);
-        //
-        //        Assert.assertEquals(MLClasses.overtrained, mlClasse);
-        //
-        //        sessionManager.reduceLoad(wNormalSessions);
-        //        Assert.assertTrue(wNormalSessions
-        //          .get(7)
-        //          .getBikeDistance() < saved);
+        PlanService planService = new PlanService();
+        GenerateTrainingDataset generateTrainingDataset = new GenerateTrainingDataset();
+        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
+
+        AthleteFTP wAthleteFTP = generateTrainingDataset.generateAthlete();
+        Plan plan = planService.getTriathlonOverTrainingPlan(wAthleteFTP);
+        List<AthleteActivity> activities = generateTrainingDataset.generateActivities(plan, activitiesGenerator);
+
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
+        AthletesFeatures wAthletesFeatures = wFeatureExtractor.extract(activities, 101.0, 228.0, 345.0);
+        wAthletesFeatures.setAthlete(wAthleteFTP);
+
+        MLClasses mlClasse = wekaMLService.classify(wAthletesFeatures.gettSB(), wAthletesFeatures.getcTL(), wAthletesFeatures.getaTL());
+        wAthleteFTP.setClassification(mlClasse);
+
+        Assert.assertEquals(MLClasses.overtrained, mlClasse);
+
+        Double savedDistance = plan
+          .getPlannedWeeks()
+          .get(7)
+          .getBikeVolumeSession()
+          .getTargetDistance();
+        sessionManager.reduceLoad(plan);
+        Assert.assertTrue(plan
+          .getPlannedWeeks()
+          .get(7)
+          .getBikeVolumeSession()
+          .getTargetDistance() < savedDistance);
+    }
+
+    @Test
+    public void plan_must_higher_distances_and_time_at_ftp_for_undertrained() throws Exception {
+        PlanService planService = new PlanService();
+        GenerateTrainingDataset generateTrainingDataset = new GenerateTrainingDataset();
+        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
+
+        AthleteFTP wAthleteFTP = generateTrainingDataset.generateAthlete();
+        Plan plan = planService.getTriathlonUnderTrainingPlan(wAthleteFTP);
+        List<AthleteActivity> activities = generateTrainingDataset.generateActivities(plan, activitiesGenerator);
+
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
+        AthletesFeatures wAthletesFeatures = wFeatureExtractor.extract(activities, 101.0, 228.0, 345.0);
+        wAthletesFeatures.setAthlete(wAthleteFTP);
+
+        MLClasses mlClasse = wekaMLService.classify(wAthletesFeatures.gettSB(), wAthletesFeatures.getcTL(), wAthletesFeatures.getaTL());
+        wAthleteFTP.setClassification(mlClasse);
+
+        Assert.assertEquals(MLClasses.undertrained, mlClasse);
+
+        Double savedDistance = plan
+          .getPlannedWeeks()
+          .get(7)
+          .getBikeVolumeSession()
+          .getTargetDistance();
+        sessionManager.increaseLoad(plan);
+        Assert.assertTrue(plan
+          .getPlannedWeeks()
+          .get(7)
+          .getBikeVolumeSession()
+          .getTargetDistance() > savedDistance);
     }
 }

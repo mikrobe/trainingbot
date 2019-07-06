@@ -49,22 +49,29 @@ public class GenerateTrainingDataset {
             AthleteFTP wAthleteFTP = generateAthlete();
             wAthleteFTP.setClassification(MLClasses.overtrained);
             Plan plan = planService.getTriathlonOverTrainingPlan(wAthleteFTP);
-            generateActivities(plan, keepRawData, activitiesGenerator, wAthleteFTP);
+            generateActivitiesAndWriteFeatures(plan, keepRawData, activitiesGenerator, wAthleteFTP);
 
             wAthleteFTP = generateAthlete();
             wAthleteFTP.setClassification(MLClasses.undertrained);
             plan = planService.getTriathlonUnderTrainingPlan(wAthleteFTP);
-            generateActivities(plan, keepRawData, activitiesGenerator, wAthleteFTP);
+            generateActivitiesAndWriteFeatures(plan, keepRawData, activitiesGenerator, wAthleteFTP);
 
             wAthleteFTP = generateAthlete();
             wAthleteFTP.setClassification(MLClasses.normal);
             plan = planService.getTriathlonPlan(wAthleteFTP);
-            generateActivities(plan, keepRawData, activitiesGenerator, wAthleteFTP);
+            generateActivitiesAndWriteFeatures(plan, keepRawData, activitiesGenerator, wAthleteFTP);
 
         }
     }
 
-    private void generateActivities(Plan plan, boolean keepRawData, ActivitiesGenerator activitiesGenerator, AthleteFTP wOverAthleteFTP) {
+    private void generateActivitiesAndWriteFeatures(Plan plan, boolean keepRawData, ActivitiesGenerator activitiesGenerator, AthleteFTP wOverAthleteFTP) {
+        List<AthleteActivity> wActivities = new ArrayList<>();
+        generateActivities(plan, activitiesGenerator);
+        if (keepRawData) writeRawData(wOverAthleteFTP, wActivities);
+        writeFeatures(wOverAthleteFTP, wActivities);
+    }
+
+    public List<AthleteActivity> generateActivities(Plan plan, ActivitiesGenerator activitiesGenerator) {
         List<AthleteActivity> wActivities = new ArrayList<>();
         for (PlannedWeek plannedWeek : plan.getPlannedWeeks()) {
             List<Session> sessions = new ArrayList<>();
@@ -76,9 +83,9 @@ public class GenerateTrainingDataset {
             sessions.add(plannedWeek.getRunIntevalSession());
             wActivities.addAll(activitiesGenerator.generateActivities(plannedWeek.getWeek(), sessions));
         }
-        if (keepRawData) writeRawData(wOverAthleteFTP, wActivities);
-        writeFeatures(wOverAthleteFTP, wActivities);
+        return wActivities;
     }
+
 
     public void writeRawData(AthleteFTP wNormalAthleteFTP, List<AthleteActivity> wActivities) {
         try {

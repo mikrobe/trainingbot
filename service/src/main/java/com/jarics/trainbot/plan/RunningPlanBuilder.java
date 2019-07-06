@@ -20,7 +20,7 @@ public class RunningPlanBuilder extends PlanBuilder {
     protected double ftpVolumeHighRatio = 1.3;
 
     /** overrides PlanBuilder **/
-    protected double maximumVolumeRatio = 0.35;
+    protected double maximumVolumeRatio = 0.15;
 
     public int[] getPace() {
         return pace;

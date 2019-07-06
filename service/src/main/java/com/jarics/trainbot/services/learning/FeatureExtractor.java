@@ -3,6 +3,7 @@ package com.jarics.trainbot.services.learning;
 import com.jarics.trainbot.entities.AthleteActivity;
 import com.jarics.trainbot.entities.AthletesFeatures;
 import io.swagger.client.model.SummaryActivity;
+import org.springframework.util.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,19 +29,37 @@ public class FeatureExtractor {
     }
 
     /**
-     * Returns the weighted average of pDays
+     * Returns the weighted average of pDays. pTss size may be lower of bigger
+     * than pDays. So the avg must be calculated using the smaller number between
+     * pDays and pTss size. That way we avoid indexOutOfBound exception.
      *
      * @param pTss
      * @param pDays
      * @return
      */
     private double getWeightedAvg(List<Double> pTss, int pDays) {
-        if (pTss.size() < pDays) return 0;
+        int interation = Math.min(pDays, pTss.size());
         double lastDaysTss = 0.0;
-        for (int i = pTss.size() - 1; i > pTss.size() - pDays; i--) {
+        for (int i = 0; i < interation; i++) {
             lastDaysTss = lastDaysTss + pTss.get(i);
         }
-        return lastDaysTss / pDays;
+        return lastDaysTss / interation;
+    }
+
+    public static void main(String[] args) {
+        List<Double> tss = new ArrayList<>();
+        tss.add(1.0);
+        tss.add(2.0);
+        tss.add(3.0);
+        tss.add(4.0);
+        tss.add(5.0);
+        FeatureExtractor f = new FeatureExtractor();
+        double avg = f.getWeightedAvg(tss, 100);
+        Assert.isTrue(avg == 3);
+        avg = f.getWeightedAvg(tss, 2);
+        Assert.isTrue(avg == 1.5);
+        avg = f.getWeightedAvg(tss, 5);
+        Assert.isTrue(avg == 3);
     }
 
 
@@ -112,17 +131,14 @@ public class FeatureExtractor {
                 case BIKE: {
                     //The FTP for bike is in watts.
                     wCurrentFtp = pBikeFtp;
-                    if (activity.getWeigthedAvgWatts() == 0.0) {
-                        wNP = pBikeFtp;
-                    } else {
+                    if (!Double.isNaN(activity.getWeigthedAvgWatts())) {
                         wNP = activity.getWeigthedAvgWatts();
+                        wIF = wNP / wCurrentFtp;
                     }
-                    if (activity.getDistance() == 0.0) {
-                        wNGP = 0.0;
-                    } else {
+                    if (activity.getDistance() != 0.0) {
                         wNGP = activity.getMovingTime() / activity.getDistance();
+                        wIF = wNGP / wCurrentFtp;
                     }
-                    wIF = wNP / wCurrentFtp;
                     wTssValues.add(getTss(activity.getElapsedTime(), wNP, wNGP, wIF, wCurrentFtp));
                     break;
                 }
