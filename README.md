@@ -42,21 +42,27 @@ An exponentially weighted average of your training stress scores from the past 7
 [1] fatigue
 
 ### Zones by sports
-FTP Zones, generally from 1 to 6 where 6 is toughest zone. 
-[5] Technically, the Sweet Spot is located between high zone 3 and low zone 4: between 84% to 97% of your FTP (power at threshold). For riders who aren’t using a power meter, I’d call Sweet Spot “medium hard”. Sweet Spot is just below your 40k time trial race pace, but harder than a traditional tempo workout.
+As explained in [15] there are 7 power training zones.
 
-#### Bike Power Zones:
+#### Bike Power (watts) Zones: 
 * Zone 1 (Active recovery) Less than 55% of FTPw
-* Zone 2 (Endurance) 55% to 74% of FTPw
-* Zone 3 (Tempo) 75% to 89% of FTPw
-* Sweetpot 84% to 97% of FTPw
-* Zone 4 (Threshold) 90% to 104% of FTPw
-* Zone 5 (VO2 Max) 105% to 120% of FTPw
-* Zone 6 (Anaerobic capacity) More than 120% of FTPw
+* Zone 2 (Endurance) 56% to 75% of FTPw
+* Zone 3 (Tempo) 76% to 90% of FTPw
+* Sweet Spot 84% to 97% of FTPw 
+* Zone 4 (Threshold) 91% to 105% of FTPw
+* Zone 5 (VO2 Max) 106%56% to 120% of FTPw
+* Zone 6 (Anaerobic capacity) More than 121% of FTPw
+* Zone 7 (Neuromuscular) MAX
+
+We use the concept of sweet spot [5] for intensity workouts. 
+The sweet spot is located between high zone 3 (90%) and low zone 4 (105%) 
 
 #### Run Pace Zones [2]:
 
-If my ftp is 5:38 per km. This is 338 seconds per km. Running in sweetspot (99% and 106%) would be between (335 secs) 5:35 and (358 secs) 5:58. This is between 99%% and 106% of you FTP.
+Sweetspot used for intervals training is located at high zone 3 and low zone 4. For running it means
+between 113% and 99%.
+If my ftp is 5:38 per km. This is 338 seconds per km. Running in the sweetspot (99% and 113%) 
+would be between (335 secs) 5:35 and (381 secs) 6:21.
 This is how our algorithm calculates zones. It uses a simple rule of three.
 
 Ex.:
@@ -75,6 +81,7 @@ high 106% --> 338 * 1.06 = 358 secs (5:58)
 * Zone 5a 97% to 100% of FTP 
 * Zone 5b 90% to 96% of FTP
 * Zone 5c Faster than 90% of FTP
+
 #### Swim Pace Zones [3]:
 * Zone 1 SW (slow)
 * Zone 2 5 secs slower than T-Time
@@ -379,3 +386,4 @@ Canari SSH: ubuntu@208.75.75.24
 13. /weka-3.8/wekadocs/WekaManual.pdf
 14. https://onlinelibrary.wiley.com/doi/pdf/10.1002/clc.4960130809, Metabolic Equivalents (METS) in Exercise Testing, Exercise Prescription,
                                                                     and Evaluation of Functional Capacity, M. Jetté, K. Sidney, G. Blumchen, Clin. Cardiol. 13, 555-565 (1990)
+15. https://www.trainingpeaks.com/blog/power-training-levels/

@@ -30,7 +30,9 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 
 import java.nio.charset.Charset;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -133,7 +135,7 @@ public class MLTest {
     }
 
     @Test
-    public void typical_stressedout_guy_undertrained_with_very_high_but_few_intense_workouts() throws Exception {
+    public void typical_stressedout_guy_overtrained() throws Exception {
 
         PlanService planService = new PlanService();
         GenerateTrainingDataset generateTrainingDataset = new GenerateTrainingDataset();
@@ -152,6 +154,54 @@ public class MLTest {
 
         Assert.assertEquals(MLClasses.overtrained, mlClasse);
     }
+
+    @Test
+    public void typical_lasy_guy_overtrained_with_very_high_but_few_intense_workouts() throws Exception {
+
+        PlanService planService = new PlanService();
+        GenerateTrainingDataset generateTrainingDataset = new GenerateTrainingDataset();
+        ActivitiesGenerator activitiesGenerator = new ActivitiesGenerator();
+
+        AthleteFTP wAthleteFTP = generateTrainingDataset.generateAthlete();
+        Plan plan = planService.getTriathlonOverTrainingPlan(wAthleteFTP);
+        List<AthleteActivity> activities = generateTrainingDataset.generateActivities(plan, activitiesGenerator);
+
+        //remove 50% of the activities each weeks. We have tipically swim, bike, run (intensity and volume) equals 3 sessions per week.
+        //our guy only does the intensity one and skips sometimes one or more sessions.
+
+        //TODO i wish to randomly remove 20% of items in an array
+        List<AthleteActivity> newActivities = new ArrayList<>(activities);
+
+        int i = 0;
+        for (AthleteActivity activity : activities) {
+            int modulo = i % 4;
+            if (modulo == 0) {
+                newActivities.remove(activity);
+            }
+            ++i;
+        }
+
+        FeatureExtractor wFeatureExtractor = new FeatureExtractor();
+        AthletesFeatures wAthletesFeatures = wFeatureExtractor.extract(newActivities, 101.0, 228.0, 345.0);
+        wAthletesFeatures.setAthlete(wAthleteFTP);
+
+        MLClasses mlClasse = wekaMLService.classify(wAthletesFeatures.gettSB(), wAthletesFeatures.getcTL(), wAthletesFeatures.getaTL());
+        wAthleteFTP.setClassification(mlClasse);
+
+        Assert.assertEquals(MLClasses.overtrained, mlClasse);
+    }
+
+    private int randomBetween(int a, int b, int not) {
+        int result = 0;
+        while (result == not) {
+            Random r = new Random();
+            int low = a;
+            int high = b;
+            result = r.nextInt(high - low) + low;
+        }
+        return result;
+    }
+
 
     @Test
     public void plan_must_lower_distances_and_time_at_ftp_for_overtrained() throws Exception {
