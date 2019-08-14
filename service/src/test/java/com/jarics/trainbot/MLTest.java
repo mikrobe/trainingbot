@@ -102,7 +102,7 @@ public class MLTest {
      * @throws Exception
      */
     @Test
-    public void testFeatures() throws Exception {
+    public void test_erick_audet_real_classification() throws Exception {
         AthleteFTP athleteFTP = athleteRepositoryService.findAthleteFtpByUsername(trainingBotUserName);
         AthletesFeatures athletesFeatures = stravaService.extractAthletesFeatures(athleteFTP);
         athletesFeatures.setAthlete(athleteFTP);
